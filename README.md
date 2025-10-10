@@ -10,4 +10,4 @@ Add new Android device and press the run button to run the simulator
 
 Commands:  
 cd PathFinder  
-npm run android  
+npm run android OR npx expo start  
