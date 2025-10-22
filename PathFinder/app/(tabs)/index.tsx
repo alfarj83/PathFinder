@@ -1,98 +1,206 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  SafeAreaView
+} from 'react-native';
+import { useState } from 'react';
 import { Link } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const [searchQuery, setSearchQuery] = useState('');
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+  const departments = [
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'COMM', name: 'Communication' },
+    { code: 'ARTS', name: 'Arts' },
+    { code: 'COGS', name: 'Cognitive Science' },
+  ];
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Header Section */}
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <Text style={styles.title}>
+              Pathfinder {' '}
+              <View style={styles.iconCircle}>
+                <Ionicons name="refresh" size={24} color="white" />
+              </View>
+            </Text>
+            <Text style={styles.welcomeText}>Welcome, User!</Text>
+
+            {/* Search Bar */}
+            <View style={styles.searchContainer}>
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Search for Professors"
+                placeholderTextColor="#666"
+                value={searchQuery}
+                onChangeText={setSearchQuery}
+              />
+              <TouchableOpacity style={styles.searchButton}>
+                <Ionicons name="search" size={20} color="#666" />
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.subText}>Search for a course instead</Text>
+
+            <TouchableOpacity style={styles.viewSavedButton}>
+              <Text style={styles.viewSavedText}>View Saved</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* Departments Section */}
+        <View style={styles.departmentsSection}>
+          <Text style={styles.sectionTitle}>EXPLORE DEPARTMENTS</Text>
+          <Text style={styles.sectionSubtitle}>Humanities, Arts, and Social Sciences</Text>
+
+          <View style={styles.departmentGrid}>
+            {departments.map((dept, index) => (
+              <Link key={index} href="/faculty" asChild>
+                <TouchableOpacity style={styles.departmentButton}>
+                  <Text style={styles.departmentCode}>{dept.code}</Text>
+                </TouchableOpacity>
+              </Link>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  header: {
+    backgroundColor: '#6B8E7F',
+    paddingTop: 20,
+    paddingBottom: 30,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  headerContent: {
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  iconCircle: {
+    backgroundColor: '#5A7A6B',
+    borderRadius: 20,
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  welcomeText: {
+    fontSize: 18,
+    color: 'white',
+    marginBottom: 20,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    backgroundColor: '#E8E4D9',
+    borderRadius: 25,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    width: '100%',
+    marginBottom: 10,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#333',
+  },
+  searchButton: {
+    padding: 5,
+  },
+  subText: {
+    fontSize: 14,
+    color: 'white',
+    marginBottom: 15,
+  },
+  viewSavedButton: {
+    backgroundColor: '#8FA896',
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  viewSavedText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  departmentsSection: {
+    padding: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  sectionSubtitle: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  departmentGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  departmentButton: {
+    backgroundColor: '#8FA896',
+    width: '30%',
+    aspectRatio: 1.2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  departmentCode: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
