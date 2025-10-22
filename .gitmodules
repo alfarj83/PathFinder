@@ -1,0 +1,3 @@
+[submodule "data/RateMyProfessor.com-Web-Scraper"]
+	path = data/RateMyProfessor.com-Web-Scraper
+	url = https://github.com/highlyavailable/RateMyProfessor.com-Web-Scraper.git

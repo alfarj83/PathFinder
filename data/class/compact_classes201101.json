@@ -1,0 +1,9031 @@
+[
+  {
+    "id": "ADMN-1010",
+    "title": "Oral Comm For Ta's",
+    "act": 4,
+    "cap": 10,
+    "instructors": [
+      "Barbara A Barthel"
+    ]
+  },
+  {
+    "id": "ADMN-4050",
+    "title": "Professional Leadership Prog.",
+    "act": 34,
+    "cap": 47,
+    "instructors": [
+      "Catherine F Persoon"
+    ]
+  },
+  {
+    "id": "ADMN-4400",
+    "title": "Ug Final Admn. Registration",
+    "act": 35,
+    "cap": 0,
+    "instructors": [
+      "Maria Bedinotti Zanotta",
+      "Michael Joseph Bayer",
+      "Sharon L Kunkel"
+    ]
+  },
+  {
+    "id": "ADMN-6150",
+    "title": "External Fellowship Research",
+    "act": 0,
+    "cap": 0,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "ADMN-6300",
+    "title": "Graduate Final Registration",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ADMN-6400",
+    "title": "Grad Final Administrative Reg",
+    "act": 12,
+    "cap": 0,
+    "instructors": [
+      "Maria Bedinotti Zanotta"
+    ]
+  },
+  {
+    "id": "ADMN-6700",
+    "title": "Orientation Smr For Graduates",
+    "act": 57,
+    "cap": 200,
+    "instructors": [
+      "Constance M Grega"
+    ]
+  },
+  {
+    "id": "ADMN-6800",
+    "title": "Ta Training Seminar",
+    "act": 30,
+    "cap": 200,
+    "instructors": [
+      "Dennis E. Gornic"
+    ]
+  },
+  {
+    "id": "USAF-0020",
+    "title": "Leadership Lab",
+    "act": 11,
+    "cap": 50,
+    "instructors": [
+      "Clinton S Varner",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-0040",
+    "title": "Leadership Lab",
+    "act": 15,
+    "cap": 50,
+    "instructors": [
+      "Clinton S Varner",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-0060",
+    "title": "Leadership Lab",
+    "act": 8,
+    "cap": 50,
+    "instructors": [
+      "Clinton S Varner",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-0080",
+    "title": "Leadership Lab",
+    "act": 16,
+    "cap": 60,
+    "instructors": [
+      "Clinton S Varner",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-1020",
+    "title": "Air And Space Studies 100b",
+    "act": 13,
+    "cap": 30,
+    "instructors": [
+      "Eric Raymond Hentnik",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-2040",
+    "title": "Air And Space Studies 200b",
+    "act": 21,
+    "cap": 30,
+    "instructors": [
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-2060",
+    "title": "Air And Space Studies 300b",
+    "act": 12,
+    "cap": 30,
+    "instructors": [
+      "Clinton S Varner",
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-2080",
+    "title": "Air And Space Studies 400b",
+    "act": 12,
+    "cap": 30,
+    "instructors": [
+      "Robert Steven Drozd"
+    ]
+  },
+  {
+    "id": "USAF-2940",
+    "title": "Readings In Usaf",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARCH-2120",
+    "title": "Bldg & Thinking Arch 2",
+    "act": 61,
+    "cap": 80,
+    "instructors": [
+      "David H Bell"
+    ]
+  },
+  {
+    "id": "ARCH-2140",
+    "title": "Bldg & Thinking Arch 3",
+    "act": 56,
+    "cap": 60,
+    "instructors": [
+      "Thomas Mical"
+    ]
+  },
+  {
+    "id": "ARCH-2210",
+    "title": "Architecture Design 1",
+    "act": 51,
+    "cap": 113,
+    "instructors": [
+      "Anthony Titus",
+      "Eunjeong Seong",
+      "Ezio Blasetti",
+      "Serban Ionescu"
+    ]
+  },
+  {
+    "id": "ARCH-2230",
+    "title": "Architecture Design 3",
+    "act": 44,
+    "cap": 102,
+    "instructors": [
+      "Andrew Saunders",
+      "Florencia Vetcher",
+      "Jeremie E Carvalho",
+      "Lonn J. Combs",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ARCH-2360",
+    "title": "Environmental And Ecol System",
+    "act": 55,
+    "cap": 65,
+    "instructors": [
+      "Matthew E Gindlesparger"
+    ]
+  },
+  {
+    "id": "ARCH-2510",
+    "title": "Materials And Design",
+    "act": 52,
+    "cap": 72,
+    "instructors": [
+      "Demetrios Andreas Comodromos"
+    ]
+  },
+  {
+    "id": "ARCH-2630",
+    "title": "Grad Arch Design 3",
+    "act": 7,
+    "cap": 9,
+    "instructors": [
+      "Andrew Saunders",
+      "Florencia Vetcher",
+      "Jeremie E Carvalho",
+      "Lonn J. Combs"
+    ]
+  },
+  {
+    "id": "ARCH-2940",
+    "title": "Projects In Arch & Env Design",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARCH-4040",
+    "title": "Cities/lands",
+    "act": 51,
+    "cap": 56,
+    "instructors": [
+      "Thomas Mical"
+    ]
+  },
+  {
+    "id": "ARCH-4240",
+    "title": "Architecture Design 4",
+    "act": 0,
+    "cap": 7,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "ARCH-4250",
+    "title": "Architecture Design 5",
+    "act": 40,
+    "cap": 110,
+    "instructors": [
+      "Ayse Sulan Kolatan",
+      "David H Bell",
+      "Gustavo Enrique Alberto Crembil",
+      "Michael James Oatman",
+      "TBA",
+      "Ted T.C. Ngai"
+    ]
+  },
+  {
+    "id": "ARCH-4260",
+    "title": "Architecture Design 6",
+    "act": 25,
+    "cap": 106,
+    "instructors": [
+      "Ayse Sulan Kolatan",
+      "David H Bell",
+      "Gustavo Enrique Alberto Crembil",
+      "Michael James Oatman",
+      "Ted T.C. Ngai"
+    ]
+  },
+  {
+    "id": "ARCH-4300",
+    "title": "Design Development",
+    "act": 26,
+    "cap": 35,
+    "instructors": [
+      "Demetrios Andreas Comodromos",
+      "Jefferson A Ellinger",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ARCH-4540",
+    "title": "Professional Practice",
+    "act": 26,
+    "cap": 50,
+    "instructors": [
+      "John Salvatore Pocorobba",
+      "Stephen F Reilly"
+    ]
+  },
+  {
+    "id": "ARCH-4560",
+    "title": "Materials And Enclosures",
+    "act": 41,
+    "cap": 55,
+    "instructors": [
+      "Demetrios Andreas Comodromos"
+    ]
+  },
+  {
+    "id": "ARCH-4740",
+    "title": "Bldg Systems And Environment",
+    "act": 40,
+    "cap": 60,
+    "instructors": [
+      "Oliver S Holmes"
+    ]
+  },
+  {
+    "id": "ARCH-4850",
+    "title": "Architectural Acoustics 2",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Todd L. Brooks"
+    ]
+  },
+  {
+    "id": "ARCH-4930",
+    "title": "Structural Morphology",
+    "act": 3,
+    "cap": 12,
+    "instructors": [
+      "Ivan Markov"
+    ]
+  },
+  {
+    "id": "ARCH-4932",
+    "title": "Architectural Experience",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARCH-4933",
+    "title": "Equation Based Morphologies",
+    "act": 4,
+    "cap": 12,
+    "instructors": [
+      "Andrew Saunders"
+    ]
+  },
+  {
+    "id": "ARCH-4934",
+    "title": "Latin American Architecture",
+    "act": 6,
+    "cap": 12,
+    "instructors": [
+      "Gustavo Enrique Alberto Crembil"
+    ]
+  },
+  {
+    "id": "ARCH-4935",
+    "title": "Boom And Bloom 2.0",
+    "act": 5,
+    "cap": 12,
+    "instructors": [
+      "Ayse Sulan Kolatan"
+    ]
+  },
+  {
+    "id": "ARCH-4936",
+    "title": "Investigations:proj Built Ecol",
+    "act": 10,
+    "cap": 12,
+    "instructors": [
+      "Matthew E Gindlesparger"
+    ]
+  },
+  {
+    "id": "ARCH-4940",
+    "title": "Independent Study In Arch",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARCH-4960",
+    "title": "Sensory Culture",
+    "act": 12,
+    "cap": 12,
+    "instructors": [
+      "Ted Krueger"
+    ]
+  },
+  {
+    "id": "ARCH-4961",
+    "title": "Bedford Seminar",
+    "act": 6,
+    "cap": 8,
+    "instructors": [
+      "Michael A. Stein"
+    ]
+  },
+  {
+    "id": "ARCH-4962",
+    "title": "New Evolution(s)",
+    "act": 12,
+    "cap": 12,
+    "instructors": [
+      "Zbigniew Oksiuta"
+    ]
+  },
+  {
+    "id": "ARCH-4964",
+    "title": "Workshop In Arch Research",
+    "act": 8,
+    "cap": 11,
+    "instructors": [
+      "Michael James Oatman"
+    ]
+  },
+  {
+    "id": "ARCH-4965",
+    "title": "Environmental Parametrics",
+    "act": 10,
+    "cap": 12,
+    "instructors": [
+      "Ted T.C. Ngai"
+    ]
+  },
+  {
+    "id": "ARCH-4966",
+    "title": "Indian Arch & Urbanism",
+    "act": 8,
+    "cap": 11,
+    "instructors": [
+      "Michael James Oatman"
+    ]
+  },
+  {
+    "id": "ARCH-4967",
+    "title": "Design Philosophies",
+    "act": 8,
+    "cap": 10,
+    "instructors": [
+      "Jefferson A Ellinger"
+    ]
+  },
+  {
+    "id": "ARCH-4968",
+    "title": "Sustainable Building Design",
+    "act": 28,
+    "cap": 37,
+    "instructors": [
+      "Oliver S Holmes"
+    ]
+  },
+  {
+    "id": "ARCH-4969",
+    "title": "Analogic. Models:art Theory II",
+    "act": 12,
+    "cap": 12,
+    "instructors": [
+      "Anthony Titus"
+    ]
+  },
+  {
+    "id": "ARCH-4974",
+    "title": "Indian Language & Culture",
+    "act": 8,
+    "cap": 11,
+    "instructors": [
+      "Michael James Oatman"
+    ]
+  },
+  {
+    "id": "ARCH-4975",
+    "title": "India Studies",
+    "act": 8,
+    "cap": 11,
+    "instructors": [
+      "Michael James Oatman"
+    ]
+  },
+  {
+    "id": "ARCH-4990",
+    "title": "B Arch Final Project 2",
+    "act": 52,
+    "cap": 80,
+    "instructors": [
+      "Carla Leitao",
+      "Christopher S Perry",
+      "Julia Nicole Watson",
+      "Mark Steven Mistur",
+      "Memmet F. Kolatan",
+      "Zbigniew Oksiuta"
+    ]
+  },
+  {
+    "id": "ARCH-6110",
+    "title": "Design Explorations 1",
+    "act": 7,
+    "cap": 14,
+    "instructors": [
+      "Lonn J. Combs"
+    ]
+  },
+  {
+    "id": "ARCH-6330",
+    "title": "Built Ecologies 2",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Anna Dyson"
+    ]
+  },
+  {
+    "id": "ARCH-6340",
+    "title": "Material Systems & Productions",
+    "act": 10,
+    "cap": 12,
+    "instructors": [
+      "Jason O. Vollen"
+    ]
+  },
+  {
+    "id": "ARCH-6360",
+    "title": "Interdisciplinary Research",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Anna Dyson",
+      "Jason O. Vollen",
+      "Ted T.C. Ngai"
+    ]
+  },
+  {
+    "id": "ARCH-6830",
+    "title": "Graduate Thesis Smr:acoustics",
+    "act": 10,
+    "cap": 20,
+    "instructors": [
+      "Jonas Braasch"
+    ]
+  },
+  {
+    "id": "ARCH-6880",
+    "title": "Sonics Research Lab 2",
+    "act": 10,
+    "cap": 20,
+    "instructors": [
+      "Ning Xiang"
+    ]
+  },
+  {
+    "id": "ARCH-6890",
+    "title": "Aural Architecture",
+    "act": 10,
+    "cap": 20,
+    "instructors": [
+      "Jonas Braasch"
+    ]
+  },
+  {
+    "id": "ARCH-6900",
+    "title": "Graduate Thesis Seminar",
+    "act": 9,
+    "cap": 50,
+    "instructors": [
+      "Peter Randolph Hazard Stark",
+      "Russell P Leslie"
+    ]
+  },
+  {
+    "id": "ARCH-6940",
+    "title": "Adv Ind Proj In Arch/env Desgn",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARCH-6941",
+    "title": "Doctoral Seminar",
+    "act": 6,
+    "cap": 49,
+    "instructors": [
+      "Mariana G. Figueiro",
+      "Ning Xiang",
+      "Peter Randolph Hazard Stark"
+    ]
+  },
+  {
+    "id": "ARCH-6963",
+    "title": "Adv. Integ. Sys. Model & Test",
+    "act": 4,
+    "cap": 5,
+    "instructors": [
+      "Matthew E Gindlesparger"
+    ]
+  },
+  {
+    "id": "ARCH-6990",
+    "title": "Master's Thesis",
+    "act": 18,
+    "cap": 65,
+    "instructors": [
+      "Anna Dyson",
+      "Jason O. Vollen",
+      "Jonas Braasch",
+      "Mark Steven Mistur",
+      "Ning Xiang"
+    ]
+  },
+  {
+    "id": "ARCH-9990",
+    "title": "Architecture Dissertation",
+    "act": 17,
+    "cap": 90,
+    "instructors": [
+      "Anna Dyson",
+      "Jason O. Vollen",
+      "Jonas Braasch",
+      "Mariana G. Figueiro",
+      "Mark S Rea",
+      "Nadarajah Narendran",
+      "Ning Xiang",
+      "Russell P Leslie",
+      "Ted Krueger"
+    ]
+  },
+  {
+    "id": "ARTS-1010",
+    "title": "Media Studio:video/audio",
+    "act": 38,
+    "cap": 62,
+    "instructors": [
+      "Holland G. Hopson",
+      "Igor Vamos",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ARTS-1020",
+    "title": "Media Studio:imaging",
+    "act": 57,
+    "cap": 64,
+    "instructors": [
+      "Melinda Renee McDaniel",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ARTS-1200",
+    "title": "Basic Drawing",
+    "act": 56,
+    "cap": 60,
+    "instructors": [
+      "Brian P. Cirmo",
+      "Kenneth A. Ragsdale",
+      "Laura Garrison",
+      "Nathan Scott Meltz"
+    ]
+  },
+  {
+    "id": "ARTS-1400",
+    "title": "Music Fundamentals",
+    "act": 24,
+    "cap": 25,
+    "instructors": [
+      "Daniel James Huey"
+    ]
+  },
+  {
+    "id": "ARTS-2010",
+    "title": "Intermediate Video",
+    "act": 10,
+    "cap": 16,
+    "instructors": [
+      "Kathryn High"
+    ]
+  },
+  {
+    "id": "ARTS-2020",
+    "title": "Computer Music",
+    "act": 16,
+    "cap": 16,
+    "instructors": [
+      "Holland G. Hopson"
+    ]
+  },
+  {
+    "id": "ARTS-2040",
+    "title": "Intermediate Digital Imaging",
+    "act": 20,
+    "cap": 40,
+    "instructors": [
+      "Silvia Ruzanka"
+    ]
+  },
+  {
+    "id": "ARTS-2060",
+    "title": "Fundamentals Of Animation",
+    "act": 12,
+    "cap": 20,
+    "instructors": [
+      "Silvia Ruzanka"
+    ]
+  },
+  {
+    "id": "ARTS-2210",
+    "title": "Sculpture I",
+    "act": 51,
+    "cap": 45,
+    "instructors": [
+      "Larry Kagan",
+      "Milo Lazarevic"
+    ]
+  },
+  {
+    "id": "ARTS-2220",
+    "title": "Fundamentals Of 2d Design",
+    "act": 22,
+    "cap": 25,
+    "instructors": [
+      "Laura Garrison",
+      "Nathan Scott Meltz"
+    ]
+  },
+  {
+    "id": "ARTS-2300",
+    "title": "Rensselaer Orchestra",
+    "act": 48,
+    "cap": 75,
+    "instructors": [
+      "Nathan Andrew Madsen"
+    ]
+  },
+  {
+    "id": "ARTS-2310",
+    "title": "Rensselaer Concert Choir",
+    "act": 31,
+    "cap": 50,
+    "instructors": [
+      "John E. Ryan"
+    ]
+  },
+  {
+    "id": "ARTS-2320",
+    "title": "Percussion Ensemble",
+    "act": 8,
+    "cap": 15,
+    "instructors": [
+      "Richard Albagli"
+    ]
+  },
+  {
+    "id": "ARTS-2330",
+    "title": "Jazz Ensemble",
+    "act": 30,
+    "cap": 30,
+    "instructors": [
+      "Michael Joseph Conroy",
+      "Robert K. Button"
+    ]
+  },
+  {
+    "id": "ARTS-2350",
+    "title": "Chamber Music Ensemble",
+    "act": 6,
+    "cap": 0,
+    "instructors": [
+      "Michael L. Century"
+    ]
+  },
+  {
+    "id": "ARTS-2400",
+    "title": "Music Theory I",
+    "act": 27,
+    "cap": 20,
+    "instructors": [
+      "Mary Jane Leach"
+    ]
+  },
+  {
+    "id": "ARTS-2500",
+    "title": "History Of Western Music",
+    "act": 24,
+    "cap": 30,
+    "instructors": [
+      "Michael L. Century"
+    ]
+  },
+  {
+    "id": "ARTS-2520",
+    "title": "World Music",
+    "act": 17,
+    "cap": 20,
+    "instructors": [
+      "Tomie Hahn"
+    ]
+  },
+  {
+    "id": "ARTS-2530",
+    "title": "Art History I",
+    "act": 128,
+    "cap": 130,
+    "instructors": [
+      "Milo Lazarevic"
+    ]
+  },
+  {
+    "id": "ARTS-2540",
+    "title": "The Multimedia Century",
+    "act": 16,
+    "cap": 25,
+    "instructors": [
+      "Paula Gabriela Gaetano Adi"
+    ]
+  },
+  {
+    "id": "ARTS-2940",
+    "title": "Studies In The Arts",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARTS-2961",
+    "title": "Graphic Storytelling",
+    "act": 15,
+    "cap": 22,
+    "instructors": [
+      "Elizabeth Blum"
+    ]
+  },
+  {
+    "id": "ARTS-4010",
+    "title": "Interactive Arts Programming",
+    "act": 4,
+    "cap": 20,
+    "instructors": [
+      "Curtis Bahn"
+    ]
+  },
+  {
+    "id": "ARTS-4020",
+    "title": "Adv Digital 3d Projects",
+    "act": 19,
+    "cap": 20,
+    "instructors": [
+      "Shawn A. Lawson"
+    ]
+  },
+  {
+    "id": "ARTS-4060",
+    "title": "Animation I",
+    "act": 24,
+    "cap": 20,
+    "instructors": [
+      "Shawn A. Lawson"
+    ]
+  },
+  {
+    "id": "ARTS-4080",
+    "title": "Art, Community And Technology",
+    "act": 9,
+    "cap": 20,
+    "instructors": [
+      "Branda Miller"
+    ]
+  },
+  {
+    "id": "ARTS-4130",
+    "title": "New Media Theory",
+    "act": 16,
+    "cap": 20,
+    "instructors": [
+      "Michael L. Century"
+    ]
+  },
+  {
+    "id": "ARTS-4200",
+    "title": "Advanced Drawing",
+    "act": 24,
+    "cap": 25,
+    "instructors": [
+      "Kenneth A. Ragsdale"
+    ]
+  },
+  {
+    "id": "ARTS-4210",
+    "title": "Sculpture II",
+    "act": 14,
+    "cap": 15,
+    "instructors": [
+      "Larry Kagan"
+    ]
+  },
+  {
+    "id": "ARTS-4400",
+    "title": "Music Theory II",
+    "act": 20,
+    "cap": 25,
+    "instructors": [
+      "David H Arner"
+    ]
+  },
+  {
+    "id": "ARTS-4410",
+    "title": "Deep Listening",
+    "act": 23,
+    "cap": 20,
+    "instructors": [
+      "Pauline Oliveros"
+    ]
+  },
+  {
+    "id": "ARTS-4510",
+    "title": "Experimental Game Design",
+    "act": 18,
+    "cap": 20,
+    "instructors": [
+      "Kathleen Ruiz"
+    ]
+  },
+  {
+    "id": "ARTS-4630",
+    "title": "Writing & Directing For Video",
+    "act": 15,
+    "cap": 16,
+    "instructors": [
+      "Nao Bustamante"
+    ]
+  },
+  {
+    "id": "ARTS-4940",
+    "title": "Studies In The Arts",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARTS-4960",
+    "title": "Game Development II",
+    "act": 14,
+    "cap": 15,
+    "instructors": [
+      "Benjamin Chia-Ming Chang",
+      "Elizabeth A Large"
+    ]
+  },
+  {
+    "id": "ARTS-4962",
+    "title": "Experimental Telepresence",
+    "act": 3,
+    "cap": 16,
+    "instructors": [
+      "Doug Steven VanNort",
+      "Jonas Braasch",
+      "Pauline Oliveros"
+    ]
+  },
+  {
+    "id": "ARTS-4963",
+    "title": "Pure Performance",
+    "act": 5,
+    "cap": 16,
+    "instructors": [
+      "Nao Bustamante"
+    ]
+  },
+  {
+    "id": "ARTS-4964",
+    "title": "Adv Video: Expanded Video",
+    "act": 9,
+    "cap": 16,
+    "instructors": [
+      "Kathryn High"
+    ]
+  },
+  {
+    "id": "ARTS-4967",
+    "title": "Inflatable Public Sculpture",
+    "act": 17,
+    "cap": 16,
+    "instructors": [
+      "Igor Vamos"
+    ]
+  },
+  {
+    "id": "ARTS-4971",
+    "title": "Adv Digital Imaging",
+    "act": 11,
+    "cap": 16,
+    "instructors": [
+      "Kathleen Ruiz"
+    ]
+  },
+  {
+    "id": "ARTS-4990",
+    "title": "Bs Eart Thesis",
+    "act": 10,
+    "cap": 15,
+    "instructors": [
+      "Branda Miller"
+    ]
+  },
+  {
+    "id": "ARTS-6120",
+    "title": "Fieldwork As Art",
+    "act": 4,
+    "cap": 12,
+    "instructors": [
+      "Tomie Hahn"
+    ]
+  },
+  {
+    "id": "ARTS-6130",
+    "title": "New Media Theory",
+    "act": 1,
+    "cap": 20,
+    "instructors": [
+      "Michael L. Century"
+    ]
+  },
+  {
+    "id": "ARTS-6940",
+    "title": "Studies In Electronic Arts",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ARTS-6961",
+    "title": "Arts Ph.d. Colloquium",
+    "act": 4,
+    "cap": 12,
+    "instructors": [
+      "Neil B Rolnick"
+    ]
+  },
+  {
+    "id": "ARTS-6962",
+    "title": "Experimental Telepresence",
+    "act": 0,
+    "cap": 16,
+    "instructors": [
+      "Doug Steven VanNort",
+      "Jonas Braasch",
+      "Pauline Oliveros"
+    ]
+  },
+  {
+    "id": "ARTS-6963",
+    "title": "Pure Performance",
+    "act": 0,
+    "cap": 16,
+    "instructors": [
+      "Nao Bustamante"
+    ]
+  },
+  {
+    "id": "ARTS-6964",
+    "title": "Adv Video: Expanded Video",
+    "act": 3,
+    "cap": 16,
+    "instructors": [
+      "Kathryn High"
+    ]
+  },
+  {
+    "id": "ARTS-6965",
+    "title": "Interactive Arts Programming",
+    "act": 3,
+    "cap": 20,
+    "instructors": [
+      "Curtis Bahn"
+    ]
+  },
+  {
+    "id": "ARTS-6966",
+    "title": "Art, Community And Techno",
+    "act": 0,
+    "cap": 20,
+    "instructors": [
+      "Branda Miller"
+    ]
+  },
+  {
+    "id": "ARTS-6967",
+    "title": "Inflatable Public Sculpture",
+    "act": 1,
+    "cap": 16,
+    "instructors": [
+      "Igor Vamos"
+    ]
+  },
+  {
+    "id": "ARTS-6969",
+    "title": "Writing/directing For Video",
+    "act": 0,
+    "cap": 16,
+    "instructors": [
+      "Nao Bustamante"
+    ]
+  },
+  {
+    "id": "ARTS-6971",
+    "title": "Adv Digital Imaging",
+    "act": 0,
+    "cap": 16,
+    "instructors": [
+      "Kathleen Ruiz"
+    ]
+  },
+  {
+    "id": "ARTS-6990",
+    "title": "Master's Thesis",
+    "act": 4,
+    "cap": 71,
+    "instructors": [
+      "Branda Miller",
+      "Curtis Bahn",
+      "Igor Vamos",
+      "Kathryn High",
+      "Michael L. Century",
+      "Neil B Rolnick",
+      "Shawn A. Lawson",
+      "Tomie Hahn"
+    ]
+  },
+  {
+    "id": "ARTS-9990",
+    "title": "Dissertation",
+    "act": 3,
+    "cap": 20,
+    "instructors": [
+      "Curtis Bahn",
+      "Maryanne Staniszewski"
+    ]
+  },
+  {
+    "id": "ASTR-1530",
+    "title": "Tour Of The Solar System",
+    "act": 125,
+    "cap": 150,
+    "instructors": [
+      "Michael J Trinkala"
+    ]
+  },
+  {
+    "id": "ASTR-2050",
+    "title": "Intro Astronomy & Astrophys",
+    "act": 49,
+    "cap": 100,
+    "instructors": [
+      "Heidi Jo Newberg"
+    ]
+  },
+  {
+    "id": "ASTR-2940",
+    "title": "Readings In Astr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ASTR-4240",
+    "title": "Gravitation & Cosmology",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Wayne G Roberge"
+    ]
+  },
+  {
+    "id": "ASTR-4510",
+    "title": "Origins Of Life: Cosmic Persp",
+    "act": 14,
+    "cap": 35,
+    "instructors": [
+      "Douglas CB Whittet"
+    ]
+  },
+  {
+    "id": "ASTR-4900",
+    "title": "Astrophysics Ung Seminar",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "Wayne G Roberge"
+    ]
+  },
+  {
+    "id": "ASTR-4940",
+    "title": "Special Projects In Astronomy",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ASTR-6900",
+    "title": "Astrophysics Seminar",
+    "act": 1,
+    "cap": 30,
+    "instructors": [
+      "Wayne G Roberge"
+    ]
+  },
+  {
+    "id": "ASTR-6940",
+    "title": "Readings In Astr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ASTR-6960",
+    "title": "Origins Of Life",
+    "act": 1,
+    "cap": 4,
+    "instructors": [
+      "Douglas CB Whittet"
+    ]
+  },
+  {
+    "id": "ASTR-9990",
+    "title": "Research In Astronomy",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "Douglas CB Whittet",
+      "Heidi Jo Newberg",
+      "Wayne G Roberge"
+    ]
+  },
+  {
+    "id": "BCBP-2900",
+    "title": "Research In Biochem/biophysics",
+    "act": 0,
+    "cap": 0,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "BCBP-2940",
+    "title": "Readings In Biochem/biophysics",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BCBP-4002",
+    "title": "Ind Study/ Research @ Sunya",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "BCBP-4310",
+    "title": "Genetic Engineering",
+    "act": 40,
+    "cap": 40,
+    "instructors": [
+      "Donna Eisemann Crone"
+    ]
+  },
+  {
+    "id": "BCBP-4640",
+    "title": "Proteomics",
+    "act": 21,
+    "cap": 30,
+    "instructors": [
+      "Jane F Koretz"
+    ]
+  },
+  {
+    "id": "BCBP-4710",
+    "title": "Biochemistry Lab",
+    "act": 16,
+    "cap": 0,
+    "instructors": [
+      "Eric Matthew Rutledge",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BCBP-4770",
+    "title": "Molecular Biochem II",
+    "act": 27,
+    "cap": 30,
+    "instructors": [
+      "Jane F Koretz",
+      "Scott C. Bello",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BCBP-4940",
+    "title": "Protein Folding",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "George I. Makhatadze"
+    ]
+  },
+  {
+    "id": "BCBP-4990",
+    "title": "Senior Research Thesis",
+    "act": 3,
+    "cap": 6,
+    "instructors": [
+      "Blanca L. Barquera",
+      "Donna Eisemann Crone",
+      "Eric Matthew Rutledge",
+      "George F Edick",
+      "Jonathan Dordick",
+      "Mark D. Platt"
+    ]
+  },
+  {
+    "id": "BCBP-6310",
+    "title": "Genetic Engineering",
+    "act": 5,
+    "cap": 10,
+    "instructors": [
+      "Donna Eisemann Crone"
+    ]
+  },
+  {
+    "id": "BCBP-6640",
+    "title": "Proteomics",
+    "act": 5,
+    "cap": 15,
+    "instructors": [
+      "Jane F Koretz"
+    ]
+  },
+  {
+    "id": "BCBP-6940",
+    "title": "Readings In Bcbp",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BCBP-6961",
+    "title": "Research Rotation",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "Chunyu Wang"
+    ]
+  },
+  {
+    "id": "BCBP-6990",
+    "title": "Master's Thesis",
+    "act": 1,
+    "cap": 190,
+    "instructors": [
+      "Donna Eisemann Crone",
+      "Ivar Giaever",
+      "Jane F Koretz",
+      "Susan Sharfstein"
+    ]
+  },
+  {
+    "id": "BCBP-9990",
+    "title": "Dissertation",
+    "act": 4,
+    "cap": 90,
+    "instructors": [
+      "Blanca L. Barquera",
+      "Christopher Bystroff",
+      "Chunyu Wang",
+      "Douglas Martin Swank",
+      "George I. Makhatadze",
+      "Lee Ligon",
+      "Robert J. Linhardt",
+      "Susan P. Gilbert",
+      "Susan Sharfstein"
+    ]
+  },
+  {
+    "id": "BIOL-1010",
+    "title": "Introduction To Biology",
+    "act": 198,
+    "cap": 0,
+    "instructors": [
+      "Eric Matthew Rutledge",
+      "Georgi G. Shablovsky",
+      "Harry Roy",
+      "Lynnell W. Radlick",
+      "Michael H Hanna",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BIOL-2120",
+    "title": "Intro To Cell Biology",
+    "act": 222,
+    "cap": 18,
+    "instructors": [
+      "George E. Plopper",
+      "George F Edick"
+    ]
+  },
+  {
+    "id": "BIOL-2310",
+    "title": "Microbiology",
+    "act": 65,
+    "cap": 70,
+    "instructors": [
+      "Blanca L. Barquera"
+    ]
+  },
+  {
+    "id": "BIOL-2900",
+    "title": "Research In Biology",
+    "act": 2,
+    "cap": 2,
+    "instructors": [
+      "Michael H Hanna",
+      "Ravindra S Kane"
+    ]
+  },
+  {
+    "id": "BIOL-4060",
+    "title": "Cancer Cell Research",
+    "act": 6,
+    "cap": 0,
+    "instructors": [
+      "George F Edick"
+    ]
+  },
+  {
+    "id": "BIOL-4090",
+    "title": "Seminal Developments",
+    "act": 9,
+    "cap": 20,
+    "instructors": [
+      "Michael H Hanna"
+    ]
+  },
+  {
+    "id": "BIOL-4100",
+    "title": "From Neuron To Behavior",
+    "act": 46,
+    "cap": 60,
+    "instructors": [
+      "Robert Wallace Flint"
+    ]
+  },
+  {
+    "id": "BIOL-4250",
+    "title": "Developmental Biology",
+    "act": 29,
+    "cap": 40,
+    "instructors": [
+      "Dustin S Vale-Cruz"
+    ]
+  },
+  {
+    "id": "BIOL-4400",
+    "title": "Bioterrorism",
+    "act": 45,
+    "cap": 30,
+    "instructors": [
+      "Charles W Boylen"
+    ]
+  },
+  {
+    "id": "BIOL-4550",
+    "title": "Bioinformatics II",
+    "act": 8,
+    "cap": 30,
+    "instructors": [
+      "Christopher Bystroff",
+      "Chunyu Wang"
+    ]
+  },
+  {
+    "id": "BIOL-4620",
+    "title": "Molecular Biology",
+    "act": 101,
+    "cap": 120,
+    "instructors": [
+      "Donna Eisemann Crone"
+    ]
+  },
+  {
+    "id": "BIOL-4640",
+    "title": "Proteomics",
+    "act": 3,
+    "cap": 15,
+    "instructors": [
+      "Jane F Koretz"
+    ]
+  },
+  {
+    "id": "BIOL-4710",
+    "title": "Biochemistry Lab",
+    "act": 23,
+    "cap": 15,
+    "instructors": [
+      "Eric Matthew Rutledge",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BIOL-4750",
+    "title": "Cell Ecm Interactions",
+    "act": 16,
+    "cap": 20,
+    "instructors": [
+      "George E. Plopper"
+    ]
+  },
+  {
+    "id": "BIOL-4770",
+    "title": "Molecular Biochem II",
+    "act": 23,
+    "cap": 25,
+    "instructors": [
+      "Jane F Koretz",
+      "Scott C. Bello",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BIOL-4850",
+    "title": "Principles Of Ecology",
+    "act": 39,
+    "cap": 45,
+    "instructors": [
+      "Bradford C Lister"
+    ]
+  },
+  {
+    "id": "BIOL-4940",
+    "title": "Readings In Biol",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Shiva Prasad Kotha"
+    ]
+  },
+  {
+    "id": "BIOL-4970",
+    "title": "Non-thesis Research",
+    "act": 5,
+    "cap": 3,
+    "instructors": [
+      "Donna Eisemann Crone",
+      "Eric Matthew Rutledge",
+      "Lee Ligon"
+    ]
+  },
+  {
+    "id": "BIOL-4980",
+    "title": "Biomedical Research",
+    "act": 9,
+    "cap": 21,
+    "instructors": [
+      "Guohao Dai",
+      "Michael H Hanna"
+    ]
+  },
+  {
+    "id": "BIOL-4990",
+    "title": "Senior Research Thesis",
+    "act": 1,
+    "cap": 3,
+    "instructors": [
+      "Christopher Bystroff",
+      "Chunyu Wang",
+      "Fern P. Finger"
+    ]
+  },
+  {
+    "id": "BIOL-6100",
+    "title": "From Neuron To Behavior",
+    "act": 7,
+    "cap": 60,
+    "instructors": [
+      "Robert Wallace Flint"
+    ]
+  },
+  {
+    "id": "BIOL-6310",
+    "title": "Microbiology",
+    "act": 4,
+    "cap": 70,
+    "instructors": [
+      "Blanca L. Barquera"
+    ]
+  },
+  {
+    "id": "BIOL-6420",
+    "title": "Bioinformatics II",
+    "act": 2,
+    "cap": 20,
+    "instructors": [
+      "Christopher Bystroff",
+      "Chunyu Wang"
+    ]
+  },
+  {
+    "id": "BIOL-6520",
+    "title": "Biology Core Course II",
+    "act": 9,
+    "cap": 20,
+    "instructors": [
+      "Andrea W. Page-McCaw",
+      "Douglas Martin Swank",
+      "Fern P. Finger",
+      "George E. Plopper",
+      "Lee Ligon",
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BIOL-6640",
+    "title": "Proteomics",
+    "act": 3,
+    "cap": 10,
+    "instructors": [
+      "Jane F Koretz"
+    ]
+  },
+  {
+    "id": "BIOL-6750",
+    "title": "Cell Ecm Interactions",
+    "act": 9,
+    "cap": 15,
+    "instructors": [
+      "George E. Plopper"
+    ]
+  },
+  {
+    "id": "BIOL-6900",
+    "title": "Seminar In Biology",
+    "act": 38,
+    "cap": 48,
+    "instructors": [
+      "Lee Ligon"
+    ]
+  },
+  {
+    "id": "BIOL-6940",
+    "title": "Readings In Biol",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BIOL-6964",
+    "title": "Muscle Mechanics & Modeling",
+    "act": 0,
+    "cap": 10,
+    "instructors": [
+      "David Thomas Corr"
+    ]
+  },
+  {
+    "id": "BIOL-6967",
+    "title": "Research Rotation II",
+    "act": 7,
+    "cap": 25,
+    "instructors": [
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BIOL-6968",
+    "title": "Research Rotation III",
+    "act": 7,
+    "cap": 25,
+    "instructors": [
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BIOL-6970",
+    "title": "Masters Professional Project",
+    "act": 5,
+    "cap": 11,
+    "instructors": [
+      "Eric Matthew Rutledge",
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BIOL-6980",
+    "title": "Research",
+    "act": 0,
+    "cap": 1,
+    "instructors": [
+      "Eric Matthew Rutledge"
+    ]
+  },
+  {
+    "id": "BIOL-6990",
+    "title": "Master's Thesis",
+    "act": 1,
+    "cap": 21,
+    "instructors": [
+      "Christopher Bystroff",
+      "Eric Matthew Rutledge",
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BIOL-9990",
+    "title": "Dissertation",
+    "act": 22,
+    "cap": 130,
+    "instructors": [
+      "Blanca L. Barquera",
+      "Charles W Boylen",
+      "Christopher Bystroff",
+      "Chunyu Wang",
+      "Douglas Martin Swank",
+      "Fern P. Finger",
+      "George E. Plopper",
+      "George I. Makhatadze",
+      "Lee Ligon",
+      "Robert E. Palazzo",
+      "Robert J. Linhardt",
+      "Susan P. Gilbert"
+    ]
+  },
+  {
+    "id": "BMED-2100",
+    "title": "Biomaterials Sci & Engineering",
+    "act": 98,
+    "cap": 100,
+    "instructors": [
+      "Ryan James Gilbert"
+    ]
+  },
+  {
+    "id": "BMED-2200",
+    "title": "Modeling Of Biomedical Systems",
+    "act": 87,
+    "cap": 90,
+    "instructors": [
+      "Stanley M. Dunn",
+      "Stanley S. Reisman"
+    ]
+  },
+  {
+    "id": "BMED-2940",
+    "title": "Readings In Bmed",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BMED-4240",
+    "title": "Tissue-biomatl Interact",
+    "act": 88,
+    "cap": 90,
+    "instructors": [
+      "James A. Cooper"
+    ]
+  },
+  {
+    "id": "BMED-4410",
+    "title": "Biomems",
+    "act": 17,
+    "cap": 20,
+    "instructors": [
+      "Deanna Marie Thompson"
+    ]
+  },
+  {
+    "id": "BMED-4440",
+    "title": "Biophotonics",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "Xavier R. M. Intes"
+    ]
+  },
+  {
+    "id": "BMED-4500",
+    "title": "Adv Systems Physiology",
+    "act": 94,
+    "cap": 90,
+    "instructors": [
+      "Deepak Vashishth",
+      "Kristen M. Bryk",
+      "TBA"
+    ]
+  },
+  {
+    "id": "BMED-4540",
+    "title": "Biomechanics",
+    "act": 82,
+    "cap": 90,
+    "instructors": [
+      "Shiva Prasad Kotha"
+    ]
+  },
+  {
+    "id": "BMED-4600",
+    "title": "Biomedical Engr Design",
+    "act": 69,
+    "cap": 70,
+    "instructors": [
+      "Eric Howard Ledet"
+    ]
+  },
+  {
+    "id": "BMED-4650",
+    "title": "Intro To Cell And Tissue Eng",
+    "act": 35,
+    "cap": 40,
+    "instructors": [
+      "Guohao Dai"
+    ]
+  },
+  {
+    "id": "BMED-4940",
+    "title": "Readings In Bmed",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BMED-4968",
+    "title": "Muscle Mechanics & Modeling",
+    "act": 17,
+    "cap": 20,
+    "instructors": [
+      "David Thomas Corr"
+    ]
+  },
+  {
+    "id": "BMED-6410",
+    "title": "Biomems",
+    "act": 7,
+    "cap": 20,
+    "instructors": [
+      "Deanna Marie Thompson"
+    ]
+  },
+  {
+    "id": "BMED-6440",
+    "title": "Biophotonics",
+    "act": 8,
+    "cap": 30,
+    "instructors": [
+      "Xavier R. M. Intes"
+    ]
+  },
+  {
+    "id": "BMED-6940",
+    "title": "Readings In Bmed",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "BMED-6962",
+    "title": "Intro To Cell/tissue Engr",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Guohao Dai"
+    ]
+  },
+  {
+    "id": "BMED-6963",
+    "title": "Discussions In Grad Research",
+    "act": 32,
+    "cap": 45,
+    "instructors": [
+      "Deepak Vashishth"
+    ]
+  },
+  {
+    "id": "BMED-6965",
+    "title": "Muscle Mechanics & Modeling",
+    "act": 6,
+    "cap": 20,
+    "instructors": [
+      "David Thomas Corr"
+    ]
+  },
+  {
+    "id": "BMED-6980",
+    "title": "Master's Project",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "David Thomas Corr",
+      "Xavier R. M. Intes"
+    ]
+  },
+  {
+    "id": "BMED-6990",
+    "title": "Master's Thesis",
+    "act": 6,
+    "cap": 126,
+    "instructors": [
+      "David Thomas Corr",
+      "Deanna Marie Thompson",
+      "Deepak Vashishth",
+      "Eric Howard Ledet",
+      "Guohao Dai",
+      "James A. Cooper",
+      "Robert L Spilker",
+      "Ryan James Gilbert",
+      "Shiva Prasad Kotha",
+      "TBA",
+      "Xavier R. M. Intes"
+    ]
+  },
+  {
+    "id": "BMED-9990",
+    "title": "Dissertation",
+    "act": 27,
+    "cap": 140,
+    "instructors": [
+      "Badrinath Roysam",
+      "David Thomas Corr",
+      "Deanna Marie Thompson",
+      "Deepak Vashishth",
+      "Eric Howard Ledet",
+      "George Xu",
+      "Guohao Dai",
+      "Hiroki Yokota",
+      "James A. Cooper",
+      "Robert L Spilker",
+      "Ryan James Gilbert",
+      "Shiva Prasad Kotha",
+      "TBA",
+      "Xavier R. M. Intes"
+    ]
+  },
+  {
+    "id": "CHME-2020",
+    "title": "Energy,entropy, & Equilibrium",
+    "act": 79,
+    "cap": 100,
+    "instructors": [
+      "Christine M Allard",
+      "Linda T. McCloskey",
+      "Pankaj Karande"
+    ]
+  },
+  {
+    "id": "CHME-2940",
+    "title": "Rdgs In Chemical Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CHME-4020",
+    "title": "Transport Phenomena II",
+    "act": 70,
+    "cap": 70,
+    "instructors": [
+      "Patrick T. Underhill"
+    ]
+  },
+  {
+    "id": "CHME-4050",
+    "title": "Chemical Process Design",
+    "act": 65,
+    "cap": 68,
+    "instructors": [
+      "B Wayne Bequette",
+      "George Theodore Dalakos",
+      "Marc-Olivier Coppens"
+    ]
+  },
+  {
+    "id": "CHME-4160",
+    "title": "Chem Engr Lab II",
+    "act": 46,
+    "cap": 50,
+    "instructors": [
+      "Peter Matthew Tessier"
+    ]
+  },
+  {
+    "id": "CHME-4170",
+    "title": "Biotechnol & Bioprocessing Lab",
+    "act": 18,
+    "cap": 0,
+    "instructors": [
+      "Cynthia H. Collins",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHME-4400",
+    "title": "Chromatography Separation Proc",
+    "act": 28,
+    "cap": 50,
+    "instructors": [
+      "Steven Cramer"
+    ]
+  },
+  {
+    "id": "CHME-4940",
+    "title": "Rdgs In Chemical Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CHME-6510",
+    "title": "Adv Fluid Mechanics",
+    "act": 25,
+    "cap": 25,
+    "instructors": [
+      "Georges Belfort"
+    ]
+  },
+  {
+    "id": "CHME-6640",
+    "title": "Adv Chemical Reactor Design",
+    "act": 30,
+    "cap": 30,
+    "instructors": [
+      "Joel Plawsky"
+    ]
+  },
+  {
+    "id": "CHME-6830",
+    "title": "Combustion",
+    "act": 2,
+    "cap": 20,
+    "instructors": [
+      "Matthew Adam Oehlschlaeger"
+    ]
+  },
+  {
+    "id": "CHME-6940",
+    "title": "Rdg In Chemical Engr",
+    "act": 2,
+    "cap": 1,
+    "instructors": [
+      "Joel Plawsky"
+    ]
+  },
+  {
+    "id": "CHME-6961",
+    "title": "Mod. Predictive Control Theory",
+    "act": 2,
+    "cap": 3,
+    "instructors": [
+      "B Wayne Bequette"
+    ]
+  },
+  {
+    "id": "CHME-6963",
+    "title": "Chbe Seminar",
+    "act": 53,
+    "cap": 75,
+    "instructors": [
+      "Pankaj Karande",
+      "Rosemary H Primett",
+      "Shekhar S Garde"
+    ]
+  },
+  {
+    "id": "CHME-6964",
+    "title": "Professional Development",
+    "act": 16,
+    "cap": 40,
+    "instructors": [
+      "Jonathan Dordick"
+    ]
+  },
+  {
+    "id": "CHME-6967",
+    "title": "Chromatography Separations",
+    "act": 4,
+    "cap": 20,
+    "instructors": [
+      "Steven Cramer"
+    ]
+  },
+  {
+    "id": "CHME-6980",
+    "title": "Masters Project",
+    "act": 1,
+    "cap": 15,
+    "instructors": [
+      "Marc-Olivier Coppens",
+      "Steven Cramer"
+    ]
+  },
+  {
+    "id": "CHME-6990",
+    "title": "Master's Thesis",
+    "act": 2,
+    "cap": 40,
+    "instructors": [
+      "Joel Plawsky",
+      "Peter Matthew Tessier",
+      "Steven Cramer",
+      "Susan Sharfstein"
+    ]
+  },
+  {
+    "id": "CHME-9990",
+    "title": "Dissertation",
+    "act": 60,
+    "cap": 200,
+    "instructors": [
+      "Angel Enrique Garcia",
+      "B Wayne Bequette",
+      "Cynthia H. Collins",
+      "Diana Andra Borca Tasciuc",
+      "Ganpati Ramanath",
+      "Georges Belfort",
+      "Joel Plawsky",
+      "Jonathan Dordick",
+      "Lealon L. Martin",
+      "Marc-Olivier Coppens",
+      "Mattheos Koffas",
+      "Pankaj Karande",
+      "Patrick T. Underhill",
+      "Peter Matthew Tessier",
+      "Ravindra S Kane",
+      "Robert J. Linhardt",
+      "Shekhar S Garde",
+      "Steven Cramer",
+      "Susan Sharfstein",
+      "Theodorian Borca-Tasciuc"
+    ]
+  },
+  {
+    "id": "CHEM-1100",
+    "title": "Chemistry I",
+    "act": 133,
+    "cap": 215,
+    "instructors": [
+      "Elizabeth Anne Sprague",
+      "Sara Leslie Alvaro",
+      "TBA",
+      "Wilfredo Colon"
+    ]
+  },
+  {
+    "id": "CHEM-1200",
+    "title": "Chemistry II",
+    "act": 149,
+    "cap": 220,
+    "instructors": [
+      "Elizabeth Anne Sprague",
+      "Sara Leslie Alvaro",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-2030",
+    "title": "Inorganic Chemistry I",
+    "act": 47,
+    "cap": 48,
+    "instructors": [
+      "Peter Henry Dinolfo"
+    ]
+  },
+  {
+    "id": "CHEM-2240",
+    "title": "Organic Chemistry Lab II",
+    "act": 74,
+    "cap": 100,
+    "instructors": [
+      "Alan R Cutler",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-2260",
+    "title": "Organic Chemistry II",
+    "act": 138,
+    "cap": 200,
+    "instructors": [
+      "James A Moore",
+      "Michael Aldersley"
+    ]
+  },
+  {
+    "id": "CHEM-2290",
+    "title": "Experimental Chemistry II",
+    "act": 14,
+    "cap": 26,
+    "instructors": [
+      "Alan R Cutler",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-2540",
+    "title": "Intro To Geochemistry",
+    "act": 0,
+    "cap": 24,
+    "instructors": [
+      "E Bruce Watson"
+    ]
+  },
+  {
+    "id": "CHEM-2940",
+    "title": "Special Projects In Chemistry",
+    "act": 0,
+    "cap": 0,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-2950",
+    "title": "Undergraduate Research",
+    "act": 0,
+    "cap": 0,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-4110",
+    "title": "Instrumental Methods Of Anlys",
+    "act": 16,
+    "cap": 30,
+    "instructors": [
+      "Mark D. Platt"
+    ]
+  },
+  {
+    "id": "CHEM-4120",
+    "title": "Experimental Chemistry Iv",
+    "act": 22,
+    "cap": 22,
+    "instructors": [
+      "Ronald Albert Bailey"
+    ]
+  },
+  {
+    "id": "CHEM-4160",
+    "title": "Nmr Spectroscopy",
+    "act": 5,
+    "cap": 30,
+    "instructors": [
+      "Herbert M Schwartz"
+    ]
+  },
+  {
+    "id": "CHEM-4420",
+    "title": "Microscopic Physical Chemistry",
+    "act": 87,
+    "cap": 100,
+    "instructors": [
+      "James G. Kempf"
+    ]
+  },
+  {
+    "id": "CHEM-4530",
+    "title": "Modern Techniques In Chemistry",
+    "act": 30,
+    "cap": 30,
+    "instructors": [
+      "Elizabeth Anne Sprague",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-4620",
+    "title": "Intro Polymer Chemistry",
+    "act": 27,
+    "cap": 30,
+    "instructors": [
+      "James Crivello"
+    ]
+  },
+  {
+    "id": "CHEM-4690",
+    "title": "Aqueous Geochemistry",
+    "act": 8,
+    "cap": 24,
+    "instructors": [
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "CHEM-4770",
+    "title": "Molecular Biochem II",
+    "act": 8,
+    "cap": 10,
+    "instructors": [
+      "Jane F Koretz",
+      "Scott C. Bello",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-4940",
+    "title": "Readings In Chem",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Linda B. McGown"
+    ]
+  },
+  {
+    "id": "CHEM-4950",
+    "title": "Senior Experience",
+    "act": 3,
+    "cap": 3,
+    "instructors": [
+      "Pankaj Karande",
+      "Ronald Albert Bailey",
+      "Sandra Nierzwicki-Bauer"
+    ]
+  },
+  {
+    "id": "CHEM-4961",
+    "title": "Computational Chemistry",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Curtis Breneman"
+    ]
+  },
+  {
+    "id": "CHEM-4962",
+    "title": "Non-linear Spectroscopy",
+    "act": 10,
+    "cap": 30,
+    "instructors": [
+      "Gerald M Korenowski",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-4963",
+    "title": "Chemical Biology",
+    "act": 0,
+    "cap": 20,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "CHEM-4964",
+    "title": "Entrepreneurship",
+    "act": 0,
+    "cap": 25,
+    "instructors": [
+      "Chang Yeol Ryu"
+    ]
+  },
+  {
+    "id": "CHEM-4970",
+    "title": "Advanced Research Project",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CHEM-4990",
+    "title": "Senior Thesis",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CHEM-6140",
+    "title": "Intro To Mass Spectrometry",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "Mark D. Platt"
+    ]
+  },
+  {
+    "id": "CHEM-6160",
+    "title": "Nmr Spectroscopy",
+    "act": 8,
+    "cap": 30,
+    "instructors": [
+      "Herbert M Schwartz"
+    ]
+  },
+  {
+    "id": "CHEM-6450",
+    "title": "Nonlinear Laser Spectros",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "Gerald M Korenowski"
+    ]
+  },
+  {
+    "id": "CHEM-6510",
+    "title": "Comp Chem & Molecular Model",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Curtis Breneman"
+    ]
+  },
+  {
+    "id": "CHEM-6520",
+    "title": "Adv. Analytical Chemistry",
+    "act": 8,
+    "cap": 20,
+    "instructors": [
+      "Linda B. McGown"
+    ]
+  },
+  {
+    "id": "CHEM-6710",
+    "title": "Chemical Biology",
+    "act": 4,
+    "cap": 20,
+    "instructors": [
+      "Soma De"
+    ]
+  },
+  {
+    "id": "CHEM-6900",
+    "title": "Chemistry Seminar",
+    "act": 19,
+    "cap": 50,
+    "instructors": [
+      "James G. Kempf"
+    ]
+  },
+  {
+    "id": "CHEM-6940",
+    "title": "Readings In Chem",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CHEM-6961",
+    "title": "Glycochemistry",
+    "act": 5,
+    "cap": 30,
+    "instructors": [
+      "Robert J. Linhardt"
+    ]
+  },
+  {
+    "id": "CHEM-6962",
+    "title": "Entrepreneurship",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Chang Yeol Ryu"
+    ]
+  },
+  {
+    "id": "CHEM-6990",
+    "title": "Master's Thesis",
+    "act": 5,
+    "cap": 60,
+    "instructors": [
+      "Chang Yeol Ryu",
+      "James Crivello",
+      "Linda B. McGown",
+      "Mark D. Platt",
+      "Robert J. Linhardt",
+      "Wilfredo Colon"
+    ]
+  },
+  {
+    "id": "CHEM-9990",
+    "title": "Dissertation",
+    "act": 39,
+    "cap": 140,
+    "instructors": [
+      "Brian C. Benicewicz",
+      "Chang Yeol Ryu",
+      "Curtis Breneman",
+      "James G. Kempf",
+      "Julie Stenken",
+      "K. V. Lakshmi",
+      "Linda B. McGown",
+      "Marianne C. Nyman",
+      "Mark D. Platt",
+      "Peter Henry Dinolfo",
+      "Robert J. Linhardt",
+      "Ronald Albert Bailey",
+      "Wilfredo Colon",
+      "Yvonne Akpalu"
+    ]
+  },
+  {
+    "id": "CIVL-1960",
+    "title": "Autocad",
+    "act": 56,
+    "cap": 90,
+    "instructors": [
+      "Jason M. Dolmetsch"
+    ]
+  },
+  {
+    "id": "CIVL-1961",
+    "title": "Introduction To Cee",
+    "act": 47,
+    "cap": 80,
+    "instructors": [
+      "Thomas F Zimmie"
+    ]
+  },
+  {
+    "id": "CIVL-2940",
+    "title": "Readings In Civl",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CIVL-4080",
+    "title": "Concrete Design",
+    "act": 65,
+    "cap": 80,
+    "instructors": [
+      "Gianluca Cusatis"
+    ]
+  },
+  {
+    "id": "CIVL-4150",
+    "title": "Experimental Soil Mech.",
+    "act": 46,
+    "cap": 48,
+    "instructors": [
+      "TBA",
+      "Tarek H Abdoun",
+      "Victoria Gene Bennett"
+    ]
+  },
+  {
+    "id": "CIVL-4270",
+    "title": "Construction Management",
+    "act": 67,
+    "cap": 75,
+    "instructors": [
+      "James B Dall"
+    ]
+  },
+  {
+    "id": "CIVL-4440",
+    "title": "Advanced Structural Analysis",
+    "act": 28,
+    "cap": 70,
+    "instructors": [
+      "Janet A Pertierra",
+      "Michael Symans"
+    ]
+  },
+  {
+    "id": "CIVL-4570",
+    "title": "Analytical Mthds In Ce Systems",
+    "act": 5,
+    "cap": 50,
+    "instructors": [
+      "Xiaokun Wang"
+    ]
+  },
+  {
+    "id": "CIVL-4660",
+    "title": "Traffic Engineering",
+    "act": 24,
+    "cap": 30,
+    "instructors": [
+      "Xuegang Ban"
+    ]
+  },
+  {
+    "id": "CIVL-4920",
+    "title": "Civil Engr Capstone Design",
+    "act": 72,
+    "cap": 80,
+    "instructors": [
+      "John M. Reilly"
+    ]
+  },
+  {
+    "id": "CIVL-4940",
+    "title": "Readings In Civl",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CIVL-4961",
+    "title": "Bedford Seminar",
+    "act": 8,
+    "cap": 8,
+    "instructors": [
+      "Michael A. Stein"
+    ]
+  },
+  {
+    "id": "CIVL-6290",
+    "title": "Freight Transportation Systems",
+    "act": 11,
+    "cap": 25,
+    "instructors": [
+      "Jose E. Holguin-Veras"
+    ]
+  },
+  {
+    "id": "CIVL-6320",
+    "title": "Adv Steel Design",
+    "act": 33,
+    "cap": 40,
+    "instructors": [
+      "Michael J O'Rourke"
+    ]
+  },
+  {
+    "id": "CIVL-6440",
+    "title": "Advanced Structural Analysis",
+    "act": 5,
+    "cap": 75,
+    "instructors": [
+      "Janet A Pertierra",
+      "Michael Symans"
+    ]
+  },
+  {
+    "id": "CIVL-6520",
+    "title": "Adv Found And Earth Struc",
+    "act": 19,
+    "cap": 25,
+    "instructors": [
+      "Mourad Zeghal"
+    ]
+  },
+  {
+    "id": "CIVL-6530",
+    "title": "Seepage,drain & Groundwater",
+    "act": 21,
+    "cap": 30,
+    "instructors": [
+      "Thomas F Zimmie"
+    ]
+  },
+  {
+    "id": "CIVL-6540",
+    "title": "Dynam Of Soil & Soil-fdtn Engr",
+    "act": 6,
+    "cap": 25,
+    "instructors": [
+      "Ricardo Dobry"
+    ]
+  },
+  {
+    "id": "CIVL-6900",
+    "title": "Graduate Seminar",
+    "act": 3,
+    "cap": 40,
+    "instructors": [
+      "Mourad Zeghal"
+    ]
+  },
+  {
+    "id": "CIVL-6940",
+    "title": "Rdgs In Civil Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CIVL-6961",
+    "title": "Wind Engineering",
+    "act": 25,
+    "cap": 50,
+    "instructors": [
+      "Christopher W Letchford",
+      "Janet A Pertierra"
+    ]
+  },
+  {
+    "id": "CIVL-6990",
+    "title": "Master's Thesis",
+    "act": 4,
+    "cap": 80,
+    "instructors": [
+      "Gianluca Cusatis",
+      "Jose E. Holguin-Veras",
+      "Michael J O'Rourke",
+      "Michael Symans",
+      "Satish V. Ukkusuri",
+      "Tarek H Abdoun",
+      "Thomas F Zimmie",
+      "Xuegang Ban"
+    ]
+  },
+  {
+    "id": "CIVL-9990",
+    "title": "Dissertation",
+    "act": 23,
+    "cap": 130,
+    "instructors": [
+      "Gianluca Cusatis",
+      "Jacob Fish",
+      "Jose E. Holguin-Veras",
+      "Michael J O'Rourke",
+      "Michael Symans",
+      "Mourad Zeghal",
+      "Satish V. Ukkusuri",
+      "Tarek H Abdoun",
+      "Thomas F Zimmie",
+      "Xuegang Ban"
+    ]
+  },
+  {
+    "id": "COGS-2960",
+    "title": "Heroes Of The Hudson Valley",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Christopher L. Lindsay",
+      "Selmer Bringsjord"
+    ]
+  },
+  {
+    "id": "COGS-4320",
+    "title": "Game Mechanics",
+    "act": 54,
+    "cap": 48,
+    "instructors": [
+      "Elizabeth A Large",
+      "Marc Christian Destefano"
+    ]
+  },
+  {
+    "id": "COGS-4940",
+    "title": "Logic Software Development",
+    "act": 2,
+    "cap": 2,
+    "instructors": [
+      "Bram Van Heuveln",
+      "Yingrui Yang"
+    ]
+  },
+  {
+    "id": "COGS-4960",
+    "title": "Game Development II",
+    "act": 14,
+    "cap": 15,
+    "instructors": [
+      "Benjamin Chia-Ming Chang",
+      "Elizabeth A Large"
+    ]
+  },
+  {
+    "id": "COGS-4961",
+    "title": "Programming For Ai & Cog Sci",
+    "act": 4,
+    "cap": 10,
+    "instructors": [
+      "Vladislav Daniel Veksler"
+    ]
+  },
+  {
+    "id": "COGS-4962",
+    "title": "Adaptive Robotics",
+    "act": 3,
+    "cap": 0,
+    "instructors": [
+      "Vladislav Daniel Veksler"
+    ]
+  },
+  {
+    "id": "COGS-4963",
+    "title": "Perception And Action",
+    "act": 0,
+    "cap": 15,
+    "instructors": [
+      "Brett R. Fajen"
+    ]
+  },
+  {
+    "id": "COGS-4964",
+    "title": "Game Architecture",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Elizabeth A Large",
+      "Marc Christian Destefano"
+    ]
+  },
+  {
+    "id": "COGS-4965",
+    "title": "Game Ai",
+    "act": 16,
+    "cap": 25,
+    "instructors": [
+      "Mei Si"
+    ]
+  },
+  {
+    "id": "COGS-4966",
+    "title": "Behavioral Neuroscience",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "COGS-4967",
+    "title": "Intro To Cog Neuroscience",
+    "act": 9,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "COGS-4968",
+    "title": "Stress & The Brain",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "COGS-6310",
+    "title": "Adv Exp Methods & Statistics",
+    "act": 1,
+    "cap": 5,
+    "instructors": [
+      "Michael J Kalsher"
+    ]
+  },
+  {
+    "id": "COGS-6420",
+    "title": "Perception And Action",
+    "act": 8,
+    "cap": 15,
+    "instructors": [
+      "Brett R. Fajen"
+    ]
+  },
+  {
+    "id": "COGS-6940",
+    "title": "Readings In Cognitive Science",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "COGS-6961",
+    "title": "Issues In Cognitive Science",
+    "act": 19,
+    "cap": 0,
+    "instructors": [
+      "Selmer Bringsjord"
+    ]
+  },
+  {
+    "id": "COGS-6964",
+    "title": "Cog Sci & Economics",
+    "act": 0,
+    "cap": 15,
+    "instructors": [
+      "Yingrui Yang"
+    ]
+  },
+  {
+    "id": "COGS-6966",
+    "title": "Tps. In Interactive Behavior",
+    "act": 7,
+    "cap": 0,
+    "instructors": [
+      "Wayne D. Gray"
+    ]
+  },
+  {
+    "id": "COGS-6967",
+    "title": "The Meaning Of Language",
+    "act": 5,
+    "cap": 20,
+    "instructors": [
+      "Nicholas L Cassimatis"
+    ]
+  },
+  {
+    "id": "COGS-6990",
+    "title": "Masters Thesis",
+    "act": 4,
+    "cap": 21,
+    "instructors": [
+      "Brett R. Fajen",
+      "Michael J Kalsher",
+      "Wayne D. Gray"
+    ]
+  },
+  {
+    "id": "COGS-9990",
+    "title": "Dissertation",
+    "act": 12,
+    "cap": 75,
+    "instructors": [
+      "Brett R. Fajen",
+      "Deborah L. McGuinness",
+      "James A. Hendler",
+      "Larry D Reid",
+      "Nicholas L Cassimatis",
+      "Ron Sun",
+      "Selmer Bringsjord",
+      "Wayne D. Gray"
+    ]
+  },
+  {
+    "id": "COMM-1510",
+    "title": "Intro To Communication Theory",
+    "act": 49,
+    "cap": 50,
+    "instructors": [
+      "Colleen Mae Klatt"
+    ]
+  },
+  {
+    "id": "COMM-1600",
+    "title": "History And Culture Of Games",
+    "act": 29,
+    "cap": 30,
+    "instructors": [
+      "Elizabeth A Large",
+      "Michael F Lynch"
+    ]
+  },
+  {
+    "id": "COMM-2410",
+    "title": "Perspectives On Photography",
+    "act": 23,
+    "cap": 25,
+    "instructors": [
+      "Ellen Esrock"
+    ]
+  },
+  {
+    "id": "COMM-2440",
+    "title": "Documentary Film",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Tamar Gordon"
+    ]
+  },
+  {
+    "id": "COMM-2610",
+    "title": "Intro To Visual Communic",
+    "act": 71,
+    "cap": 72,
+    "instructors": [
+      "Paul A Miyamoto"
+    ]
+  },
+  {
+    "id": "COMM-2940",
+    "title": "Readings In Comm",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "COMM-2960",
+    "title": "Religion In The Media",
+    "act": 22,
+    "cap": 25,
+    "instructors": [
+      "Tamar Gordon"
+    ]
+  },
+  {
+    "id": "COMM-2961",
+    "title": "Graphic Design Studio",
+    "act": 11,
+    "cap": 24,
+    "instructors": [
+      "Leah A. Rico"
+    ]
+  },
+  {
+    "id": "COMM-2962",
+    "title": "Programming For Creative Peopl",
+    "act": 14,
+    "cap": 20,
+    "instructors": [
+      "Michael F Lynch"
+    ]
+  },
+  {
+    "id": "COMM-4180",
+    "title": "Studio Design In Hci",
+    "act": 7,
+    "cap": 15,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-4210",
+    "title": "Designing Interactive Characte",
+    "act": 46,
+    "cap": 50,
+    "instructors": [
+      "Charles Lee Sheldon",
+      "Michael F Lynch"
+    ]
+  },
+  {
+    "id": "COMM-4300",
+    "title": "Communication Internship",
+    "act": 12,
+    "cap": 20,
+    "instructors": [
+      "James P Zappen"
+    ]
+  },
+  {
+    "id": "COMM-4570",
+    "title": "Typography",
+    "act": 25,
+    "cap": 20,
+    "instructors": [
+      "Audrey Grace Bennett"
+    ]
+  },
+  {
+    "id": "COMM-4690",
+    "title": "Interface Design",
+    "act": 20,
+    "cap": 15,
+    "instructors": [
+      "Patricia Search"
+    ]
+  },
+  {
+    "id": "COMM-4730",
+    "title": "Graphic Design Corporate Id",
+    "act": 20,
+    "cap": 24,
+    "instructors": [
+      "Sara L. Tack"
+    ]
+  },
+  {
+    "id": "COMM-4770",
+    "title": "User-centered Design",
+    "act": 15,
+    "cap": 15,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-4940",
+    "title": "Readings In Comm",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-4940",
+    "title": "Readings In Comm",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-4940",
+    "title": "Readings In Comm",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-4960",
+    "title": "Design For Society",
+    "act": 13,
+    "cap": 15,
+    "instructors": [
+      "Audrey Grace Bennett"
+    ]
+  },
+  {
+    "id": "COMM-4961",
+    "title": "Electronic Portfolio Dev.",
+    "act": 22,
+    "cap": 24,
+    "instructors": [
+      "Leah A. Rico"
+    ]
+  },
+  {
+    "id": "COMM-6260",
+    "title": "Rhetoric, Culture & Comm Tech",
+    "act": 2,
+    "cap": 15,
+    "instructors": [
+      "Ekaterina Valeri Haskins"
+    ]
+  },
+  {
+    "id": "COMM-6300",
+    "title": "Communication Internship",
+    "act": 1,
+    "cap": 5,
+    "instructors": [
+      "James P Zappen"
+    ]
+  },
+  {
+    "id": "COMM-6530",
+    "title": "Communication Research I",
+    "act": 8,
+    "cap": 15,
+    "instructors": [
+      "Carlos G. Godoy"
+    ]
+  },
+  {
+    "id": "COMM-6570",
+    "title": "Typography",
+    "act": 0,
+    "cap": 5,
+    "instructors": [
+      "Audrey Grace Bennett"
+    ]
+  },
+  {
+    "id": "COMM-6770",
+    "title": "User-centered Design",
+    "act": 11,
+    "cap": 10,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-6810",
+    "title": "Studio Design In Hci",
+    "act": 11,
+    "cap": 10,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-6940",
+    "title": "Studies In Communication",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "COMM-6960",
+    "title": "Design For Society",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "Audrey Grace Bennett"
+    ]
+  },
+  {
+    "id": "COMM-6965",
+    "title": "Human-media Interaction",
+    "act": 11,
+    "cap": 15,
+    "instructors": [
+      "Carlos G. Godoy"
+    ]
+  },
+  {
+    "id": "COMM-6980",
+    "title": "Master's Project In Comm",
+    "act": 0,
+    "cap": 25,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-6990",
+    "title": "Master's Thesis",
+    "act": 0,
+    "cap": 100,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "COMM-9990",
+    "title": "Dissertation",
+    "act": 8,
+    "cap": 80,
+    "instructors": [
+      "Carlos G. Godoy",
+      "Ekaterina Valeri Haskins",
+      "Ellen Esrock",
+      "James P Zappen",
+      "June Deery",
+      "Nathaniel George Freier",
+      "Tamar Gordon"
+    ]
+  },
+  {
+    "id": "CSCI-1010",
+    "title": "Intro To Computer Programming",
+    "act": 76,
+    "cap": 80,
+    "instructors": [
+      "Andrew L. Schoch",
+      "James Steven Lewis"
+    ]
+  },
+  {
+    "id": "CSCI-1100",
+    "title": "Computer Science I",
+    "act": 151,
+    "cap": 161,
+    "instructors": [
+      "Martin Hardwick",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CSCI-1190",
+    "title": "Beginning Prog For Eng",
+    "act": 190,
+    "cap": 200,
+    "instructors": [
+      "Minoo Aghili Nasab",
+      "R Lindsay Todd"
+    ]
+  },
+  {
+    "id": "CSCI-1200",
+    "title": "Data Structures",
+    "act": 191,
+    "cap": 231,
+    "instructors": [
+      "Charles V Stewart",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CSCI-2220",
+    "title": "Programming In Java",
+    "act": 48,
+    "cap": 60,
+    "instructors": [
+      "Travis James Desell"
+    ]
+  },
+  {
+    "id": "CSCI-2300",
+    "title": "Introduction To Algorithms",
+    "act": 106,
+    "cap": 140,
+    "instructors": [
+      "Sanmay Das",
+      "TBA"
+    ]
+  },
+  {
+    "id": "CSCI-2400",
+    "title": "Models Of Computation",
+    "act": 92,
+    "cap": 100,
+    "instructors": [
+      "Mukkai S Krishnamoorthy"
+    ]
+  },
+  {
+    "id": "CSCI-2500",
+    "title": "Computer Organization",
+    "act": 64,
+    "cap": 72,
+    "instructors": [
+      "Judith Ellen O'Rourke"
+    ]
+  },
+  {
+    "id": "CSCI-2940",
+    "title": "Readings In Csci",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Martin Hardwick"
+    ]
+  },
+  {
+    "id": "CSCI-2960",
+    "title": "Programming Practicum I",
+    "act": 19,
+    "cap": 0,
+    "instructors": [
+      "Charles V Stewart",
+      "Martin Hardwick",
+      "Sanmay Das"
+    ]
+  },
+  {
+    "id": "CSCI-4020",
+    "title": "Computer Algorithms",
+    "act": 44,
+    "cap": 60,
+    "instructors": [
+      "Elliot I. Anshelevich"
+    ]
+  },
+  {
+    "id": "CSCI-4210",
+    "title": "Operating Systems",
+    "act": 95,
+    "cap": 100,
+    "instructors": [
+      "David Eric Goldschmidt"
+    ]
+  },
+  {
+    "id": "CSCI-4260",
+    "title": "Graph Theory",
+    "act": 39,
+    "cap": 40,
+    "instructors": [
+      "Mark K Goldberg"
+    ]
+  },
+  {
+    "id": "CSCI-4320",
+    "title": "Parallel Programming",
+    "act": 40,
+    "cap": 50,
+    "instructors": [
+      "Christopher D. Carothers"
+    ]
+  },
+  {
+    "id": "CSCI-4380",
+    "title": "Database Systems",
+    "act": 50,
+    "cap": 60,
+    "instructors": [
+      "Sibel Adali"
+    ]
+  },
+  {
+    "id": "CSCI-4430",
+    "title": "Programming Languages",
+    "act": 46,
+    "cap": 90,
+    "instructors": [
+      "Carlos A Varela"
+    ]
+  },
+  {
+    "id": "CSCI-4440",
+    "title": "Software Design & Docume",
+    "act": 63,
+    "cap": 60,
+    "instructors": [
+      "Anita Kuchera",
+      "John Sturman"
+    ]
+  },
+  {
+    "id": "CSCI-4490",
+    "title": "Robotics II",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Jeffrey C. Trinkle"
+    ]
+  },
+  {
+    "id": "CSCI-4530",
+    "title": "Advanced Computer Graphics",
+    "act": 20,
+    "cap": 35,
+    "instructors": [
+      "Barbara Cutler"
+    ]
+  },
+  {
+    "id": "CSCI-4650",
+    "title": "Networking Laboratory I",
+    "act": 25,
+    "cap": 45,
+    "instructors": [
+      "Christian M. Price",
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4660",
+    "title": "Networking Laboratory II",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4800",
+    "title": "Numerical Computing",
+    "act": 6,
+    "cap": 80,
+    "instructors": [
+      "Melih Ozlem",
+      "Yuri V Lvov"
+    ]
+  },
+  {
+    "id": "CSCI-4820",
+    "title": "Intro Num Meth Diff Eqs",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "Fengyan Li"
+    ]
+  },
+  {
+    "id": "CSCI-4940",
+    "title": "Readings In Csci",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CSCI-4960",
+    "title": "X-informatics",
+    "act": 6,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "CSCI-4961",
+    "title": "Web Systems Development",
+    "act": 18,
+    "cap": 10,
+    "instructors": [
+      "James A. Hendler",
+      "TBA",
+      "William Cooper Gill"
+    ]
+  },
+  {
+    "id": "CSCI-4962",
+    "title": "Computer Networking II",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4963",
+    "title": "E-comm, Soc. Nets, Coll Intel",
+    "act": 17,
+    "cap": 40,
+    "instructors": [
+      "Sanmay Das"
+    ]
+  },
+  {
+    "id": "CSCI-4964",
+    "title": "Comp Biol & Bioinformatics",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "Mohammed J. Zaki"
+    ]
+  },
+  {
+    "id": "CSCI-4965",
+    "title": "Computer Networking I",
+    "act": 17,
+    "cap": 45,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4966",
+    "title": "Vmware Vsphere 4.1",
+    "act": 14,
+    "cap": 15,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4967",
+    "title": "Network Security/voice Lab",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4968",
+    "title": "Adv. Networking Practicum",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4969",
+    "title": "Game Development II",
+    "act": 16,
+    "cap": 15,
+    "instructors": [
+      "Benjamin Chia-Ming Chang",
+      "Elizabeth A Large"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4970",
+    "title": "Computer Networking Lab",
+    "act": 96,
+    "cap": 162,
+    "instructors": [
+      "David A Kotfila"
+    ]
+  },
+  {
+    "id": "CSCI-4971",
+    "title": "Cryptography & Net Security I",
+    "act": 22,
+    "cap": 30,
+    "instructors": [
+      "Bulent Yener"
+    ]
+  },
+  {
+    "id": "CSCI-4972",
+    "title": "Comp Vision Environ Monitoring",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Charles V Stewart"
+    ]
+  },
+  {
+    "id": "CSCI-4974",
+    "title": "Programming For Ai & Cog Sci",
+    "act": 20,
+    "cap": 20,
+    "instructors": [
+      "Vladislav Daniel Veksler"
+    ]
+  },
+  {
+    "id": "CSCI-4975",
+    "title": "Adaptive Robotics",
+    "act": 6,
+    "cap": 0,
+    "instructors": [
+      "Vladislav Daniel Veksler"
+    ]
+  },
+  {
+    "id": "CSCI-6360",
+    "title": "Parallel Computing",
+    "act": 15,
+    "cap": 50,
+    "instructors": [
+      "Christopher D. Carothers"
+    ]
+  },
+  {
+    "id": "CSCI-6490",
+    "title": "Robotics II",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Jeffrey C. Trinkle"
+    ]
+  },
+  {
+    "id": "CSCI-6530",
+    "title": "Advanced Computer Graphics",
+    "act": 5,
+    "cap": 35,
+    "instructors": [
+      "Barbara Cutler"
+    ]
+  },
+  {
+    "id": "CSCI-6820",
+    "title": "Num Solution Of Ordin Diff Eq",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "Donald W Schwendeman"
+    ]
+  },
+  {
+    "id": "CSCI-6900",
+    "title": "Computer Science Colloquium",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "CSCI-6940",
+    "title": "Readings In Csci",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "CSCI-6960",
+    "title": "X-informatics",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "CSCI-6961",
+    "title": "Software Engineering II",
+    "act": 11,
+    "cap": 30,
+    "instructors": [
+      "Ana L. Milanova"
+    ]
+  },
+  {
+    "id": "CSCI-6963",
+    "title": "E-comm, Soc Nets, Coll Intel",
+    "act": 7,
+    "cap": 40,
+    "instructors": [
+      "Sanmay Das"
+    ]
+  },
+  {
+    "id": "CSCI-6964",
+    "title": "Comp Biol & Bioinformatics",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Mohammed J. Zaki"
+    ]
+  },
+  {
+    "id": "CSCI-6965",
+    "title": "Advanced Semantic Technologies",
+    "act": 5,
+    "cap": 20,
+    "instructors": [
+      "Deborah L. McGuinness"
+    ]
+  },
+  {
+    "id": "CSCI-6968",
+    "title": "Cryptography & Network Sec",
+    "act": 10,
+    "cap": 10,
+    "instructors": [
+      "Bulent Yener"
+    ]
+  },
+  {
+    "id": "CSCI-6969",
+    "title": "Programming Languages",
+    "act": 16,
+    "cap": 20,
+    "instructors": [
+      "Carlos A Varela"
+    ]
+  },
+  {
+    "id": "CSCI-6970",
+    "title": "Cyberinfrastructure Challenges",
+    "act": 5,
+    "cap": 30,
+    "instructors": [
+      "James Douglas Myers"
+    ]
+  },
+  {
+    "id": "CSCI-6972",
+    "title": "Comp Vision Environ Monitoring",
+    "act": 9,
+    "cap": 30,
+    "instructors": [
+      "Charles V Stewart"
+    ]
+  },
+  {
+    "id": "CSCI-6990",
+    "title": "Master's Thesis",
+    "act": 25,
+    "cap": 240,
+    "instructors": [
+      "Ana L. Milanova",
+      "Barbara Cutler",
+      "Boleslaw Szymanski",
+      "Bulent Yener",
+      "Carlos A Varela",
+      "Charles V Stewart",
+      "Christopher Bystroff",
+      "Christopher D. Carothers",
+      "Deborah L. McGuinness",
+      "Elliot I. Anshelevich",
+      "James A. Hendler",
+      "Jeffrey C. Trinkle",
+      "Kristin P Bennett",
+      "Malik Magdon-Ismail",
+      "Mark K Goldberg",
+      "Mark S Shephard",
+      "Martin Hardwick",
+      "Mohammed J. Zaki",
+      "Mukkai S Krishnamoorthy",
+      "Peter A Fox",
+      "Sanmay Das",
+      "Selmer Bringsjord",
+      "Sibel Adali",
+      "W. Randolph Franklin"
+    ]
+  },
+  {
+    "id": "CSCI-9990",
+    "title": "Dissertation",
+    "act": 58,
+    "cap": 265,
+    "instructors": [
+      "Ana L. Milanova",
+      "Barbara Cutler",
+      "Boleslaw Szymanski",
+      "Bulent Yener",
+      "Carlos A Varela",
+      "Charles V Stewart",
+      "Christopher D. Carothers",
+      "David L Spooner",
+      "Deborah L. McGuinness",
+      "Elliot I. Anshelevich",
+      "James A. Hendler",
+      "Jeffrey C. Trinkle",
+      "Kristin P Bennett",
+      "Malik Magdon-Ismail",
+      "Mark K Goldberg",
+      "Mark S Shephard",
+      "Martin Hardwick",
+      "Mohammed J. Zaki",
+      "Mukkai S Krishnamoorthy",
+      "Peter A Fox",
+      "Petros Drineas",
+      "Sanmay Das",
+      "Selmer Bringsjord",
+      "Sibel Adali",
+      "W. Randolph Franklin"
+    ]
+  },
+  {
+    "id": "ENGR-1010",
+    "title": "Professional Development I",
+    "act": 23,
+    "cap": 25,
+    "instructors": [
+      "Linda T. McCloskey",
+      "Tracy N. Sullivan"
+    ]
+  },
+  {
+    "id": "ENGR-1100",
+    "title": "Intro To Engr Analysis",
+    "act": 303,
+    "cap": 310,
+    "instructors": [
+      "Mark W Olles",
+      "Mohamed H. Aboul-Seoud",
+      "Ricardo Dobry",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ENGR-1200",
+    "title": "Eng Graphics & Cad",
+    "act": 198,
+    "cap": 270,
+    "instructors": [
+      "Jeffrey Phillip Morris",
+      "Mark Walter Steiner"
+    ]
+  },
+  {
+    "id": "ENGR-1300",
+    "title": "Engr Processes",
+    "act": 259,
+    "cap": 280,
+    "instructors": [
+      "John P Szczesniak",
+      "Mark Walter Steiner"
+    ]
+  },
+  {
+    "id": "ENGR-1600",
+    "title": "Materials Science For Engrs",
+    "act": 256,
+    "cap": 283,
+    "instructors": [
+      "Christoph Steinbruchel",
+      "Paul George Keblinski",
+      "Robert Hull",
+      "Robert W Messler",
+      "TBA",
+      "Yunfeng Shi"
+    ]
+  },
+  {
+    "id": "ENGR-1960",
+    "title": "Vasudha Research Experience",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "Bradford C Lister",
+      "Prabhat Hajela"
+    ]
+  },
+  {
+    "id": "ENGR-1962",
+    "title": "Engr Communications",
+    "act": 128,
+    "cap": 180,
+    "instructors": [
+      "Jeffrey Phillip Morris"
+    ]
+  },
+  {
+    "id": "ENGR-2020",
+    "title": "Pdi Studio II",
+    "act": 25,
+    "cap": 0,
+    "instructors": [
+      "Linda Layne",
+      "Mark Walter Steiner"
+    ]
+  },
+  {
+    "id": "ENGR-2050",
+    "title": "Intro Engineering Design",
+    "act": 333,
+    "cap": 364,
+    "instructors": [
+      "Aren Yale Paster",
+      "Catherine F Persoon",
+      "Charles Sanford Goodwin",
+      "Christine M Allard",
+      "Graham C. Knowles",
+      "James A. Reed",
+      "Jeffrey Phillip Morris",
+      "John R. LaGraff",
+      "Lawrence Edward Ruff",
+      "Linda T. McCloskey",
+      "Mark J Anderson",
+      "Thomas Clark Haley",
+      "Tracy N. Sullivan",
+      "Venkata Ramana Gadhamshetty",
+      "Wei Zhou",
+      "William John Foley"
+    ]
+  },
+  {
+    "id": "ENGR-2090",
+    "title": "Engineering Dynamics",
+    "act": 257,
+    "cap": 280,
+    "instructors": [
+      "John A Tichy",
+      "Mark W Olles"
+    ]
+  },
+  {
+    "id": "ENGR-2250",
+    "title": "Thermal & Fluids Eng I",
+    "act": 282,
+    "cap": 300,
+    "instructors": [
+      "Chia Min Leong",
+      "Dana R. Swalla"
+    ]
+  },
+  {
+    "id": "ENGR-2350",
+    "title": "Embedded Control",
+    "act": 198,
+    "cap": 257,
+    "instructors": [
+      "Jeffrey H. Braunstein",
+      "Russell P. Kraft"
+    ]
+  },
+  {
+    "id": "ENGR-2530",
+    "title": "Strength Of Materials",
+    "act": 187,
+    "cap": 220,
+    "instructors": [
+      "Nelson John Tacy"
+    ]
+  },
+  {
+    "id": "ENGR-2600",
+    "title": "Mod & Analysis Uncertain",
+    "act": 295,
+    "cap": 316,
+    "instructors": [
+      "Bimal K Malaviya",
+      "Charles Malmborg",
+      "Thomas R Willemain"
+    ]
+  },
+  {
+    "id": "ENGR-2710",
+    "title": "Gen Manufacturing Proc",
+    "act": 35,
+    "cap": 0,
+    "instructors": [
+      "Samuel G Chiappone"
+    ]
+  },
+  {
+    "id": "ENGR-2940",
+    "title": "Readings In Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ENGR-2960",
+    "title": "Computer Aided Machine II",
+    "act": 8,
+    "cap": 10,
+    "instructors": [
+      "Lawrence Edward Ruff",
+      "Samuel G Chiappone"
+    ]
+  },
+  {
+    "id": "ENGR-4010",
+    "title": "Professional Devel III",
+    "act": 344,
+    "cap": 310,
+    "instructors": [
+      "Annie J. Virkus",
+      "Catherine F Persoon",
+      "James A. Reed",
+      "Linda T. McCloskey",
+      "Tracy N. Sullivan"
+    ]
+  },
+  {
+    "id": "ENGR-4100",
+    "title": "Business Issues For Engr & Sci",
+    "act": 18,
+    "cap": 35,
+    "instructors": [
+      "Carl Pavarini"
+    ]
+  },
+  {
+    "id": "ENGR-4300",
+    "title": "Electronic Instrumentation",
+    "act": 119,
+    "cap": 128,
+    "instructors": [
+      "Kenneth A Connor",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ENGR-4700",
+    "title": "Manufacturing Planning",
+    "act": 23,
+    "cap": 27,
+    "instructors": [
+      "Mohamed H. Aboul-Seoud"
+    ]
+  },
+  {
+    "id": "ENGR-4720",
+    "title": "Manufact Process & Sys Lab II",
+    "act": 31,
+    "cap": 31,
+    "instructors": [
+      "Samuel G Chiappone"
+    ]
+  },
+  {
+    "id": "ENGR-4760",
+    "title": "Engineering Economics",
+    "act": 130,
+    "cap": 136,
+    "instructors": [
+      "John M. Reilly"
+    ]
+  },
+  {
+    "id": "ENGR-4940",
+    "title": "Readings In Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ENGR-4961",
+    "title": "Pdi Design Studio Vi",
+    "act": 22,
+    "cap": 25,
+    "instructors": [
+      "Dean Andrew Nieusma"
+    ]
+  },
+  {
+    "id": "ENGR-4962",
+    "title": "Fortran Programming",
+    "act": 27,
+    "cap": 45,
+    "instructors": [
+      "Michael Kupferschmid"
+    ]
+  },
+  {
+    "id": "ENGR-6100",
+    "title": "Business Issues For Engr & Sci",
+    "act": 11,
+    "cap": 35,
+    "instructors": [
+      "Carl Pavarini"
+    ]
+  },
+  {
+    "id": "ERTH-1200",
+    "title": "Geology II Earth's Surface",
+    "act": 56,
+    "cap": 70,
+    "instructors": [
+      "Richard Bopp",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ERTH-2140",
+    "title": "Intro To Geochemistry",
+    "act": 19,
+    "cap": 24,
+    "instructors": [
+      "E Bruce Watson"
+    ]
+  },
+  {
+    "id": "ERTH-4180",
+    "title": "Environmental Geology",
+    "act": 42,
+    "cap": 42,
+    "instructors": [
+      "David Joseph De Simone"
+    ]
+  },
+  {
+    "id": "ERTH-4500",
+    "title": "Earth's Climate",
+    "act": 25,
+    "cap": 24,
+    "instructors": [
+      "Miriam Ellen Katz"
+    ]
+  },
+  {
+    "id": "ERTH-4690",
+    "title": "Aqueous Geochemistry",
+    "act": 4,
+    "cap": 24,
+    "instructors": [
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "ERTH-4940",
+    "title": "Readings In Erth",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ERTH-4960",
+    "title": "Geomorphology",
+    "act": 14,
+    "cap": 17,
+    "instructors": [
+      "David Joseph De Simone"
+    ]
+  },
+  {
+    "id": "ERTH-4963",
+    "title": "X-informatics",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "ERTH-4980",
+    "title": "Senior Project",
+    "act": 0,
+    "cap": 80,
+    "instructors": [
+      "Frank Spear"
+    ]
+  },
+  {
+    "id": "ERTH-6940",
+    "title": "Readings In Erth",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ERTH-6961",
+    "title": "Metamorphic Phase Equilibria",
+    "act": 5,
+    "cap": 0,
+    "instructors": [
+      "Frank Spear"
+    ]
+  },
+  {
+    "id": "ERTH-6963",
+    "title": "X-informatics",
+    "act": 0,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "ERTH-6980",
+    "title": "Master's Project",
+    "act": 0,
+    "cap": 5,
+    "instructors": [
+      "Richard Bopp"
+    ]
+  },
+  {
+    "id": "ERTH-6990",
+    "title": "Master's Thesis",
+    "act": 1,
+    "cap": 60,
+    "instructors": [
+      "E Bruce Watson",
+      "Frank Spear",
+      "Miriam Ellen Katz",
+      "Peter A Fox",
+      "Richard Bopp",
+      "Steven W Roecker"
+    ]
+  },
+  {
+    "id": "ERTH-9990",
+    "title": "Dissertation",
+    "act": 7,
+    "cap": 85,
+    "instructors": [
+      "E Bruce Watson",
+      "Frank Spear",
+      "Miriam Ellen Katz",
+      "Peter A Fox",
+      "Richard Bopp",
+      "Steven W Roecker",
+      "Teofilo Abrajano"
+    ]
+  },
+  {
+    "id": "ECON-1200",
+    "title": "Introductory Economics",
+    "act": 293,
+    "cap": 355,
+    "instructors": [
+      "Lester C. Hadsell",
+      "Richard Brescia",
+      "Robert W. Jones",
+      "Sarah Marsden Greene"
+    ]
+  },
+  {
+    "id": "ECON-2010",
+    "title": "Managerial Economics",
+    "act": 120,
+    "cap": 126,
+    "instructors": [
+      "Daniel L. Shawhan",
+      "John M Gowdy",
+      "Robert W. Jones"
+    ]
+  },
+  {
+    "id": "ECON-2020",
+    "title": "Intermediate Macroeconomics",
+    "act": 72,
+    "cap": 100,
+    "instructors": [
+      "John J. Heim"
+    ]
+  },
+  {
+    "id": "ECON-2940",
+    "title": "Readings In Economics",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECON-4130",
+    "title": "Money & Banking",
+    "act": 100,
+    "cap": 105,
+    "instructors": [
+      "Arturo Estrella",
+      "John J. Heim"
+    ]
+  },
+  {
+    "id": "ECON-4190",
+    "title": "Internat Eco And Globalization",
+    "act": 15,
+    "cap": 30,
+    "instructors": [
+      "Faye Duchin"
+    ]
+  },
+  {
+    "id": "ECON-4210",
+    "title": "Cost-benefit Analysis",
+    "act": 32,
+    "cap": 40,
+    "instructors": [
+      "Gregory DeAngelo"
+    ]
+  },
+  {
+    "id": "ECON-4250",
+    "title": "Ecological Economics",
+    "act": 4,
+    "cap": 10,
+    "instructors": [
+      "Faye Duchin"
+    ]
+  },
+  {
+    "id": "ECON-4260",
+    "title": "Environmental And Resource Eco",
+    "act": 10,
+    "cap": 40,
+    "instructors": [
+      "John M Gowdy"
+    ]
+  },
+  {
+    "id": "ECON-4570",
+    "title": "Econometrics",
+    "act": 28,
+    "cap": 30,
+    "instructors": [
+      "Kenneth L. Simons"
+    ]
+  },
+  {
+    "id": "ECON-4900",
+    "title": "Seminar In Economics",
+    "act": 9,
+    "cap": 89,
+    "instructors": [
+      "Arturo Estrella",
+      "Daniel L. Shawhan",
+      "Donald F Vitaliano",
+      "Faye Duchin",
+      "John J. Heim",
+      "John M Gowdy",
+      "Kenneth L. Simons"
+    ]
+  },
+  {
+    "id": "ECON-4940",
+    "title": "Readings In Economics",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECON-6190",
+    "title": "Adv Intern Eco & Globalization",
+    "act": 0,
+    "cap": 40,
+    "instructors": [
+      "Faye Duchin"
+    ]
+  },
+  {
+    "id": "ECON-6210",
+    "title": "Adv Cost-benefit Analy",
+    "act": 7,
+    "cap": 10,
+    "instructors": [
+      "Gregory DeAngelo"
+    ]
+  },
+  {
+    "id": "ECON-6250",
+    "title": "Adv Ecological Economics",
+    "act": 5,
+    "cap": 10,
+    "instructors": [
+      "Faye Duchin"
+    ]
+  },
+  {
+    "id": "ECON-6570",
+    "title": "Advanced Econometrics",
+    "act": 11,
+    "cap": 20,
+    "instructors": [
+      "Kenneth L. Simons"
+    ]
+  },
+  {
+    "id": "ECON-6940",
+    "title": "Readings In Economics",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECON-9990",
+    "title": "Dissertation",
+    "act": 2,
+    "cap": 90,
+    "instructors": [
+      "David I. Stern",
+      "Faye Duchin",
+      "John M Gowdy",
+      "Kenneth L. Simons",
+      "Richard W Siegel"
+    ]
+  },
+  {
+    "id": "EPOW-9990",
+    "title": "Dissertation",
+    "act": 1,
+    "cap": 20,
+    "instructors": [
+      "Jian Sun",
+      "Joe H Chow"
+    ]
+  },
+  {
+    "id": "ECSE-2010",
+    "title": "Electric Circuits",
+    "act": 89,
+    "cap": 110,
+    "instructors": [
+      "Paul Matthew Schoch",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-2050",
+    "title": "Introduction To Electronics",
+    "act": 72,
+    "cap": 74,
+    "instructors": [
+      "Michael Shur",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-2100",
+    "title": "Fields And Waves I",
+    "act": 41,
+    "cap": 51,
+    "instructors": [
+      "Jianqiang Lu",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-2210",
+    "title": "Microelectronics Technology",
+    "act": 52,
+    "cap": 60,
+    "instructors": [
+      "Ishwara B Bhat",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-2410",
+    "title": "Signals And Systems",
+    "act": 70,
+    "cap": 136,
+    "instructors": [
+      "Michael J Wozny"
+    ]
+  },
+  {
+    "id": "ECSE-2500",
+    "title": "Engineering Probability",
+    "act": 86,
+    "cap": 86,
+    "instructors": [
+      "W. Randolph Franklin"
+    ]
+  },
+  {
+    "id": "ECSE-2610",
+    "title": "Cptr Components & Oper",
+    "act": 78,
+    "cap": 102,
+    "instructors": [
+      "TBA",
+      "Tong Zhang"
+    ]
+  },
+  {
+    "id": "ECSE-2660",
+    "title": "Cptr Arch, Nets & Os",
+    "act": 90,
+    "cap": 110,
+    "instructors": [
+      "Alhussein A Abouzeid"
+    ]
+  },
+  {
+    "id": "ECSE-2940",
+    "title": "Readings In Ecse",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECSE-2960",
+    "title": "Electrical Energy Systems",
+    "act": 95,
+    "cap": 100,
+    "instructors": [
+      "Leila Parsa",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-4040",
+    "title": "Digital Electronics",
+    "act": 19,
+    "cap": 32,
+    "instructors": [
+      "TBA",
+      "Yannick L Lecoz"
+    ]
+  },
+  {
+    "id": "ECSE-4050",
+    "title": "Advanced Electronic Circuits",
+    "act": 19,
+    "cap": 40,
+    "instructors": [
+      "Gary J Saulnier"
+    ]
+  },
+  {
+    "id": "ECSE-4090",
+    "title": "Mechatronics",
+    "act": 4,
+    "cap": 10,
+    "instructors": [
+      "Jo Anne Gagliardi",
+      "Mauricio Castillo Effen"
+    ]
+  },
+  {
+    "id": "ECSE-4120",
+    "title": "Electromechanics",
+    "act": 22,
+    "cap": 30,
+    "instructors": [
+      "Sheppard Joel Salon"
+    ]
+  },
+  {
+    "id": "ECSE-4130",
+    "title": "Epe Lab",
+    "act": 22,
+    "cap": 18,
+    "instructors": [
+      "Jeffrey H. Braunstein",
+      "Sheppard Joel Salon",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-4220",
+    "title": "Vlsi Design",
+    "act": 21,
+    "cap": 48,
+    "instructors": [
+      "John F McDonald"
+    ]
+  },
+  {
+    "id": "ECSE-4490",
+    "title": "Robotics II",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Jeffrey C. Trinkle"
+    ]
+  },
+  {
+    "id": "ECSE-4510",
+    "title": "Digital Control Systems",
+    "act": 38,
+    "cap": 40,
+    "instructors": [
+      "Anak Agung Julius"
+    ]
+  },
+  {
+    "id": "ECSE-4540",
+    "title": "Intro To Image Processing",
+    "act": 8,
+    "cap": 40,
+    "instructors": [
+      "Lester A Gerhardt"
+    ]
+  },
+  {
+    "id": "ECSE-4560",
+    "title": "Digital Communications",
+    "act": 8,
+    "cap": 40,
+    "instructors": [
+      "Gary J Saulnier"
+    ]
+  },
+  {
+    "id": "ECSE-4760",
+    "title": "Real-time Applic In Ctrl Comm",
+    "act": 18,
+    "cap": 36,
+    "instructors": [
+      "Russell P. Kraft",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-4780",
+    "title": "Adv Comp Hardware Design",
+    "act": 6,
+    "cap": 34,
+    "instructors": [
+      "John F McDonald",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-4900",
+    "title": "Ecse Design",
+    "act": 85,
+    "cap": 0,
+    "instructors": [
+      "Junichi Kanai",
+      "Valerie J. Masterson"
+    ]
+  },
+  {
+    "id": "ECSE-4940",
+    "title": "Readings In Ecse",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECSE-4964",
+    "title": "Optoelectronics Technology",
+    "act": 12,
+    "cap": 30,
+    "instructors": [
+      "Zhaoran Huang"
+    ]
+  },
+  {
+    "id": "ECSE-6050",
+    "title": "Advanced Electronic Circuits",
+    "act": 16,
+    "cap": 40,
+    "instructors": [
+      "Gary J Saulnier"
+    ]
+  },
+  {
+    "id": "ECSE-6190",
+    "title": "Computer Methods In Epe",
+    "act": 8,
+    "cap": 30,
+    "instructors": [
+      "Joe H Chow"
+    ]
+  },
+  {
+    "id": "ECSE-6290",
+    "title": "Semicond Dev & Models II",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Shayla Maya Sawyer"
+    ]
+  },
+  {
+    "id": "ECSE-6300",
+    "title": "Ic Fabrication Lab",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Tat-Sing Chow"
+    ]
+  },
+  {
+    "id": "ECSE-6480",
+    "title": "Adaptive Systems",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "John Wen"
+    ]
+  },
+  {
+    "id": "ECSE-6490",
+    "title": "Robotics II",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Jeffrey C. Trinkle"
+    ]
+  },
+  {
+    "id": "ECSE-6520",
+    "title": "Detection & Est Theory",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "Kenneth S Vastola"
+    ]
+  },
+  {
+    "id": "ECSE-6530",
+    "title": "Inform Theory & Coding",
+    "act": 4,
+    "cap": 20,
+    "instructors": [
+      "John W Woods"
+    ]
+  },
+  {
+    "id": "ECSE-6560",
+    "title": "Digital Comm Engr",
+    "act": 5,
+    "cap": 40,
+    "instructors": [
+      "Gary J Saulnier"
+    ]
+  },
+  {
+    "id": "ECSE-6600",
+    "title": "Internet Protocols",
+    "act": 15,
+    "cap": 30,
+    "instructors": [
+      "Koushik Kar"
+    ]
+  },
+  {
+    "id": "ECSE-6610",
+    "title": "Pattern Recognition",
+    "act": 20,
+    "cap": 32,
+    "instructors": [
+      "Qiang Ji"
+    ]
+  },
+  {
+    "id": "ECSE-6700",
+    "title": "Comp. Arch Proto.",
+    "act": 5,
+    "cap": 34,
+    "instructors": [
+      "John F McDonald",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-6780",
+    "title": "Software Engineering II",
+    "act": 4,
+    "cap": 30,
+    "instructors": [
+      "Ana L. Milanova"
+    ]
+  },
+  {
+    "id": "ECSE-6940",
+    "title": "Readings In Ecse",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ECSE-6961",
+    "title": "Light Emitting Diodes",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "E. Fred Schubert"
+    ]
+  },
+  {
+    "id": "ECSE-6980",
+    "title": "Master's Project",
+    "act": 0,
+    "cap": 430,
+    "instructors": [
+      "Chuanyi Ji",
+      "E. Fred Schubert",
+      "Jian Sun",
+      "John F McDonald",
+      "Michael Shur",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ECSE-6990",
+    "title": "Master's Thesis/project",
+    "act": 20,
+    "cap": 376,
+    "instructors": [
+      "Alhussein A Abouzeid",
+      "Anak Agung Julius",
+      "Arthur C Sanderson",
+      "Badrinath Roysam",
+      "Biplab Sikdar",
+      "Christian M. Wetzel",
+      "Don L Millard",
+      "Gary J Saulnier",
+      "George Nagy",
+      "Ishwara B Bhat",
+      "Jian Sun",
+      "Jianqiang Lu",
+      "Joe H Chow",
+      "John W Woods",
+      "John Wen",
+      "Jong Kyu Kim",
+      "Kenneth A Connor",
+      "Khaled N. Salama",
+      "Kim L. Boyer",
+      "Koushik Kar",
+      "Leila Parsa",
+      "Lester A Gerhardt",
+      "Michael J Wozny",
+      "Michael Shur",
+      "Mona Mostafa Hella",
+      "Murat Arcak",
+      "Partha S. Dutta",
+      "Paul Matthew Schoch",
+      "Qiang Ji",
+      "Richard J Radke",
+      "Shayla Maya Sawyer",
+      "Shivkumar Kalyanaraman",
+      "Tat-Sing Chow",
+      "Tong Zhang",
+      "W. Randolph Franklin",
+      "Xi-Cheng Zhang",
+      "Yannick L Lecoz"
+    ]
+  },
+  {
+    "id": "ECSE-9990",
+    "title": "Dissertation",
+    "act": 105,
+    "cap": 410,
+    "instructors": [
+      "Alhussein A Abouzeid",
+      "Anak Agung Julius",
+      "Arthur C Sanderson",
+      "Badrinath Roysam",
+      "Biplab Sikdar",
+      "Birsen Yazici",
+      "E. Fred Schubert",
+      "Gary J Saulnier",
+      "Ishwara B Bhat",
+      "Jian Sun",
+      "Jianqiang Lu",
+      "Joe H Chow",
+      "John F McDonald",
+      "John Keith Nelson",
+      "John W Woods",
+      "John Wen",
+      "Kenneth A Connor",
+      "Kenneth S Vastola",
+      "Khaled N. Salama",
+      "Kim L. Boyer",
+      "Koushik Kar",
+      "Leila Parsa",
+      "Lester A Gerhardt",
+      "Michael J Wozny",
+      "Michael Shur",
+      "Mona Mostafa Hella",
+      "Murat Arcak",
+      "Partha S. Dutta",
+      "Paul Matthew Schoch",
+      "Qiang Ji",
+      "Richard J Radke",
+      "Ronald J Gutmann",
+      "Shayla Maya Sawyer",
+      "Shivkumar Kalyanaraman",
+      "Tat-Sing Chow",
+      "Tong Zhang",
+      "William A Pearlman",
+      "Xi-Cheng Zhang",
+      "Yannick L Lecoz",
+      "Zhaoran Huang"
+    ]
+  },
+  {
+    "id": "ESCI-9990",
+    "title": "Doctor's Thesis In Engrng Sci",
+    "act": 2,
+    "cap": 70,
+    "instructors": [
+      "Cheng Hsu",
+      "E. Fred Schubert",
+      "Ishwara B Bhat",
+      "Jorge Haddock",
+      "Kevin Craig",
+      "Stephen James Derby",
+      "Toh-Ming Lu"
+    ]
+  },
+  {
+    "id": "ENVE-1960",
+    "title": "Autocad",
+    "act": 6,
+    "cap": 90,
+    "instructors": [
+      "Jason M. Dolmetsch"
+    ]
+  },
+  {
+    "id": "ENVE-2940",
+    "title": "Readings In Enee",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ENVE-4110",
+    "title": "Aqueous Geochemistry",
+    "act": 16,
+    "cap": 40,
+    "instructors": [
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "ENVE-4180",
+    "title": "Environmental Process Design",
+    "act": 11,
+    "cap": 25,
+    "instructors": [
+      "James Kilduff"
+    ]
+  },
+  {
+    "id": "ENVE-4200",
+    "title": "Solid & Hazardous Waste",
+    "act": 16,
+    "cap": 30,
+    "instructors": [
+      "Venkata Ramana Gadhamshetty"
+    ]
+  },
+  {
+    "id": "ENVE-4240",
+    "title": "Bench Scale Design",
+    "act": 4,
+    "cap": 50,
+    "instructors": [
+      "Philippe C Baveye"
+    ]
+  },
+  {
+    "id": "ENVE-4310",
+    "title": "Appl Hydrology & Hydraulics",
+    "act": 46,
+    "cap": 80,
+    "instructors": [
+      "Gregory J. Daviero",
+      "Philippe C Baveye"
+    ]
+  },
+  {
+    "id": "ENVE-4320",
+    "title": "Env Chemodynamics",
+    "act": 13,
+    "cap": 45,
+    "instructors": [
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "ENVE-4340",
+    "title": "Physicochemical Proc In Enve",
+    "act": 17,
+    "cap": 25,
+    "instructors": [
+      "James Kilduff"
+    ]
+  },
+  {
+    "id": "ENVE-4940",
+    "title": "Readings In Enve",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ENVE-4961",
+    "title": "Microbial Fuel Cells",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Venkata Ramana Gadhamshetty"
+    ]
+  },
+  {
+    "id": "ENVE-6230",
+    "title": "Math Modeling Of Env Engr Syst",
+    "act": 3,
+    "cap": 20,
+    "instructors": [
+      "Philippe C Baveye"
+    ]
+  },
+  {
+    "id": "ENVE-6910",
+    "title": "Colloquium Series",
+    "act": 2,
+    "cap": 50,
+    "instructors": [
+      "Philippe C Baveye"
+    ]
+  },
+  {
+    "id": "ENVE-6940",
+    "title": "Readings In Enve",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ENVE-6961",
+    "title": "Microbial Fuel Cells",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Venkata Ramana Gadhamshetty"
+    ]
+  },
+  {
+    "id": "ENVE-6970",
+    "title": "Professional Project",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Charles W Boylen",
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "ENVE-6980",
+    "title": "Master's Project",
+    "act": 0,
+    "cap": 5,
+    "instructors": [
+      "James Kilduff"
+    ]
+  },
+  {
+    "id": "ENVE-6990",
+    "title": "Masters Thesis",
+    "act": 0,
+    "cap": 10,
+    "instructors": [
+      "James Kilduff"
+    ]
+  },
+  {
+    "id": "ENVE-9990",
+    "title": "Dissertation",
+    "act": 3,
+    "cap": 90,
+    "instructors": [
+      "George Xu",
+      "James Kilduff",
+      "Jong-In Han",
+      "Marianne C. Nyman"
+    ]
+  },
+  {
+    "id": "ISYE-2210",
+    "title": "Pom And Cost Acctg",
+    "act": 51,
+    "cap": 50,
+    "instructors": [
+      "Mohamed H. Aboul-Seoud"
+    ]
+  },
+  {
+    "id": "ISYE-2940",
+    "title": "Readings In Isye",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ISYE-4210",
+    "title": "Desgn & Analys Of Supply Chain",
+    "act": 37,
+    "cap": 60,
+    "instructors": [
+      "Jennifer Kistemaker Ryan"
+    ]
+  },
+  {
+    "id": "ISYE-4230",
+    "title": "Quality Control",
+    "act": 31,
+    "cap": 32,
+    "instructors": [
+      "Thomas R Willemain"
+    ]
+  },
+  {
+    "id": "ISYE-4250",
+    "title": "Facilit Dsn & Indus Log",
+    "act": 28,
+    "cap": 30,
+    "instructors": [
+      "Charles Malmborg"
+    ]
+  },
+  {
+    "id": "ISYE-4270",
+    "title": "Indust&mgt Engr Design",
+    "act": 22,
+    "cap": 0,
+    "instructors": [
+      "Cheng Hsu",
+      "Mark Walter Steiner",
+      "Valerie J. Masterson"
+    ]
+  },
+  {
+    "id": "ISYE-4290",
+    "title": "Discrete Event Sim,  Modeling",
+    "act": 38,
+    "cap": 40,
+    "instructors": [
+      "Cheng Hsu"
+    ]
+  },
+  {
+    "id": "ISYE-4760",
+    "title": "Mathematical Statistics",
+    "act": 8,
+    "cap": 30,
+    "instructors": [
+      "Wai Kin Chan"
+    ]
+  },
+  {
+    "id": "ISYE-4810",
+    "title": "Computational Intelligence",
+    "act": 13,
+    "cap": 30,
+    "instructors": [
+      "Mark J Embrechts"
+    ]
+  },
+  {
+    "id": "ISYE-4940",
+    "title": "Readings In Isye",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "ISYE-4961",
+    "title": "Complex Sys Mod For Ise",
+    "act": 10,
+    "cap": 30,
+    "instructors": [
+      "Wai Kin Chan"
+    ]
+  },
+  {
+    "id": "ISYE-4962",
+    "title": "Time Series Analysis",
+    "act": 3,
+    "cap": 10,
+    "instructors": [
+      "Thomas R Willemain"
+    ]
+  },
+  {
+    "id": "ISYE-4963",
+    "title": "Theory Of Prod. Scheduling",
+    "act": 12,
+    "cap": 30,
+    "instructors": [
+      "Thomas C. Sharkey"
+    ]
+  },
+  {
+    "id": "ISYE-6100",
+    "title": "Time Series Analysis",
+    "act": 16,
+    "cap": 30,
+    "instructors": [
+      "Thomas R Willemain"
+    ]
+  },
+  {
+    "id": "ISYE-6210",
+    "title": "Theory Of Prod. Scheduling",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Thomas C. Sharkey"
+    ]
+  },
+  {
+    "id": "ISYE-6600",
+    "title": "Dsn Of Mfg Sys & Supply Chains",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "Jennifer Kistemaker Ryan"
+    ]
+  },
+  {
+    "id": "ISYE-6620",
+    "title": "Discrete Event Simulation",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "Cheng Hsu"
+    ]
+  },
+  {
+    "id": "ISYE-6760",
+    "title": "Combin Optim & Integer Progr",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "John E. Mitchell"
+    ]
+  },
+  {
+    "id": "ISYE-6940",
+    "title": "Readings In Isye",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "William Alan Wallace"
+    ]
+  },
+  {
+    "id": "ISYE-6960",
+    "title": "Research Methods In Ise",
+    "act": 3,
+    "cap": 30,
+    "instructors": [
+      "David Joseph Mendonca"
+    ]
+  },
+  {
+    "id": "ISYE-6990",
+    "title": "Master's Thesis",
+    "act": 2,
+    "cap": 11,
+    "instructors": [
+      "Thomas R Willemain",
+      "William Alan Wallace"
+    ]
+  },
+  {
+    "id": "ISYE-9990",
+    "title": "Dissertation",
+    "act": 20,
+    "cap": 100,
+    "instructors": [
+      "Aparna Gupta",
+      "Charles Malmborg",
+      "Cheng Hsu",
+      "Jennifer Kistemaker Ryan",
+      "John E. Mitchell",
+      "Mark J Embrechts",
+      "Martha Rose Grabowski",
+      "Thomas C. Sharkey",
+      "Wai Kin Chan",
+      "William Alan Wallace"
+    ]
+  },
+  {
+    "id": "ITWS-1220",
+    "title": "It And Society",
+    "act": 44,
+    "cap": 50,
+    "instructors": [
+      "Atsushi Akera",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ITWS-2110",
+    "title": "Web Systems Development",
+    "act": 35,
+    "cap": 40,
+    "instructors": [
+      "James A. Hendler",
+      "TBA",
+      "William Cooper Gill"
+    ]
+  },
+  {
+    "id": "ITWS-2210",
+    "title": "Introduction To Hci",
+    "act": 29,
+    "cap": 40,
+    "instructors": [
+      "Roger Grice"
+    ]
+  },
+  {
+    "id": "ITWS-2940",
+    "title": "Rdgs In Information Technology",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Jeffrey G Miner",
+      "TBA"
+    ]
+  },
+  {
+    "id": "ITWS-4300",
+    "title": "Business Issues",
+    "act": 0,
+    "cap": 35,
+    "instructors": [
+      "Carl Pavarini"
+    ]
+  },
+  {
+    "id": "ITWS-4961",
+    "title": "It For Arts & Performance",
+    "act": 9,
+    "cap": 20,
+    "instructors": [
+      "Curtis Bahn",
+      "Eric Louis Ameres"
+    ]
+  },
+  {
+    "id": "ITWS-4962",
+    "title": "X-informatics",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "ITWS-6300",
+    "title": "Business Issues For Engr & Sci",
+    "act": 6,
+    "cap": 35,
+    "instructors": [
+      "Carl Pavarini"
+    ]
+  },
+  {
+    "id": "ITWS-6800",
+    "title": "It and Decision Syst Capstone",
+    "act": 28,
+    "cap": 25,
+    "instructors": [
+      "Gregory N. Hughes"
+    ]
+  },
+  {
+    "id": "ITWS-6961",
+    "title": "X-informatics",
+    "act": 7,
+    "cap": 25,
+    "instructors": [
+      "Peter A Fox"
+    ]
+  },
+  {
+    "id": "ITWS-6962",
+    "title": "Advanced Semantic Technologies",
+    "act": 0,
+    "cap": 20,
+    "instructors": [
+      "Deborah L. McGuinness"
+    ]
+  },
+  {
+    "id": "ITWS-6990",
+    "title": "Master's Thesis",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "William Alan Wallace"
+    ]
+  },
+  {
+    "id": "IENV-1910",
+    "title": "Environmental Seminar",
+    "act": 6,
+    "cap": 24,
+    "instructors": [
+      "Miriam Ellen Katz"
+    ]
+  },
+  {
+    "id": "IHSS-1220",
+    "title": "It And Society",
+    "act": 17,
+    "cap": 25,
+    "instructors": [
+      "Atsushi Akera",
+      "TBA"
+    ]
+  },
+  {
+    "id": "IHSS-1970",
+    "title": "Design, History & Society",
+    "act": 58,
+    "cap": 62,
+    "instructors": [
+      "Brian Ladd"
+    ]
+  },
+  {
+    "id": "ISCI-4510",
+    "title": "Origins Of Life Seminar",
+    "act": 7,
+    "cap": 35,
+    "instructors": [
+      "Douglas CB Whittet"
+    ]
+  },
+  {
+    "id": "ISCI-6240",
+    "title": "Biomolecular Science",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "Donna Eisemann Crone"
+    ]
+  },
+  {
+    "id": "ISCI-9990",
+    "title": "Dissertation",
+    "act": 2,
+    "cap": 35,
+    "instructors": [
+      "Douglas CB Whittet",
+      "Gyorgy Korniss",
+      "Mukkai S Krishnamoorthy",
+      "Susan Sharfstein"
+    ]
+  },
+  {
+    "id": "LANG-2004",
+    "title": "Int Russian II (at Skidmore)",
+    "act": 1,
+    "cap": 1,
+    "instructors": []
+  },
+  {
+    "id": "LGHT-4770",
+    "title": "Lighting Tech & Applications",
+    "act": 13,
+    "cap": 17,
+    "instructors": [
+      "Andrew Bierman",
+      "Jean Paul Freyssinier",
+      "Nadarajah Narendran"
+    ]
+  },
+  {
+    "id": "LGHT-4940",
+    "title": "Adv Ind Projects In Lght",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "LGHT-6750",
+    "title": "Lighting Research Design",
+    "act": 4,
+    "cap": 10,
+    "instructors": [
+      "John D. Bullough",
+      "Mark S Rea"
+    ]
+  },
+  {
+    "id": "LGHT-6760",
+    "title": "Lighting Workshop",
+    "act": 8,
+    "cap": 15,
+    "instructors": [
+      "Patricia A. Rizzo",
+      "Russell P Leslie"
+    ]
+  },
+  {
+    "id": "LGHT-6770",
+    "title": "Light And Health",
+    "act": 6,
+    "cap": 12,
+    "instructors": [
+      "Mariana G. Figueiro"
+    ]
+  },
+  {
+    "id": "LGHT-6940",
+    "title": "Adv Ind Projects In Lght",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "LGHT-6980",
+    "title": "Master's Project",
+    "act": 2,
+    "cap": 130,
+    "instructors": [
+      "Jean Paul Freyssinier",
+      "Mariana G. Figueiro",
+      "Mark S Rea",
+      "Nadarajah Narendran",
+      "Patricia A. Rizzo",
+      "Russell P Leslie"
+    ]
+  },
+  {
+    "id": "LGHT-6990",
+    "title": "Master's Thesis",
+    "act": 6,
+    "cap": 40,
+    "instructors": [
+      "Mariana G. Figueiro",
+      "Mark S Rea",
+      "Nadarajah Narendran",
+      "Russell P Leslie"
+    ]
+  },
+  {
+    "id": "LITR-2110",
+    "title": "Intro To Literature",
+    "act": 49,
+    "cap": 50,
+    "instructors": [
+      "Blaise K. Farina",
+      "David D. Seelow"
+    ]
+  },
+  {
+    "id": "LITR-2770",
+    "title": "Women Writers",
+    "act": 19,
+    "cap": 25,
+    "instructors": [
+      "Ellen Esrock"
+    ]
+  },
+  {
+    "id": "LITR-2940",
+    "title": "Literature Studies",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "LITR-2961",
+    "title": "Creative Writing: Poetry",
+    "act": 25,
+    "cap": 25,
+    "instructors": [
+      "Juliette E Gutmann"
+    ]
+  },
+  {
+    "id": "LITR-2962",
+    "title": "Creative Writing: Short Story",
+    "act": 24,
+    "cap": 22,
+    "instructors": [
+      "Juliette E Gutmann"
+    ]
+  },
+  {
+    "id": "LITR-2963",
+    "title": "Creative Non- Fiction",
+    "act": 26,
+    "cap": 25,
+    "instructors": [
+      "Elizabeth Gordon"
+    ]
+  },
+  {
+    "id": "LITR-4150",
+    "title": "Science And Fiction",
+    "act": 26,
+    "cap": 25,
+    "instructors": [
+      "June Deery"
+    ]
+  },
+  {
+    "id": "LITR-4410",
+    "title": "Film Theory",
+    "act": 22,
+    "cap": 25,
+    "instructors": [
+      "Ekaterina Valeri Haskins"
+    ]
+  },
+  {
+    "id": "LITR-6940",
+    "title": "Readings In Litr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MGMT-1100",
+    "title": "Intro To Management",
+    "act": 81,
+    "cap": 35,
+    "instructors": [
+      "Frank X. Wright",
+      "Jonathan Paul O'Brien",
+      "Margaret A McDermott"
+    ]
+  },
+  {
+    "id": "MGMT-1250",
+    "title": "Mgmt Leadership II",
+    "act": 71,
+    "cap": 105,
+    "instructors": [
+      "Graham C. Knowles",
+      "Linda T. McCloskey"
+    ]
+  },
+  {
+    "id": "MGMT-1260",
+    "title": "External Environ Of Bus",
+    "act": 79,
+    "cap": 95,
+    "instructors": [
+      "David M Grandeau",
+      "Stephen John Hensel"
+    ]
+  },
+  {
+    "id": "MGMT-2100",
+    "title": "Statistical Methods",
+    "act": 24,
+    "cap": 38,
+    "instructors": [
+      "Lei Chi"
+    ]
+  },
+  {
+    "id": "MGMT-2300",
+    "title": "Acct For Decision Making",
+    "act": 81,
+    "cap": 120,
+    "instructors": [
+      "Pengfei Ye",
+      "Seunghan Nam",
+      "Yinghong Zhang"
+    ]
+  },
+  {
+    "id": "MGMT-2320",
+    "title": "Managerial Finance",
+    "act": 95,
+    "cap": 131,
+    "instructors": [
+      "Chang Y Ha",
+      "Pengfei Ye",
+      "Yawen Jiao"
+    ]
+  },
+  {
+    "id": "MGMT-2510",
+    "title": "Microcomputers & Applications",
+    "act": 26,
+    "cap": 30,
+    "instructors": [
+      "Pindaro Epaminonda Demertzoglou"
+    ]
+  },
+  {
+    "id": "MGMT-2940",
+    "title": "Readings In Mgmt",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MGMT-4100",
+    "title": "Quantitative Methods For Bus",
+    "act": 34,
+    "cap": 70,
+    "instructors": [
+      "Hesna M. Yayla-Kullu"
+    ]
+  },
+  {
+    "id": "MGMT-4110",
+    "title": "Operations Management",
+    "act": 72,
+    "cap": 90,
+    "instructors": [
+      "April Eve Hicks",
+      "Christopher McDermott"
+    ]
+  },
+  {
+    "id": "MGMT-4130",
+    "title": "Enterprise It Integration",
+    "act": 25,
+    "cap": 30,
+    "instructors": [
+      "Pindaro Epaminonda Demertzoglou"
+    ]
+  },
+  {
+    "id": "MGMT-4140",
+    "title": "Computer Info Systems",
+    "act": 56,
+    "cap": 60,
+    "instructors": [
+      "Lei Chi"
+    ]
+  },
+  {
+    "id": "MGMT-4170",
+    "title": "Data Resource Management",
+    "act": 28,
+    "cap": 25,
+    "instructors": [
+      "Jason Nicholas Kuruzovich"
+    ]
+  },
+  {
+    "id": "MGMT-4260",
+    "title": "Financial Statement Analysis",
+    "act": 7,
+    "cap": 40,
+    "instructors": [
+      "Seunghan Nam"
+    ]
+  },
+  {
+    "id": "MGMT-4320",
+    "title": "Investments I",
+    "act": 29,
+    "cap": 35,
+    "instructors": [
+      "Albert S Paulson"
+    ]
+  },
+  {
+    "id": "MGMT-4330",
+    "title": "Investments II",
+    "act": 22,
+    "cap": 35,
+    "instructors": [
+      "Albert S Paulson"
+    ]
+  },
+  {
+    "id": "MGMT-4380",
+    "title": "Derivatives Markets",
+    "act": 6,
+    "cap": 26,
+    "instructors": [
+      "Aparna Gupta"
+    ]
+  },
+  {
+    "id": "MGMT-4430",
+    "title": "Marketing Principles",
+    "act": 51,
+    "cap": 65,
+    "instructors": [
+      "Dmitri Markovitch"
+    ]
+  },
+  {
+    "id": "MGMT-4460",
+    "title": "Consumer Behavior And Prod Dsn",
+    "act": 36,
+    "cap": 40,
+    "instructors": [
+      "Susan J Freeman"
+    ]
+  },
+  {
+    "id": "MGMT-4470",
+    "title": "Marketing Research",
+    "act": 15,
+    "cap": 35,
+    "instructors": [
+      "Dongling Huang"
+    ]
+  },
+  {
+    "id": "MGMT-4490",
+    "title": "Adv Strat & Promotions",
+    "act": 34,
+    "cap": 40,
+    "instructors": [
+      "Susan J Freeman"
+    ]
+  },
+  {
+    "id": "MGMT-4520",
+    "title": "Intro To Tech Entrepreneurship",
+    "act": 24,
+    "cap": 35,
+    "instructors": [
+      "Lois S Peters"
+    ]
+  },
+  {
+    "id": "MGMT-4530",
+    "title": "Starting Up A New Venture",
+    "act": 17,
+    "cap": 40,
+    "instructors": [
+      "Richard Frederick"
+    ]
+  },
+  {
+    "id": "MGMT-4540",
+    "title": "Venture Capital Finance",
+    "act": 12,
+    "cap": 40,
+    "instructors": [
+      "Mark O Hubbard"
+    ]
+  },
+  {
+    "id": "MGMT-4850",
+    "title": "Org Behav In High Perform Orgs",
+    "act": 63,
+    "cap": 75,
+    "instructors": [
+      "Hao Zhao"
+    ]
+  },
+  {
+    "id": "MGMT-4860",
+    "title": "Hr In High Performance Org",
+    "act": 59,
+    "cap": 71,
+    "instructors": [
+      "James Kirk Menard"
+    ]
+  },
+  {
+    "id": "MGMT-4870",
+    "title": "Strategy And Policy",
+    "act": 76,
+    "cap": 90,
+    "instructors": [
+      "Andrew C. Corbett",
+      "William M. Tracy"
+    ]
+  },
+  {
+    "id": "MGMT-4900",
+    "title": "Practicum In Management",
+    "act": 2,
+    "cap": 1,
+    "instructors": [
+      "Frank X. Wright"
+    ]
+  },
+  {
+    "id": "MGMT-4940",
+    "title": "Studies In Management",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MGMT-4961",
+    "title": "Auditing & Reg.  Compliance",
+    "act": 2,
+    "cap": 40,
+    "instructors": [
+      "Yinghong Zhang"
+    ]
+  },
+  {
+    "id": "MGMT-4962",
+    "title": "They Don't Teach 'corporate'",
+    "act": 8,
+    "cap": 10,
+    "instructors": [
+      "Frank X. Wright"
+    ]
+  },
+  {
+    "id": "MGMT-4963",
+    "title": "Financial Simulations",
+    "act": 2,
+    "cap": 30,
+    "instructors": [
+      "Aparna Gupta"
+    ]
+  },
+  {
+    "id": "MGMT-4965",
+    "title": "Internet Market",
+    "act": 21,
+    "cap": 30,
+    "instructors": [
+      "Jason Nicholas Kuruzovich"
+    ]
+  },
+  {
+    "id": "MGMT-6020",
+    "title": "Financial Management I",
+    "act": 53,
+    "cap": 50,
+    "instructors": [
+      "Bill Francis"
+    ]
+  },
+  {
+    "id": "MGMT-6030",
+    "title": "Financial Management II",
+    "act": 28,
+    "cap": 30,
+    "instructors": [
+      "John L Teall"
+    ]
+  },
+  {
+    "id": "MGMT-6050",
+    "title": "Creating & Manag An Enter. II",
+    "act": 26,
+    "cap": 48,
+    "instructors": [
+      "Jason Nicholas Kuruzovich",
+      "M.V. Shyam Kumar"
+    ]
+  },
+  {
+    "id": "MGMT-6060",
+    "title": "Business Impl. Of Emerg. Tech",
+    "act": 22,
+    "cap": 50,
+    "instructors": [
+      "Lois S Peters",
+      "Thiagarajan Ravichandran"
+    ]
+  },
+  {
+    "id": "MGMT-6140",
+    "title": "Information Sys For Mgmt",
+    "act": 48,
+    "cap": 50,
+    "instructors": [
+      "Thiagarajan Ravichandran"
+    ]
+  },
+  {
+    "id": "MGMT-6180",
+    "title": "Strategic Info Systems Mgmt",
+    "act": 9,
+    "cap": 30,
+    "instructors": [
+      "Satish P Nambisan"
+    ]
+  },
+  {
+    "id": "MGMT-6260",
+    "title": "Entrepreneurial Finance",
+    "act": 36,
+    "cap": 30,
+    "instructors": [
+      "Mark O Hubbard"
+    ]
+  },
+  {
+    "id": "MGMT-6370",
+    "title": "Derivatives Markets",
+    "act": 25,
+    "cap": 26,
+    "instructors": [
+      "Aparna Gupta"
+    ]
+  },
+  {
+    "id": "MGMT-6430",
+    "title": "Advanced Financial Statement",
+    "act": 24,
+    "cap": 30,
+    "instructors": [
+      "Seunghan Nam"
+    ]
+  },
+  {
+    "id": "MGMT-6540",
+    "title": "Marketing Comm & Promo Strat",
+    "act": 8,
+    "cap": 10,
+    "instructors": [
+      "Susan J Freeman"
+    ]
+  },
+  {
+    "id": "MGMT-6550",
+    "title": "Marketing Research",
+    "act": 7,
+    "cap": 20,
+    "instructors": [
+      "Dongling Huang"
+    ]
+  },
+  {
+    "id": "MGMT-6580",
+    "title": "Marketing High - Tech Prod",
+    "act": 23,
+    "cap": 35,
+    "instructors": [
+      "Michael I. Boskin"
+    ]
+  },
+  {
+    "id": "MGMT-6630",
+    "title": "Starting Up A New Ventur",
+    "act": 7,
+    "cap": 20,
+    "instructors": [
+      "Richard Frederick"
+    ]
+  },
+  {
+    "id": "MGMT-6670",
+    "title": "Practicum In Tech Entrpr",
+    "act": 8,
+    "cap": 0,
+    "instructors": [
+      "Gina O'Connor"
+    ]
+  },
+  {
+    "id": "MGMT-6840",
+    "title": "Practicum In Management",
+    "act": 35,
+    "cap": 44,
+    "instructors": [
+      "Jeffrey F. Durgee"
+    ]
+  },
+  {
+    "id": "MGMT-6910",
+    "title": "Doctoral Res. Mthds II",
+    "act": 10,
+    "cap": 20,
+    "instructors": [
+      "Dongling Huang"
+    ]
+  },
+  {
+    "id": "MGMT-6920",
+    "title": "Strategic Mgmt Theory  Seminar",
+    "act": 6,
+    "cap": 20,
+    "instructors": [
+      "M.V. Shyam Kumar"
+    ]
+  },
+  {
+    "id": "MGMT-6940",
+    "title": "Readings In Mgmt",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MGMT-6960",
+    "title": "Topics In Accounting & Finance",
+    "act": 5,
+    "cap": 15,
+    "instructors": [
+      "Bill Francis",
+      "Iftekhar Hasan"
+    ]
+  },
+  {
+    "id": "MGMT-6961",
+    "title": "Negotiations",
+    "act": 21,
+    "cap": 25,
+    "instructors": [
+      "Timothy D. Golden"
+    ]
+  },
+  {
+    "id": "MGMT-6962",
+    "title": "Auditing And Reg. Compliance",
+    "act": 7,
+    "cap": 15,
+    "instructors": [
+      "Yinghong Zhang"
+    ]
+  },
+  {
+    "id": "MGMT-6963",
+    "title": "Microeconomics Theory",
+    "act": 13,
+    "cap": 50,
+    "instructors": [
+      "John L Teall"
+    ]
+  },
+  {
+    "id": "MGMT-6964",
+    "title": "Financial Simulations",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "Aparna Gupta"
+    ]
+  },
+  {
+    "id": "MGMT-6965",
+    "title": "Internet Market",
+    "act": 26,
+    "cap": 30,
+    "instructors": [
+      "Jason Nicholas Kuruzovich"
+    ]
+  },
+  {
+    "id": "MGMT-6966",
+    "title": "Bankruptcy Management",
+    "act": 13,
+    "cap": 15,
+    "instructors": [
+      "Gabriel Ramirez"
+    ]
+  },
+  {
+    "id": "MGMT-6967",
+    "title": "Financial Mgmt Res. Workshop",
+    "act": 5,
+    "cap": 20,
+    "instructors": [
+      "Bill Francis"
+    ]
+  },
+  {
+    "id": "MGMT-6968",
+    "title": "Org Behavior:theory/research",
+    "act": 7,
+    "cap": 30,
+    "instructors": [
+      "Timothy D. Golden"
+    ]
+  },
+  {
+    "id": "MGMT-6970",
+    "title": "Commercializing Advanced Tech",
+    "act": 24,
+    "cap": 50,
+    "instructors": [
+      "Lois S Peters"
+    ]
+  },
+  {
+    "id": "MGMT-6980",
+    "title": "Practicum In Managemnt",
+    "act": 1,
+    "cap": 100,
+    "instructors": [
+      "Jeffrey F. Durgee",
+      "Mark R. Nelson"
+    ]
+  },
+  {
+    "id": "MGMT-6990",
+    "title": "Management Thesis",
+    "act": 0,
+    "cap": 200,
+    "instructors": [
+      "Mark J Embrechts"
+    ]
+  },
+  {
+    "id": "MGMT-7060",
+    "title": "Design, Manuf And Marketing II",
+    "act": 79,
+    "cap": 80,
+    "instructors": [
+      "Christopher McDermott",
+      "Jeffrey F. Durgee"
+    ]
+  },
+  {
+    "id": "MGMT-7070",
+    "title": "Manage On The Edge- Corp Innov",
+    "act": 24,
+    "cap": 45,
+    "instructors": [
+      "Andrew C. Corbett"
+    ]
+  },
+  {
+    "id": "MGMT-7240",
+    "title": "Prof Developmt Wkshp II",
+    "act": 42,
+    "cap": 42,
+    "instructors": [
+      "Sonja Dennis Francis"
+    ]
+  },
+  {
+    "id": "MGMT-7750",
+    "title": "Global Business & Social Respo",
+    "act": 10,
+    "cap": 0,
+    "instructors": [
+      "David Rainey"
+    ]
+  },
+  {
+    "id": "MGMT-9990",
+    "title": "Dissertation",
+    "act": 17,
+    "cap": 160,
+    "instructors": [
+      "Adrian Choo",
+      "Albert S Paulson",
+      "Andrew C. Corbett",
+      "Bill Francis",
+      "Christopher McDermott",
+      "Gina O'Connor",
+      "Hesna M. Yayla-Kullu",
+      "Iftekhar Hasan",
+      "Jason Nicholas Kuruzovich",
+      "Jonathan Paul O'Brien",
+      "M.V. Shyam Kumar",
+      "Phillip Phan",
+      "Robert A Baron",
+      "Satish P Nambisan",
+      "Susan Sanderson",
+      "Timothy D. Golden"
+    ]
+  },
+  {
+    "id": "EMBA-6180",
+    "title": "Managerial Accounting",
+    "act": 0,
+    "cap": 35,
+    "instructors": [
+      "Louis William Gingerella"
+    ]
+  },
+  {
+    "id": "EMBA-6200",
+    "title": "Corporate Vent & Entrepre",
+    "act": 0,
+    "cap": 60,
+    "instructors": [
+      "Bela L Musits"
+    ]
+  },
+  {
+    "id": "EMBA-6300",
+    "title": "Econ Mgrl Decision Makin",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "James M MacDonald"
+    ]
+  },
+  {
+    "id": "EMBA-6340",
+    "title": "Financial Management I",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "James Patrick Murtagh"
+    ]
+  },
+  {
+    "id": "EMBA-6360",
+    "title": "Financial Analysis",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "James Patrick Murtagh"
+    ]
+  },
+  {
+    "id": "EMBA-6500",
+    "title": "Marketing For Mgmt",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "Jeffrey F. Durgee"
+    ]
+  },
+  {
+    "id": "EMBA-6760",
+    "title": "Human Resource Mgmt",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "Michael W. Hurley"
+    ]
+  },
+  {
+    "id": "EMBA-6962",
+    "title": "Leading Issues In Finance",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "Hugh Johnson"
+    ]
+  },
+  {
+    "id": "EMBA-6965",
+    "title": "Organizational Design & Dev",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "Robert R Albright"
+    ]
+  },
+  {
+    "id": "MTLE-2100",
+    "title": "Struct Of Engineer Matls",
+    "act": 86,
+    "cap": 100,
+    "instructors": [
+      "Minoru Tomozawa"
+    ]
+  },
+  {
+    "id": "MTLE-2940",
+    "title": "Readings In Mtse",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MTLE-2980",
+    "title": "Senior Project",
+    "act": 0,
+    "cap": 10,
+    "instructors": [
+      "Roger N Wright"
+    ]
+  },
+  {
+    "id": "MTLE-4150",
+    "title": "Kinetics In Matls Systems",
+    "act": 30,
+    "cap": 28,
+    "instructors": [
+      "Douglas B. Chrisey"
+    ]
+  },
+  {
+    "id": "MTLE-4250",
+    "title": "Prop Of Engineering Matls II",
+    "act": 38,
+    "cap": 40,
+    "instructors": [
+      "Linda Schadler",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MTLE-4310",
+    "title": "Corrosion",
+    "act": 21,
+    "cap": 28,
+    "instructors": [
+      "David J Duquette"
+    ]
+  },
+  {
+    "id": "MTLE-4450",
+    "title": "Mtls Synthesis & Process II",
+    "act": 24,
+    "cap": 28,
+    "instructors": [
+      "Roger N Wright"
+    ]
+  },
+  {
+    "id": "MTLE-4910",
+    "title": "Design In Materials Engr",
+    "act": 26,
+    "cap": 25,
+    "instructors": [
+      "Daniel J. Lewis"
+    ]
+  },
+  {
+    "id": "MTLE-4920",
+    "title": "Application Of Materials",
+    "act": 20,
+    "cap": 28,
+    "instructors": [
+      "Rahmi Ozisik",
+      "Valerie J. Masterson"
+    ]
+  },
+  {
+    "id": "MTLE-4961",
+    "title": "Thin Films",
+    "act": 9,
+    "cap": 28,
+    "instructors": [
+      "Daniel Gall"
+    ]
+  },
+  {
+    "id": "MTLE-4962",
+    "title": "Fuel Cell Fundamentals",
+    "act": 9,
+    "cap": 15,
+    "instructors": [
+      "Daniel J. Lewis"
+    ]
+  },
+  {
+    "id": "MTLE-6060",
+    "title": "Adv Kinetics Of Matl Reactions",
+    "act": 22,
+    "cap": 30,
+    "instructors": [
+      "Liping Huang"
+    ]
+  },
+  {
+    "id": "MTLE-6300",
+    "title": "Ic Fabrication Lab",
+    "act": 6,
+    "cap": 20,
+    "instructors": [
+      "Tat-Sing Chow"
+    ]
+  },
+  {
+    "id": "MTLE-6460",
+    "title": "Advanced Structure & Bonding",
+    "act": 19,
+    "cap": 30,
+    "instructors": [
+      "Ganpati Ramanath"
+    ]
+  },
+  {
+    "id": "MTLE-6900",
+    "title": "Graduate Seminar",
+    "act": 31,
+    "cap": 50,
+    "instructors": [
+      "Liping Huang"
+    ]
+  },
+  {
+    "id": "MTLE-6940",
+    "title": "Readings In Materials Engr",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MTLE-6960",
+    "title": "Nanostructured Materials",
+    "act": 19,
+    "cap": 20,
+    "instructors": [
+      "Richard W Siegel"
+    ]
+  },
+  {
+    "id": "MTLE-6961",
+    "title": "Thin Films",
+    "act": 10,
+    "cap": 28,
+    "instructors": [
+      "Daniel Gall"
+    ]
+  },
+  {
+    "id": "MTLE-6980",
+    "title": "Master's Project",
+    "act": 2,
+    "cap": 85,
+    "instructors": [
+      "Daniel J. Lewis",
+      "Douglas B. Chrisey",
+      "Paul George Keblinski",
+      "Rahmi Ozisik",
+      "Richard W Siegel",
+      "Robert Hull"
+    ]
+  },
+  {
+    "id": "MTLE-6990",
+    "title": "Master's Thesis",
+    "act": 8,
+    "cap": 91,
+    "instructors": [
+      "Christoph Steinbruchel",
+      "Daniel Gall",
+      "Daniel J. Lewis",
+      "Linda Schadler",
+      "Liping Huang",
+      "Paul George Keblinski",
+      "Richard W Siegel",
+      "Robert Hull",
+      "Roger N Wright",
+      "Yunfeng Shi"
+    ]
+  },
+  {
+    "id": "MTLE-9990",
+    "title": "Dissertation",
+    "act": 47,
+    "cap": 150,
+    "instructors": [
+      "Christoph Steinbruchel",
+      "Daniel Gall",
+      "Daniel J. Lewis",
+      "David J Duquette",
+      "Douglas B. Chrisey",
+      "Ganpati Ramanath",
+      "Linda Schadler",
+      "Liping Huang",
+      "Minoru Tomozawa",
+      "Paul George Keblinski",
+      "Rahmi Ozisik",
+      "Richard W Siegel",
+      "Robert Hull",
+      "Roger N Wright",
+      "Yunfeng Shi"
+    ]
+  },
+  {
+    "id": "MATP-4620",
+    "title": "Mathematical Statistics",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "Wai Kin Chan"
+    ]
+  },
+  {
+    "id": "MATP-4820",
+    "title": "Computational Optimization",
+    "act": 19,
+    "cap": 40,
+    "instructors": [
+      "Kristin P Bennett"
+    ]
+  },
+  {
+    "id": "MATP-4940",
+    "title": "Readings In Mpst",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MATP-6610",
+    "title": "Computational Optimization",
+    "act": 13,
+    "cap": 40,
+    "instructors": [
+      "Kristin P Bennett"
+    ]
+  },
+  {
+    "id": "MATP-6620",
+    "title": "Combinat Optimizat & Int Progr",
+    "act": 18,
+    "cap": 30,
+    "instructors": [
+      "John E. Mitchell"
+    ]
+  },
+  {
+    "id": "MATP-6940",
+    "title": "Readings In Matp",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MATH-1010",
+    "title": "Calculus I",
+    "act": 53,
+    "cap": 90,
+    "instructors": [
+      "David A Schmidt",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-1020",
+    "title": "Calculus II",
+    "act": 478,
+    "cap": 600,
+    "instructors": [
+      "Harry W McLaughlin",
+      "Jennifer A. Blue",
+      "Margaret Z. Kiehl",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-1520",
+    "title": "Math Meth In Mgmt Econ",
+    "act": 82,
+    "cap": 60,
+    "instructors": [
+      "Isom Herron",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-1620",
+    "title": "Contemporary Math Ideas",
+    "act": 87,
+    "cap": 120,
+    "instructors": [
+      "Jennifer A. Blue",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-1910",
+    "title": "Art & Science Of Math II",
+    "act": 28,
+    "cap": 55,
+    "instructors": [
+      "Harry W McLaughlin",
+      "Yuri V Lvov"
+    ]
+  },
+  {
+    "id": "MATH-1961",
+    "title": "Calculus I Supplemental Study",
+    "act": 10,
+    "cap": 21,
+    "instructors": [
+      "Bruce Piper"
+    ]
+  },
+  {
+    "id": "MATH-2010",
+    "title": "Multivar Calc & Matrix Alg",
+    "act": 284,
+    "cap": 240,
+    "instructors": [
+      "David A Schmidt",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-2400",
+    "title": "Intro Diff Equations",
+    "act": 414,
+    "cap": 480,
+    "instructors": [
+      "David Isaacson",
+      "Liwei Xu",
+      "Mohamed Boudjelkha",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-2800",
+    "title": "Intro Discrete Structures",
+    "act": 195,
+    "cap": 240,
+    "instructors": [
+      "John E. Mitchell",
+      "Margaret Cheney",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MATH-2940",
+    "title": "Readings In Math",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MATH-4010",
+    "title": "Abstract Algebra",
+    "act": 5,
+    "cap": 30,
+    "instructors": [
+      "Michael Zuker"
+    ]
+  },
+  {
+    "id": "MATH-4020",
+    "title": "Intro To Number Theory",
+    "act": 36,
+    "cap": 42,
+    "instructors": [
+      "Bruce Piper"
+    ]
+  },
+  {
+    "id": "MATH-4090",
+    "title": "Foundations Of Analysis",
+    "act": 36,
+    "cap": 35,
+    "instructors": [
+      "Margaret Z. Kiehl"
+    ]
+  },
+  {
+    "id": "MATH-4150",
+    "title": "Graph Theory",
+    "act": 29,
+    "cap": 30,
+    "instructors": [
+      "Mark K Goldberg"
+    ]
+  },
+  {
+    "id": "MATH-4210",
+    "title": "Mathematical Analysis II",
+    "act": 15,
+    "cap": 30,
+    "instructors": [
+      "Gregor Kovacic"
+    ]
+  },
+  {
+    "id": "MATH-4300",
+    "title": "Intro Complex Var",
+    "act": 39,
+    "cap": 35,
+    "instructors": [
+      "Liwei Xu"
+    ]
+  },
+  {
+    "id": "MATH-4500",
+    "title": "Meth Pde Of Math Physics",
+    "act": 5,
+    "cap": 30,
+    "instructors": [
+      "Yuri V Lvov"
+    ]
+  },
+  {
+    "id": "MATH-4600",
+    "title": "Advanced Calculus",
+    "act": 67,
+    "cap": 45,
+    "instructors": [
+      "Mohamed Boudjelkha"
+    ]
+  },
+  {
+    "id": "MATH-4800",
+    "title": "Numerical Computing",
+    "act": 91,
+    "cap": 95,
+    "instructors": [
+      "Melih Ozlem",
+      "Yuri V Lvov"
+    ]
+  },
+  {
+    "id": "MATH-4820",
+    "title": "Intro Num Meth Diff Eqs",
+    "act": 16,
+    "cap": 30,
+    "instructors": [
+      "Fengyan Li"
+    ]
+  },
+  {
+    "id": "MATH-4940",
+    "title": "Readings In Math",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MATH-4950",
+    "title": "Senior Research",
+    "act": 3,
+    "cap": 0,
+    "instructors": [
+      "Bruce Piper"
+    ]
+  },
+  {
+    "id": "MATH-4960",
+    "title": "Ug Resrch Applied & Comp Math",
+    "act": 13,
+    "cap": 31,
+    "instructors": [
+      "Mark H Holmes"
+    ]
+  },
+  {
+    "id": "MATH-4961",
+    "title": "Intermediate Logic",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Bram Van Heuveln"
+    ]
+  },
+  {
+    "id": "MATH-4962",
+    "title": "Methods  Calculus Instruction",
+    "act": 15,
+    "cap": 20,
+    "instructors": [
+      "Bruce Piper"
+    ]
+  },
+  {
+    "id": "MATH-4980",
+    "title": "Undergrad Project In Math",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "Margaret Cheney"
+    ]
+  },
+  {
+    "id": "MATH-6240",
+    "title": "Functional Analysis",
+    "act": 0,
+    "cap": 30,
+    "instructors": [
+      "Michael Zuker"
+    ]
+  },
+  {
+    "id": "MATH-6590",
+    "title": "Hyperbolic Equations",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "David Isaacson"
+    ]
+  },
+  {
+    "id": "MATH-6640",
+    "title": "Complx Vari Integral Transform",
+    "act": 20,
+    "cap": 30,
+    "instructors": [
+      "Ashwani Kumar Kapila"
+    ]
+  },
+  {
+    "id": "MATH-6740",
+    "title": "Financial Mathematics And Sim.",
+    "act": 28,
+    "cap": 30,
+    "instructors": [
+      "Peter R Kramer"
+    ]
+  },
+  {
+    "id": "MATH-6790",
+    "title": "Finite Element Methods",
+    "act": 6,
+    "cap": 30,
+    "instructors": [
+      "Fengyan Li"
+    ]
+  },
+  {
+    "id": "MATH-6791",
+    "title": "Biomechanical Image Soft Tissu",
+    "act": 2,
+    "cap": 20,
+    "instructors": [
+      "Joyce R. McLaughlin"
+    ]
+  },
+  {
+    "id": "MATH-6820",
+    "title": "Numerical Sol Of Odes",
+    "act": 18,
+    "cap": 30,
+    "instructors": [
+      "Donald W Schwendeman"
+    ]
+  },
+  {
+    "id": "MATH-6940",
+    "title": "Readings In Math",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MATH-6951",
+    "title": "Intro. To Research In Math",
+    "act": 9,
+    "cap": 30,
+    "instructors": [
+      "Liwei Xu"
+    ]
+  },
+  {
+    "id": "MATH-6970",
+    "title": "Teaching Calc II- Curric. Dev.",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Bruce Piper"
+    ]
+  },
+  {
+    "id": "MATH-6980",
+    "title": "Master's Project",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "David Isaacson",
+      "Donald A Drew",
+      "Joyce R. McLaughlin",
+      "Mark S Shephard"
+    ]
+  },
+  {
+    "id": "MATH-9990",
+    "title": "Dissertation",
+    "act": 28,
+    "cap": 170,
+    "instructors": [
+      "Ashwani Kumar Kapila",
+      "Bruce Piper",
+      "Chjan C Lim",
+      "David Isaacson",
+      "Donald A Drew",
+      "Donald W Schwendeman",
+      "Fengyan Li",
+      "Gregor Kovacic",
+      "Isom Herron",
+      "John E. Mitchell",
+      "Joyce R. McLaughlin",
+      "Kristin P Bennett",
+      "Margaret Cheney",
+      "Mark H Holmes",
+      "Peter R Kramer",
+      "William L. Siegmann",
+      "Yuri V Lvov"
+    ]
+  },
+  {
+    "id": "MANE-1961",
+    "title": "Intro To Nuclear Engr.",
+    "act": 11,
+    "cap": 25,
+    "instructors": [
+      "Peter F. Caracappa"
+    ]
+  },
+  {
+    "id": "MANE-1962",
+    "title": "Energy & Environment",
+    "act": 5,
+    "cap": 20,
+    "instructors": [
+      "Bimal K Malaviya"
+    ]
+  },
+  {
+    "id": "MANE-2060",
+    "title": "Fundamentals Of Flight",
+    "act": 113,
+    "cap": 120,
+    "instructors": [
+      "Michael Amitay",
+      "Zvi Rusak"
+    ]
+  },
+  {
+    "id": "MANE-2830",
+    "title": "Nuclear Phenomena For Engr",
+    "act": 50,
+    "cap": 50,
+    "instructors": [
+      "Li Liu"
+    ]
+  },
+  {
+    "id": "MANE-2940",
+    "title": "Readings In Mane",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MANE-4010",
+    "title": "Thermal And Fluids Engr II",
+    "act": 116,
+    "cap": 120,
+    "instructors": [
+      "Deborah Kaminski",
+      "Yoav Peles"
+    ]
+  },
+  {
+    "id": "MANE-4020",
+    "title": "Thermal & Fluids Eng Lab",
+    "act": 94,
+    "cap": 0,
+    "instructors": [
+      "TBA",
+      "Theodorian Borca-Tasciuc",
+      "Victor L. Marrero"
+    ]
+  },
+  {
+    "id": "MANE-4030",
+    "title": "Elements Of Mech Design",
+    "act": 95,
+    "cap": 200,
+    "instructors": [
+      "Antoinette Maniatty"
+    ]
+  },
+  {
+    "id": "MANE-4040",
+    "title": "Mechanical Systems Lab",
+    "act": 95,
+    "cap": 24,
+    "instructors": [
+      "Henry A Scarton"
+    ]
+  },
+  {
+    "id": "MANE-4050",
+    "title": "Modeling And Contrl Of Dyn Sys",
+    "act": 158,
+    "cap": 70,
+    "instructors": [
+      "Sandipan Mishra",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MANE-4100",
+    "title": "Spaceflight Mechanics",
+    "act": 59,
+    "cap": 60,
+    "instructors": [
+      "Kurt S Anderson"
+    ]
+  },
+  {
+    "id": "MANE-4180",
+    "title": "Mechanisms",
+    "act": 71,
+    "cap": 70,
+    "instructors": [
+      "Jo Anne Gagliardi",
+      "Johnson Samuel"
+    ]
+  },
+  {
+    "id": "MANE-4220",
+    "title": "Inventor's Studio",
+    "act": 11,
+    "cap": 14,
+    "instructors": [
+      "Burt L. Swersey"
+    ]
+  },
+  {
+    "id": "MANE-4230",
+    "title": "Air Vehicle Design",
+    "act": 43,
+    "cap": 80,
+    "instructors": [
+      "Wallace James Morris"
+    ]
+  },
+  {
+    "id": "MANE-4260",
+    "title": "Design Of Mechanical Sys",
+    "act": 88,
+    "cap": 0,
+    "instructors": [
+      "Mark Walter Steiner",
+      "Richard Alben",
+      "Russell Scott Miller",
+      "Valerie J. Masterson"
+    ]
+  },
+  {
+    "id": "MANE-4360",
+    "title": "Int Fusion Devices & Sy",
+    "act": 22,
+    "cap": 30,
+    "instructors": [
+      "Peter F. Caracappa"
+    ]
+  },
+  {
+    "id": "MANE-4390",
+    "title": "Senior Design Project II",
+    "act": 41,
+    "cap": 41,
+    "instructors": [
+      "Yaron Danon"
+    ]
+  },
+  {
+    "id": "MANE-4400",
+    "title": "Nuclear Power Syst Engr",
+    "act": 33,
+    "cap": 35,
+    "instructors": [
+      "Sastry Ramachandra Sreepada",
+      "TBA"
+    ]
+  },
+  {
+    "id": "MANE-4440",
+    "title": "Critical Reactor Lab.",
+    "act": 17,
+    "cap": 12,
+    "instructors": [
+      "Timothy H. Trumbull"
+    ]
+  },
+  {
+    "id": "MANE-4470",
+    "title": "Radiological Engineering",
+    "act": 1,
+    "cap": 0,
+    "instructors": [
+      "George Xu"
+    ]
+  },
+  {
+    "id": "MANE-4480",
+    "title": "Physics Of Nuclear Reactors",
+    "act": 38,
+    "cap": 41,
+    "instructors": [
+      "Yaron Danon"
+    ]
+  },
+  {
+    "id": "MANE-4490",
+    "title": "Mechatronics",
+    "act": 16,
+    "cap": 0,
+    "instructors": [
+      "Jo Anne Gagliardi",
+      "Mauricio Castillo Effen"
+    ]
+  },
+  {
+    "id": "MANE-4550",
+    "title": "Analy. Of Manuf. Process.",
+    "act": 49,
+    "cap": 0,
+    "instructors": [
+      "Daniel Walczyk"
+    ]
+  },
+  {
+    "id": "MANE-4700",
+    "title": "Solar Dev. & Energy Renew.",
+    "act": 27,
+    "cap": 0,
+    "instructors": [
+      "David N Borton"
+    ]
+  },
+  {
+    "id": "MANE-4720",
+    "title": "Design & Analy. Of Energy Sys.",
+    "act": 69,
+    "cap": 0,
+    "instructors": [
+      "Sastry Ramachandra Sreepada"
+    ]
+  },
+  {
+    "id": "MANE-4750",
+    "title": "Combustion Systems",
+    "act": 43,
+    "cap": 80,
+    "instructors": [
+      "Matthew Adam Oehlschlaeger"
+    ]
+  },
+  {
+    "id": "MANE-4900",
+    "title": "Aero. & Struct. Vibrations",
+    "act": 77,
+    "cap": 115,
+    "instructors": [
+      "Assad Anshuman Oberai"
+    ]
+  },
+  {
+    "id": "MANE-4910",
+    "title": "Fluid Dynamics Lab",
+    "act": 25,
+    "cap": 40,
+    "instructors": [
+      "Chia Min Leong",
+      "Victor L. Marrero"
+    ]
+  },
+  {
+    "id": "MANE-4920",
+    "title": "Aero Struct & Control Lab",
+    "act": 81,
+    "cap": 40,
+    "instructors": [
+      "Nikhil Koratkar"
+    ]
+  },
+  {
+    "id": "MANE-4940",
+    "title": "Independent Study In Mane",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MANE-4963",
+    "title": "Nuclear Reactor Materials",
+    "act": 10,
+    "cap": 15,
+    "instructors": [
+      "Jie Lian"
+    ]
+  },
+  {
+    "id": "MANE-4965",
+    "title": "Radiological Engineering",
+    "act": 28,
+    "cap": 26,
+    "instructors": [
+      "George Xu"
+    ]
+  },
+  {
+    "id": "MANE-6290",
+    "title": "Radiation Transport Meth",
+    "act": 8,
+    "cap": 20,
+    "instructors": [
+      "Wei Ji"
+    ]
+  },
+  {
+    "id": "MANE-6320",
+    "title": "Radioactive Waste Mgmt",
+    "act": 8,
+    "cap": 20,
+    "instructors": [
+      "Wei Zhou"
+    ]
+  },
+  {
+    "id": "MANE-6350",
+    "title": "Radiation Shielding",
+    "act": 14,
+    "cap": 20,
+    "instructors": [
+      "Peter F. Caracappa"
+    ]
+  },
+  {
+    "id": "MANE-6380",
+    "title": "Nuclear Reactor Material",
+    "act": 1,
+    "cap": 15,
+    "instructors": [
+      "Jie Lian"
+    ]
+  },
+  {
+    "id": "MANE-6460",
+    "title": "Fracture Mechan & Fatigue Matl",
+    "act": 29,
+    "cap": 20,
+    "instructors": [
+      "Catalin R Picu"
+    ]
+  },
+  {
+    "id": "MANE-6480",
+    "title": "Health Phys & Med Asp Of Rad",
+    "act": 7,
+    "cap": 30,
+    "instructors": [
+      "George Xu"
+    ]
+  },
+  {
+    "id": "MANE-6530",
+    "title": "Turbulence",
+    "act": 7,
+    "cap": 20,
+    "instructors": [
+      "Luciano Castillo"
+    ]
+  },
+  {
+    "id": "MANE-6550",
+    "title": "Theory Of Compress. Flow",
+    "act": 15,
+    "cap": 20,
+    "instructors": [
+      "Zvi Rusak"
+    ]
+  },
+  {
+    "id": "MANE-6560",
+    "title": "Incompressible Flow",
+    "act": 10,
+    "cap": 25,
+    "instructors": [
+      "Amir Hirsa"
+    ]
+  },
+  {
+    "id": "MANE-6720",
+    "title": "Computational Fluid Dynamics",
+    "act": 23,
+    "cap": 20,
+    "instructors": [
+      "Lucy T. Zhang"
+    ]
+  },
+  {
+    "id": "MANE-6730",
+    "title": "Tribology",
+    "act": 23,
+    "cap": 35,
+    "instructors": [
+      "Thierry Blanchet"
+    ]
+  },
+  {
+    "id": "MANE-6750",
+    "title": "Generalized Finite Elem Method",
+    "act": 9,
+    "cap": 20,
+    "instructors": [
+      "Suvranu De"
+    ]
+  },
+  {
+    "id": "MANE-6830",
+    "title": "Combustion",
+    "act": 24,
+    "cap": 20,
+    "instructors": [
+      "Matthew Adam Oehlschlaeger"
+    ]
+  },
+  {
+    "id": "MANE-6900",
+    "title": "Graduate Seminar",
+    "act": 143,
+    "cap": 150,
+    "instructors": [
+      "Theodorian Borca-Tasciuc"
+    ]
+  },
+  {
+    "id": "MANE-6940",
+    "title": "Independent Study In Mane",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "MANE-6961",
+    "title": "Micro Sys & Phys Des & App",
+    "act": 14,
+    "cap": 20,
+    "instructors": [
+      "Diana Andra Borca Tasciuc"
+    ]
+  },
+  {
+    "id": "MANE-6962",
+    "title": "Spacecraft Attitude Dynamics",
+    "act": 18,
+    "cap": 30,
+    "instructors": [
+      "Riccardo Bevilacqua"
+    ]
+  },
+  {
+    "id": "MANE-6963",
+    "title": "Fuel Cell Design & Manuf.",
+    "act": 13,
+    "cap": 15,
+    "instructors": [
+      "Daniel Walczyk"
+    ]
+  },
+  {
+    "id": "MANE-6980",
+    "title": "Master's Project",
+    "act": 4,
+    "cap": 20,
+    "instructors": [
+      "Michael K. Jensen",
+      "Thierry Blanchet",
+      "Zvi Rusak"
+    ]
+  },
+  {
+    "id": "MANE-6990",
+    "title": "Master's Thesis",
+    "act": 35,
+    "cap": 291,
+    "instructors": [
+      "Achille Messac",
+      "Amir Hirsa",
+      "Antoinette Maniatty",
+      "Catalin R Picu",
+      "Daniel Walczyk",
+      "Deborah Kaminski",
+      "Diana Andra Borca Tasciuc",
+      "George Xu",
+      "John Wen",
+      "Johnson Samuel",
+      "Kenneth Jansen",
+      "Kurt S Anderson",
+      "Leik N Myrabo",
+      "Luciano Castillo",
+      "Lucy T. Zhang",
+      "Lupita D. Montoya",
+      "Mark S Shephard",
+      "Matthew Adam Oehlschlaeger",
+      "Michael Amitay",
+      "Michael K. Jensen",
+      "Nikhil Koratkar",
+      "Riccardo Bevilacqua",
+      "Sandipan Mishra",
+      "Stephen James Derby",
+      "Suvranu De",
+      "Thierry Blanchet",
+      "Timothy Wei",
+      "Yaron Danon",
+      "Yoav Peles",
+      "Zvi Rusak"
+    ]
+  },
+  {
+    "id": "MANE-9990",
+    "title": "Dissertation",
+    "act": 111,
+    "cap": 415,
+    "instructors": [
+      "Achille Messac",
+      "Amir Hirsa",
+      "Antoinette Maniatty",
+      "Assad Anshuman Oberai",
+      "Catalin R Picu",
+      "Daniel Walczyk",
+      "Deborah Kaminski",
+      "Diana Andra Borca Tasciuc",
+      "Don Steiner",
+      "George Xu",
+      "Henry A Scarton",
+      "Jacob Fish",
+      "Jie Lian",
+      "John Wen",
+      "Johnson Samuel",
+      "Kenneth Jansen",
+      "Kurt S Anderson",
+      "Leik N Myrabo",
+      "Li Liu",
+      "Luciano Castillo",
+      "Lucy T. Zhang",
+      "Lupita D. Montoya",
+      "Mark S Shephard",
+      "Matthew Adam Oehlschlaeger",
+      "Michael Amitay",
+      "Michael K. Jensen",
+      "Michael Podowski",
+      "Nikhil Koratkar",
+      "Prabhat Hajela",
+      "Riccardo Bevilacqua",
+      "Sandipan Mishra",
+      "Stephen James Derby",
+      "Suvranu De",
+      "Theodorian Borca-Tasciuc",
+      "Thierry Blanchet",
+      "Timothy Wei",
+      "Wei Ji",
+      "Yaron Danon",
+      "Yoav Peles",
+      "Zvi Rusak"
+    ]
+  },
+  {
+    "id": "USAR-0020",
+    "title": "Fundamentals Of Mil Sci Lab II",
+    "act": 7,
+    "cap": 25,
+    "instructors": [
+      "Michael Joseph Conroy",
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-0040",
+    "title": "Applied Leadership Lab II",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Michael Joseph Conroy",
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-0060",
+    "title": "Appl Milit Leadership Lab II",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-0080",
+    "title": "Adv Milt Mgt Leadership Lab II",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-1020",
+    "title": "Fund Of Military Sci II",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-2020",
+    "title": "Applied Leadership II",
+    "act": 9,
+    "cap": 25,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-2070",
+    "title": "Military Leadership II",
+    "act": 9,
+    "cap": 15,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-2940",
+    "title": "Advanced Leadership Evaluation",
+    "act": 0,
+    "cap": 1,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USAR-4020",
+    "title": "Military Mgmt & Leadership II",
+    "act": 2,
+    "cap": 15,
+    "instructors": [
+      "Samantha Ross"
+    ]
+  },
+  {
+    "id": "USNA-0020",
+    "title": "Drill/laboratory",
+    "act": 19,
+    "cap": 45,
+    "instructors": [
+      "Eric Larson"
+    ]
+  },
+  {
+    "id": "USNA-0040",
+    "title": "Drill/laboratory",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Eric Larson"
+    ]
+  },
+  {
+    "id": "USNA-0060",
+    "title": "Drill/laboratory",
+    "act": 4,
+    "cap": 35,
+    "instructors": [
+      "Eric Larson"
+    ]
+  },
+  {
+    "id": "USNA-0080",
+    "title": "Drill/laboratory",
+    "act": 4,
+    "cap": 35,
+    "instructors": [
+      "Eric Larson"
+    ]
+  },
+  {
+    "id": "USNA-2020",
+    "title": "Seapower",
+    "act": 23,
+    "cap": 55,
+    "instructors": [
+      "Jonathan Lee Hirsch"
+    ]
+  },
+  {
+    "id": "USNA-2040",
+    "title": "Naval Ships Systems I",
+    "act": 14,
+    "cap": 40,
+    "instructors": [
+      "Aaron Thomas Roth"
+    ]
+  },
+  {
+    "id": "USNA-2060",
+    "title": "Naval Operations",
+    "act": 17,
+    "cap": 40,
+    "instructors": [
+      "Andrew Glenn Wilcox"
+    ]
+  },
+  {
+    "id": "USNA-2150",
+    "title": "Evolution Of Warfare",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Eric Larson"
+    ]
+  },
+  {
+    "id": "USNA-4190",
+    "title": "Naval Leadership & Ethics",
+    "act": 19,
+    "cap": 45,
+    "instructors": [
+      "Jeffrey Hughes"
+    ]
+  },
+  {
+    "id": "PHIL-1110",
+    "title": "Intro To Philosophy",
+    "act": 67,
+    "cap": 70,
+    "instructors": [
+      "James T. Fahey",
+      "Joseph A. Carcasole"
+    ]
+  },
+  {
+    "id": "PHIL-2100",
+    "title": "Critical Thinking",
+    "act": 32,
+    "cap": 30,
+    "instructors": [
+      "Bram Van Heuveln",
+      "Justin K Weil"
+    ]
+  },
+  {
+    "id": "PHIL-2120",
+    "title": "Intro To Cognitive Science",
+    "act": 26,
+    "cap": 15,
+    "instructors": [
+      "Bram Van Heuveln"
+    ]
+  },
+  {
+    "id": "PHIL-2130",
+    "title": "Intro To Phil Of Science",
+    "act": 17,
+    "cap": 15,
+    "instructors": [
+      "James T. Fahey"
+    ]
+  },
+  {
+    "id": "PHIL-2140",
+    "title": "Introduction To Logic",
+    "act": 52,
+    "cap": 60,
+    "instructors": [
+      "Selmer Bringsjord"
+    ]
+  },
+  {
+    "id": "PHIL-2600",
+    "title": "Moral Development",
+    "act": 14,
+    "cap": 30,
+    "instructors": [
+      "William J Puka"
+    ]
+  },
+  {
+    "id": "PHIL-2940",
+    "title": "Philosophy Studies",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "PHIL-2960",
+    "title": "Democracy As Democratism",
+    "act": 22,
+    "cap": 40,
+    "instructors": [
+      "William J Puka"
+    ]
+  },
+  {
+    "id": "PHIL-2961",
+    "title": "Heroes Of The Hudson Valley",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Christopher L. Lindsay",
+      "Selmer Bringsjord"
+    ]
+  },
+  {
+    "id": "PHIL-4140",
+    "title": "Intermediate Logic",
+    "act": 25,
+    "cap": 25,
+    "instructors": [
+      "Bram Van Heuveln"
+    ]
+  },
+  {
+    "id": "PHIL-4240",
+    "title": "Ethics",
+    "act": 38,
+    "cap": 35,
+    "instructors": [
+      "Joseph A. Carcasole"
+    ]
+  },
+  {
+    "id": "PHIL-4360",
+    "title": "Phil Prob Space & Time",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Michael J Zenzen"
+    ]
+  },
+  {
+    "id": "PHIL-4480",
+    "title": "Metaphysics And Consciousness",
+    "act": 17,
+    "cap": 25,
+    "instructors": [
+      "James T. Fahey"
+    ]
+  },
+  {
+    "id": "PHIL-4940",
+    "title": "Readings In Phil",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "PHIL-4960",
+    "title": "Topics In Nietzsche",
+    "act": 5,
+    "cap": 0,
+    "instructors": [
+      "Michael J Zenzen"
+    ]
+  },
+  {
+    "id": "PHIL-4990",
+    "title": "Capstone Exper In Philosophy",
+    "act": 0,
+    "cap": 0,
+    "instructors": [
+      "TBA"
+    ]
+  },
+  {
+    "id": "PHYS-1050",
+    "title": "General Physics",
+    "act": 55,
+    "cap": 110,
+    "instructors": [
+      "John Schroeder"
+    ]
+  },
+  {
+    "id": "PHYS-1100",
+    "title": "Physics I",
+    "act": 289,
+    "cap": 384,
+    "instructors": [
+      "Christian M. Wetzel",
+      "Gary S Adams",
+      "Gwo Ching Wang",
+      "Morris A Washington",
+      "Sang-Kee Eah",
+      "TBA",
+      "Toh-Ming Lu"
+    ]
+  },
+  {
+    "id": "PHYS-1200",
+    "title": "Physics II",
+    "act": 403,
+    "cap": 480,
+    "instructors": [
+      "Joel T. Giedt",
+      "Kim Michelle Lewis",
+      "Masashi Yamaguchi",
+      "Peter Persans",
+      "Scott Richard Dwyer",
+      "TBA"
+    ]
+  },
+  {
+    "id": "PHYS-1250",
+    "title": "Physics II Honors",
+    "act": 60,
+    "cap": 64,
+    "instructors": [
+      "Peter Persans",
+      "TBA"
+    ]
+  },
+  {
+    "id": "PHYS-2350",
+    "title": "Experimental Physics",
+    "act": 57,
+    "cap": 54,
+    "instructors": [
+      "Ingrid Wilke",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-2620",
+    "title": "Fundamentals Of Optics",
+    "act": 38,
+    "cap": 41,
+    "instructors": [
+      "John Schroeder",
+      "Peter Persans",
+      "TBA"
+    ]
+  },
+  {
+    "id": "PHYS-2940",
+    "title": "Special Proj In Physics",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "PHYS-2990",
+    "title": "Thesis",
+    "act": 0,
+    "cap": 50,
+    "instructors": [
+      "Heidi Jo Newberg"
+    ]
+  },
+  {
+    "id": "PHYS-4100",
+    "title": "Intro Quantum Mech",
+    "act": 40,
+    "cap": 50,
+    "instructors": [
+      "Shengbai Zhang"
+    ]
+  },
+  {
+    "id": "PHYS-4210",
+    "title": "Electromagnetic Theory",
+    "act": 52,
+    "cap": 60,
+    "instructors": [
+      "James J Napolitano"
+    ]
+  },
+  {
+    "id": "PHYS-4240",
+    "title": "General Relativity",
+    "act": 28,
+    "cap": 30,
+    "instructors": [
+      "Wayne G Roberge"
+    ]
+  },
+  {
+    "id": "PHYS-4420",
+    "title": "Thermodyn & Stat Mech",
+    "act": 51,
+    "cap": 55,
+    "instructors": [
+      "Gyorgy Korniss"
+    ]
+  },
+  {
+    "id": "PHYS-4810",
+    "title": "Computational Physics",
+    "act": 27,
+    "cap": 40,
+    "instructors": [
+      "Vincent Meunier"
+    ]
+  },
+  {
+    "id": "PHYS-4910",
+    "title": "Culminating Experience Project",
+    "act": 4,
+    "cap": 0,
+    "instructors": [
+      "James J Napolitano"
+    ]
+  },
+  {
+    "id": "PHYS-4940",
+    "title": "Readings In Phys",
+    "act": 2,
+    "cap": 1,
+    "instructors": [
+      "Kim Michelle Lewis",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-4960",
+    "title": "Practicum In Physics Teaching",
+    "act": 25,
+    "cap": 20,
+    "instructors": [
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-6410",
+    "title": "Electrodynamics",
+    "act": 16,
+    "cap": 25,
+    "instructors": [
+      "Angel Enrique Garcia"
+    ]
+  },
+  {
+    "id": "PHYS-6520",
+    "title": "Quantum Mechanics II",
+    "act": 17,
+    "cap": 30,
+    "instructors": [
+      "Saroj K. Nayak"
+    ]
+  },
+  {
+    "id": "PHYS-6900",
+    "title": "Physics Colloquium",
+    "act": 14,
+    "cap": 75,
+    "instructors": [
+      "Kim Michelle Lewis",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-6900",
+    "title": "Physics Colloquium",
+    "act": 14,
+    "cap": 75,
+    "instructors": [
+      "Kim Michelle Lewis",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-6900",
+    "title": "Physics Colloquium",
+    "act": 14,
+    "cap": 75,
+    "instructors": [
+      "Kim Michelle Lewis",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-6940",
+    "title": "Readings In Phys",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "PHYS-6960",
+    "title": "Thz Science & Technology",
+    "act": 14,
+    "cap": 12,
+    "instructors": [
+      "Xi-Cheng Zhang"
+    ]
+  },
+  {
+    "id": "PHYS-6980",
+    "title": "Master's Project",
+    "act": 1,
+    "cap": 31,
+    "instructors": [
+      "Douglas CB Whittet",
+      "Joel T. Giedt",
+      "Peter Persans"
+    ]
+  },
+  {
+    "id": "PHYS-6990",
+    "title": "Master's Thesis",
+    "act": 7,
+    "cap": 70,
+    "instructors": [
+      "Gwo Ching Wang",
+      "Kim Michelle Lewis",
+      "Peter Persans",
+      "Toh-Ming Lu",
+      "Vincent Meunier",
+      "Wayne G Roberge",
+      "Xi-Cheng Zhang"
+    ]
+  },
+  {
+    "id": "PHYS-9990",
+    "title": "Dissertation",
+    "act": 43,
+    "cap": 240,
+    "instructors": [
+      "Angel Enrique Garcia",
+      "Christian M. Wetzel",
+      "E. Fred Schubert",
+      "Gary S Adams",
+      "Gwo Ching Wang",
+      "Gyorgy Korniss",
+      "Heidi Jo Newberg",
+      "Ingrid Wilke",
+      "James J Napolitano",
+      "Joel T. Giedt",
+      "John Schroeder",
+      "Kim Michelle Lewis",
+      "Masashi Yamaguchi",
+      "Paul Stoler",
+      "Peter Persans",
+      "Sang-Kee Eah",
+      "Saroj K. Nayak",
+      "Shawn Yu Lin",
+      "Shengbai Zhang",
+      "Toh-Ming Lu",
+      "Vincent Meunier",
+      "Wayne G Roberge",
+      "Xi-Cheng Zhang"
+    ]
+  },
+  {
+    "id": "PSYC-1200",
+    "title": "General Psychology",
+    "act": 276,
+    "cap": 600,
+    "instructors": [
+      "Christopher L Hubbell"
+    ]
+  },
+  {
+    "id": "PSYC-2100",
+    "title": "Critical Thinking",
+    "act": 33,
+    "cap": 30,
+    "instructors": [
+      "Bram Van Heuveln",
+      "Justin K Weil"
+    ]
+  },
+  {
+    "id": "PSYC-2120",
+    "title": "Intro. To Cognitive Science",
+    "act": 21,
+    "cap": 15,
+    "instructors": [
+      "Bram Van Heuveln"
+    ]
+  },
+  {
+    "id": "PSYC-2220",
+    "title": "Human Factors In Design",
+    "act": 26,
+    "cap": 30,
+    "instructors": [
+      "Ann Ruecker"
+    ]
+  },
+  {
+    "id": "PSYC-2600",
+    "title": "Moral Development",
+    "act": 15,
+    "cap": 30,
+    "instructors": [
+      "William J Puka"
+    ]
+  },
+  {
+    "id": "PSYC-2730",
+    "title": "Social Psychology",
+    "act": 151,
+    "cap": 150,
+    "instructors": [
+      "Ann Ruecker",
+      "Christopher A. VerWys"
+    ]
+  },
+  {
+    "id": "PSYC-2960",
+    "title": "Thinking",
+    "act": 15,
+    "cap": 19,
+    "instructors": [
+      "Yingrui Yang"
+    ]
+  },
+  {
+    "id": "PSYC-2961",
+    "title": "Democracy  As Democratism",
+    "act": 16,
+    "cap": 40,
+    "instructors": [
+      "William J Puka"
+    ]
+  },
+  {
+    "id": "PSYC-2962",
+    "title": "Heroes Of The Hudson Valley",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Christopher L. Lindsay",
+      "Selmer Bringsjord"
+    ]
+  },
+  {
+    "id": "PSYC-4110",
+    "title": "Motivation & Performance",
+    "act": 31,
+    "cap": 30,
+    "instructors": [
+      "Ralph G Noble"
+    ]
+  },
+  {
+    "id": "PSYC-4170",
+    "title": "Professional Development II",
+    "act": 393,
+    "cap": 415,
+    "instructors": [
+      "Allison Beth Hoffman",
+      "Holly A Traver"
+    ]
+  },
+  {
+    "id": "PSYC-4200",
+    "title": "Organizational Psychology",
+    "act": 29,
+    "cap": 50,
+    "instructors": [
+      "Allison Beth Hoffman"
+    ]
+  },
+  {
+    "id": "PSYC-4310",
+    "title": "Adv Exper Methods & Statistics",
+    "act": 24,
+    "cap": 20,
+    "instructors": [
+      "Michael J Kalsher"
+    ]
+  },
+  {
+    "id": "PSYC-4320",
+    "title": "Behavioral Neuroscience",
+    "act": 11,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "PSYC-4370",
+    "title": "Cognitive Psychology",
+    "act": 80,
+    "cap": 75,
+    "instructors": [
+      "Holly A Traver"
+    ]
+  },
+  {
+    "id": "PSYC-4400",
+    "title": "Personality",
+    "act": 82,
+    "cap": 90,
+    "instructors": [
+      "Christopher A. VerWys"
+    ]
+  },
+  {
+    "id": "PSYC-4450",
+    "title": "Learning",
+    "act": 93,
+    "cap": 100,
+    "instructors": [
+      "Christopher L Hubbell"
+    ]
+  },
+  {
+    "id": "PSYC-4500",
+    "title": "Drugs Society & Behavior",
+    "act": 102,
+    "cap": 0,
+    "instructors": [
+      "Larry D Reid"
+    ]
+  },
+  {
+    "id": "PSYC-4720",
+    "title": "Abnormal Psychology",
+    "act": 70,
+    "cap": 70,
+    "instructors": [
+      "Keith J. Anderson"
+    ]
+  },
+  {
+    "id": "PSYC-4750",
+    "title": "Forensic Psychology",
+    "act": 95,
+    "cap": 100,
+    "instructors": [
+      "Christopher A. VerWys"
+    ]
+  },
+  {
+    "id": "PSYC-4770",
+    "title": "Psychopharm & Beh Toxico",
+    "act": 32,
+    "cap": 0,
+    "instructors": [
+      "Larry D Reid"
+    ]
+  },
+  {
+    "id": "PSYC-4800",
+    "title": "Sports Psychology Seminar",
+    "act": 12,
+    "cap": 0,
+    "instructors": [
+      "Christopher L Hubbell"
+    ]
+  },
+  {
+    "id": "PSYC-4940",
+    "title": "Readings In Psyc",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "PSYC-4960",
+    "title": "Perception And Action",
+    "act": 5,
+    "cap": 15,
+    "instructors": [
+      "Brett R. Fajen"
+    ]
+  },
+  {
+    "id": "PSYC-4964",
+    "title": "Psychology And Games",
+    "act": 30,
+    "cap": 25,
+    "instructors": [
+      "Ralph G Noble"
+    ]
+  },
+  {
+    "id": "PSYC-4966",
+    "title": "Cog Sci & Economics",
+    "act": 21,
+    "cap": 20,
+    "instructors": [
+      "Yingrui Yang"
+    ]
+  },
+  {
+    "id": "PSYC-4967",
+    "title": "Thinking",
+    "act": 20,
+    "cap": 19,
+    "instructors": [
+      "Yingrui Yang"
+    ]
+  },
+  {
+    "id": "PSYC-4968",
+    "title": "Intro To Cog Neuroscience",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "PSYC-4969",
+    "title": "Stress & The Brain",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Alicia Ann Walf"
+    ]
+  },
+  {
+    "id": "PSYC-4990",
+    "title": "Undergraduate Thesis",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSH-1110",
+    "title": "Science,tech And Society",
+    "act": 41,
+    "cap": 50,
+    "instructors": [
+      "Edward J Woodhouse",
+      "TBA"
+    ]
+  },
+  {
+    "id": "STSH-1961",
+    "title": "Sustainability Debates",
+    "act": 10,
+    "cap": 25,
+    "instructors": [
+      "Dean Andrew Nieusma"
+    ]
+  },
+  {
+    "id": "STSH-2130",
+    "title": "Intro To Phil Of Science",
+    "act": 11,
+    "cap": 15,
+    "instructors": [
+      "James T. Fahey"
+    ]
+  },
+  {
+    "id": "STSH-2410",
+    "title": "Century Of The Gene",
+    "act": 23,
+    "cap": 25,
+    "instructors": [
+      "Michael A Fortun"
+    ]
+  },
+  {
+    "id": "STSH-2520",
+    "title": "History Of The Us Since 1877",
+    "act": 25,
+    "cap": 30,
+    "instructors": [
+      "Ronald Helfrich"
+    ]
+  },
+  {
+    "id": "STSH-2940",
+    "title": "Readings In Stsh",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSH-4250",
+    "title": "Bioethics",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Nancy D. Campbell"
+    ]
+  },
+  {
+    "id": "STSH-4430",
+    "title": "Drugs In History",
+    "act": 9,
+    "cap": 25,
+    "instructors": [
+      "Nancy D. Campbell"
+    ]
+  },
+  {
+    "id": "STSH-4510",
+    "title": "History Of American Technology",
+    "act": 20,
+    "cap": 25,
+    "instructors": [
+      "Atsushi Akera"
+    ]
+  },
+  {
+    "id": "STSH-4520",
+    "title": "China: Past And Present",
+    "act": 22,
+    "cap": 30,
+    "instructors": [
+      "Jacquelyn S. Swearingen"
+    ]
+  },
+  {
+    "id": "STSH-4800",
+    "title": "Public Service Internship",
+    "act": 6,
+    "cap": 15,
+    "instructors": [
+      "Lauren Jenifer Montgomery Rinehart"
+    ]
+  },
+  {
+    "id": "STSH-4940",
+    "title": "Readings In Stsh",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSH-4960",
+    "title": "Phelan Sem Democracy/internet",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Langdon Winner"
+    ]
+  },
+  {
+    "id": "STSH-4961",
+    "title": "Pdi Studio Vi",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Dean Andrew Nieusma"
+    ]
+  },
+  {
+    "id": "STSH-4963",
+    "title": "War In Afghanistan",
+    "act": 16,
+    "cap": 25,
+    "instructors": [
+      "Steven Breyman"
+    ]
+  },
+  {
+    "id": "STSH-4964",
+    "title": "Consumer Culture",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Linda Layne"
+    ]
+  },
+  {
+    "id": "STSH-4967",
+    "title": "Globalization & Development",
+    "act": 2,
+    "cap": 25,
+    "instructors": [
+      "Michael Mascarenhas"
+    ]
+  },
+  {
+    "id": "STSH-4968",
+    "title": "Sociology Of Religion",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Sal Restivo"
+    ]
+  },
+  {
+    "id": "STSH-4980",
+    "title": "Senior Project",
+    "act": 13,
+    "cap": 20,
+    "instructors": [
+      "Sharon Anderson-Gold"
+    ]
+  },
+  {
+    "id": "STSH-6940",
+    "title": "Readings In Stsh",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSS-1110",
+    "title": "Science, Tech And Society",
+    "act": 43,
+    "cap": 50,
+    "instructors": [
+      "Edward J Woodhouse",
+      "Geraldine M. Gauthier",
+      "TBA"
+    ]
+  },
+  {
+    "id": "STSS-1510",
+    "title": "Intro Cultural Anthropology",
+    "act": 22,
+    "cap": 25,
+    "instructors": [
+      "Michael A Fortun"
+    ]
+  },
+  {
+    "id": "STSS-1520",
+    "title": "Sociology",
+    "act": 21,
+    "cap": 25,
+    "instructors": [
+      "Sal Restivo"
+    ]
+  },
+  {
+    "id": "STSS-1961",
+    "title": "Sustainability Debates",
+    "act": 4,
+    "cap": 25,
+    "instructors": [
+      "Dean Andrew Nieusma"
+    ]
+  },
+  {
+    "id": "STSS-2210",
+    "title": "Design, Culture, And Society",
+    "act": 24,
+    "cap": 30,
+    "instructors": [
+      "Linnda R Caporael"
+    ]
+  },
+  {
+    "id": "STSS-2300",
+    "title": "Environment & Society",
+    "act": 25,
+    "cap": 25,
+    "instructors": [
+      "Kelly Elizabeth Grindstaff"
+    ]
+  },
+  {
+    "id": "STSS-2350",
+    "title": "Laws, Values And Public Policy",
+    "act": 18,
+    "cap": 25,
+    "instructors": [
+      "Aalok Khandekar"
+    ]
+  },
+  {
+    "id": "STSS-2400",
+    "title": "Medicine And Society",
+    "act": 16,
+    "cap": 25,
+    "instructors": [
+      "Aalok Khandekar"
+    ]
+  },
+  {
+    "id": "STSS-2940",
+    "title": "Readings In Stss",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSS-4250",
+    "title": "Bioethics",
+    "act": 10,
+    "cap": 25,
+    "instructors": [
+      "Nancy D. Campbell"
+    ]
+  },
+  {
+    "id": "STSS-4350",
+    "title": "Politics Of Design",
+    "act": 24,
+    "cap": 25,
+    "instructors": [
+      "Langdon Winner"
+    ]
+  },
+  {
+    "id": "STSS-4430",
+    "title": "Drugs In History",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Nancy D. Campbell"
+    ]
+  },
+  {
+    "id": "STSS-4560",
+    "title": "Gender, Science And Tech",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Shailaja Valdiya"
+    ]
+  },
+  {
+    "id": "STSS-4800",
+    "title": "Public Service Internship",
+    "act": 3,
+    "cap": 15,
+    "instructors": [
+      "Lauren Jenifer Montgomery Rinehart"
+    ]
+  },
+  {
+    "id": "STSS-4840",
+    "title": "Professional Development II",
+    "act": 119,
+    "cap": 150,
+    "instructors": [
+      "Linnda R Caporael",
+      "Peter A. LaVenia",
+      "TBA"
+    ]
+  },
+  {
+    "id": "STSS-4850",
+    "title": "Phelan Sem Democracy/ Internet",
+    "act": 5,
+    "cap": 25,
+    "instructors": [
+      "Langdon Winner"
+    ]
+  },
+  {
+    "id": "STSS-4940",
+    "title": "Readings In Stss",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSS-4961",
+    "title": "Oil Politics",
+    "act": 15,
+    "cap": 25,
+    "instructors": [
+      "Kim Fortun"
+    ]
+  },
+  {
+    "id": "STSS-4963",
+    "title": "War In Afghanistan",
+    "act": 12,
+    "cap": 25,
+    "instructors": [
+      "Steven Breyman"
+    ]
+  },
+  {
+    "id": "STSS-4964",
+    "title": "Consumer Culture",
+    "act": 8,
+    "cap": 25,
+    "instructors": [
+      "Linda Layne"
+    ]
+  },
+  {
+    "id": "STSS-4966",
+    "title": "Globalization & Development",
+    "act": 15,
+    "cap": 25,
+    "instructors": [
+      "Michael Mascarenhas"
+    ]
+  },
+  {
+    "id": "STSS-4968",
+    "title": "Sociology Of Religion",
+    "act": 14,
+    "cap": 25,
+    "instructors": [
+      "Sal Restivo"
+    ]
+  },
+  {
+    "id": "STSS-4969",
+    "title": "Environmental Sociology",
+    "act": 5,
+    "cap": 20,
+    "instructors": [
+      "Michael Mascarenhas"
+    ]
+  },
+  {
+    "id": "STSS-4980",
+    "title": "Senior Project",
+    "act": 9,
+    "cap": 10,
+    "instructors": [
+      "Sharon Anderson-Gold"
+    ]
+  },
+  {
+    "id": "STSS-6100",
+    "title": "Policy Studies",
+    "act": 15,
+    "cap": 20,
+    "instructors": [
+      "Steven Breyman"
+    ]
+  },
+  {
+    "id": "STSS-6110",
+    "title": "Research Methods In Sts",
+    "act": 6,
+    "cap": 20,
+    "instructors": [
+      "Ron B Eglash"
+    ]
+  },
+  {
+    "id": "STSS-6940",
+    "title": "Readings In Stss",
+    "act": 0,
+    "cap": 0,
+    "instructors": []
+  },
+  {
+    "id": "STSS-6960",
+    "title": "Pro Seminar",
+    "act": 11,
+    "cap": 20,
+    "instructors": [
+      "Abby J. Kinchy"
+    ]
+  },
+  {
+    "id": "STSS-6962",
+    "title": "Asthma Politics",
+    "act": 9,
+    "cap": 15,
+    "instructors": [
+      "Kim Fortun"
+    ]
+  },
+  {
+    "id": "STSS-6970",
+    "title": "Masters Internship",
+    "act": 1,
+    "cap": 1,
+    "instructors": [
+      "Nancy D. Campbell"
+    ]
+  },
+  {
+    "id": "STSS-6990",
+    "title": "Master's Thesis",
+    "act": 0,
+    "cap": 20,
+    "instructors": [
+      "Nancy D. Campbell",
+      "Steven Breyman"
+    ]
+  },
+  {
+    "id": "STSS-9990",
+    "title": "Dissertation",
+    "act": 13,
+    "cap": 140,
+    "instructors": [
+      "Abby J. Kinchy",
+      "Atsushi Akera",
+      "David J Hess",
+      "Dean Andrew Nieusma",
+      "Kim Fortun",
+      "Langdon Winner",
+      "Linda Layne",
+      "Linnda R Caporael",
+      "Michael A Fortun",
+      "Michael Mascarenhas",
+      "Nancy D. Campbell",
+      "Ron B Eglash",
+      "Sal Restivo",
+      "Sharon Anderson-Gold"
+    ]
+  },
+  {
+    "id": "WRIT-1110",
+    "title": "Writing For Classrm And Career",
+    "act": 72,
+    "cap": 75,
+    "instructors": [
+      "Elizabeth Gordon",
+      "Kenneth Denberg"
+    ]
+  },
+  {
+    "id": "WRIT-2110",
+    "title": "Rhetoric & Writing",
+    "act": 40,
+    "cap": 50,
+    "instructors": [
+      "Blaise K. Farina",
+      "Timothy J Coffey"
+    ]
+  },
+  {
+    "id": "WRIT-2340",
+    "title": "Speech Communication",
+    "act": 44,
+    "cap": 50,
+    "instructors": [
+      "Merrill Duane Whitburn"
+    ]
+  },
+  {
+    "id": "WRIT-4160",
+    "title": "Writing About Science",
+    "act": 9,
+    "cap": 15,
+    "instructors": [
+      "C Lee Odell"
+    ]
+  },
+  {
+    "id": "WRIT-4410",
+    "title": "Research Writing",
+    "act": 5,
+    "cap": 10,
+    "instructors": [
+      "Barbara J Lewis"
+    ]
+  },
+  {
+    "id": "WRIT-4550",
+    "title": "Proposing & Persuading",
+    "act": 12,
+    "cap": 15,
+    "instructors": [
+      "Colleen Mae Klatt"
+    ]
+  },
+  {
+    "id": "WRIT-4960",
+    "title": "Writing In Organizations",
+    "act": 6,
+    "cap": 15,
+    "instructors": [
+      "James P Zappen"
+    ]
+  },
+  {
+    "id": "WRIT-4962",
+    "title": "Writing- Promotion/ Marketing",
+    "act": 11,
+    "cap": 15,
+    "instructors": [
+      "Stephen A. Madarasz"
+    ]
+  },
+  {
+    "id": "WRIT-6160",
+    "title": "Writing About Science",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "C Lee Odell"
+    ]
+  },
+  {
+    "id": "WRIT-6410",
+    "title": "Research Writing",
+    "act": 15,
+    "cap": 15,
+    "instructors": [
+      "Barbara J Lewis"
+    ]
+  },
+  {
+    "id": "WRIT-6550",
+    "title": "Proposing & Persuading",
+    "act": 2,
+    "cap": 10,
+    "instructors": [
+      "Colleen Mae Klatt"
+    ]
+  },
+  {
+    "id": "WRIT-6960",
+    "title": "Writing In Organizations",
+    "act": 2,
+    "cap": 15,
+    "instructors": [
+      "James P Zappen"
+    ]
+  },
+  {
+    "id": "WRIT-6962",
+    "title": "Writing- Promotion & Marketing",
+    "act": 1,
+    "cap": 10,
+    "instructors": [
+      "Stephen A. Madarasz"
+    ]
+  }
+]
