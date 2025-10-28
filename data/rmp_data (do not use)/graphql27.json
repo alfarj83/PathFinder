@@ -1,0 +1,363 @@
+{
+    "data": {
+        "search": {
+            "teachers": {
+                "didFallback": false,
+                "edges": [
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjEzMA==",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 2.3,
+                            "avgRating": 5,
+                            "department": "Communication",
+                            "firstName": "Benjamin",
+                            "id": "VGVhY2hlci0zMDM5NDMy",
+                            "isSaved": false,
+                            "lastName": "Gleeksman",
+                            "legacyId": 3039432,
+                            "numRatings": 4,
+                            "school": {
+                                "id": "U2Nob29sLTc5NQ==",
+                                "name": "Rensselaer Polytechnic Institute"
+                            },
+                            "wouldTakeAgainPercent": 100
+                        }
+                    },
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjEzMQ==",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 1,
+                            "avgRating": 5,
+                            "department": "Language \u0026 Literature",
+                            "firstName": "Audrey",
+                            "id": "VGVhY2hlci0zMDYwMTg1",
+                            "isSaved": false,
+                            "lastName": "Peterson-McCann",
+                            "legacyId": 3060185,
+                            "numRatings": 3,
+                            "school": {
+                                "id": "U2Nob29sLTc5NQ==",
+                                "name": "Rensselaer Polytechnic Institute"
+                            },
+                            "wouldTakeAgainPercent": 100
+                        }
+                    },
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjEzMg==",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 2,
+                            "avgRating": 5,
+                            "department": "Economics",
+                            "firstName": "Billur",
+                            "id": "VGVhY2hlci0yODIyMDE0",
+                            "isSaved": false,
+                            "lastName": "Aksoy",
+                            "legacyId": 2822014,
+                            "numRatings": 1,
+                            "school": {
+                                "id": "U2Nob29sLTc5NQ==",
+                                "name": "Rensselaer Polytechnic Institute"
+                            },
+                            "wouldTakeAgainPercent": 100
+                        }
+                    },
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjEzMw==",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 2.4,
+                            "avgRating": 2.8,
+                            "department": "Computer Science",
+                            "firstName": "John",
+                            "id": "VGVhY2hlci0yNDQ1MjM=",
+                            "isSaved": false,
+                            "lastName": "Sturman",
+                            "legacyId": 244523,
+                            "numRatings": 25,
+                            "school": {
+                                "id": "U2Nob29sLTc5NQ==",
+                                "name": "Rensselaer Polytechnic Institute"
+                            },
+                            "wouldTakeAgainPercent": 36.3636
+                        }
+                    },
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjEzNA==",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 4.1,
+                            "avgRating": 2.3,
+                            "department": "Materials Science",
+                            "firstName": "Ganpati",
+                            "id": "VGVhY2hlci0xMzQwMjg=",
+                            "isSaved": false,
+                            "lastName": "Ramanath",
+                            "legacyId": 134028,
+                            "numRatings": 18,
+                            "school": {
+                                "id": "U2Nob29sLTc5NQ==",
+                                "name": "Rensselaer Polytechnic Institute"
+                            },
+                            "wouldTakeAgainPercent": 100
+                        }
+                    }
+                ],
+                "filters": [
+                    {
+                        "field": "teacherdepartment_s",
+                        "options": [
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDcy",
+                                "value": "aerospace studies"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00",
+                                "value": "architecture"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC03MQ==",
+                                "value": "army rotc"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMTM=",
+                                "value": "art"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC05Mw==",
+                                "value": "biochemistry"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC02",
+                                "value": "biology"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDcz",
+                                "value": "biomedical"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC03",
+                                "value": "business"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zMzY=",
+                                "value": "career development"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC02MQ==",
+                                "value": "chemical engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC04",
+                                "value": "chemistry"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC02Mg==",
+                                "value": "civil engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDUy",
+                                "value": "cognitive science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMA==",
+                                "value": "communication"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMQ==",
+                                "value": "computer science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xNTU=",
+                                "value": "decision science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xODQ4",
+                                "value": "earth \u0026 environmental sciences"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC03OA==",
+                                "value": "earth science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xNQ==",
+                                "value": "economics"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDc=",
+                                "value": "electrical engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xODY=",
+                                "value": "electronic media"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xNw==",
+                                "value": "engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDg=",
+                                "value": "environmental science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xOQ==",
+                                "value": "ethnic studies"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yMQ==",
+                                "value": "finance"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yMg==",
+                                "value": "fine arts"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yNQ==",
+                                "value": "graphic arts"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zMA==",
+                                "value": "information science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zODE=",
+                                "value": "information technology"
+                            },
+                            {
+                                "id": "",
+                                "value": "language  literature"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yMTc1",
+                                "value": "language \u0026 literature"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zMw==",
+                                "value": "languages"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC03MzQ=",
+                                "value": "leadership"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zNg==",
+                                "value": "management"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC02Nw==",
+                                "value": "materials science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMjcw",
+                                "value": "materials science \u0026 eng."
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yNTE5",
+                                "value": "mathematical science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0zOA==",
+                                "value": "mathematics"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC02OQ==",
+                                "value": "mechanical engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00NjU=",
+                                "value": "modern languages"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00MA==",
+                                "value": "music"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDE4",
+                                "value": "natural sciences"
+                            },
+                            {
+                                "id": "",
+                                "value": "not specified"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDU4",
+                                "value": "nuclear engineering"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00Mg==",
+                                "value": "philosophy"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00NA==",
+                                "value": "physics"
+                            },
+                            {
+                                "id": "",
+                                "value": "physics  astronomy"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0yNTg=",
+                                "value": "physics \u0026 astronomy"
+                            },
+                            {
+                                "id": "",
+                                "value": "physics amp astronomy"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00NQ==",
+                                "value": "political science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC0xMDg1",
+                                "value": "psychiatry"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00Ng==",
+                                "value": "psychology"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00OA==",
+                                "value": "science"
+                            },
+                            {
+                                "id": "",
+                                "value": "science technology  society"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC01OTI=",
+                                "value": "science technology \u0026 society"
+                            },
+                            {
+                                "id": "",
+                                "value": "science technology amp society"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC00OQ==",
+                                "value": "social science"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC01MQ==",
+                                "value": "sociology"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC03MzE=",
+                                "value": "technology"
+                            },
+                            {
+                                "id": "RGVwYXJ0bWVudC01NA==",
+                                "value": "writing"
+                            }
+                        ]
+                    }
+                ],
+                "pageInfo": {
+                    "endCursor": "YXJyYXljb25uZWN0aW9uOjEzNA==",
+                    "hasNextPage": true
+                },
+                "resultCount": 898
+            }
+        }
+    }
+}
