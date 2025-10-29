@@ -5,8 +5,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  SafeAreaView
 } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useState } from 'react';
 import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -42,7 +42,7 @@ export default function HomeScreen() {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Header Section */}
         <View style={styles.header}>
@@ -93,7 +93,7 @@ export default function HomeScreen() {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

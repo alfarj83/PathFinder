@@ -10,42 +10,51 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 PSE_ID = os.getenv("PSE_ID")
+
 # LIST OF ALL DEPARTMENTS
-ALL_DEPTS = [
+# This map links all variations (keys) to a single canonical name (value)
+DEPT_MAP = {
     # School of Architecture
-    "Architecture",
+    "Architecture": "Architecture",
     
     # School of Engineering
-    "Biomedical Engineering",
-    "Chemical and Biological Engineering",
-    "Civil and Environmental Engineering",
-    "Electrical, Computer, and Systems Engineering",
-    "Industrial and Systems Engineering",
-    "Materials Science and Engineering",
-    "Mechanical, Aerospace, and Nuclear Engineering",
+    "Biomedical Engineering": "Biomedical Engineering",
+    "Chemical and Biological Engineering": "Chemical and Biological Engineering",
+    "Civil and Environmental Engineering": "Civil and Environmental Engineering",
+    "Electrical, Computer, and Systems Engineering": "Electrical, Computer, and Systems Engineering",
+    "Electrical, Computer and Systems Engineering": "Electrical, Computer, and Systems Engineering", # No comma
+    "Industrial and Systems Engineering": "Industrial and Systems Engineering", 
+    "Industrial & Systems Engineering":"Industrial and Systems Engineering",
+    "Materials Science and Engineering": "Materials Science and Engineering",
+    "Mechanical, Aerospace, and Nuclear Engineering": "Mechanical, Aerospace and Nuclear Engineering",
     
-    # School of Humanities, Arts, and Social Sciences (HASS)
-    "Arts",
-    "Cognitive Science",
-    "Communication and Media",
-    "Economics",
-    "Games and Simulation Arts and Sciences",
-    "Science and Technology Studies",
+    # School of Humanities, Arts, and social Sciences (HASS)
+    "Arts": "Arts", 
+    "Cognitive Science": "Cognitive Science",
+    "Cognitive Sciences": "Cognitive Science", # Plural
+    "Communication and Media": "Communication and Media",
+    "Economics": "Economics",
+    "Games and Simulation Arts and Sciences": "Games and Simulation Arts and Sciences",
+    "Science and Technology Studies": "Science and Technology Studies",
     
     # Lally School of Management
-    "Management", 
+    "Management": "Management", 
     
     # School of Science
-    "Biological Sciences",
-    "Chemistry and Chemical Biology",
-    "Computer Science",
-    "Earth and Environmental Sciences",
-    "Mathematical Sciences",
-    "Physics, Applied Physics, and Astronomy",
+    "Biological Sciences": "Biological Sciences",
+    "Chemistry and Chemical Biology": "Chemistry and Chemical Biology",
+    "Computer Science": "Computer Science",
+    "Computer Sciences": "Computer Science", # Plural
+    "Earth and Environmental Sciences": "Earth and Environmental Sciences",
+    "Mathematical Science": "Mathematical Sciences", # Canonical set to plural
+    "Mathematical Sciences": "Mathematical Sciences", # Plural
+    "Mathematics": "Mathematics",
+    "Physics, Applied Physics, and Astronomy": "Physics, Applied Physics, and Astronomy",
     
     # Interdisciplinary Program
-    "Information Technology and Web Science",
-]
+    "Information Technology and Web Science": "Information Technology and Web Science",
+    "Information Technology and Web Systems": "Information Technology and Web Science", # Variation
+}
 
 # --- 1. Load your HTML file ---
 # Assumes your HTML file is named 'catalog.html'
@@ -78,28 +87,39 @@ def get_departments():
         for container in prof_containers:
             # name_tag is the strong tag within the p tag
             name_tag = container.find('strong')
-            #print(name_tag)
 
             if name_tag:
                 # gets name text
                 name = name_tag.get_text().replace("\u2019", "'").strip().strip(" *+•►♦")
+        
                 # gets text immediately after strong tag
-                sibling_tag = name_tag.next_sibling
+                # Get the *entire* text of the <p> tag
+                full_p_text = container.get_text().replace("\u2019", "'")
+                
+                # Get the text of just the <strong> tag (the raw name)
+                raw_name_text = name_tag.get_text().replace("\u2019", "'")
 
-                if sibling_tag:
-                    info_string = str(sibling_tag).strip()
-                    #print('heres the name:', name)
+                # Subtract the raw name from the full text to get the rest of the info.
+                # We also strip common leading punctuation.
+                info_string = full_p_text.replace(raw_name_text, "").strip().strip(" ,;•►♦")
+
+                if info_string:
+                    if name == 'Koffas, Mattheos':
+                        print('heres the name:', name)
+                        print(full_p_text)
+                        print(info_string)
 
                     # Loop through every official department
                     found_dept = 'unknown'
                     max_len = 0
-                    for dept in ALL_DEPTS:
+                    for dept in DEPT_MAP.keys():
                     # Check if that department name is in the string
-                        if dept in info_string:
+                        if dept.lower() in info_string.lower():
+                            #print(dept)
                             # If it is, check if it's the longest one we've found so far
                             if len(dept) > max_len:
                                 max_len = len(dept)
-                                found_dept = dept
+                                found_dept = DEPT_MAP[dept]
                     
                     # load items into dictionary item
                     prof_data = {
@@ -111,10 +131,7 @@ def get_departments():
 
         return all_professors
 
-def find_linkedin_url(service, name):
-    # setup query
-    query = f"{name} rpi Linkedin"
-
+def search_query(service, name, query):
     try:
         response = service.cse().list(
             q=query,
@@ -148,9 +165,13 @@ try:
     urls = []
     name_list = pd.DataFrame(prof_dept_list)['Name']
     # testing
-    name = name_list[0]
-    url = find_linkedin_url(service, name)
-    print(url) # WORKS
+    name = name_list[2]
+    print(name)
+    linkedin_query = f"{name} rpi Linkedin"
+    #linkedin_url = search_query(service, name, linkedin_query) # WORKS
+
+    rpi_page_query = f"{name} rpi page"
+    #rpi_page_url = search_query(service, name, rpi_page_query) # WORKS
     #urls.append(url)
 
 except Exception as e:
