@@ -14,31 +14,52 @@ import { Ionicons } from '@expo/vector-icons';
 export default function HomeScreen() {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const departments = [
-    { code: 'COMM', name: 'Communication' },
+    // Define the type for a single department object
+    type Department = {
+      code: string;
+      name: string;
+    };
+
+  // The array of department objects
+  const departments: Department[] = [
+    { code: 'ARCH', name: 'Architecture' },
     { code: 'ARTS', name: 'Arts' },
+    { code: 'ASTR', name: 'Astronomy' },
+    { code: 'BCBP', name: 'Biochemistry and Biophysics' },
+    { code: 'BIOL', name: 'Biology' },
+    { code: 'BMED', name: 'Biomedical Engineering' },
+    { code: 'BUSN', name: 'Business (H)' },
+    { code: 'CHEM', name: 'Chemistry' },
+    { code: 'CHME', name: 'Chemical Engineering' },
+    { code: 'CIVL', name: 'Civil Engineering' },
     { code: 'COGS', name: 'Cognitive Science' },
     { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'COGS', name: 'Cognitive Science' },
+    { code: 'CSCI', name: 'Computer Science' },
+    { code: 'ECON', name: 'Economics' },
+    { code: 'ECSE', name: 'Electrical, Computer, and Systems Engineering' },
+    { code: 'ENGR', name: 'General Engineering' },
+    { code: 'ENVE', name: 'Environmental Engineering' },
+    { code: 'ERTH', name: 'Earth and Environmental Science' },
+    { code: 'ESCI', name: 'Engineering Science' },
+    { code: 'GSAS', name: 'Games and Simulation Arts and Sciences' },
+    { code: 'IHSS', name: 'Interdisciplinary Humanities and Social Sciences' },
+    { code: 'INQR', name: 'HASS Inquiry' },
+    { code: 'ISCI', name: 'Interdisciplinary Science' },
+    { code: 'ISYE', name: 'Industrial and Systems Engineering' },
+    { code: 'ITWS', name: 'Information Technology and Web Science' },
+    { code: 'LANG', name: 'Foreign Languages' },
+    { code: 'LGHT', name: 'Lighting' },
+    { code: 'LITR', name: 'Literature' },
+    { code: 'MANE', name: 'Mechanical, Aerospace, and Nuclear Engineering' },
+    { code: 'MATH', name: 'Mathematics' },
+    { code: 'MATP', name: 'Mathematical Programming, Probability, and Statistics' },
+    { code: 'MGMT', name: 'Management' },
+    { code: 'MTLE', name: 'Materials Science and Engineering' },
+    { code: 'PHIL', name: 'Philosophy' },
+    { code: 'PHYS', name: 'Physics' },
+    { code: 'PSYC', name: 'Psychology' },
+    { code: 'STSO', name: 'Science, Technology, and Society' },
+    { code: 'WRIT', name: 'Writing' },
   ];
 
   return (
