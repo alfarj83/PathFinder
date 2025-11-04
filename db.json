@@ -1,0 +1,62 @@
+{
+  "departments": [
+    { "id": "1", "code": "COMM", "name": "Communication", "fullName": "Communication & Media Department" },
+    { "id": "4", "code": "CSCI", "name": "Computer Science", "fullName": "Computer Science Department" },
+    { "id": "3", "code": "COGS", "name": "Cognitive Science", "fullName": "Cognitive Science Department" }
+  ],
+  "professors": [
+    {
+      "id": "1",
+      "name": "Barbara Cutler",
+      "firstName": "Barbara",
+      "lastName": "Cutler",
+      "department": "Computer Science",
+      "departmentCode": "CSCI",
+      "rating": 3.3,
+      "difficulty": 3.0,
+      "wouldTakeAgain": 65,
+      "numRatings": 45,
+      "email": "cutler@cs.rpi.edu",
+      "officeLocation": "Lally 305"
+    },
+    {
+      "id": "2",
+      "name": "John Smith",
+      "firstName": "John",
+      "lastName": "Smith",
+      "department": "Communication",
+      "departmentCode": "COMM",
+      "rating": 4.2,
+      "difficulty": 2.5,
+      "wouldTakeAgain": 85,
+      "numRatings": 30,
+      "email": "smithj@rpi.edu"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "code": "CSCI 1100",
+      "name": "Computer Science I",
+      "department": "Computer Science",
+      "departmentCode": "CSCI",
+      "description": "Introduction to computer programming and problem solving",
+      "credits": 4,
+      "difficulty": 3.2,
+      "prerequisites": [],
+      "professors": ["Barbara Cutler"]
+    },
+    {
+      "id": "2",
+      "code": "COMM 2400",
+      "name": "Media Studies",
+      "department": "Communication",
+      "departmentCode": "COMM",
+      "description": "Introduction to media theory and analysis",
+      "credits": 3,
+      "difficulty": 2.5,
+      "prerequisites": [],
+      "professors": ["John Smith"]
+    }
+  ]
+}

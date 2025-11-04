@@ -5,62 +5,118 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Alert,
+  ActivityIndicator,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useState } from 'react';
-import { Link } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { Link, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { departmentService } from '@/services/departments';
+import { professorService } from '@/services/professors';
+import { courseService } from '@/services/courses';
+import { Department } from '@/types';
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const [departments, setDepartments] = useState<Department[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchMode, setSearchMode] = useState<'professor' | 'course'>('professor');
+  const [searching, setSearching] = useState(false);
 
-    // Define the type for a single department object
-    type Department = {
-      code: string;
-      name: string;
-    };
+  // Load departments on mount
+  useEffect(() => {
+    loadDepartments();
+  }, []);
 
-  // The array of department objects
-  const departments: Department[] = [
-    { code: 'ARCH', name: 'Architecture' },
-    { code: 'ARTS', name: 'Arts' },
-    { code: 'ASTR', name: 'Astronomy' },
-    { code: 'BCBP', name: 'Biochemistry and Biophysics' },
-    { code: 'BIOL', name: 'Biology' },
-    { code: 'BMED', name: 'Biomedical Engineering' },
-    { code: 'BUSN', name: 'Business (H)' },
-    { code: 'CHEM', name: 'Chemistry' },
-    { code: 'CHME', name: 'Chemical Engineering' },
-    { code: 'CIVL', name: 'Civil Engineering' },
-    { code: 'COGS', name: 'Cognitive Science' },
-    { code: 'COMM', name: 'Communication' },
-    { code: 'CSCI', name: 'Computer Science' },
-    { code: 'ECON', name: 'Economics' },
-    { code: 'ECSE', name: 'Electrical, Computer, and Systems Engineering' },
-    { code: 'ENGR', name: 'General Engineering' },
-    { code: 'ENVE', name: 'Environmental Engineering' },
-    { code: 'ERTH', name: 'Earth and Environmental Science' },
-    { code: 'ESCI', name: 'Engineering Science' },
-    { code: 'GSAS', name: 'Games and Simulation Arts and Sciences' },
-    { code: 'IHSS', name: 'Interdisciplinary Humanities and Social Sciences' },
-    { code: 'INQR', name: 'HASS Inquiry' },
-    { code: 'ISCI', name: 'Interdisciplinary Science' },
-    { code: 'ISYE', name: 'Industrial and Systems Engineering' },
-    { code: 'ITWS', name: 'Information Technology and Web Science' },
-    { code: 'LANG', name: 'Foreign Languages' },
-    { code: 'LGHT', name: 'Lighting' },
-    { code: 'LITR', name: 'Literature' },
-    { code: 'MANE', name: 'Mechanical, Aerospace, and Nuclear Engineering' },
-    { code: 'MATH', name: 'Mathematics' },
-    { code: 'MATP', name: 'Mathematical Programming, Probability, and Statistics' },
-    { code: 'MGMT', name: 'Management' },
-    { code: 'MTLE', name: 'Materials Science and Engineering' },
-    { code: 'PHIL', name: 'Philosophy' },
-    { code: 'PHYS', name: 'Physics' },
-    { code: 'PSYC', name: 'Psychology' },
-    { code: 'STSO', name: 'Science, Technology, and Society' },
-    { code: 'WRIT', name: 'Writing' },
-  ];
+  const loadDepartments = async () => {
+    try {
+      setLoading(true);
+      const data = await departmentService.getAllDepartments();
+      setDepartments(data);
+    } catch (error) {
+      console.error('Error loading departments:', error);
+      Alert.alert('Error', 'Failed to load departments. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      Alert.alert('Search', 'Please enter a search query');
+      return;
+    }
+
+    try {
+      setSearching(true);
+
+      if (searchMode === 'professor') {
+        const results = await professorService.searchProfessors(searchQuery);
+        
+        if (results.length === 0) {
+          Alert.alert('No Results', 'No professors found matching your search.');
+          return;
+        }
+
+        // Navigate to faculty page with search results
+        router.push({
+          pathname: '/faculty',
+          params: { 
+            searchQuery,
+            searchResults: JSON.stringify(results)
+          }
+        });
+      } else {
+        const results = await courseService.searchCourses(searchQuery);
+        
+        if (results.length === 0) {
+          Alert.alert('No Results', 'No courses found matching your search.');
+          return;
+        }
+
+        // Navigate to courses page with search results
+        // Note: You'll need to create this page later
+        Alert.alert('Coming Soon', 'Course search will be available soon!');
+        // Uncomment when you create the courses page:
+        // router.push({
+        //   pathname: '/courses',
+        //   params: { 
+        //     searchQuery,
+        //     searchResults: JSON.stringify(results)
+        //   }
+        // });
+      }
+    } catch (error) {
+      console.error('Search error:', error);
+      Alert.alert('Error', 'Failed to perform search. Please try again.');
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const toggleSearchMode = () => {
+    setSearchMode(prev => prev === 'professor' ? 'course' : 'professor');
+    setSearchQuery(''); // Clear search when toggling
+  };
+
+  const handleDepartmentPress = (dept: Department) => {
+    router.push({
+      pathname: '/faculty',
+      params: { 
+        departmentCode: dept.code,
+        departmentName: dept.fullName || dept.name
+      }
+    });
+  };
+
+  const handleViewSaved = () => {
+    // Navigate to profile/saved page
+    Alert.alert('Coming Soon', 'Saved items will be available soon!');
+    // Uncomment when you create the profile page:
+    // router.push('/profile');
+  };
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -68,31 +124,50 @@ export default function HomeScreen() {
         {/* Header Section */}
         <View style={styles.header}>
           <View style={styles.headerContent}>
-            <Text style={styles.title}>
-              Pathfinder {' '}
+            <View style={styles.titleRow}>
+              <Text style={styles.title}>Pathfinder</Text>
               <View style={styles.iconCircle}>
-                <Ionicons name="refresh" size={24} color="white" />
+                <Ionicons name="compass" size={24} color="white" />
               </View>
-            </Text>
+            </View>
             <Text style={styles.welcomeText}>Welcome, User!</Text>
 
             {/* Search Bar */}
             <View style={styles.searchContainer}>
               <TextInput
                 style={styles.searchInput}
-                placeholder="Search for Professors"
+                placeholder={`Search for ${searchMode === 'professor' ? 'Professors' : 'a Course'}`}
                 placeholderTextColor="#666"
                 value={searchQuery}
                 onChangeText={setSearchQuery}
+                onSubmitEditing={handleSearch}
+                returnKeyType="search"
+                editable={!searching}
               />
-              <TouchableOpacity style={styles.searchButton}>
-                <Ionicons name="search" size={20} color="#666" />
+              <TouchableOpacity 
+                style={styles.searchButton} 
+                onPress={handleSearch}
+                disabled={searching}
+              >
+                {searching ? (
+                  <ActivityIndicator size="small" color="#666" />
+                ) : (
+                  <Ionicons name="search" size={20} color="#666" />
+                )}
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.subText}>Search for a course instead</Text>
+            <TouchableOpacity onPress={toggleSearchMode} activeOpacity={0.7}>
+              <Text style={styles.subText}>
+                Search for a {searchMode === 'professor' ? 'course' : 'professor'} instead
+              </Text>
+            </TouchableOpacity>
 
-            <TouchableOpacity style={styles.viewSavedButton}>
+            <TouchableOpacity 
+              style={styles.viewSavedButton}
+              onPress={handleViewSaved}
+              activeOpacity={0.8}
+            >
               <Text style={styles.viewSavedText}>View Saved</Text>
             </TouchableOpacity>
           </View>
@@ -101,17 +176,29 @@ export default function HomeScreen() {
         {/* Departments Section */}
         <View style={styles.departmentsSection}>
           <Text style={styles.sectionTitle}>EXPLORE DEPARTMENTS</Text>
-          <Text style={styles.sectionSubtitle}>Humanities, Arts, and Social Sciences</Text>
+          <Text style={styles.sectionSubtitle}>
+            Humanities, Arts, and Social Sciences
+          </Text>
 
-          <View style={styles.departmentGrid}>
-            {departments.map((dept, index) => (
-              <Link key={index} href="/faculty" asChild>
-                <TouchableOpacity style={styles.departmentButton}>
+          {loading ? (
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#6B8E7F" />
+              <Text style={styles.loadingText}>Loading departments...</Text>
+            </View>
+          ) : (
+            <View style={styles.departmentGrid}>
+              {departments.map((dept) => (
+                <TouchableOpacity 
+                  key={dept.id} 
+                  style={styles.departmentButton}
+                  onPress={() => handleDepartmentPress(dept)}
+                  activeOpacity={0.8}
+                >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
                 </TouchableOpacity>
-              </Link>
-            ))}
-          </View>
+              ))}
+            </View>
+          )}
         </View>
       </ScrollView>
     </SafeAreaProvider>
@@ -134,13 +221,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignItems: 'center',
   },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
   title: {
     fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
-    marginBottom: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+    marginRight: 10,
   },
   iconCircle: {
     backgroundColor: '#5A7A6B',
@@ -149,7 +239,6 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 10,
   },
   welcomeText: {
     fontSize: 18,
@@ -164,6 +253,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     width: '100%',
     marginBottom: 10,
+    alignItems: 'center',
   },
   searchInput: {
     flex: 1,
@@ -172,11 +262,16 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     padding: 5,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   subText: {
     fontSize: 14,
     color: 'white',
     marginBottom: 15,
+    textDecorationLine: 'underline',
   },
   viewSavedButton: {
     backgroundColor: '#8FA896',
@@ -204,6 +299,15 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 20,
     textAlign: 'center',
+  },
+  loadingContainer: {
+    paddingVertical: 40,
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 14,
+    color: '#666',
   },
   departmentGrid: {
     flexDirection: 'row',
