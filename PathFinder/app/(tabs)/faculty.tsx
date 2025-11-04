@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     ScrollView,
     StyleSheet,
@@ -112,6 +112,10 @@ export default function FacultyScreen() {
     return '#EF5350';
   };
 
+  const navigateToProfile = () => {
+    router.push('/test'); // Push a new screen onto the stack
+  };
+
   return (
     <SafeAreaProvider style={styles.container}>
       {/* Header */}
@@ -125,7 +129,7 @@ export default function FacultyScreen() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
           {professors.map((professor) => (
-            <TouchableOpacity key={professor.id} style={styles.professorCard}>
+            <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
