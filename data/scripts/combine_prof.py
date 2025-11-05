@@ -2,6 +2,7 @@ import json
 import glob
 import os
 from collections import defaultdict
+import pandas as pd
 
 def build_professor_index(input_dir, output_file):
     # This will hold instructor -> { semester: [course_ids] }
