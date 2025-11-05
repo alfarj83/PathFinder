@@ -1,9 +1,10 @@
 {
   "Maurice Suckling": {
-    "rmpurl": "",
-    "overall": "number",
-    "diff": "number",
-    "GSAS2520": [
+    "rmpurl": "https://www.ratemyprofessors.com/professor/2296458",
+    "department": "Communication",
+    "overall": 4.8,
+    "diff": 1.6,
+    "GSAS-2520": [
       [
         5,
         2
@@ -17,13 +18,13 @@
         2
       ]
     ],
-    "GSAS4240": [
+    "GSAS-4240": [
       [
         5,
         1
       ]
     ],
-    "COMM4962": [
+    "COMM-4962": [
       [
         5,
         2

@@ -9,6 +9,12 @@ def extract_class_info(json_text):
         file_content_string = file.read()
 
 
+    #get legacy id for url
+    legacyidindex = file_content_string.find("legacyId")
+    print(legacyidindex)
+    legacy_id = (file_content_string[legacyidindex+10:file_content_string.find(",", legacyidindex + 10)])
+    rmpurl = "https://www.ratemyprofessors.com/professor/" + legacy_id
+
     firstnameindex = file_content_string.find("firstName")
     #print(firstnameindex)
     first_name = (file_content_string[firstnameindex+12:file_content_string.find("\"", firstnameindex + 12)])
@@ -31,13 +37,18 @@ def extract_class_info(json_text):
 
 
     #avgRating
+    avgratingsindex = file_content_string.find("avgRating", numratingsindex)
+    print(avgratingsindex)
+    avg_ratings = float(file_content_string[avgratingsindex+11:file_content_string.find(",", avgratingsindex + 11)])
 
 
     #avgDifficulty
+    avgdiffindex = file_content_string.find("avgDifficulty", avgratingsindex)
+    print(avgdiffindex)
+    avg_diff = float(file_content_string[avgdiffindex+15:file_content_string.find(",", avgdiffindex + 15)])
 
 
-
-    curindex = numratingsindex
+    curindex = avgdiffindex
     class_index = file_content_string.find("\"class\":", curindex)
     
     class_reviews = {}
@@ -47,6 +58,8 @@ def extract_class_info(json_text):
         #find class name
         print(class_index)
         class_name = (file_content_string[class_index+9:file_content_string.find("\"", class_index + 9)])
+        if(len(class_name) == 8):
+            class_name = class_name[:4] + "-" + class_name[4:]
         
         ratingindex = file_content_string.find("helpfulRating", class_index)
         print(ratingindex)
@@ -71,9 +84,10 @@ def extract_class_info(json_text):
     professor_name = first_name + " " + last_name
     result = {
         professor_name: {
-            "rmpurl": "",
-            "overall": "number",
-            "diff": "number"
+            "rmpurl": rmpurl,
+            "department": department,
+            "overall": avg_ratings,
+            "diff": avg_diff
         }
     }
 
