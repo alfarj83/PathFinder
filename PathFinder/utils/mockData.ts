@@ -42,6 +42,7 @@ export const mockProfessors: Professor[] = [
     wouldTakeAgain: 85,
     numRatings: 30,
     email: 'smithj@rpi.edu',
+    officeLocation: 'Lally 305',
   },
   {
     id: '3',
@@ -55,6 +56,7 @@ export const mockProfessors: Professor[] = [
     wouldTakeAgain: 90,
     numRatings: 25,
     email: 'doej@rpi.edu',
+    officeLocation: 'Lally 305',
   },
   // Add more mock professors as needed
 ];

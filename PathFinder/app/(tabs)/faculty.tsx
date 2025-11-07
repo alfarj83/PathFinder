@@ -9,96 +9,100 @@ import {
     View
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
-
-interface Professor {
-  id: string;
-  name: string;
-  department: string;
-  rating: number;
-  difficulty: number;
-  wouldTakeAgain: number;
-  numRatings: number;
-  image?: string;
-}
+import { supabase } from '@/utils/supabase';
 
 export default function FacultyScreen() {
   const router = useRouter();
   const [selectedDepartment] = useState('Communication & Media Department');
+  const [professors, setProfessors] = useState<any[]>([]);
+  // const [profName, setProfName] = useState<string>('Barbara Cutler');
+  // const [profDept, setProfDept] = useState<string>('Computer Science');
+  // const [rating, setRating] = useState<number>(3.3);
+  // const [difficulty, setDifficulty] = useState<number>(3);
 
-  const professors: Professor[] = [
-    {
-      id: '1',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '2',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '3',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '4',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '5',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '6',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '7',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-    {
-      id: '8',
-      name: 'Barbara Cutler',
-      department: 'Computer Science',
-      rating: 3.3,
-      difficulty: 3,
-      wouldTakeAgain: 65,
-      numRatings: 45,
-    },
-  ];
+  useEffect(() => {
+    getMatchingProfessors();
+  }, []);
+
+  async function getMatchingProfessors() {
+    const { data } = await supabase.from('professors').select();
+    if (data) setProfessors(data);
+  }
+
+  // const professors: Professor[] = [
+  //   {
+  //     id: '1',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '2',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '3',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '4',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '5',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '6',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '7',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  //   {
+  //     id: '8',
+  //     name: 'Barbara Cutler',
+  //     department: 'Computer Science',
+  //     rating: 3.3,
+  //     difficulty: 3,
+  //     wouldTakeAgain: 65,
+  //     numRatings: 45,
+  //   },
+  // ];
 
   const getRatingColor = (rating: number) => {
     if (rating >= 4) return '#4CAF50';
@@ -115,6 +119,7 @@ export default function FacultyScreen() {
   const navigateToProfile = () => {
     router.push('/test'); // Push a new screen onto the stack
   };
+  
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -138,10 +143,10 @@ export default function FacultyScreen() {
 
                 {/* Professor Info */}
                 <View style={styles.professorInfo}>
-                  <Text style={styles.professorName}>{professor.name}</Text>
+                  <Text style={styles.professorName}>{professor.full_name}</Text>
                   <View style={styles.departmentRow}>
                     <Ionicons name="location-outline" size={14} color="#666" />
-                    <Text style={styles.departmentText}>{professor.department}</Text>
+                    <Text style={styles.departmentText}>{professor.department_name}</Text>
                   </View>
                 </View>
 
