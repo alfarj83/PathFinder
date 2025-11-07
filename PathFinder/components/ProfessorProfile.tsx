@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import supabase from '../utils/supabase'
+import { supabase }from '../utils/supabase'
 import { useRouter } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {
@@ -115,20 +115,19 @@ export default function ProfessorProfile() {
             <ScrollView>
                 <View style={styles.profileHeader}>
                     <View style={styles.profileImage}>
-                        <Image source={require('../assets/images/favicon.png')} style={{ width: '100%', height: '100%'}}/>
+                        <Image source={require('../assets/images/Anicca_square.png')} style={{ width: '100%', height: '100%'}}/>
                     </View>
                     <View style={{flex: 1, flexDirection: 'column'}}>
-                        <Text style={{marginLeft: 30, fontWeight: 'bold', fontSize: 30}}>{"Barbara Cutler"}</Text>
-                        <Text style={{marginLeft: 30}}>{"Computer Science"}</Text>
+                        <Text style={{marginLeft: 30, fontWeight: 'bold', fontSize: 30}}>{"Sky Anicca"}</Text>
+                        <Text style={{marginLeft: 30}}>{"Communication & Media"}</Text>
                     </View>
                 </View>
                 {/*contact card*/}
                 <View style={styles.contactCard}>
-                    <ContactInfoRow icon="mail" text="cutleb@rpi.edu" />
-                    <ContactInfoRow icon="phone" text="(555) 123 - 4567" />
-                    <ContactInfoRow icon="map-pin" text="Amos Eaton 412" />
-                    <ContactInfoRow icon="linkedin" text="URL link" />
-                    <ContactInfoRow icon="link" text="RPI Page: URL link" />
+                    <ContactInfoRow icon="mail" text="aniccs.edu" />
+                    <ContactInfoRow icon="phone" text="999 999 9999" />
+                    <ContactInfoRow icon="map-pin" text="SA 4206" />
+                    <ContactInfoRow icon="link" text="https://faculty.rpi.edu/skye-anicca" />
                 </View>
                 <View style={styles.greenSection}>
                     <Text style={styles.sectionTitle}>Current Classes</Text>

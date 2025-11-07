@@ -13,6 +13,26 @@ export const mockDepartments: Department[] = [
   { id: '10', code: 'PSYC', name: 'Psychology', fullName: 'Psychology Department' },
   { id: '11', code: 'PHIL', name: 'Philosophy', fullName: 'Philosophy Department' },
   { id: '12', code: 'HIST', name: 'History', fullName: 'History Department' },
+  { id: '13', code: 'BMED', name: 'Biomedical Engineering', fullName: 'Biomedical Engineering Department' },
+  { id: '14', code: 'CHME', name: 'Chemical Engineering', fullName: 'Chemical Engineering Department' },
+  { id: '15', code: 'CIVL', name: 'Civil Engineering', fullName: 'Civil Engineering Department' },
+  { id: '16', code: 'ECSE', name: 'Electrical, Computer, and Systems Engineering', fullName: 'Electrical, Computer, and Systems Engineering Department' },
+  { id: '17', code: 'ENGR', name: 'General Engineering', fullName: 'General Engineering Department' },
+  { id: '18', code: 'ENVE', name: 'Environmental Engineering', fullName: 'Environmental Engineering Department' },
+  { id: '19', code: 'ESCI', name: 'Engineering Science', fullName: 'Engineering Science Department' },
+  { id: '20', code: 'ISYE', name: 'Industrial and Systems Engineering', fullName: 'Industrial and Systems Engineering Department' },
+  { id: '21', code: 'MANE', name: 'Mechanical, Aerospace, and Nuclear Engineering', fullName: 'Mechanical, Aerospace, and Nuclear Engineering Department' },
+  { id: '22', code: 'MTLE', name: 'Materials Science and Engineering', fullName: 'Materials Science and Engineering Department' },
+  { id: '23', code: 'ASTR', name: 'Astronomy', fullName: 'Astronomy Department' },
+  { id: '24', code: 'BCBP', name: 'Biochemistry and Biophysics', fullName: 'Biochemistry and Biophysics Department' },
+  { id: '25', code: 'BIOL', name: 'Biology', fullName: 'Biology Department' },
+  { id: '26', code: 'CHEM', name: 'Chemistry', fullName: 'Chemistry Department' },
+  { id: '27', code: 'CSCI', name: 'Computer Science', fullName: 'Computer Science Department' },
+  { id: '28', code: 'ERTH', name: 'Earth and Environmental Science', fullName: 'Earth and Environmental Science Department' },
+  { id: '29', code: 'ISCI', name: 'Interdisciplinary Science', fullName: 'Interdisciplinary Science Department' },
+  { id: '30', code: 'MATH', name: 'Mathematics', fullName: 'Mathematics Department' },
+  { id: '31', code: 'MATP', name: 'Mathematical Programming, Probability, and Statistics', fullName: 'Mathematical Programming, Probability, and Statistics Department' },
+  { id: '32', code: 'PHYS', name: 'Physics', fullName: 'Physics Department' }
 ];
 
 export const mockProfessors: Professor[] = [
