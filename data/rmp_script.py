@@ -74,7 +74,10 @@ def extract_class_info(json_text):
 
         #find class name
         class_name_index = file_content_string.find(">", class_name_index) 
+        old_index_here = class_name_index
         if(count_num_reviews < 6): class_name_index = file_content_string.find(">", class_name_index + 1)
+        if(file_content_string[class_name_index-1:class_name_index+5] == "v></di"):
+            class_name_index = old_index_here
         print(str(class_name_index) + file_content_string[class_name_index-1:class_name_index+5])
         if(file_content_string[class_name_index:class_name_index+5] == "><img"):
             class_name_index = file_content_string.find("currentitem", class_name_index + 1)
