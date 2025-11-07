@@ -48,28 +48,61 @@ def extract_class_info(json_text):
     avg_diff = float(file_content_string[avgdiffindex+15:file_content_string.find(",", avgdiffindex + 15)])
 
 
-    curindex = avgdiffindex
-    class_index = file_content_string.find("\"class\":", curindex)
+
+
+
+    file_content_string = ""
     
+    with open("ratings.txt", "r") as file:
+        file_content_string = file.read()
+
+
+    class_name_index = file_content_string.find("RatingHeader__StyledClass")
+    
+    # RatingHeader__StyledClass
+    # >
+    # >
+    # CardNumRating__CardNumRatingNumber
+    # > 
+    count_num_reviews = 0
     class_reviews = {}
 
-    while(class_index > 20):
+    while(class_name_index > 5):
+        print()
+        count_num_reviews = count_num_reviews + 1
+        print(count_num_reviews)
 
         #find class name
-        print(class_index)
-        class_name = (file_content_string[class_index+9:file_content_string.find("\"", class_index + 9)])
+        class_name_index = file_content_string.find(">", class_name_index) 
+        if(count_num_reviews < 6): class_name_index = file_content_string.find(">", class_name_index + 1)
+        print(str(class_name_index) + file_content_string[class_name_index-1:class_name_index+5])
+        if(file_content_string[class_name_index:class_name_index+5] == "><img"):
+            class_name_index = file_content_string.find("currentitem", class_name_index + 1)
+            class_name_index = file_content_string.find(">", class_name_index + 1)
+        class_name = (file_content_string[class_name_index+1:file_content_string.find("<", class_name_index+1)]).strip()
+        print(class_name + " here===")
         if(len(class_name) == 8):
             class_name = class_name[:4] + "-" + class_name[4:]
         
-        ratingindex = file_content_string.find("helpfulRating", class_index)
-        print(ratingindex)
-        user_rating = int(file_content_string[ratingindex+15:file_content_string.find(",", ratingindex + 15)])
 
+        ratingindex = file_content_string.find("CardNumRating__CardNumRatingNumber", class_name_index)
         
-        diffindex = file_content_string.find("difficultyRating", ratingindex)
-        print(diffindex)
-        user_diff = int(file_content_string[diffindex+18:file_content_string.find(",", diffindex + 18)])
+        ratingindex = file_content_string.find(">", ratingindex)
+        print(ratingindex)
+        if(count_num_reviews == 78):
+            print(file_content_string[ratingindex-10:ratingindex+20])
+        user_rating = float(file_content_string[ratingindex+1:file_content_string.find("<", ratingindex)])
+        print(user_rating)
 
+
+
+        diffindex = file_content_string.find("CardNumRating__CardNumRatingNumber", ratingindex)
+        diffindex = file_content_string.find(">", diffindex)
+        print(diffindex)
+        user_diff = float(file_content_string[diffindex+1:file_content_string.find("<", diffindex)])
+        print(user_diff)
+        
+        
 
         if class_name not in class_reviews:
             class_reviews[class_name] = []
@@ -77,9 +110,11 @@ def extract_class_info(json_text):
         
 
 
-        class_index = file_content_string.find("\"class\":", diffindex)
+        class_name_index = file_content_string.find("RatingHeader__StyledClass", diffindex)
+        class_name_index = file_content_string.find("RatingHeader__StyledClass", class_name_index+5)
 
 
+    
     #help me fix this part
     professor_name = first_name + " " + last_name
     result = {
