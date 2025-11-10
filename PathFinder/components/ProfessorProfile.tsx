@@ -118,7 +118,7 @@ export default function ProfessorProfile() {
                         <Image source={require('../assets/images/Anicca_square.png')} style={{ width: '100%', height: '100%'}}/>
                     </View>
                     <View style={{flex: 1, flexDirection: 'column'}}>
-                        <Text style={{marginLeft: 30, fontWeight: 'bold', fontSize: 30}}>{"Sky Anicca"}</Text>
+                        <Text style={{marginLeft: 30, fontWeight: 'bold', fontSize: 30}}>{"Skye Anicca"}</Text>
                         <Text style={{marginLeft: 30}}>{"Communication & Media"}</Text>
                     </View>
                 </View>
@@ -132,7 +132,7 @@ export default function ProfessorProfile() {
                 <View style={styles.greenSection}>
                     <Text style={styles.sectionTitle}>Current Classes</Text>
                         <ClassCard
-                            title="CSCI-1200 Data Structures"
+                            title="COMM-1960 Topics in Communication"
                             semester="Fall 2025 Semester"
                             rating="4.5"
                             isExpanded={currentReviewsVisible}
@@ -142,14 +142,14 @@ export default function ProfessorProfile() {
                             <ReviewCard
                             rating={4} // "Tough class" sounds like a 4-star
                             date="Jan 8th, 2023"
-                            text="Tough class. It had lots of homework and was very fast paced, and that made me a much better computer scientist."
+                            text="Tough class. It had lots of homework and was very fast paced, and that made me much better at communication."
                             />
                         )}
 
 
                     <Text style={styles.sectionTitle2}>Past Classes</Text>
                     <ClassCard
-                        title="CSCI 4530 Advanced Computer Graphics"
+                        title="IHSS-1962 Topics in IHSS"
                         semester="Spring 2021 Semester"
                         rating="5.0"
                         isExpanded={pastReviewsVisible}

@@ -10,31 +10,59 @@ import {
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
-import { Link, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { departmentService } from '@/services/departments';
-import { professorService } from '@/services/professors';
-import { courseService } from '@/services/courses';
+import { DeptObj } from '@/services/departments';
+import { ProfObj } from '@/services/professors';
+import { CourseObj } from '@/services/courses';
 import { Department } from '@/types';
+import { UserObj } from '@/services/user';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
-  const [departments, setDepartments] = useState<Department[]>([]);
+  const [humanities, setHumanities] = useState<Department[]>([]);
+  const [engineering, setEngineering] = useState<Department[]>([]);
+  const [architecture, setArchitecture] = useState<Department[]>([]);
+  const [management, setManagement] = useState<Department[]>([]);
+  const [science, setScience] = useState<Department[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchMode, setSearchMode] = useState<'professor' | 'course'>('professor');
   const [searching, setSearching] = useState(false);
 
-  // Load departments on mount
+  //Load departments on mount
   useEffect(() => {
     loadDepartments();
   }, []);
 
   const loadDepartments = async () => {
+    let hum:Department[] = [], 
+      eng:Department[] = [], 
+      arch:Department[] = [], 
+      manage:Department[] = [], 
+      sci:Department[] = [];
+
     try {
       setLoading(true);
-      const data = await departmentService.getAllDepartments();
-      setDepartments(data);
+      const data = await DeptObj.getDeptList();
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].category === 'Humanities, Arts and Social Sciences') {
+          hum.push(data[i]);
+        } else if (data[i].category === 'Engineering') {
+          eng.push(data[i]);
+        } else if (data[i].category === 'Architecture') {
+          arch.push(data[i]);
+        } else if (data[i].category === 'Science') {
+          sci.push(data[i]); 
+        } else if (data[i].category === 'Management') {
+          manage.push(data[i]);
+        }
+      }
+      setHumanities(hum);
+      setEngineering(eng);
+      setArchitecture(arch);
+      setScience(sci);
+      setManagement(manage);
     } catch (error) {
       console.error('Error loading departments:', error);
       Alert.alert('Error', 'Failed to load departments. Please try again.');
@@ -44,56 +72,13 @@ export default function HomeScreen() {
   };
 
   const handleSearch = async () => {
-    if (!searchQuery.trim()) {
-      Alert.alert('Search', 'Please enter a search query');
-      return;
+    setSearching(true);
+    if (searchMode === 'professor') {
+      UserObj.displayMatchingProfessors(searchQuery, router);
+    } else {
+      Alert.alert('Coming Soon', 'Course search will be available soon!');
     }
-
-    try {
-      setSearching(true);
-
-      if (searchMode === 'professor') {
-        const results = await professorService.searchProfessors(searchQuery);
-        
-        if (results.length === 0) {
-          Alert.alert('No Results', 'No professors found matching your search.');
-          return;
-        }
-
-        // Navigate to faculty page with search results
-        router.push({
-          pathname: '/faculty',
-          params: { 
-            searchQuery,
-            searchResults: JSON.stringify(results)
-          }
-        });
-      } else {
-        const results = await courseService.searchCourses(searchQuery);
-        
-        if (results.length === 0) {
-          Alert.alert('No Results', 'No courses found matching your search.');
-          return;
-        }
-
-        // Navigate to courses page with search results
-        // Note: You'll need to create this page later
-        Alert.alert('Coming Soon', 'Course search will be available soon!');
-        // Uncomment when you create the courses page:
-        // router.push({
-        //   pathname: '/courses',
-        //   params: { 
-        //     searchQuery,
-        //     searchResults: JSON.stringify(results)
-        //   }
-        // });
-      }
-    } catch (error) {
-      console.error('Search error:', error);
-      Alert.alert('Error', 'Failed to perform search. Please try again.');
-    } finally {
-      setSearching(false);
-    }
+    setSearching(false);
   };
 
   const toggleSearchMode = () => {
@@ -179,7 +164,6 @@ export default function HomeScreen() {
           <Text style={styles.sectionSubtitle}>
             Humanities, Arts, and Social Sciences
           </Text>
-
           {loading ? (
             <View style={styles.loadingContainer}>
               <ActivityIndicator size="large" color="#6B8E7F" />
@@ -187,7 +171,95 @@ export default function HomeScreen() {
             </View>
           ) : (
             <View style={styles.departmentGrid}>
-              {departments.map((dept) => (
+              {humanities.map((dept) => (
+                <TouchableOpacity 
+                  key={dept.id} 
+                  style={styles.departmentButton}
+                  onPress={() => handleDepartmentPress(dept)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.departmentCode}>{dept.code}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          <Text style={styles.sectionSubtitle}>
+            Engineering
+          </Text>
+          {loading ? (
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#6B8E7F" />
+              <Text style={styles.loadingText}>Loading departments...</Text>
+            </View>
+          ) : (
+            <View style={styles.departmentGrid}>
+              {engineering.map((dept) => (
+                <TouchableOpacity 
+                  key={dept.id} 
+                  style={styles.departmentButton}
+                  onPress={() => handleDepartmentPress(dept)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.departmentCode}>{dept.code}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          <Text style={styles.sectionSubtitle}>
+            Architecture
+          </Text>
+          {loading ? (
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#6B8E7F" />
+              <Text style={styles.loadingText}>Loading departments...</Text>
+            </View>
+          ) : (
+            <View style={styles.departmentGrid}>
+              {architecture.map((dept) => (
+                <TouchableOpacity 
+                  key={dept.id} 
+                  style={styles.departmentButton}
+                  onPress={() => handleDepartmentPress(dept)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.departmentCode}>{dept.code}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          <Text style={styles.sectionSubtitle}>
+            Management
+          </Text>
+          {loading ? (
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#6B8E7F" />
+              <Text style={styles.loadingText}>Loading departments...</Text>
+            </View>
+          ) : (
+            <View style={styles.departmentGrid}>
+              {management.map((dept) => (
+                <TouchableOpacity 
+                  key={dept.id} 
+                  style={styles.departmentButton}
+                  onPress={() => handleDepartmentPress(dept)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.departmentCode}>{dept.code}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          <Text style={styles.sectionSubtitle}>
+            Science
+          </Text>
+          {loading ? (
+            <View style={styles.loadingContainer}>
+              <ActivityIndicator size="large" color="#6B8E7F" />
+              <Text style={styles.loadingText}>Loading departments...</Text>
+            </View>
+          ) : (
+            <View style={styles.departmentGrid}>
+              {science.map((dept) => (
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
@@ -207,7 +279,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    //flex: 1,
     backgroundColor: '#f5f5f5',
   },
   header: {
@@ -286,6 +358,7 @@ const styles = StyleSheet.create({
   },
   departmentsSection: {
     padding: 20,
+    //backgroundColor: 'red',
   },
   sectionTitle: {
     fontSize: 18,
@@ -310,18 +383,20 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   departmentGrid: {
+    //backgroundColor: 'blue',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   departmentButton: {
     backgroundColor: '#8FA896',
     width: '30%',
+    padding: 30,
     aspectRatio: 1.2,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     borderRadius: 10,
-    marginBottom: 15,
+    margin: 5,
   },
   departmentCode: {
     color: 'white',

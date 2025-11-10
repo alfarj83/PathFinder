@@ -1,8 +1,9 @@
 export interface Department {
-  id: string;
-  code: string;
-  name: string;
-  fullName?: string;
+  id: string,
+  category: string,
+  code: string,
+  name: string,
+  fullName?: string,
 }
 
 export interface Professor {
@@ -34,6 +35,22 @@ export interface Course {
 }
 
 export interface SearchResult {
-  professors: Professor[];
-  courses: Course[];
+  professors: Professor[],
+  courses: Course[],
+}
+
+export interface Review {
+    id: string,
+    rating: number,
+    comment: string,
+    createdAt: Date,
+    authorId: string,
+}
+
+export interface User {
+  id: string,
+  name: string,
+  email: string,
+  savedProfessors: Professor[],
+  savedCourses: Course[],
 }

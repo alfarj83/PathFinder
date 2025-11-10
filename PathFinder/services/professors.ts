@@ -1,21 +1,61 @@
 // services/professors.ts
-import { Professor } from '@/types';
+import { Professor, Course } from '@/types';
 import { mockProfessors } from '@/utils/mockData';
 import { api } from '@/services/api';
 import { supabase } from '@/utils/supabase';
+import { DeptObj } from './departments';
+import { CourseObj } from './courses';
 const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
 
-export const professorService = {
-  getAllProfessors: () => USE_MOCK
-    ? Promise.resolve(mockProfessors)
-    : api.get<Professor[]>('/professors'),
+// export const professorService = {
+//   getAllProfessors: () => USE_MOCK
+//     ? Promise.resolve(mockProfessors)
+//     : api.get<Professor[]>('/professors'),
 
-  getProfessorsByDepartment: (departmentCode: string) => USE_MOCK
-    ? Promise.resolve(mockProfessors.filter(p => p.departmentCode === departmentCode))
-    : api.get<Professor[]>('/professors', { department: departmentCode }),
+//   getProfessorsByDepartment: (departmentCode: string) => USE_MOCK
+//     ? Promise.resolve(mockProfessors.filter(p => p.departmentCode === departmentCode))
+//     : api.get<Professor[]>('/professors', { department: departmentCode }),
+// };
 
+class ProfessorService {
+  // internal record of all matching professors within a professorSearch
+  private matchingProfessors: Professor[] = [];
+  private currentCourses: typeof CourseObj[] = [];
+  private previousCourses: typeof CourseObj[] = [];
+
+  /* SETTERS/GETTERS */
+  //returns Professor[]
+  returnMatchingProfessors() {
+    return this.matchingProfessors;
+  }
+  // returns Course[]
+  returnCurrentCourses() {
+    return this.currentCourses;
+  }
+  //returns Course[]
+  returnPreviousCourses() {
+    return this.previousCourses;
+  }
+  // returns CourseReview[]
+  // returnCurrentCourseReviews() {
+  //   let currentCourseReviews:typeof CourseReview[] = [];
+  //   for (let i = 0; i < this.currentCourses.length; i++) {
+  //     currentCourseReviews[i].getCourseReviews();
+  //   }
+  //   return currentCourseReviews;
+  // }
+  // returns CourseReview[]
+  // returnPreviousCourseReviews() {
+  //   let previousCourseReviews:typeof CourseReview[] = [];
+  //   for (let i = 0; i < this.currentCourses.length; i++) {
+  //     previousCourseReviews[i].getCourseReviews();
+  //   }
+  //   return previousCourseReviews;
+  // }
+
+  /* SETTERS */
     // 1. Make the function async so you can use 'await'
-  searchProfessors: async (q: string): Promise<Professor[]> => {
+  async searchProfessor(q: string): Promise<void> {
     
     // The 'supabase' variable is the Supabase client
     if (supabase) {
@@ -32,23 +72,15 @@ export const professorService = {
         `department_name.ilike.${searchQuery}`
       ].join(','); // .or() takes a comma-separated string
 
-      // 4. Await the database query
-      const { data, error } = await supabase
-        .from('professors') // Make sure 'professors' is your table name
-        .select()            // Get all columns
-        .or(filterString);   // Apply the multi-column search
-
-      if (error) {
-        console.error('Error searching professors:', error);
-        return []; // On error, return an empty array
-      }
-
-      // 5. Return the data from the database
-      return data || []; // Return data, or an empty array if data is null
-    
-    } else {
-      // Your fallback API call was correct
-      return api.get<Professor[]>('/professors/search', { q });
+      this.matchingProfessors = await DeptObj.getMatchingProfessors(filterString);
     }
   }
-};
+
+  // use of facade software design pattern
+  // selectProfessorCard() {
+  //   this.returnCurrentCourseReviews();
+  //   this.returnPreviousCourseReviews();
+  // }
+}
+
+export var ProfObj = new ProfessorService();
