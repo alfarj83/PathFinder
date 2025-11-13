@@ -1,6 +1,10 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
+import Constants from "expo-constants";
+
+console.log("EXTRA:", Constants.expoConfig?.extra);
+
 //import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';

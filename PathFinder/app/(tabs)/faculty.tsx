@@ -7,7 +7,7 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View, 
+    View,
     ActivityIndicator
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
@@ -17,22 +17,53 @@ export default function FacultyScreen() {
   const router = useRouter();
   const params = useLocalSearchParams(); // 2. Get all navigation parameters
   const { searchResults } = params; // 3. Get your specific 'searchResults' param
-  const [selectedDepartment] = useState('Communication & Media Department');
+  const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
   const [professors, setProfessors] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true); // Added for loading state
-
+  const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string | null>(null);
   // const [profName, setProfName] = useState<string>('Barbara Cutler');
   // const [profDept, setProfDept] = useState<string>('Computer Science');
   // const [rating, setRating] = useState<number>(3.3);
   // const [difficulty, setDifficulty] = useState<number>(3);
 
   useEffect(() => {
-    getMatchingProfessors();
-  }, []);
+    loadProfessors();
+  }, [params]);
 
-  async function getMatchingProfessors() {
-    const { data } = await supabase.from('professors').select();
-    if (data) setProfessors(data);
+  async function loadProfessors() {
+    setLoading(true);
+    try {
+      // Check if we have search results passed from the search screen
+      if (params?.searchResults) {
+        // Parse the search results from the URL parameter
+        const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
+        setProfessors(results);
+        setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
+        
+        // Update header to show it's a search result
+        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
+      } 
+      // Check if we have a department to display
+      else if (params?.departmentCode) {
+        setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
+        
+        // Load professors from the specific department
+        const { data } = await supabase
+          .from('professors')
+          .select()
+          .eq('department_code', Array.isArray(params.departmentCode) ? params.departmentCode[0] : params.departmentCode);
+        if (data) setProfessors(data);
+      } 
+      // Default: Load all professors
+      else {
+        const { data } = await supabase.from('professors').select();
+        if (data) setProfessors(data);
+      }
+    } catch (error) {
+      console.error('Error loading professors:', error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const getRatingColor = (rating: number) => {
@@ -62,9 +93,18 @@ export default function FacultyScreen() {
         <Text style={styles.headerTitle}>{selectedDepartment}</Text>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.content}>
-          {professors.map((professor) => (
+      {loading ? (
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#6B8E7F" />
+        </View>
+      ) : professors.length === 0 ? (
+        <View style={styles.emptyContainer}>
+          <Text style={styles.emptyText}>No professors found</Text>
+        </View>
+      ) : (
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.content}>
+            {professors.map((professor) => (
             <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
               <View style={styles.cardContent}>
                 {/* Professor Image */}
@@ -100,10 +140,11 @@ export default function FacultyScreen() {
                   <Text style={styles.plusRatings}>+{professor.numRatings}</Text>
                 </View>
               </View>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </ScrollView>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      )}
     </SafeAreaProvider>
   );
 }
@@ -132,6 +173,22 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 15,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: '#999',
+    textAlign: 'center',
   },
   professorCard: {
     backgroundColor: 'white',

@@ -1,3 +1,15 @@
+// app/(tabs)/courses.tsx
+import React from "react";
+import { View, Text } from "react-native";
+
+export default function CoursesScreen() {
+  return (
+    <View>
+      <Text>Courses</Text>
+    </View>
+  );
+}
+
 // import { Ionicons } from '@expo/vector-icons';
 // import { useRouter } from 'expo-router';
 // import { useState } from 'react';
