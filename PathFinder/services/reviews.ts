@@ -10,6 +10,7 @@ class ProfessorReview {
 }
 
 class CourseReview {
+    
     // returns string[]
     getCurrentCourseReview() {}
     // returns string[]

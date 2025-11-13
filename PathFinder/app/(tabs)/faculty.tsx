@@ -1,20 +1,26 @@
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+//import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
 import { useState, useEffect } from 'react';
 import {
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View, 
+    ActivityIndicator
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
 
 export default function FacultyScreen() {
   const router = useRouter();
+  const params = useLocalSearchParams(); // 2. Get all navigation parameters
+  const { searchResults } = params; // 3. Get your specific 'searchResults' param
   const [selectedDepartment] = useState('Communication & Media Department');
   const [professors, setProfessors] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true); // Added for loading state
+
   // const [profName, setProfName] = useState<string>('Barbara Cutler');
   // const [profDept, setProfDept] = useState<string>('Computer Science');
   // const [rating, setRating] = useState<number>(3.3);

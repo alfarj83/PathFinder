@@ -56,12 +56,12 @@ class ProfessorService {
   /* SETTERS */
     // 1. Make the function async so you can use 'await'
   async searchProfessor(q: string): Promise<void> {
-    
     // The 'supabase' variable is the Supabase client
     if (supabase) {
       
       // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)
       const searchQuery = `%${q}%`;
+      console.log(searchQuery) // gets to here
 
       // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
       // Note: Adjust this if your column names are different!
@@ -72,7 +72,8 @@ class ProfessorService {
         `department_name.ilike.${searchQuery}`
       ].join(','); // .or() takes a comma-separated string
 
-      this.matchingProfessors = await DeptObj.getMatchingProfessors(filterString);
+      this.matchingProfessors = await DeptObj.getMatchingProfessors(q, filterString);
+      //console.log("this is the matching professors array:", this.matchingProfessors);
     }
   }
 

@@ -19,10 +19,11 @@ import { Router, useRouter } from 'expo-router';
 class UserService {
     public async displayMatchingProfessors(searchQuery:string, router:Router) {
         // try searching for a matching professor
+        
         try {
             // this fills matchingProfessors array with matching professors
             await ProfObj.searchProfessor(searchQuery);
-            let results = ProfObj.returnMatchingProfessors;
+            let results = ProfObj.returnMatchingProfessors();
 
             if (results.length === 0) {
                 Alert.alert('No Results', 'No professors found matching your search.');
@@ -37,6 +38,9 @@ class UserService {
                 searchResults: JSON.stringify(results)
                 }
             });
+
+            //
+            
             // COMING SOON: CASE FOR COURSE SEARCHING
            } //else {
         //     const results = await CourseService.searchCourses(searchQuery);

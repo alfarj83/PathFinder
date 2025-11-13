@@ -4,6 +4,8 @@ import pandas as pd
 from googleapiclient.discovery import build
 import os
 from dotenv import load_dotenv
+import requests
+import win32com.client
 
 # API KEYS AND ENGINE ID
 # Load the variables from .env into the environment
@@ -60,7 +62,7 @@ DEPT_MAP = {
 # Assumes your HTML file is named 'catalog.html'
 def get_departments():
     try:
-        with open('catalog.html', 'r', encoding='utf-16') as f:
+        with open('professor_data/catalog.html', 'r', encoding='utf-16') as f:
             html_content = f.read()
             #print(html_content)
     except FileNotFoundError:
@@ -104,10 +106,6 @@ def get_departments():
                 info_string = full_p_text.replace(raw_name_text, "").strip().strip(" ,;•►♦")
 
                 if info_string:
-                    if name == 'Koffas, Mattheos':
-                        print('heres the name:', name)
-                        print(full_p_text)
-                        print(info_string)
 
                     # Loop through every official department
                     found_dept = 'unknown'
@@ -153,26 +151,100 @@ def search_query(service, name, query):
         print(e)
         return e
 
+def get_contact_info(service, name, contact_container):
+    # get page
+    faculty_page_query = f"{name} rpi faculty"
+    print(faculty_page_query)
+    faculty_page_url = search_query(service, name, faculty_page_query)
+
+    # replicate browser to parse html
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    }
+    response = requests.get(faculty_page_url, headers=headers)
+    # This will raise an error if the request failed (e.g., 404, 500)
+    response.raise_for_status() 
+    # 'response.text' contains the full HTML content as a string
+    html_content = response.text
+    soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # parse email
+    email_html = soup.select_one("a[href^='mailto:']")
+    email_link = email_html.text
+    print(email_link)
+
+    # parse phone number
+    phone_html = soup.select_one("a[href^='tel:']")
+    phone_num = phone_html.text
+    print(phone_num)
+
+    # parse office location
+    outlook = win32com.client.Dispatch("Outlook.Application")
+    mapi = outlook.GetNamespace("MAPI")
+    # 1. Create a Recipient object
+    recipient = mapi.CreateRecipient(email_link)
+    # 2. Resolve it (this is the key step)
+    recipient.Resolve()
+    if recipient.Resolved:
+        # 3. Get the AddressEntry
+        addr_entry = recipient.AddressEntry
+        
+        # 4. Check if it's an Exchange user
+        if addr_entry.Type == "EX": 
+            
+            # 5. Get the ExchangeUser object
+            exchange_user = addr_entry.GetExchangeUser()
+            work_location = ""
+            if exchange_user.OfficeLocation:
+                work_location = exchange_user.OfficeLocation
+            print(f"Work Location (Office): {work_location}")
+
+    # parse linkedin
+    linkedin_query = f"{name} rpi Linkedin profile page"
+    linkedin_url = search_query(service, name, linkedin_query)
+    print(linkedin_url)
+
+    info_data = {
+        'Email': email_link,
+        'Phone': phone_num,
+        'Office': work_location,
+        'RPI_Page': faculty_page_url,
+        'Linkedin': linkedin_url
+    }
+    prof = {
+        name: info_data
+    }
+    contact_container.append(prof)
+    return
+
 # --- MAIN ---
 prof_dept_list = get_departments()
 with open('professor_data/departments.json', 'w', encoding='utf-8') as f:
     json.dump(prof_dept_list, f, indent=4, ensure_ascii=False)
 
-# build query service for linkedin profile scraping using api
+# build query service for contact info scraping using combination of apis and outlook
 try:
     service = build("customsearch", "v1", developerKey=API_KEY)
-
-    urls = []
     name_list = pd.DataFrame(prof_dept_list)['Name']
-    # testing
-    name = name_list[2]
-    print(name)
-    linkedin_query = f"{name} rpi Linkedin"
-    #linkedin_url = search_query(service, name, linkedin_query) # WORKS
+    # name = name_list[3]
+    all_contact_info = []
+    for n in name_list:
+        get_contact_info(service, n, all_contact_info)
+    with open('professor_data/contact_info.json', 'w', encoding='utf-8') as f:
+        json.dump(prof_dept_list, f, indent=4, ensure_ascii=False)
+    # service = build("customsearch", "v1", developerKey=API_KEY)
 
-    rpi_page_query = f"{name} rpi page"
-    #rpi_page_url = search_query(service, name, rpi_page_query) # WORKS
-    #urls.append(url)
+    # urls = []
+    # name_list = pd.DataFrame(prof_dept_list)['Name']
+    # # testing
+    # name = name_list[2]
+    # print(name)
+    # linkedin_query = f"{name} rpi Linkedin"
+    # #linkedin_url = search_query(service, name, linkedin_query) # WORKS
+
+    # rpi_page_query = f"{name} rpi page"
+    # #rpi_page_url = search_query(service, name, rpi_page_query) # WORKS
+    # #urls.append(url)
 
 except Exception as e:
     print("LINKEDIN SCRAPING FAILED")

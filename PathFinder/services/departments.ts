@@ -19,7 +19,7 @@ class DepartmentService {
     return api.get<Department>(`/departments/${code}`);
   };
 
-  async getMatchingProfessors(search_query:string): Promise<Professor[]> {
+  async getMatchingProfessors(q:string, search_query:string): Promise<Professor[]> {
     let matchingProfs: Professor[] = [];
     
     if (supabase) {
@@ -30,11 +30,16 @@ class DepartmentService {
         .or(search_query);   // Apply the multi-column search
 
       if (error) {
+        console.log(error)
         console.error('Error searching professors:', error);
         return []; // On error, return an empty array
       }
 
+
       matchingProfs = data;
+    } else {
+      // Your fallback API call was correct
+      return api.get<Professor[]>('/professors/search', { q });
     }
     return matchingProfs;
   }
