@@ -12,20 +12,20 @@ import {
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
-import { Professor } from '@/types';
 
 export default function FacultyScreen() {
-  const router = useRouter();
-  const params = useLocalSearchParams(); // 2. Get all navigation parameters
-  const { searchResults } = params; // 3. Get your specific 'searchResults' param
-  const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
-  const [professors, setProfessors] = useState<Professor[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState<string | null>(null);
-  // const [profName, setProfName] = useState<string>('Barbara Cutler');
-  // const [profDept, setProfDept] = useState<string>('Computer Science');
-  // const [rating, setRating] = useState<number>(3.3);
-  // const [difficulty, setDifficulty] = useState<number>(3);
+    const router = useRouter();
+    const params = useLocalSearchParams(); // 2. Get all navigation parameters
+    const { searchResults } = params; // 3. Get your specific 'searchResults' param
+    const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
+    const [professors, setProfessors] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState<string | null>(null);
+    const [profName, setProfName] = useState<string>('Barbara Cutler');
+    const [profDept, setProfDept] = useState<string>('Computer Science');
+    const [rating, setRating] = useState<number>(3.3);
+    const [difficulty, setDifficulty] = useState<number>(3);
+    const [searchMode, setSearchMode] = useState<boolean>(false)
 
   // Only re-run when relevant navigation params change. Using the whole
   // `params` object can cause a new reference every render and trigger
@@ -46,13 +46,16 @@ export default function FacultyScreen() {
     try {
       // Check if we have search results passed from the search screen
       if (params?.searchResults) {
+        console.log(params.searchResults)
+        setSearchMode(true)
         // Parse the search results from the URL parameter
         const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
         setProfessors(results);
         setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
         
         // Update header to show it's a search result
-        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
+        if (searchMode) setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
+        else setSelectedDepartment(`"${Array.isArray(params.searchQuery) ? params.searchQuery[4] : params.searchQuery}"`);
       } 
       // Check if we have a department to display
       else if (params?.departmentCode) {
@@ -148,7 +151,7 @@ export default function FacultyScreen() {
                     </View>
                   </View>
 
-                  <Text style={styles.plusRatings}>+{professor.num_ratings}</Text>
+                  <Text style={styles.plusRatings}>+{professor.numRatings}</Text>
                 </View>
               </View>
               </TouchableOpacity>

@@ -8,7 +8,6 @@ import { Professor } from '@/types';
 class DepartmentService {
   // returns a list of all department professors
   getDeptList(): Department[] {
-    //console.log(mockDepartments)
     return mockDepartments;
   };
 
@@ -17,7 +16,7 @@ class DepartmentService {
   };
 
   // filters by dept_name in professors table
-  async getMatchingProfessors(dept_name: string): Promise<Professor[]> {
+  async getDeptProfessors(dept_name: string): Promise<Professor[]> {
     //const query = `/professors?department_name=${dept_name}`; 
     if (supabase) {
       // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)

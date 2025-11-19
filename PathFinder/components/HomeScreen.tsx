@@ -91,7 +91,7 @@ export default function HomeScreen() {
   };
 
   const handleDepartmentPress = async (dept: Department) => {
-    let results = await DeptObj.getMatchingProfessors(dept.name);
+    let results = await DeptObj.getDeptProfessors(dept.name);
     // Navigate to faculty page with search results
     router.push({
         pathname: '/faculty',
