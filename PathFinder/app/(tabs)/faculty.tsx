@@ -26,9 +26,19 @@ export default function FacultyScreen() {
   // const [rating, setRating] = useState<number>(3.3);
   // const [difficulty, setDifficulty] = useState<number>(3);
 
+  // Only re-run when relevant navigation params change. Using the whole
+  // `params` object can cause a new reference every render and trigger
+  // an infinite update loop. Depend on specific fields instead.
   useEffect(() => {
+    console.debug('[faculty] effect run - params:', {
+      searchResults: params?.searchResults,
+      departmentCode: params?.departmentCode,
+      searchQuery: params?.searchQuery,
+      departmentName: params?.departmentName,
+    });
     loadProfessors();
-  }, [params]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params?.searchResults, params?.departmentCode, params?.searchQuery, params?.departmentName]);
 
   async function loadProfessors() {
     setLoading(true);

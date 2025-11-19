@@ -1,47 +1,50 @@
 // services/departments.ts
 import { Department } from '@/types';
 import { mockDepartments } from '@/utils/mockData';
-import { api } from '@/services/api';
+import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
 import { Professor } from '@/types';
 
-const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
-
 class DepartmentService {
-  // returns a list of all departments
-  async getDeptList(): Promise<Department[]> {
-    if (USE_MOCK) return mockDepartments;
-    return api.get<Department[]>('/departments');
+  // returns a list of all department professors
+  getDeptList(): Department[] {
+    //console.log(mockDepartments)
+    return mockDepartments;
   };
 
   async getDepartmentByCode(code: string): Promise<Department | null> {
-    if (USE_MOCK) return mockDepartments.find(d => d.code === code) ?? null;
-    return api.get<Department>(`/departments/${code}`);
+    return APIObj.get<Department>(`/departments/${code}`);
   };
 
-  async getMatchingProfessors(q:string, search_query:string): Promise<Professor[]> {
-    let matchingProfs: Professor[] = [];
-    
+  // filters by dept_name in professors table
+  async getMatchingProfessors(dept_name: string): Promise<Professor[]> {
+    //const query = `/professors?department_name=${dept_name}`; 
     if (supabase) {
-      // 4. Await the database query
-      const { data, error } = await supabase
-        .from('professors') // Make sure 'professors' is your table name
-        .select()            // Get all columns
-        .or(search_query);   // Apply the multi-column search
+      // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)
+      const searchQuery = `%${dept_name}%`;
+      console.log(searchQuery) // gets to here
 
-      if (error) {
-        console.log(error)
-        console.error('Error searching professors:', error);
-        return []; // On error, return an empty array
+      // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
+      // Note: Adjust this if your column names are different!
+      const filterString = [
+        `department_name.ilike.${searchQuery}`
+      ].join(','); // .or() takes a comma-separated string
+
+        // 4. Await the database query
+        const { data, error } = await supabase
+          .from('professors') // Make sure 'professors' is your table name
+          .select()            // Get all columns
+          .or(filterString);   // Apply the multi-column search
+  
+        if (error) {
+          console.log(error)
+          console.error('Error fetching department:', error);
+        }
+  
+        return data as Professor[];
+      } else {
+        return [];
       }
-
-
-      matchingProfs = data;
-    } else {
-      // Your fallback API call was correct
-      return api.get<Professor[]>('/professors/search', { q });
-    }
-    return matchingProfs;
   }
 };
 

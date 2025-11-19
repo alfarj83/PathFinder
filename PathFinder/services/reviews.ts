@@ -1,8 +1,8 @@
 // services/professors.ts
 import { Professor } from '@/types';
-import { mockProfessors } from '@/utils/mockData';
-import { api } from '@/services/api';
-import { supabase } from '@/utils/supabase';
+//import { mockProfessors } from '@/utils/mockData';
+import { APIObj } from '@/services/api';
+//import { supabase } from '@/utils/supabase';
 
 class ProfessorReview {
     // returns string[]

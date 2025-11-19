@@ -20,11 +20,9 @@ type ContactInfoRowProps = {
     icon:string,
     text:string,
 };
-
 type StarRating = {
     rating:number
 };
-
 type ClassCardProps = {
      title:string,
      semester:string,
@@ -32,7 +30,6 @@ type ClassCardProps = {
      isExpanded:boolean,
      onToggle: ((event: GestureResponderEvent) => void) | undefined,
 };
-
 type ReviewCardProps = {
     rating:number,
     date:string,

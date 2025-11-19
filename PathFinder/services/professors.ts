@@ -1,7 +1,7 @@
 // services/professors.ts
 import { Professor, Course } from '@/types';
-import { mockProfessors } from '@/utils/mockData';
-import { api } from '@/services/api';
+//import { mockProfessors } from '@/utils/mockData';
+import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
 import { DeptObj } from './departments';
 import { CourseObj } from './courses';
@@ -36,22 +36,6 @@ class ProfessorService {
   returnPreviousCourses() {
     return this.previousCourses;
   }
-  // returns CourseReview[]
-  // returnCurrentCourseReviews() {
-  //   let currentCourseReviews:typeof CourseReview[] = [];
-  //   for (let i = 0; i < this.currentCourses.length; i++) {
-  //     currentCourseReviews[i].getCourseReviews();
-  //   }
-  //   return currentCourseReviews;
-  // }
-  // returns CourseReview[]
-  // returnPreviousCourseReviews() {
-  //   let previousCourseReviews:typeof CourseReview[] = [];
-  //   for (let i = 0; i < this.currentCourses.length; i++) {
-  //     previousCourseReviews[i].getCourseReviews();
-  //   }
-  //   return previousCourseReviews;
-  // }
 
   /* SETTERS */
     // 1. Make the function async so you can use 'await'
@@ -72,16 +56,30 @@ class ProfessorService {
         `department_name.ilike.${searchQuery}`
       ].join(','); // .or() takes a comma-separated string
 
-      this.matchingProfessors = await DeptObj.getMatchingProfessors(q, filterString);
-      //console.log("this is the matching professors array:", this.matchingProfessors);
+        // 4. Await the database query
+        const { data, error } = await supabase
+          .from('professors') // Make sure 'professors' is your table name
+          .select()            // Get all columns
+          .or(filterString);   // Apply the multi-column search
+  
+        if (error) {
+          console.log(error)
+          console.error('Error searching professors:', error);
+        }
+  
+        this.matchingProfessors = (data ?? []) as Professor[];
+      } //else {
+          // Your fallback API call was correct
+          //this.matchingProfessors = APIObj.get<Professor[]>('/professors/search', { q }) ?? []
+        //}
     }
-  }
+      //console.log("this is the matching professors array:", this.matchingProfessors);
+}
 
   // use of facade software design pattern
   // selectProfessorCard() {
   //   this.returnCurrentCourseReviews();
   //   this.returnPreviousCourseReviews();
   // }
-}
 
 export var ProfObj = new ProfessorService();

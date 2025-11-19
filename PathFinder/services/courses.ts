@@ -1,8 +1,8 @@
 // services/courses.ts
 import { Course, Professor } from '@/types';
-import { mockCourses } from '@/utils/mockData';
-import { api } from '@/services/api';
-const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
+//import { mockCourses } from '@/utils/mockData';
+import { APIObj } from '@/services/api';
+//const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
 
 // export const courseService = {
 //   getAllCourses: () => USE_MOCK
