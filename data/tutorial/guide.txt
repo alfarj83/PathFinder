@@ -1,0 +1,37 @@
+
+video tutorial
+https://drive.google.com/file/d/1iAjq0MOgZOIefdMCDkgayZptQ5pwOjp0/view?usp=sharing
+
+Copy the name from supabase
+Paste name into rate my professor, 
+Paste into then into VSCode for profn change 
+Paste into faculty page
+
+Copy faculty url 
+If professor has a picture save the picture using the ending of the url in the ims folder
+Paste url in supabase facultyurl
+
+Back in RMP note the overall rating,diff,reviews
+
+Find the load more reviews button
+Right click, inspect element
+Copy JSpath
+Open console
+Paste and add “.click()”
+Enter and ^ (up arrow) and Enter until the button returns back with non existing
+Back to the elements page
+Right click on the review pane
+Copy element
+Paste this into ratings.txt
+
+Run the rmp_script.py
+Look at the output in prof_rate.json
+Look for any classes that need to be combined
+
+Run the rmp_csv_convert.py with any combines
+Replace the profn with the professor name that is copied in there
+
+Insert the csv into supabase
+
+
+
