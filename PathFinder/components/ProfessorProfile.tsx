@@ -221,7 +221,7 @@ export default function ProfessorProfile({ professorId }: ProfessorProfileProps 
         <View style={styles.profileSection}>
           <View style={styles.profileImageLarge}>
             <Image 
-              source={require('../assets/images/Anicca_square.png')} 
+              source={require('../assets/images/rpi-logo.png')} 
               style={styles.profileImg}
             />
           </View>
