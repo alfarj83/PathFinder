@@ -1,11 +1,11 @@
 // app/(tabs)/test.tsx
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import CourseProfile from '@/components/CourseProfile';
 import ProfessorProfile from '@/components/ProfessorProfile';
 import HomeScreen from '@/components/HomeScreen';
-import CourseProfile from '@/components/CourseProfile';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
 
-// profile page
+// Profile page - handles both professor and course profiles
 export default function TestScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
@@ -32,6 +32,18 @@ export default function TestScreen() {
       </View>
     );
   }
+
+  // Show course profile if courseId exists
+  if (courseId) {
+    return (
+      <View style={styles.container}>
+        <CourseProfile courseId={courseId}/>
+      </View>
+    )
+  }
+
+  //If neither Ids are present return null
+  return null;
 }
 
 const styles = StyleSheet.create({
