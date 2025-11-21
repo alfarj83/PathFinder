@@ -93,7 +93,9 @@ export default function TestScreen() {
   // Show professor profile if professorId exists
   if (professorId) {
     return (
-      <HomeScreen/>
+      <View style={styles.container}>
+        <ProfessorProfile professorId={professorId} />
+      </View>
     );
   }
   // return (
