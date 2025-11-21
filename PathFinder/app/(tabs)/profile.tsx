@@ -2,10 +2,11 @@
 import React from "react";
 import { View, Text } from "react-native";
 
+// user profile (not in beta)
 export default function ProfileTab() {
   return (
     <View>
-      <Text style={{ 'flex': 1, alignItems: 'center'}}>Profile coming soon!!</Text>
+      <Text style={{ fontSize: 100 }}>Profile coming soon!!</Text>
     </View>
   );
 }

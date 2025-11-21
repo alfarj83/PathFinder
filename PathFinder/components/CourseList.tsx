@@ -23,10 +23,6 @@ export default function CoursesScreen() {
   const [loading, setLoading] = useState(false);
   const [courseCode, setCourseCode] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
-  // const [profName, setProfName] = useState<string>('Barbara Cutler');
-  // const [profDept, setProfDept] = useState<string>('Computer Science');
-  // const [rating, setRating] = useState<number>(3.3);
-  // const [difficulty, setDifficulty] = useState<number>(3);
 
   // Only re-run when relevant navigation params change. Using the whole
   // `params` object can cause a new reference every render and trigger
@@ -57,23 +53,6 @@ export default function CoursesScreen() {
 
       console.log('here is the course info', courses)
 
-      // parse through searchQuery
-      // Check if we have a department to display
-    //   else if (params?.departmentCode) {
-    //     setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
-        
-        // Load courses from the specific department
-        // const { data } = await supabase
-        //   .from('courses')
-        //   .select()
-        //   .eq('course_name', '${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}');
-        // if (data) setCourses(data);
-    //  } 
-      // Default: Load all professors
-    //   else {
-    //     const { data } = await supabase.from('courses').select();
-    //     if (data) setCourses(data);
-    //   }
     } catch (error) {
       console.error('Error loading courses:', error);
     } finally {
@@ -93,8 +72,18 @@ export default function CoursesScreen() {
     return '#EF5350';
   };
 
-  const navigateToProfile = () => {
-    router.push('/test'); // Push a new screen onto the stack
+    // Updated to accept professor ID and pass current search context
+  const navigateToProfile = (courseId: string) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        courseId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
   
 
@@ -120,7 +109,7 @@ export default function CoursesScreen() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
             {courses.map((course) => (
-            <TouchableOpacity key={course.id} style={styles.professorCard} onPress={navigateToProfile}>
+            <TouchableOpacity key={course.id} style={styles.professorCard} onPress={() => navigateToProfile(course.id)}>
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>

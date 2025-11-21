@@ -1,6 +1,6 @@
 import ProfScreen from "@/components/FacultyList"
-import CoursesScreen from "@/components/CourseList";
 
+// tab for professor list (for searching professors)
 export default function FacultyTab() {
   return <ProfScreen/>;
 }

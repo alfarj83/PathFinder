@@ -22,10 +22,6 @@ export default function ProfsScreen() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
-  // const [profName, setProfName] = useState<string>('Barbara Cutler');
-  // const [profDept, setProfDept] = useState<string>('Computer Science');
-  // const [rating, setRating] = useState<number>(3.3);
-  // const [difficulty, setDifficulty] = useState<number>(3);
 
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {

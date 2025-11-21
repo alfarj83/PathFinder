@@ -25,23 +25,6 @@ type HomeScreenProps = {
   onProfessorPress?: (professorId: string) => void;
 };
 
-// --- NEW INTERFACE DEFINITION ---
-// --- CORRECT DEFAULT PROPS INITIALIZATION ---
-// This uses an object literal to define static default values (empty functions)
-// const defaultProps: HomeScreenProps = {
-//     loadDepartments: () => console.log("loadDepartments prop not provided!"),
-//     handleSearch: () => console.log("handleSearch prop not provided!"),
-//     handleDepartmentPress: () => console.log("handleDepartmentPress prop not provided!"),
-//     handleViewSaved: () => console.log("handleViewSaved prop not provided!"),
-// }
-
-// interface HomeScreenProps {
-//     // Make functions OPTIONAL (?:) because the component is a route and might be called without props
-//     loadDepartments?: () => void; 
-//     handleSearch?: () => void; 
-//     handleDepartmentPress?: (dept: Department) => void;
-//     handleViewSaved?: () => void;
-// }
 
 export default function HomeScreen({ onProfessorPress }: HomeScreenProps = {}/*initialProps: HomeScreenProps*/) {
   //const props = useMemo(() => ({...defaultProps, ...initialProps}), [initialProps]);
