@@ -1,6 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-//import { useRouter } from 'expo-router';
-import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useState, useEffect } from 'react';
 import {
     ScrollView,
@@ -15,21 +14,14 @@ import { supabase } from '@/utils/supabase';
 
 export default function FacultyScreen() {
     const router = useRouter();
-    const params = useLocalSearchParams(); // 2. Get all navigation parameters
-    const { searchResults } = params; // 3. Get your specific 'searchResults' param
+    const params = useLocalSearchParams();
+    const { searchResults } = params;
     const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
     const [professors, setProfessors] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState<string | null>(null);
-    const [profName, setProfName] = useState<string>('Barbara Cutler');
-    const [profDept, setProfDept] = useState<string>('Computer Science');
-    const [rating, setRating] = useState<number>(3.3);
-    const [difficulty, setDifficulty] = useState<number>(3);
     const [searchMode, setSearchMode] = useState<boolean>(false)
 
-  // Only re-run when relevant navigation params change. Using the whole
-  // `params` object can cause a new reference every render and trigger
-  // an infinite update loop. Depend on specific fields instead.
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
@@ -92,8 +84,18 @@ export default function FacultyScreen() {
     return '#EF5350';
   };
 
-  const navigateToProfile = () => {
-    router.push('/test'); // Push a new screen onto the stack
+  // Updated to accept professor ID and pass current search context
+  const navigateToProfile = (professorId: string) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        professorId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
   
 
@@ -119,7 +121,12 @@ export default function FacultyScreen() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
             {professors.map((professor) => (
-            <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
+            <TouchableOpacity 
+              key={professor.id} 
+              style={styles.professorCard} 
+              onPress={() => navigateToProfile(professor.id)}
+              activeOpacity={0.7}
+            >
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>

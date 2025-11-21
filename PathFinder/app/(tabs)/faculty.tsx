@@ -1,6 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-//import { useRouter } from 'expo-router';
-import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useState, useEffect } from 'react';
 import {
     ScrollView,
@@ -12,24 +11,17 @@ import {
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
-import { Professor } from '@/types';
 
 export default function FacultyScreen() {
-  const router = useRouter();
-  const params = useLocalSearchParams(); // 2. Get all navigation parameters
-  const { searchResults } = params; // 3. Get your specific 'searchResults' param
-  const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
-  const [professors, setProfessors] = useState<Professor[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState<string | null>(null);
-  // const [profName, setProfName] = useState<string>('Barbara Cutler');
-  // const [profDept, setProfDept] = useState<string>('Computer Science');
-  // const [rating, setRating] = useState<number>(3.3);
-  // const [difficulty, setDifficulty] = useState<number>(3);
+    const router = useRouter();
+    const params = useLocalSearchParams();
+    const { searchResults } = params;
+    const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
+    const [professors, setProfessors] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState<string | null>(null);
+    const [searchMode, setSearchMode] = useState<boolean>(false)
 
-  // Only re-run when relevant navigation params change. Using the whole
-  // `params` object can cause a new reference every render and trigger
-  // an infinite update loop. Depend on specific fields instead.
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
@@ -46,13 +38,16 @@ export default function FacultyScreen() {
     try {
       // Check if we have search results passed from the search screen
       if (params?.searchResults) {
+        console.log(params.searchResults)
+        setSearchMode(true)
         // Parse the search results from the URL parameter
         const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
         setProfessors(results);
         setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
         
         // Update header to show it's a search result
-        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
+        if (searchMode) setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
+        else setSelectedDepartment(`"${Array.isArray(params.searchQuery) ? params.searchQuery[4] : params.searchQuery}"`);
       } 
       // Check if we have a department to display
       else if (params?.departmentCode) {
@@ -89,8 +84,18 @@ export default function FacultyScreen() {
     return '#EF5350';
   };
 
-  const navigateToProfile = () => {
-    router.push('/test'); // Push a new screen onto the stack
+  // Updated to accept professor ID and pass current search context
+  const navigateToProfile = (professorId: string) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        professorId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
   
 
@@ -116,7 +121,12 @@ export default function FacultyScreen() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
             {professors.map((professor) => (
-            <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
+            <TouchableOpacity 
+              key={professor.id} 
+              style={styles.professorCard} 
+              onPress={() => navigateToProfile(professor.id)}
+              activeOpacity={0.7}
+            >
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
@@ -148,7 +158,7 @@ export default function FacultyScreen() {
                     </View>
                   </View>
 
-                  <Text style={styles.plusRatings}>+{professor.num_ratings}</Text>
+                  <Text style={styles.plusRatings}>+{professor.numRatings}</Text>
                 </View>
               </View>
               </TouchableOpacity>

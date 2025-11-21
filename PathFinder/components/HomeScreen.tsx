@@ -20,7 +20,12 @@ import { useRouter } from 'expo-router';
 import { APIObj } from '@/services/api';
 import { Professor } from '@/types';
 
-export default function HomeScreen() {
+// Add prop type
+type HomeScreenProps = {
+  onProfessorPress?: (professorId: string) => void;
+};
+
+export default function HomeScreen({ onProfessorPress }: HomeScreenProps = {}) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [humanities, setHumanities] = useState<Department[]>([]);
@@ -78,7 +83,14 @@ export default function HomeScreen() {
   const handleSearch = async () => {
     setSearching(true);
     if (searchMode === 'professor') {
-      UserObj.displayMatchingProfessors(searchQuery, router);
+      // If onProfessorPress prop is provided, use it; otherwise use the default navigation
+      if (onProfessorPress) {
+        // This would require getting the professor ID from the search
+        // For now, keeping the default behavior
+        UserObj.displayMatchingProfessors(searchQuery, router);
+      } else {
+        UserObj.displayMatchingProfessors(searchQuery, router);
+      }
     } else {
       Alert.alert('Coming Soon', 'Course search will be available soon!');
     }

@@ -74,34 +74,36 @@
 // });
 
 // app/(tabs)/test.tsx
-import { View, ScrollView, StyleSheet, Text } from 'react-native';
-import SignUpForm from '@/components/auth/SignUpForm';
-import LoginForm from '@/components/auth/LoginForm';
-import HomeScreen from '@/components/HomeScreen';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { useRouter, useLocalSearchParams } from 'expo-router';
+import ProfessorProfile from '@/components/ProfessorProfile';
 
 export default function TestScreen() {
-    return (
-      <HomeScreen/>
-    );
-  // return (
-  //   <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
-  //     {/* Header Labels */}
-  //     <View style={styles.headerRow}>
-  //       <Text style={styles.headerLabel}>Sign In Page</Text>
-  //       <Text style={styles.headerLabel}>Log In Page</Text>
-  //     </View>
+  const router = useRouter();
+  const params = useLocalSearchParams();
+  
+  // Get professorId from route params
+  const professorId = params.professorId as string;
 
-  //     {/* Side by Side Forms */}
-  //     <View style={styles.formsRow}>
-  //       <View style={styles.formWrapper}>
-  //         <SignUpForm />
-  //       </View>
-  //       <View style={styles.formWrapper}>
-  //         <LoginForm onLoginSuccess={Success}/>
-  //       </View>
-  //     </View>
-  //   </ScrollView>/
-  // );
+  const handleBackPress = () => {
+    router.back();
+  };
+
+  // Show professor profile if professorId exists
+  if (professorId) {
+    return (
+      <View style={styles.container}>
+        <ProfessorProfile professorId={professorId} />
+      </View>
+    );
+  }
+
+  // Otherwise show error
+  return (
+    <View style={styles.container}>
+      <Text style={styles.errorText}>No professor selected</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -109,30 +111,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
   },
-  scrollContent: {
-    flexGrow: 1,
+  backButton: {
+    backgroundColor: '#627768',
+    padding: 12,
+    margin: 16,
+    borderRadius: 8,
+    alignItems: 'center',
   },
-  headerRow: {
-    flexDirection: 'row',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  headerLabel: {
-    flex: 1,
+  backButtonText: {
+    color: 'white',
     fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: '600',
+  },
+  errorText: {
+    fontSize: 16,
     color: '#666',
-  },
-  formsRow: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  formWrapper: {
-    flex: 1,
-    minHeight: 600, // Ensure full height
+    textAlign: 'center',
+    marginTop: 50,
   },
 });
