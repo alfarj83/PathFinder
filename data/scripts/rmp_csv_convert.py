@@ -42,7 +42,7 @@ def rmp_csv(par_arr):
 
             for info in infos:
 
-                if(info == "rmpurl" or info == "department" or info == "overall" or info == "diff"):
+                if(info == "rmpurl" or info == "department" or info == "overall" or info == "diff" or info == "temp"):
                     continue
                 
 

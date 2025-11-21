@@ -1,38 +1,15 @@
 {
-  "Dave Goldschmidt": {
-    "rmpurl": "https://www.ratemyprofessors.com/professor/176154",
-    "department": "Computer Science",
-    "overall": 4.2,
-    "diff": 3.1,
-    "CSCI-4210": [
-      81.5,
-      57.0,
-      20
-    ],
-    "CSCI-2300": [
-      24.0,
-      17.0,
-      5
-    ],
+  "profn": {
+    "temp": "temp",
     "CSCI-2200": [
-      28.0,
-      19.0,
-      6
+      68.0,
+      99.0,
+      24
     ],
-    "CSCI-2500": [
-      9.0,
-      12.0,
+    "CSCI-6220": [
+      15.0,
+      8.0,
       3
-    ],
-    "CSCI-2220": [
-      3.5,
-      4.0,
-      1
-    ],
-    "CSCI-4440": [
-      10.0,
-      4.0,
-      2
     ]
   }
 }

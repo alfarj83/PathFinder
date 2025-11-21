@@ -74,16 +74,28 @@
 // });
 
 // app/(tabs)/test.tsx
-import { View, ScrollView, StyleSheet, Text } from 'react-native';
-import SignUpForm from '@/components/auth/SignUpForm';
-import LoginForm from '@/components/auth/LoginForm';
-import HomeScreen from '@/components/HomeScreen';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import ProfessorProfile from '@/components/ProfessorProfile';
+import HomeScreen from '@/components/HomeScreen';
 
 export default function TestScreen() {
+  const router = useRouter();
+  const params = useLocalSearchParams();
+  
+  // Get professorId from route params
+  const professorId = params.professorId as string;
+
+  const handleBackPress = () => {
+    router.back();
+  };
+
+  // Show professor profile if professorId exists
+  if (professorId) {
     return (
-      <ProfessorProfile/>
+      <HomeScreen/>
     );
+  }
   // return (
   //   <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
   //     {/* Header Labels */}
@@ -110,30 +122,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
   },
-  scrollContent: {
-    flexGrow: 1,
+  backButton: {
+    backgroundColor: '#627768',
+    padding: 12,
+    margin: 16,
+    borderRadius: 8,
+    alignItems: 'center',
   },
-  headerRow: {
-    flexDirection: 'row',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  headerLabel: {
-    flex: 1,
+  backButtonText: {
+    color: 'white',
     fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: '600',
+  },
+  errorText: {
+    fontSize: 16,
     color: '#666',
-  },
-  formsRow: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  formWrapper: {
-    flex: 1,
-    minHeight: 600, // Ensure full height
+    textAlign: 'center',
+    marginTop: 50,
   },
 });

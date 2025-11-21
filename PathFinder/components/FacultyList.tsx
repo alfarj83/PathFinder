@@ -1,6 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-//import { useRouter } from 'expo-router';
-import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useState, useEffect } from 'react';
 import {
     ScrollView,
@@ -28,9 +27,6 @@ export default function ProfsScreen() {
   // const [rating, setRating] = useState<number>(3.3);
   // const [difficulty, setDifficulty] = useState<number>(3);
 
-  // Only re-run when relevant navigation params change. Using the whole
-  // `params` object can cause a new reference every render and trigger
-  // an infinite update loop. Depend on specific fields instead.
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
@@ -128,8 +124,18 @@ export default function ProfsScreen() {
     return '#EF5350';
   };
 
-  const navigateToProfile = () => {
-    router.push('/test'); // Push a new screen onto the stack
+  // Updated to accept professor ID and pass current search context
+  const navigateToProfile = (professorId: string) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        professorId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
   
 
@@ -155,7 +161,12 @@ export default function ProfsScreen() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
             {professors.map((professor) => (
-            <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
+            <TouchableOpacity 
+              key={professor.id} 
+              style={styles.professorCard} 
+              onPress={() => navigateToProfile(professor.id)}
+              activeOpacity={0.7}
+            >
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
