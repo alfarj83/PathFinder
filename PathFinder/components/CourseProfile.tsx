@@ -14,18 +14,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { Ionicons } from '@expo/vector-icons';
-import { Course } from '@/types';
-
-// --- Type Definitions ---
-type Professor = {
-  id: string;
-  full_name: string;
-  first_name: string;
-  last_name: string;
-  department_name: string;
-  rating: number;
-  difficulty: number;
-};
+import { Professor, Course } from '@/types';
 
 type CourseProfileProps = {
   courseId?: string;
@@ -137,9 +126,9 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
 
   useEffect(() => {
     if (activeCourseId) {
-      fetchProfessorData();
+      fetchCourseData();
     } else {
-      setError('No professor ID provided');
+      setError('No course ID provided');
       setLoading(false);
     }
   }, [activeCourseId]);
@@ -150,8 +139,8 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
       setError(null);
 
       const { data, error: supabaseError } = await supabase
-        .from('course')
-        .select('id, full_name, first_name, last_name, department_name, rating, difficulty')
+        .from('courses')
+        .select('id, course_code, course_name, course_desc')
         .eq('id', activeCourseId)
         .single();
 
@@ -166,8 +155,6 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
       // Ensure rating and difficulty are numbers
       const processedData = {
         ...data,
-        rating: typeof data.rating === 'number' ? data.rating : parseFloat(data.rating) || 0,
-        difficulty: typeof data.difficulty === 'number' ? data.difficulty : parseFloat(data.difficulty) || 0,
       };
 
       setCourseData(processedData);
@@ -193,14 +180,14 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
   }
 
   // Error state
-  if (error || !professorData) {
+  if (error || !courseData) {
     return (
       <SafeAreaProvider style={styles.container}>
         <View style={styles.errorContainer}>
           <Icon name="alert-circle" size={64} color="#E74C3C" />
           <Text style={styles.errorTitle}>Oops!</Text>
           <Text style={styles.errorText}>
-            {error || 'Unable to load professor data'}
+            {error || 'Unable to load course data'}
           </Text>
         </View>
       </SafeAreaProvider>
@@ -215,20 +202,14 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
           <TouchableOpacity onPress={handleBackPress} style={styles.backButtonIcon}>
             <Icon name="chevron-left" size={28} color="#000" />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>Professor Profile</Text>
+          <Text style={styles.headerTitle}>Course Profile</Text>
         </View>
 
         {/* Profile Section */}
         <View style={styles.profileSection}>
-          <View style={styles.profileImageLarge}>
-            <Image 
-              source={require('../assets/images/Anicca_square.png')} 
-              style={styles.profileImg}
-            />
           </View>
-          <Text style={styles.professorNameLarge}>{professorData.full_name}</Text>
-          <Text style={styles.departmentTextLarge}>{professorData.department_name}</Text>
-        </View>
+          <Text style={styles.professorNameLarge}>{courseData.course_code}</Text>
+          <Text style={styles.departmentTextLarge}>{courseData.course_name}</Text>
 
         {/* Contact Info Card */}
         <View style={styles.contactCard}>
@@ -239,7 +220,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
         {/* Green Section */}
         <View style={styles.greenSection}>
           <Text style={styles.sectionTitle}>Current Classes</Text>
-          <ClassCard
+          {/* <ClassCard
             title="CSCI-1200 Data Structures"
             semester="Fall 2025 Semester"
             rating="4.5"
@@ -261,7 +242,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
             rating="5.0"
             isExpanded={pastReviewsVisible}
             onToggle={() => setPastReviewsVisible(!pastReviewsVisible)}
-          />
+          /> */}
         </View>
       </ScrollView>
     </SafeAreaProvider>

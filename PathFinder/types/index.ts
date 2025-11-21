@@ -8,16 +8,18 @@ export interface Department {
 
 export interface Professor {
   id: string,
-  full_name: string
-  first_name: string,
-  last_name: string,
-  department_name: string,
-  department_code: string,
-  image_url?: string,
+  prof_name: string,
+  class_code: string,
+  num_ratings?: number,
   rating: number,
-  difficulty: number,
-  num_ratings: number,
-  reviews: Review[];
+  diff: number,
+  department_name?: string,
+  full_name?: string
+  first_name?: string,
+  last_name?: string,
+  department_code?: string,
+  image_url?: string,
+  reviews?: Review[];
 }
 
 export interface Course {
