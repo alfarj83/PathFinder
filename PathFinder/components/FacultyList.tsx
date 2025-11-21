@@ -189,8 +189,8 @@ export default function ProfsScreen() {
                   
                   <View style={styles.ratingBox}>
                     <Text style={styles.ratingLabel}>Difficulty</Text>
-                    <View style={[styles.ratingValue, { backgroundColor: getDifficultyColor(professor.difficulty) }]}>
-                      <Text style={styles.ratingText}>{professor.difficulty}/5</Text>
+                    <View style={[styles.ratingValue, { backgroundColor: getDifficultyColor(professor.diff) }]}>
+                      <Text style={styles.ratingText}>{professor.diff}/5</Text>
                     </View>
                   </View>
 
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#6B8E7F',
-    paddingTop: 10,
+    paddingTop: 50,
     paddingBottom: 20,
     paddingHorizontal: 20,
     flexDirection: 'row',

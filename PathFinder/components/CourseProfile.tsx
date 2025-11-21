@@ -1,4 +1,5 @@
 import { Course, Professor } from '@/types';
+import { supabase } from '@/utils/supabase';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -13,9 +14,7 @@ import {
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
-import { supabase } from '../utils/supabase';
 
-// --- Type Definitions ---
 type CourseProfileProps = {
   courseId?: string;
 };
@@ -69,8 +68,8 @@ const ProfessorCard = ({ professor, onPress }: ProfessorCardProps) => {
           
           <View style={styles.ratingBox}>
             <Text style={styles.ratingLabel}>Difficulty</Text>
-            <View style={[styles.ratingBadge, { backgroundColor: getDifficultyColor(professor.difficulty) }]}>
-              <Text style={styles.ratingValue}>{professor.difficulty}/5</Text>
+            <View style={[styles.ratingBadge, { backgroundColor: getDifficultyColor(professor.diff) }]}>
+              <Text style={styles.ratingValue}>{professor.diff}/5</Text>
             </View>
           </View>
 
@@ -114,7 +113,6 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
   useEffect(() => {
     if (activeCourseId) {
       fetchCourseData();
-      fetchProfessorsForCourse();
     } else {
       setError('No course ID provided');
       setLoading(false);
@@ -126,10 +124,9 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
       setLoading(true);
       setError(null);
 
-      // Fetch course data
-      const { data: courseInfo, error: courseError } = await supabase
+      const { data, error: courseError } = await supabase
         .from('courses')
-        .select('*')
+        .select('id, course_code, course_name, course_desc')
         .eq('id', activeCourseId)
         .single();
 
@@ -137,16 +134,16 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
         throw courseError;
       }
 
-      if (!courseInfo) {
+      if (!data) {
         throw new Error('Course not found');
       }
 
-      setCourseData(courseInfo);
-      
-      // Check if course has prerequisites
-      // For now, setting a default value
-      setHasPrerequisites(false);
-      
+      // Ensure rating and difficulty are numbers
+      const processedData = {
+        ...data,
+      };
+
+      setCourseData(processedData);
     } catch (err: any) {
       console.error('Error fetching course:', err);
       setError(err.message || 'Failed to load course data');

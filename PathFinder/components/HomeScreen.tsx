@@ -20,13 +20,25 @@ import { useRouter } from 'expo-router';
 import { APIObj } from '@/services/api';
 import { Professor } from '@/types';
 
-// Add prop type
-type HomeScreenProps = {
-  onProfessorPress?: (professorId: string) => void;
-};
+// --- NEW INTERFACE DEFINITION ---
+// --- CORRECT DEFAULT PROPS INITIALIZATION ---
+// This uses an object literal to define static default values (empty functions)
+const defaultProps: HomeScreenProps = {
+    loadDepartments: () => console.log("loadDepartments prop not provided!"),
+    handleSearch: () => console.log("handleSearch prop not provided!"),
+    handleDepartmentPress: () => console.log("handleDepartmentPress prop not provided!"),
+    handleViewSaved: () => console.log("handleViewSaved prop not provided!"),
+}
 
+interface HomeScreenProps {
+    // Make functions OPTIONAL (?:) because the component is a route and might be called without props
+    loadDepartments?: () => void; 
+    handleSearch?: () => void; 
+    handleDepartmentPress?: (dept: Department) => void;
+    handleViewSaved?: () => void;
+}
 
-export default function HomeScreen({ onProfessorPress }: HomeScreenProps = {}/*initialProps: HomeScreenProps*/) {
+export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
   //const props = useMemo(() => ({...defaultProps, ...initialProps}), [initialProps]);
 
   const router = useRouter();
@@ -91,14 +103,7 @@ export default function HomeScreen({ onProfessorPress }: HomeScreenProps = {}/*i
   const handleSearch = async () => {
     setSearching(true);
     if (searchMode === 'professor') {
-      // If onProfessorPress prop is provided, use it; otherwise use the default navigation
-      if (onProfessorPress) {
-        // This would require getting the professor ID from the search
-        // For now, keeping the default behavior
-        UserObj.displayMatchingProfessors(searchQuery, router);
-      } else {
-        UserObj.displayMatchingProfessors(searchQuery, router);
-      }
+      UserObj.displayMatchingProfessors(searchQuery, router);
     } else {
       UserObj.displayMatchingCourses(searchQuery, router);
     }
@@ -305,7 +310,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#6B8E7F',
-    paddingTop: 20,
+    paddingTop: 50,
     paddingBottom: 30,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,

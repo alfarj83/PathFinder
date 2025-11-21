@@ -1,6 +1,7 @@
 // app/(tabs)/test.tsx
 import CourseProfile from '@/components/CourseProfile';
 import ProfessorProfile from '@/components/ProfessorProfile';
+import HomeScreen from '@/components/HomeScreen';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
@@ -22,6 +23,12 @@ export default function TestScreen() {
     return (
       <View style={styles.container}>
         <ProfessorProfile professorId={professorId} />
+      </View>
+    );
+  } else if (courseId) {
+    return (
+      <View style={styles.container}>
+        <CourseProfile courseId={courseId} />
       </View>
     );
   }
