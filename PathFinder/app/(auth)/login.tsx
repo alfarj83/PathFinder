@@ -5,7 +5,7 @@ export default function LoginPage() {
   const router = useRouter();
 
     function Success() {
-        console.log('login was a success!!')
+        console.log('Login was a success! Please verify your email.')
         router.push('/')
     }
 
