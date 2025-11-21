@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { ProfObj } from './professors';
 import { Router, useRouter } from 'expo-router';
+import { CourseObj } from './courses';
 
 // Response type for authentication operations
 export interface AuthResponse {
@@ -276,8 +277,37 @@ class UserService {
         }
     }
 
-    displayProfessorProfile(router: Router) {
-        router.push('/test'); // Push a new screen onto the stack
+    public async displayMatchingCourses(searchQuery: string, router: Router) {
+        // Check if user is authenticated before allowing search
+        const isAuth = await this.isAuthenticated();
+        if (!isAuth) {
+            Alert.alert('Authentication Required', 'Please log in to search for professors.');
+            return;
+        }
+
+        try {
+            // this fills matchingProfessors array with matching professors
+            await CourseObj.searchCourse(searchQuery);
+            let results = CourseObj.returnMatchingCourses();
+            //console.log('results after returning matching courses', results)
+
+            if (results.length === 0) {
+                Alert.alert('No Results', 'No courses found matching your search.');
+                return;
+            }
+
+            // Navigate to faculty page with search results
+            router.push({
+                pathname: '/courses',
+                params: { 
+                    searchQuery,
+                    searchResults: JSON.stringify(results)
+                }
+            });
+        } catch (error) {
+            console.error('Search error:', error);
+            Alert.alert('Error', 'Failed to perform search. Please try again.');
+        }
     }
 
     saveProfessor() {

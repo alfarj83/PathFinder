@@ -14,16 +14,34 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen
         name="index"
-        // options={{
-        //   title: 'Home',
-        //   tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        // }}
+        options={{
+           title: 'Home'
+           //tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+         }}
       />
       <Tabs.Screen
         name="faculty"
+        options={{
+          title: 'Faculty'
+        }}
       />
       <Tabs.Screen
-      name="test"
+        name="profile"
+        options={{
+          title: "User"
+        }}
+      />
+      <Tabs.Screen
+        name="test"
+        options={{
+          href: null
+        }}
+      />
+      <Tabs.Screen
+        name="courses"
+        options={{
+          href: null
+        }}
       />
     </Tabs>
   );

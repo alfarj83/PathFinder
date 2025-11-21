@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 // We'll use Feather and MaterialCommunityIcons for the icons
 import Icon from 'react-native-vector-icons/Feather';
-import { Ionicons } from '@expo/vector-icons';
 
 // --- Re-usable Helper Components ---
 type ContactInfoRowProps = {
@@ -116,17 +115,10 @@ export default function ProfessorProfile() {
 
     return (
         <SafeAreaProvider style={styles.container}>
-            {/* Header */}
-            <View style={styles.header}>
-              <TouchableOpacity onPress={() => router.push("/faculty")} style={styles.backButton}>
-                <Ionicons name="chevron-back" size={30} color="black" />
-              </TouchableOpacity>
-            </View>
-
             <ScrollView>
                 <View style={styles.profileHeader}>
                     <View style={styles.profileImage}>
-                        <Image source={require('../assets/images/Anicca_square.png')} style={{ width: '100%', height: '100%'}}/>
+                        <Image source={require(image)} style={{ width: '100%', height: '100%'}}/>
                     </View>
                     <View style={{flex: 1, flexDirection: 'column'}}>
                         <Text style={{marginLeft: 30, fontWeight: 'bold', fontSize: 30}}>{"Skye Anicca"}</Text>
@@ -328,15 +320,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#444',
     lineHeight: 20,
-  },
-    header: {
-    backgroundColor: '#E8E4D5',
-    paddingTop: 30,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  backButton: {
-    marginRight: 15,
   },
 });

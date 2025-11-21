@@ -1,14 +1,22 @@
 // services/departments.ts
 import { Department } from '@/types';
-import { mockDepartments } from '@/utils/mockData';
 import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
 import { Professor } from '@/types';
 
 class DepartmentService {
   // returns a list of all department professors
-  getDeptList(): Department[] {
-    return mockDepartments;
+  async getDeptList(): Promise<Department[]> {
+    if (supabase) {
+      const { data } = await supabase
+        .from('dept_list')
+        .select()
+
+      return data as Department[];
+    } else {
+      console.log('Department data was not collected')
+      return [];
+    }
   };
 
   async getDepartmentByCode(code: string): Promise<Department | null> {
@@ -21,7 +29,7 @@ class DepartmentService {
     if (supabase) {
       // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)
       const searchQuery = `%${dept_name}%`;
-      console.log(searchQuery) // gets to here
+      console.log('here is searchQuery:', searchQuery) // gets to here
 
       // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
       // Note: Adjust this if your column names are different!
@@ -34,7 +42,11 @@ class DepartmentService {
           .from('professors') // Make sure 'professors' is your table name
           .select()            // Get all columns
           .or(filterString);   // Apply the multi-column search
-  
+
+        if (data == null) {
+          return [];
+        }
+        
         if (error) {
           console.log(error)
           console.error('Error fetching department:', error);

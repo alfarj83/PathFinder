@@ -78,10 +78,11 @@ import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import SignUpForm from '@/components/auth/SignUpForm';
 import LoginForm from '@/components/auth/LoginForm';
 import HomeScreen from '@/components/HomeScreen';
+import ProfessorProfile from '@/components/ProfessorProfile';
 
 export default function TestScreen() {
     return (
-      <HomeScreen/>
+      <ProfessorProfile/>
     );
   // return (
   //   <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>

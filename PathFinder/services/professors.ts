@@ -23,7 +23,7 @@ class ProfessorService {
   private currentCourses: typeof CourseObj[] = [];
   private previousCourses: typeof CourseObj[] = [];
 
-  /* SETTERS/GETTERS */
+  /* GETTERS */
   //returns Professor[]
   returnMatchingProfessors() {
     return this.matchingProfessors;

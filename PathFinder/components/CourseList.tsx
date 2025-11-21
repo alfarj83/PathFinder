@@ -14,14 +14,14 @@ import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
 import { Professor, Course } from '@/types';
 
-export default function ProfsScreen() {
+export default function CoursesScreen() {
   const router = useRouter();
   const params = useLocalSearchParams(); // 2. Get all navigation parameters
   const { searchResults } = params; // 3. Get your specific 'searchResults' param
   const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
-  const [professors, setProfessors] = useState<Professor[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(false);
+  const [courseCode, setCourseCode] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
   // const [profName, setProfName] = useState<string>('Barbara Cutler');
   // const [profDept, setProfDept] = useState<string>('Computer Science');
@@ -34,49 +34,12 @@ export default function ProfsScreen() {
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
-      departmentCode: params?.departmentCode,
       searchQuery: params?.searchQuery,
-      departmentName: params?.departmentName,
     });
-    loadProfessors();
+    loadCourses();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [params?.searchResults, params?.departmentCode, params?.searchQuery, params?.departmentName]);
+  }, [params?.searchResults, params?.searchQuery]);
 
-  async function loadProfessors() {
-    setLoading(true);
-    try {
-      // Check if we have search results passed from the search screen
-      if (params?.searchResults) {
-        // Parse the search results from the URL parameter
-        const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
-        setProfessors(results);
-        setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
-        
-        // Update header to show it's a search result
-        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
-      } 
-      // Check if we have a department to display
-      else if (params?.departmentCode) {
-        setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
-        
-        // Load professors from the specific department
-        const { data } = await supabase
-          .from('professors')
-          .select()
-          .eq('department_code', Array.isArray(params.departmentCode) ? params.departmentCode[0] : params.departmentCode);
-        if (data) setProfessors(data);
-      } 
-      // Default: Load all professors
-      else {
-        const { data } = await supabase.from('professors').select();
-        if (data) setProfessors(data);
-      }
-    } catch (error) {
-      console.error('Error loading professors:', error);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   async function loadCourses() {
     setLoading(true);
@@ -85,30 +48,32 @@ export default function ProfsScreen() {
       if (params?.searchResults) {
         // Parse the search results from the URL parameter
         const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
+        console.log(results)
         setCourses(results);
         setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
         // Update header to show it's a search result
         setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
-        
       } 
+
+      console.log('here is the course info', courses)
 
       // parse through searchQuery
       // Check if we have a department to display
-      else if (params?.departmentCode) {
-        setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
+    //   else if (params?.departmentCode) {
+    //     setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
         
-        // Load professors from the specific department
-        const { data } = await supabase
-          .from('courses')
-          .select()
-          .eq('course_code', Array.isArray(params.departmentCode) ? params.departmentCode[0] : params.departmentCode);
-        if (data) setProfessors(data);
-      } 
+        // Load courses from the specific department
+        // const { data } = await supabase
+        //   .from('courses')
+        //   .select()
+        //   .eq('course_name', '${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}');
+        // if (data) setCourses(data);
+    //  } 
       // Default: Load all professors
-      else {
-        const { data } = await supabase.from('courses').select();
-        if (data) setCourses(data);
-      }
+    //   else {
+    //     const { data } = await supabase.from('courses').select();
+    //     if (data) setCourses(data);
+    //   }
     } catch (error) {
       console.error('Error loading courses:', error);
     } finally {
@@ -147,15 +112,15 @@ export default function ProfsScreen() {
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#6B8E7F" />
         </View>
-      ) : professors.length === 0 ? (
+      ) : courses.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No professors found</Text>
+          <Text style={styles.emptyText}>No Courses found</Text>
         </View>
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
-            {professors.map((professor) => (
-            <TouchableOpacity key={professor.id} style={styles.professorCard} onPress={navigateToProfile}>
+            {courses.map((course) => (
+            <TouchableOpacity key={course.id} style={styles.professorCard} onPress={navigateToProfile}>
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
@@ -164,34 +129,15 @@ export default function ProfsScreen() {
 
                 {/* Professor Info */}
                 <View style={styles.professorInfo}>
-                  <Text style={styles.professorName}>{professor.full_name}</Text>
+                  <Text style={styles.professorName}>{course.course_name}</Text>
                   <View style={styles.departmentRow}>
                     <Ionicons name="location-outline" size={14} color="#666" />
-                    <Text style={styles.departmentText}>{professor.department_name}</Text>
+                    <Text style={styles.departmentText}>{course.course_code}</Text>
                   </View>
                 </View>
-
-                {/* Ratings */}
-                <View style={styles.ratingsContainer}>
-                  <View style={styles.ratingBox}>
-                    <Text style={styles.ratingLabel}>Rating</Text>
-                    <View style={[styles.ratingValue, { backgroundColor: getRatingColor(professor.rating) }]}>
-                      <Text style={styles.ratingText}>{professor.rating}/5</Text>
-                    </View>
-                  </View>
-                  
-                  <View style={styles.ratingBox}>
-                    <Text style={styles.ratingLabel}>Difficulty</Text>
-                    <View style={[styles.ratingValue, { backgroundColor: getDifficultyColor(professor.difficulty) }]}>
-                      <Text style={styles.ratingText}>{professor.difficulty}/5</Text>
-                    </View>
-                  </View>
-
-                  <Text style={styles.plusRatings}>+{professor.num_ratings}</Text>
                 </View>
-              </View>
               </TouchableOpacity>
-            ))}
+              ))}
           </View>
         </ScrollView>
       )}

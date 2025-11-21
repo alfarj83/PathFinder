@@ -1,59 +1,59 @@
 import json
 import csv
 
-# --- Configuration for courses ---
-input_json_file = 'professor_courses.json'  # Change this to your JSON file's name
-output_csv_file = 'professor_courses.csv' # The name of the file to create
-# ---------------------
+# # --- Configuration for courses ---
+# input_json_file = 'mockData.json'  # Change this to your JSON file's name
+# output_csv_file = 'dept_list.csv' # The name of the file to create
+# # ---------------------
 
-try:
-    # 1. Read the JSON data from the input file
-    with open(input_json_file, 'r') as f:
-        professor_data = json.load(f)
+# try:
+#     # 1. Read the JSON data from the input file
+#     with open(input_json_file, 'r') as f:
+#         professor_data = json.load(f)
 
-    # 2. Process the data to prepare for the CSV
-    output_rows = []
+#     # 2. Process the data to prepare for the CSV
+#     output_rows = []
     
-    # Add a header row for the CSV
-    output_rows.append(['Professor', 'Courses']) 
+#     # Add a header row for the CSV
+#     output_rows.append(['Professor', 'Courses']) 
 
-    # Loop through each professor (the top-level keys in the JSON)
-    for professor_name, semesters in professor_data.items():
+#     # Loop through each professor (the top-level keys in the JSON)
+#     for professor_name, semesters in professor_data.items():
         
-        # Use a set() to automatically store only unique course codes
-        unique_courses = set()
+#         # Use a set() to automatically store only unique course codes
+#         unique_courses = set()
         
-        # Loop through all the semester records for that professor
-        for semester, course_list in semesters.items():
-            # The update() method adds all items from the list to the set
-            unique_courses.update(course_list) 
+#         # Loop through all the semester records for that professor
+#         for semester, course_list in semesters.items():
+#             # The update() method adds all items from the list to the set
+#             unique_courses.update(course_list) 
         
-        # Convert the set of unique courses into a single, comma-separated string
-        # We sort them so the output is consistent and clean (e.g., "ADMN-1010, WRIT-4120")
-        courses_string = ", ".join(sorted(list(unique_courses)))
+#         # Convert the set of unique courses into a single, comma-separated string
+#         # We sort them so the output is consistent and clean (e.g., "ADMN-1010, WRIT-4120")
+#         courses_string = ", ".join(sorted(list(unique_courses)))
         
-        # Add the professor's name and their formatted course string as a new row
-        output_rows.append([professor_name, courses_string])
+#         # Add the professor's name and their formatted course string as a new row
+#         output_rows.append([professor_name, courses_string])
 
-    # 3. Write the processed data to a CSV file
-    with open(output_csv_file, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        # writerows() writes all the rows at once
-        writer.writerows(output_rows)
+#     # 3. Write the processed data to a CSV file
+#     with open(output_csv_file, 'w', newline='') as csvfile:
+#         writer = csv.writer(csvfile)
+#         # writerows() writes all the rows at once
+#         writer.writerows(output_rows)
 
-    print(f"✅ Successfully created '{output_csv_file}'!")
+#     print(f"✅ Successfully created '{output_csv_file}'!")
 
-except FileNotFoundError:
-    print(f"Error: The file '{input_json_file}' was not found.")
-    print("Please make sure the file is in the same directory as the script, or provide the full path.")
-except json.JSONDecodeError:
-    print(f"Error: Could not decode JSON from '{input_json_file}'. Please check the file's format.")
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+# except FileNotFoundError:
+#     print(f"Error: The file '{input_json_file}' was not found.")
+#     print("Please make sure the file is in the same directory as the script, or provide the full path.")
+# except json.JSONDecodeError:
+#     print(f"Error: Could not decode JSON from '{input_json_file}'. Please check the file's format.")
+# except Exception as e:
+#     print(f"An unexpected error occurred: {e}")
 
 # -- Configuration for departments -- #
-input_json = 'departments.json'  # Change this to your JSON file's name
-output_csv = 'departments.csv' # The name of the file to create
+input_json = 'mockData.json'  # Change this to your JSON file's name
+output_csv = 'dept_list.csv' # The name of the file to create
 
 # 1. Read the JSON data from the input file
 with open(input_json, 'r', encoding='utf-8') as f:
@@ -83,9 +83,9 @@ try:
             # Write all the data rows
             writer.writerows(data_list)
         
-        print(f"Successfully created '{output_csv_file}'")
+        print(f"Successfully created '{output_csv}'")
 
 except FileNotFoundError:
-    print(f"Error: The file '{input_json_file}' was not found.")
+    print(f"Error: The file '{input_json}' was not found.")
 except Exception as e:
     print(f"An unexpected error occurred: {e}")

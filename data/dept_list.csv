@@ -1,0 +1,39 @@
+id,category,code,name,fullName
+1,"Humanities, Arts and Social Sciences",ARTS,Arts,Arts Department
+2,"Humanities, Arts and Social Sciences",COGS,Cognitive Science,Cognitive Science Department
+3,"Humanities, Arts and Social Sciences",COMM,Communication,Communication & Media Department
+4,"Humanities, Arts and Social Sciences",ECON,Economics,Economics Department
+5,"Humanities, Arts and Social Sciences",GSAS,Games and Simulation Arts and Sciences,Games and Simulation Arts and Sciences Department
+6,"Humanities, Arts and Social Sciences",IHSS,Interdisciplinary Humanities and Social Sciences,Interdisciplinary Humanities and Social Sciences Department
+7,"Humanities, Arts and Social Sciences",INQR,HASS Inquiry,HASS Inquiry Department
+8,"Humanities, Arts and Social Sciences",LANG,Foreign Languages,Foreign Languages Department
+9,"Humanities, Arts and Social Sciences",LITR,Literature,Literature Department
+10,"Humanities, Arts and Social Sciences",PHIL,Philosophy,Philosophy Department
+11,"Humanities, Arts and Social Sciences",PSYC,Psychology,Psychology Department
+12,"Humanities, Arts and Social Sciences",STSO,"Science, Technology, and Society","Science, Technology, and Society Department"
+13,"Humanities, Arts and Social Sciences",WRIT,Writing,Writing Department
+14,Management,BUSN,Business (H),Business (H) Department
+15,Management,MGMT,Management,Management Department
+16,Architecture,ARCH,Architecture,Architecture Department
+17,Architecture,LGHT,Lighting,Lighting Department
+18,Engineering,BMED,Biomedical Engineering,Biomedical Engineering Department
+19,Engineering,CHME,Chemical Engineering,Chemical Engineering Department
+20,Engineering,CIVL,Civil Engineering,Civil Engineering Department
+21,Engineering,ECSE,"Electrical, Computer, and Systems Engineering","Electrical, Computer, and Systems Engineering Department"
+22,Engineering,ENGR,General Engineering,General Engineering Department
+23,Engineering,ENVE,Environmental Engineering,Environmental Engineering Department
+24,Engineering,ESCI,Engineering Science,Engineering Science Department
+25,Engineering,ISYE,Industrial and Systems Engineering,Industrial and Systems Engineering Department
+26,Engineering,MANE,"Mechanical, Aerospace, and Nuclear Engineering","Mechanical, Aerospace, and Nuclear Engineering Department"
+27,Engineering,MTLE,Materials Science and Engineering,Materials Science and Engineering Department
+28,Management,ITWS,Information Technology and Web Science,Information Technology and Web Science Department
+29,Science,ASTR,Astronomy,Astronomy Department
+30,Science,BCBP,Biochemistry and Biophysics,Biochemistry and Biophysics Department
+31,Science,BIOL,Biology,Biology Department
+32,Science,CHEM,Chemistry,Chemistry Department
+33,Science,CSCI,Computer Science,Computer Science Department
+34,Science,ERTH,Earth and Environmental Science,Earth and Environmental Science Department
+35,Science,ISCI,Interdisciplinary Science,Interdisciplinary Science Department
+36,Science,MATH,Mathematics,Mathematics Department
+37,Science,MATP,"Mathematical Programming, Probability, and Statistics","Mathematical Programming, Probability, and Statistics Department"
+38,Science,PHYS,Physics,Physics Department

@@ -16,23 +16,23 @@ export interface Professor {
   image_url?: string,
   rating: number,
   difficulty: number,
-  would_take_again: number,
   num_ratings: number,
-  email: string,
-  officeLocation?: string,
+  reviews: Review[];
 }
 
 export interface Course {
   id: string,
-  code: string,
-  name: string,
-  department: string,
-  departmentCode: string,
-  description: string,
-  credits: number,
-  difficulty?: number,
-  prerequisites?: string[],
-  professors?: string[],
+  course_code: string,
+  course_name: string,
+  course_desc: string,
+  // department: string,
+  // departmentCode: string,
+  // description: string,
+  // credits: number,
+  // difficulty?: number,
+  // prerequisites?: string[],
+  // professors?: string[],
+
 }
 
 export interface SearchResult {

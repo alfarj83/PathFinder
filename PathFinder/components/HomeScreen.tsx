@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { DeptObj } from '@/services/departments';
 import { ProfObj } from '@/services/professors';
@@ -20,7 +20,27 @@ import { useRouter } from 'expo-router';
 import { APIObj } from '@/services/api';
 import { Professor } from '@/types';
 
-export default function HomeScreen() {
+// --- NEW INTERFACE DEFINITION ---
+// --- CORRECT DEFAULT PROPS INITIALIZATION ---
+// This uses an object literal to define static default values (empty functions)
+const defaultProps: HomeScreenProps = {
+    loadDepartments: () => console.log("loadDepartments prop not provided!"),
+    handleSearch: () => console.log("handleSearch prop not provided!"),
+    handleDepartmentPress: () => console.log("handleDepartmentPress prop not provided!"),
+    handleViewSaved: () => console.log("handleViewSaved prop not provided!"),
+}
+
+interface HomeScreenProps {
+    // Make functions OPTIONAL (?:) because the component is a route and might be called without props
+    loadDepartments?: () => void; 
+    handleSearch?: () => void; 
+    handleDepartmentPress?: (dept: Department) => void;
+    handleViewSaved?: () => void;
+}
+
+export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
+  //const props = useMemo(() => ({...defaultProps, ...initialProps}), [initialProps]);
+
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [humanities, setHumanities] = useState<Department[]>([]);
@@ -38,8 +58,13 @@ export default function HomeScreen() {
     //DeptObj.getMatchingProfessors('', '')
   }, []);
 
+  const toggleSearchMode = () => {
+    setSearchMode(prev => prev === 'professor' ? 'course' : 'professor');
+    setSearchQuery(''); // Clear search when toggling
+  };
+
   // department data is based on mockDepartments, NOT supabase data
-  function loadDepartments() {
+  async function loadDepartments() {
     let hum:Department[] = [], 
       eng:Department[] = [], 
       arch:Department[] = [], 
@@ -48,7 +73,7 @@ export default function HomeScreen() {
 
     try {
       setLoading(true);
-      const data = DeptObj.getDeptList();
+      const data = await DeptObj.getDeptList();
       for (let i = 0; i < data.length; i++) {
         if (data[i].category === 'Humanities, Arts and Social Sciences') {
           hum.push(data[i]);
@@ -80,14 +105,9 @@ export default function HomeScreen() {
     if (searchMode === 'professor') {
       UserObj.displayMatchingProfessors(searchQuery, router);
     } else {
-      Alert.alert('Coming Soon', 'Course search will be available soon!');
+      UserObj.displayMatchingCourses(searchQuery, router);
     }
     setSearching(false);
-  };
-
-  const toggleSearchMode = () => {
-    setSearchMode(prev => prev === 'professor' ? 'course' : 'professor');
-    setSearchQuery(''); // Clear search when toggling
   };
 
   const handleDepartmentPress = async (dept: Department) => {
