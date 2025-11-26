@@ -7,9 +7,11 @@ import sys
 def rmp_csv(par_arr):
 
     # --- Configuration for courses ---
-    input_json_file = '../prof_rate.json'  # Change this to your JSON file's name
-    output_csv_file = '../tempcsv.csv' # The name of the file to create
+    input_json_file = '../temps/prof_rate.json'  # Change this to your JSON file's name
+    output_csv_file = '../temps/tempcsv.csv' # The name of the file to create
     # ---------------------
+
+
 
     try:
         # 1. Read the JSON data from the input file
@@ -98,4 +100,12 @@ if __name__ == "__main__":
 
 
     print("CSV created")
+
+
+    names_file = "../temps/full_names.txt"
+    with open(names_file, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    # Write back everything except the first line
+    with open(names_file, "w", encoding="utf-8") as f:
+        f.writelines(lines[1:])
 
