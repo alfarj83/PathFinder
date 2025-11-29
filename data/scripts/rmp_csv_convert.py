@@ -24,9 +24,11 @@ def rmp_csv(par_arr):
         # Add a header row for the CSV
         output_rows.append(['prof_name', 'class_code', 'num_ratings', 'rating', 'diff']) 
 
+        store_prof_name = ""
+
         # Loop through each professor (the top-level keys in the JSON)
         for professor_name, infos in professor_data.items():
-            
+            store_prof_name = professor_name
             # goes through our list of combines
             # adds the seocnd part to the first part and removes the second part
             for combine in par_arr:
@@ -68,6 +70,8 @@ def rmp_csv(par_arr):
             writer.writerows(output_rows)
 
         print(f"✅ Successfully created '{output_csv_file}'!")
+
+        return store_prof_name
         
 
     except FileNotFoundError:
@@ -77,6 +81,8 @@ def rmp_csv(par_arr):
         print(f"Error: Could not decode JSON from '{input_json_file}'. Please check the file's format.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+    return ""
 
 
 
@@ -90,22 +96,28 @@ if __name__ == "__main__":
     par_arr = []
     
     for i in range(1, len(sys.argv), 2):
-        print(i)
+        print(str(i) + sys.argv[i])
         par_arr.append([sys.argv[i], sys.argv[i+1]])
     
     print("paramters:")
     print(par_arr)
     # put in the big string of it here
-    rmp_csv(par_arr)
+    profname = rmp_csv(par_arr)
 
 
     print("CSV created")
+    
 
-
+    
+    
     names_file = "../temps/full_names.txt"
     with open(names_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
     # Write back everything except the first line
     with open(names_file, "w", encoding="utf-8") as f:
-        f.writelines(lines[1:])
+        if(profname == lines[0].strip()):
+            f.writelines(lines[1:])
+        else:
+            f.writelines(lines)
+    
 

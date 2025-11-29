@@ -137,9 +137,10 @@ def extract_class_info(json_text, what_print):
     
     print("Total reviews:")
     print(count_num_reviews)
-    average_rat = round(tot_rating/count_num_reviews, 1)
+    average_rat = round(tot_rating/count_num_reviews + 0.0001, 1)
     print(average_rat)
-    average_diff = round(tot_diff/count_num_reviews, 1)
+    average_diff = round(tot_diff/count_num_reviews + 0.0001, 1)
+    print(average_diff)
     
 
     with open("../temps/sql_insert.sql", "r", encoding="utf-8") as f:
@@ -148,26 +149,22 @@ def extract_class_info(json_text, what_print):
     sql = f"""UPDATE professors
 SET rating = {average_rat},
     difficulty = {average_diff},
-    num_ratings = {count_num_reviews}
-    faculty_url = {fac_link},
-    rmp_url = https://www.ratemyprofessors.com/professor/{prof_num}
+    num_ratings = {count_num_reviews},
+    faculty_url = \'{fac_link}\',
+    rmp_url = \'https://www.ratemyprofessors.com/professor/{prof_num}\'
 WHERE full_name = '{professor_name}';"""
 
     print(sql)
+
+    with open("../temps/sql_insert.sql", "w", encoding="utf-8") as f:
+        f.write(sql)
+
+
     result = {
         professor_name: {
             "temp": "temp"
-
-            
         }
     }
-
-    '''
-    "rmpurl": rmpurl,
-    "department": department,
-    "overall": avg_ratings,
-    "diff": avg_diff
-    '''
 
     # Add each class and its reviews
     for cname, ratings in class_reviews.items():
@@ -180,12 +177,8 @@ WHERE full_name = '{professor_name}';"""
             for single_rating in ratings:
                 tot_over = tot_over + single_rating[0]
                 tot_diff = tot_diff + single_rating[1]
-            #print(tot_over/len(ratings))
-            #print(tot_diff/len(ratings))
-            if(what_print == "fin"):
-                result[professor_name][cname] = [round(tot_over/len(ratings), 1), round(tot_diff/len(ratings), 1), len(ratings)]
-            else:
-                result[professor_name][cname] = [tot_over, tot_diff, len(ratings)]
+            
+            result[professor_name][cname] = [tot_over, tot_diff, len(ratings)]
 
     return result
 
