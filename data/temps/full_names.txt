@@ -1,11 +1,9 @@
-James Kilduff
+Jason Huh
+Jason Kuruzovich
 James Lu
 James Malazita
 Jarah Moesch
 Jason Du
-Jason Hicken
-Jason Huh
-Jason Kuruzovich
 Jefferson Ellinger
 Jeffrey Banks
 Jeffrey Morris
@@ -297,3 +295,4 @@ Zachary Ward
 Zhaoran (Rena) Huang
 Zheyu Zhang
 Zhiding Liang
+James Kilduff
