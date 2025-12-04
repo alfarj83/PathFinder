@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,8 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
+  RefreshControl,
+  Button
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -22,6 +24,7 @@ export default function ProfileTab() {
   const [joinedDate, setJoinedDate] = useState('');
   const [savedCourses, setSavedCourses] = useState<Course[]>([]);
   const [savedProfessors, setSavedProfessors] = useState<Professor[]>([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     loadUserProfile();
@@ -103,6 +106,50 @@ export default function ProfileTab() {
     });
   };
 
+  const onRefresh = useCallback(async () => {
+    // 1. Start the loading indicator
+    setRefreshing(true);
+
+    // 2. Perform the actual refresh/data fetching logic
+    // Get current user
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+        console.log('No user found');
+        return;
+      }
+
+    // Load saved courses (limit to 2 for preview)
+    const { data: savedCoursesData } = await supabase
+      .from('saved_courses')
+      .select('courses(*)')
+      .eq('user_id', user.id)
+      .limit(2);
+
+    if (savedCoursesData) {
+      const courses = savedCoursesData
+        .map((item: any) => item.courses)
+        .filter((course): course is Course => course !== null);
+      setSavedCourses(courses);
+    }
+
+    // Load saved professors (limit to 2 for preview)
+    const { data: savedProfsData } = await supabase
+      .from('saved_professors')
+      .select('professors(*)')
+      .eq('user_id', user.id)
+      .limit(2);
+
+    if (savedProfsData) {
+      const professors = savedProfsData
+        .map((item: any) => item.professors)
+        .filter((prof): prof is Professor => prof !== null);
+      setSavedProfessors(professors);
+    }
+
+    // 3. Stop the loading indicator
+    setRefreshing(false);
+  }, []);
+
   if (loading) {
     return (
       <SafeAreaProvider style={styles.container}>
@@ -114,9 +161,14 @@ export default function ProfileTab() {
     );
   }
 
+  async function signOut() {
+    const { error } = await supabase.auth.signOut()
+    router.push('../(auth)/login')
+  }
+
   return (
     <SafeAreaProvider style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} refreshControl= {<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}>
         {/* Header Section */}
         <View style={styles.headerSection}>
           <View style={styles.profileImageContainer}>
@@ -205,7 +257,7 @@ export default function ProfileTab() {
                   </View>
                   <View style={styles.professorRating}>
                     <Text style={styles.ratingNumber}>
-                      {professor.rating?.toFixed(1) || 'N/A'}
+                      {professor.rating? professor.rating : 'N/A' }
                     </Text>
                   </View>
                   <Icon name="chevron-right" size={20} color="#666" />
@@ -220,6 +272,7 @@ export default function ProfileTab() {
             </>
           )}
         </View>
+        <Button title="Log Out" onPress={() => signOut()}></Button>
       </ScrollView>
     </SafeAreaProvider>
   );

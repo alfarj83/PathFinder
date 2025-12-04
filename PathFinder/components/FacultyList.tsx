@@ -7,11 +7,14 @@ import {
     Text,
     TouchableOpacity,
     View,
-    ActivityIndicator
+    ActivityIndicator,
+    Button,
+    Alert
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
 import { Professor, Course } from '@/types';
+import { UserObj } from '@/services/user';
 
 export default function ProfsScreen() {
   const router = useRouter();
@@ -134,6 +137,10 @@ export default function ProfsScreen() {
     });
   };
   
+  function handleSaved(professorId: string) {
+    Alert.alert('Professor Saved!')
+    UserObj.saveProfessor(professorId);
+  }
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -195,6 +202,7 @@ export default function ProfsScreen() {
                   </View>
 
                   <Text style={styles.plusRatings}>+{professor.num_ratings}</Text>
+                  <Button title="Save" onPress={() => handleSaved(professor.id)}></Button>
                 </View>
               </View>
               </TouchableOpacity>

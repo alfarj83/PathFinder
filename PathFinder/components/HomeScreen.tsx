@@ -174,13 +174,13 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
+            {/* <TouchableOpacity 
               style={styles.viewSavedButton}
               onPress={handleViewSaved}
               activeOpacity={0.8}
             >
-              <Text style={styles.viewSavedText}>View Saved</Text>
-            </TouchableOpacity>
+              {/* <Text style={styles.viewSavedText}>View Saved</Text> }
+            </TouchableOpacity> */}
           </View>
         </View>
 

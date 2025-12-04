@@ -1,4 +1,4 @@
-import { Professor } from '@/types';
+import { Course, Professor } from '@/types';
 //import { mockProfessors } from '@/utils/mockData';
 import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
@@ -30,6 +30,8 @@ class UserService {
     // Store current user data
     private currentUser: any = null;
     private currentSession: any = null;
+    private currentSavedCourses: Course[] = [];
+    private currentSavedProfessors: Professor[] = [];
 
     // ============================================
     // AUTHENTICATION METHODS
@@ -310,29 +312,109 @@ class UserService {
         }
     }
 
-    saveProfessor() {
-        // TODO: Implement save professor functionality
-        // This should save to the user's profile in Supabase
+    /**
+     * Save a professor for the current user
+     */
+    public async saveProfessor(professorId: string): Promise<boolean> {
+        try {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user) return false;
+
+            const { data, error } = await supabase
+            .from('saved_professors')
+            .select('id')
+            .eq('user_id', user.id)
+            .eq('professor_id', professorId)
+            .single();
+
+            if (data == null) {
+                const { error } = await supabase
+                .from('saved_professors')
+                .insert({
+                    user_id: user.id,
+                    professor_id: professorId,
+                });
+            }
+
+            return !error;
+        } catch (error) {
+            console.error('Error saving professor:', error);
+            return false;
+        }
     }
 
-    saveCourse() {
-        // TODO: Implement save course functionality
+    /**
+     * Unsave a professor for the current user
+     */
+    public async unsaveProfessor(professorId: string): Promise<boolean> {
+        try {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user) return false;
+
+            const { error } = await supabase
+            .from('saved_professors')
+            .delete()
+            .eq('user_id', user.id)
+            .eq('professor_id', professorId);
+
+            return !error;
+        } catch (error) {
+            console.error('Error unsaving professor:', error);
+            return false;
+        }
     }
 
-    unsaveProfessor() {
-        // TODO: Implement unsave professor functionality
+    /**
+     * Save a course for the current user
+     */
+    public async saveCourse(courseId: string | number): Promise<boolean> {
+    try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return false;
+
+        // check if the course is saved
+        const { data, error } = await supabase
+            .from('saved_courses')
+            .select('id')
+            .eq('user_id', user.id)
+            .eq('course_id', Number(courseId)) // Convert to number for bigint column
+            .single();
+
+        if (data == null) {
+            const { error } = await supabase
+            .from('saved_courses')
+            .insert({
+                user_id: user.id,
+                course_id: Number(courseId), // Convert to number for bigint column
+            });
+        }
+
+        return !error;
+    } catch (error) {
+        console.error('Error saving course:', error);
+        return false;
+    }
     }
 
-    unsaveCourse() {
-        // TODO: Implement unsave course functionality
-    }
+    /**
+     * Unsave a course for the current user
+     */
+    public async unsaveCourse(courseId: string | number): Promise<boolean> {
+        try {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user) return false;
 
-    selectDept() {
-        // TODO: Implement department selection
-    }
+            const { error } = await supabase
+            .from('saved_courses')
+            .delete()
+            .eq('user_id', user.id)
+            .eq('course_id', Number(courseId)); // Convert to number for bigint column
 
-    displayDeptList() {
-        // TODO: Implement department list display
+            return !error;
+        } catch (error) {
+            console.error('Error unsaving course:', error);
+            return false;
+        }
     }
 }
 

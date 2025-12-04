@@ -8,11 +8,14 @@ import {
     Text,
     TouchableOpacity,
     View,
-    ActivityIndicator
+    ActivityIndicator,
+    Button,
+    Alert
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 import { supabase } from '@/utils/supabase';
 import { Professor, Course } from '@/types';
+import { UserObj } from '@/services/user';
 
 export default function CoursesScreen() {
   const router = useRouter();
@@ -73,7 +76,7 @@ export default function CoursesScreen() {
   };
 
     // Updated to accept professor ID and pass current search context
-  const navigateToProfile = (courseId: string) => {
+  const navigateToProfile = (courseId: string|number) => {
     router.push({
       pathname: '/test',
       params: { 
@@ -85,6 +88,11 @@ export default function CoursesScreen() {
       }
     });
   };
+
+  function handleSaved(courseId: string | number) {
+    Alert.alert('Course saved!')
+    UserObj.saveCourse(courseId);
+  }
   
 
   return (
@@ -124,6 +132,7 @@ export default function CoursesScreen() {
                     <Text style={styles.departmentText}>{course.course_code}</Text>
                   </View>
                 </View>
+                <Button title="Save" onPress={() => handleSaved(course.id)}></Button>
                 </View>
               </TouchableOpacity>
               ))}

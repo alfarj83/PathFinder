@@ -138,7 +138,7 @@ export default function SavedProfessorsScreen() {
                     <View style={styles.ratingBox}>
                       <Text style={styles.ratingLabel}>Rating</Text>
                       <Text style={styles.ratingValue}>
-                        {professor.rating?.toFixed(1) || 'N/A'}
+                        {professor.rating? professor.rating : 'N/A'}
                       </Text>
                     </View>
                   </View>
