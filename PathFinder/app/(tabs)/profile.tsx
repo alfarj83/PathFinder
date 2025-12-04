@@ -162,8 +162,19 @@ export default function ProfileTab() {
   }
 
   async function signOut() {
-    const { error } = await supabase.auth.signOut()
-    router.push('../(auth)/login')
+    try {
+        const { error } = await supabase.auth.signOut()
+        if (error) {
+          // Handle the error (e.g., show an alert)
+          console.error('Error logging out:', error.message);
+          return;
+        }
+        router.push('../(auth)/login')
+        // --- State/Navigation Management Goes Here ---
+
+      } catch (err) {
+        console.error('An unexpected error occurred during logout:', err);
+      }
   }
 
   return (
