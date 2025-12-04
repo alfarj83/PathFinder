@@ -23,7 +23,8 @@ export interface Professor {
 }
 
 export interface Course {
-  id: string,
+  id: string|number,
+  //id: string,
   course_code: string,
   course_name: string,
   course_desc: string,
