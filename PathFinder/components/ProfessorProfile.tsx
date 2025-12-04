@@ -1,31 +1,33 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../utils/supabase'
-import { useRouter, useLocalSearchParams } from 'expo-router';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ProfileDataObj } from '@/services/profileData';
+import { CourseWithRating, Professor } from '@/types';
 import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
+  formatRating,
+  getRatingColor,
+  isValidNumber,
+  toNumber
+} from '@/utils/formatters';
+import {
+  isProfessorSaved,
+  saveProfessor,
+  unsaveProfessor,
+} from '@/utils/savedItems';
+import { Ionicons } from '@expo/vector-icons';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import {
   ActivityIndicator,
   Alert,
+  Linking,
+  ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View
 } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
-import { Ionicons } from '@expo/vector-icons';
 
 // --- Type Definitions ---
-type Professor = {
-  id: string;
-  full_name: string;
-  first_name: string;
-  last_name: string;
-  department_name: string;
-  rating: number;
-  difficulty: number;
-};
-
 type ProfessorProfileProps = {
   professorId?: string;
 };
@@ -35,17 +37,9 @@ type StarRatingProps = {
 };
 
 type ClassCardProps = {
-  title: string;
-  semester: string;
-  rating: string;
+  course: CourseWithRating;
   isExpanded: boolean;
   onToggle: () => void;
-};
-
-type ReviewCardProps = {
-  rating: number;
-  date: string;
-  text: string;
 };
 
 /**
@@ -53,17 +47,31 @@ type ReviewCardProps = {
  */
 const StarRating = ({ rating }: StarRatingProps) => {
   const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
+  const hasHalfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
     <View style={styles.starRow}>
       {[...Array(fullStars)].map((_, i) => (
-        <Icon key={`full-${i}`} name="star" size={16} color="#000" style={{ marginRight: 2 }} />
+        <Icon
+          key={`full-${i}`}
+          name="star"
+          size={16}
+          color="#FFD700"
+          style={{ marginRight: 2 }}
+        />
       ))}
-      {hasHalfStar && <Icon name="star" size={16} color="#000" style={{ marginRight: 2 }} />}
+      {hasHalfStar && (
+        <Icon name="star" size={16} color="#FFD700" style={{ marginRight: 2 }} />
+      )}
       {[...Array(emptyStars)].map((_, i) => (
-        <Icon key={`empty-${i}`} name="star" size={16} color="#CCC" style={{ marginRight: 2 }} />
+        <Icon
+          key={`empty-${i}`}
+          name="star"
+          size={16}
+          color="#CCC"
+          style={{ marginRight: 2 }}
+        />
       ))}
     </View>
   );
@@ -72,49 +80,67 @@ const StarRating = ({ rating }: StarRatingProps) => {
 /**
  * Renders the main card for a class
  */
-const ClassCard = ({ title, semester, rating, isExpanded, onToggle }: ClassCardProps) => (
-  <View style={styles.classCard}>
-    <View style={styles.classCardTop}>
-      <View style={styles.classInfo}>
-        <Text style={styles.classTitle}>{title}</Text>
-        <Text style={styles.classSemester}>{semester}</Text>
-      </View>
-      <View style={styles.ratingBox}>
-        <Text style={styles.ratingLabel}>Overall</Text>
-        <Text style={styles.ratingLabel}>Rating</Text>
-        <Text style={styles.ratingText}>{rating}</Text>
-      </View>
-    </View>
-    <TouchableOpacity style={styles.toggleRow} onPress={onToggle}>
-      <Text style={styles.toggleText}>View reviews</Text>
-      <Icon name={isExpanded ? 'chevron-up' : 'chevron-down'} size={20} color="#000" />
-    </TouchableOpacity>
-  </View>
-);
+const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
+  const ratingDisplay = formatRating(course.rating);
+  const ratingNum = toNumber(course.rating);
+  const hasValidRating = isValidNumber(course.rating) && ratingNum > 0;
 
-/**
- * Renders a single review card
- */
-const ReviewCard = ({ rating, date, text }: ReviewCardProps) => (
-  <View style={styles.reviewCard}>
-    <View style={styles.reviewHeader}>
-      <StarRating rating={rating} />
-      <Text style={styles.reviewDate}>{date}</Text>
+  return (
+    <View style={styles.classCard}>
+      <View style={styles.classCardTop}>
+        <View style={styles.classInfo}>
+          <Text style={styles.classTitle}>
+            {course.course_code} {course.course_name !== course.course_code ? course.course_name : ''}
+          </Text>
+          {course.num_ratings != null && toNumber(course.num_ratings) > 0 && (
+            <Text style={styles.classSemester}>
+              {toNumber(course.num_ratings)} rating{toNumber(course.num_ratings) !== 1 ? 's' : ''}
+            </Text>
+          )}
+        </View>
+        <View
+          style={[
+            styles.ratingBox,
+            { backgroundColor: hasValidRating ? getRatingColor(ratingNum) : '#999' },
+          ]}
+        >
+          <Text style={styles.ratingLabel}>Overall</Text>
+          <Text style={styles.ratingLabel}>Rating</Text>
+          <Text style={styles.ratingText}>{ratingDisplay}</Text>
+        </View>
+      </View>
+      {isValidNumber(course.difficulty) && toNumber(course.difficulty) > 0 && (
+        <View style={styles.difficultyRow}>
+          <Text style={styles.difficultyLabel}>Difficulty: </Text>
+          <Text style={styles.difficultyValue}>{formatRating(course.difficulty)}/5</Text>
+        </View>
+      )}
+      <TouchableOpacity style={styles.toggleRow} onPress={onToggle}>
+        <Text style={styles.toggleText}>View reviews</Text>
+        <Icon
+          name={isExpanded ? 'chevron-up' : 'chevron-down'}
+          size={20}
+          color="#000"
+        />
+      </TouchableOpacity>
     </View>
-    <Text style={styles.reviewText}>{text}</Text>
-  </View>
-);
+  );
+};
 
-export default function ProfessorProfile({ professorId }: ProfessorProfileProps = {}) {
+export default function ProfessorProfile({
+  professorId,
+}: ProfessorProfileProps = {}) {
   const [professorData, setProfessorData] = useState<Professor | null>(null);
+  const [courses, setCourses] = useState<CourseWithRating[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [currentReviewsVisible, setCurrentReviewsVisible] = useState(false);
-  const [pastReviewsVisible, setPastReviewsVisible] = useState(false);
-  
+  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
+  const [isSaved, setIsSaved] = useState(false);
+  const [savingInProgress, setSavingInProgress] = useState(false);
+
   const router = useRouter();
   const params = useLocalSearchParams();
-  
+
   // Get professor ID from props first, then fall back to route params
   const activeProfessorId = professorId || (params.professorId as string);
 
@@ -125,11 +151,10 @@ export default function ProfessorProfile({ professorId }: ProfessorProfileProps 
         pathname: '/faculty',
         params: {
           searchQuery: params.searchQuery,
-          searchResults: params.searchResults
-        }
+          searchResults: params.searchResults,
+        },
       });
     } else {
-      // Otherwise just go back
       router.back();
     }
   };
@@ -137,45 +162,82 @@ export default function ProfessorProfile({ professorId }: ProfessorProfileProps 
   useEffect(() => {
     if (activeProfessorId) {
       fetchProfessorData();
+      checkSavedStatus();
     } else {
       setError('No professor ID provided');
       setLoading(false);
     }
   }, [activeProfessorId]);
 
+  const checkSavedStatus = async () => {
+    if (activeProfessorId) {
+      const saved = await isProfessorSaved(activeProfessorId);
+      setIsSaved(saved);
+    }
+  };
+
+  const handleToggleSave = async () => {
+    if (savingInProgress || !activeProfessorId) return;
+
+    setSavingInProgress(true);
+    try {
+      if (isSaved) {
+        const success = await unsaveProfessor(activeProfessorId);
+        if (success) setIsSaved(false);
+      } else {
+        const success = await saveProfessor(activeProfessorId);
+        if (success) setIsSaved(true);
+      }
+    } catch (err) {
+      console.error('Error toggling save:', err);
+    } finally {
+      setSavingInProgress(false);
+    }
+  };
+
   const fetchProfessorData = async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const { data, error: supabaseError } = await supabase
-        .from('professors')
-        .select('id, full_name, first_name, last_name, department_name, rating, difficulty')
-        .eq('id', activeProfessorId)
-        .single();
+      // Use the new ProfileDataService to get complete professor data
+      const { professor, courses: professorCourses } =
+        await ProfileDataObj.getFullProfessorProfile(activeProfessorId);
 
-      if (supabaseError) {
-        throw supabaseError;
-      }
-
-      if (!data) {
+      if (!professor) {
         throw new Error('Professor not found');
       }
 
-      // Ensure rating and difficulty are numbers
-      const processedData = {
-        ...data,
-        rating: typeof data.rating === 'number' ? data.rating : parseFloat(data.rating) || 0,
-        difficulty: typeof data.difficulty === 'number' ? data.difficulty : parseFloat(data.difficulty) || 0,
-      };
-
-      setProfessorData(processedData);
+      setProfessorData(professor);
+      setCourses(professorCourses);
     } catch (err: any) {
       console.error('Error fetching professor:', err);
       setError(err.message || 'Failed to load professor data');
       Alert.alert('Error', 'Failed to load professor data. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const toggleCourseExpanded = (courseCode: string) => {
+    setExpandedCourses((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(courseCode)) {
+        newSet.delete(courseCode);
+      } else {
+        newSet.add(courseCode);
+      }
+      return newSet;
+    });
+  };
+
+  const openLink = (url: string | undefined, type: string) => {
+    if (url) {
+      Linking.openURL(url).catch(() => {
+        Alert.alert('Error', `Could not open ${type} page`);
+      });
+    } else {
+      Alert.alert('Not Available', `${type} link is not available`);
     }
   };
 
@@ -201,6 +263,12 @@ export default function ProfessorProfile({ professorId }: ProfessorProfileProps 
           <Text style={styles.errorText}>
             {error || 'Unable to load professor data'}
           </Text>
+          <TouchableOpacity
+            style={styles.retryButton}
+            onPress={fetchProfessorData}
+          >
+            <Text style={styles.retryButtonText}>Try Again</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaProvider>
     );
@@ -215,53 +283,98 @@ export default function ProfessorProfile({ professorId }: ProfessorProfileProps 
             <Icon name="chevron-left" size={28} color="#000" />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Professor Profile</Text>
+          <TouchableOpacity
+            onPress={handleToggleSave}
+            style={styles.saveButton}
+            disabled={savingInProgress}
+          >
+            <Icon
+              name="bookmark"
+              size={24}
+              color={isSaved ? '#627768' : '#CCC'}
+              style={{ opacity: savingInProgress ? 0.5 : 1 }}
+            />
+          </TouchableOpacity>
         </View>
 
         {/* Profile Section */}
         <View style={styles.profileSection}>
           <View style={styles.profileImageLarge}>
-            <Image 
-              source={require('../assets/images/rpi-logo.png')} 
-              style={styles.profileImg}
-            />
+            <Ionicons name="person-circle-outline" size={100} color="#627768" />
           </View>
           <Text style={styles.professorNameLarge}>{professorData.full_name}</Text>
-          <Text style={styles.departmentTextLarge}>{professorData.department_name}</Text>
+          <Text style={styles.departmentTextLarge}>
+            {professorData.department_name || 'Department not specified'}
+          </Text>
+
+          {/* Overall Stats */}
+          <View style={styles.statsRow}>
+            <View style={styles.statItem}>
+              <Text style={styles.statValue}>
+                {formatRating(professorData.rating)}
+              </Text>
+              <Text style={styles.statLabel}>Rating</Text>
+            </View>
+            <View style={styles.statDivider} />
+            <View style={styles.statItem}>
+              <Text style={styles.statValue}>
+                {formatRating(professorData.difficulty ?? professorData.diff)}
+              </Text>
+              <Text style={styles.statLabel}>Difficulty</Text>
+            </View>
+            <View style={styles.statDivider} />
+            <View style={styles.statItem}>
+              <Text style={styles.statValue}>
+                {toNumber(professorData.num_ratings)}
+              </Text>
+              <Text style={styles.statLabel}>Reviews</Text>
+            </View>
+          </View>
         </View>
 
         {/* Contact Info Card */}
         <View style={styles.contactCard}>
           <Text style={styles.contactTitle}>Contact Info</Text>
-          <Text style={styles.contactLink}>RMP Page: URL link</Text>
-          <Text style={styles.contactLink}>RPI Page: URL link</Text>
+          <TouchableOpacity
+            onPress={() => openLink(professorData.rmp_url, 'RateMyProfessors')}
+            style={styles.contactLinkRow}
+          >
+            <Icon name="external-link" size={16} color="#627768" />
+            <Text style={styles.contactLink}>
+              {professorData.rmp_url ? 'View on RateMyProfessors' : 'RMP Page: Not available'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => openLink(professorData.faculty_url, 'RPI Faculty')}
+            style={styles.contactLinkRow}
+          >
+            <Icon name="external-link" size={16} color="#627768" />
+            <Text style={styles.contactLink}>
+              {professorData.faculty_url ? 'View RPI Faculty Page' : 'RPI Page: Not available'}
+            </Text>
+          </TouchableOpacity>
         </View>
 
-        {/* Green Section */}
+        {/* Green Section with Classes */}
         <View style={styles.greenSection}>
-          <Text style={styles.sectionTitle}>Current Classes</Text>
-          <ClassCard
-            title="CSCI-1200 Data Structures"
-            semester="Fall 2025 Semester"
-            rating="4.5"
-            isExpanded={currentReviewsVisible}
-            onToggle={() => setCurrentReviewsVisible(!currentReviewsVisible)}
-          />
-          {currentReviewsVisible && (
-            <ReviewCard
-              rating={4}
-              date="Jan 8th, 2023"
-              text="Tough class. It had lots of homework and was very fast paced, and that made me much better at computer scientist."
-            />
-          )}
+          <Text style={styles.sectionTitle}>
+            Classes ({courses.length})
+          </Text>
 
-          <Text style={styles.sectionTitle2}>Past Classes</Text>
-          <ClassCard
-            title="CSCI 4530 Advanced Computer Graphics"
-            semester="Spring 2021 Semester"
-            rating="5.0"
-            isExpanded={pastReviewsVisible}
-            onToggle={() => setPastReviewsVisible(!pastReviewsVisible)}
-          />
+          {courses.length === 0 ? (
+            <View style={styles.emptyCard}>
+              <Text style={styles.emptyText}>No class data available</Text>
+            </View>
+          ) : (
+            courses.map((course) => (
+              <ClassCard
+                key={course.course_code}
+                course={course}
+                isExpanded={expandedCourses.has(course.course_code)}
+                onToggle={() => toggleCourseExpanded(course.course_code)}
+              />
+            ))
+          )}
         </View>
       </ScrollView>
     </SafeAreaProvider>
@@ -303,6 +416,18 @@ const styles = StyleSheet.create({
     color: '#666',
     textAlign: 'center',
   },
+  retryButton: {
+    marginTop: 20,
+    backgroundColor: '#627768',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
   headerBar: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -315,9 +440,13 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   headerTitle: {
+    flex: 1,
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
+  },
+  saveButton: {
+    padding: 8,
   },
   profileSection: {
     alignItems: 'center',
@@ -330,27 +459,56 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     overflow: 'hidden',
     marginBottom: 12,
-  },
-  profileImg: {
-    width: '100%',
-    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#E8E4D5',
   },
   professorNameLarge: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 4,
+    textAlign: 'center',
   },
   departmentTextLarge: {
     fontSize: 16,
     color: '#666',
+    marginBottom: 16,
+  },
+  statsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#E8E4D5',
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    marginHorizontal: 16,
+  },
+  statItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  statValue: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#627768',
+  },
+  statLabel: {
+    fontSize: 12,
+    color: '#666',
+    marginTop: 4,
+  },
+  statDivider: {
+    width: 1,
+    height: 40,
+    backgroundColor: '#CCC',
   },
   contactCard: {
     backgroundColor: '#E8E4D5',
     borderRadius: 16,
     padding: 20,
     marginHorizontal: 16,
-    marginBottom: 20,
+    marginVertical: 16,
   },
   contactTitle: {
     fontSize: 18,
@@ -359,11 +517,15 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     textAlign: 'center',
   },
+  contactLinkRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
   contactLink: {
     fontSize: 14,
-    color: '#333',
-    marginBottom: 6,
-    textAlign: 'center',
+    color: '#627768',
+    marginLeft: 8,
   },
   greenSection: {
     backgroundColor: '#627768',
@@ -377,14 +539,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginBottom: 16,
-    marginLeft: 4,
-  },
-  sectionTitle2: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    marginTop: 24,
     marginBottom: 16,
     marginLeft: 4,
   },
@@ -414,7 +568,6 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   ratingBox: {
-    backgroundColor: '#60A960',
     borderRadius: 12,
     paddingVertical: 8,
     paddingHorizontal: 16,
@@ -432,6 +585,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 2,
   },
+  difficultyRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  difficultyLabel: {
+    fontSize: 13,
+    color: '#666',
+  },
+  difficultyValue: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#333',
+  },
   toggleRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -446,40 +613,18 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: '500',
   },
-  reviewCard: {
-    backgroundColor: '#E8E4D5',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    marginTop: 4,
-  },
-  reviewHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 8,
-  },
   starRow: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  reviewDate: {
-    fontSize: 12,
-    color: '#666',
-  },
-  reviewText: {
-    fontSize: 14,
-    color: '#333',
-    lineHeight: 20,
-  },
-    header: {
+  emptyCard: {
     backgroundColor: '#E8E4D5',
-    paddingTop: 30,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
+    borderRadius: 12,
+    padding: 24,
     alignItems: 'center',
   },
-  backButton: {
-    marginRight: 15,
+  emptyText: {
+    fontSize: 14,
+    color: '#666',
   },
 });

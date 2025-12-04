@@ -1,20 +1,23 @@
-import { Ionicons } from '@expo/vector-icons';
-import { useRouter, useLocalSearchParams } from 'expo-router';
-import { useState, useEffect } from 'react';
+import { Course, Professor } from '@/types';
 import {
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-    ActivityIndicator,
-    Button,
-    Alert
-} from 'react-native';
-import { SafeAreaProvider} from 'react-native-safe-area-context';
+  formatRating,
+  getDifficultyColor,
+  getRatingColor,
+  toNumber,
+} from '@/utils/formatters';
 import { supabase } from '@/utils/supabase';
-import { Professor, Course } from '@/types';
-import { UserObj } from '@/services/user';
+import { Ionicons } from '@expo/vector-icons';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import {
+  ActivityIndicator,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function ProfsScreen() {
   const router = useRouter();
@@ -111,18 +114,6 @@ export default function ProfsScreen() {
     }
   }
 
-  const getRatingColor = (rating: number) => {
-    if (rating >= 4) return '#4CAF50';
-    if (rating >= 3) return '#FFA726';
-    return '#EF5350';
-  };
-
-  const getDifficultyColor = (difficulty: number) => {
-    if (difficulty <= 2) return '#4CAF50';
-    if (difficulty <= 3.5) return '#FFA726';
-    return '#EF5350';
-  };
-
   // Updated to accept professor ID and pass current search context
   const navigateToProfile = (professorId: string) => {
     router.push({
@@ -137,10 +128,6 @@ export default function ProfsScreen() {
     });
   };
   
-  function handleSaved(professorId: string) {
-    Alert.alert('Professor Saved!')
-    UserObj.saveProfessor(professorId);
-  }
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -190,19 +177,18 @@ export default function ProfsScreen() {
                   <View style={styles.ratingBox}>
                     <Text style={styles.ratingLabel}>Rating</Text>
                     <View style={[styles.ratingValue, { backgroundColor: getRatingColor(professor.rating) }]}>
-                      <Text style={styles.ratingText}>{professor.rating}/5</Text>
+                      <Text style={styles.ratingText}>{formatRating(professor.rating)}</Text>
                     </View>
                   </View>
                   
                   <View style={styles.ratingBox}>
                     <Text style={styles.ratingLabel}>Difficulty</Text>
-                    <View style={[styles.ratingValue, { backgroundColor: getDifficultyColor(professor.diff) }]}>
-                      <Text style={styles.ratingText}>{professor.diff}/5</Text>
+                    <View style={[styles.ratingValue, { backgroundColor: getDifficultyColor(professor.diff ?? professor.difficulty) }]}>
+                      <Text style={styles.ratingText}>{formatRating(professor.diff ?? professor.difficulty)}</Text>
                     </View>
                   </View>
 
-                  <Text style={styles.plusRatings}>+{professor.num_ratings}</Text>
-                  <Button title="Save" onPress={() => handleSaved(professor.id)}></Button>
+                  <Text style={styles.plusRatings}>+{toNumber(professor.num_ratings)}</Text>
                 </View>
               </View>
               </TouchableOpacity>
