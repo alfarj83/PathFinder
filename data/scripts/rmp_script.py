@@ -53,12 +53,17 @@ def extract_class_info(json_text, what_print):
 
     '''
 
+    tot_rating = 0
+    tot_diff = 0
 
     file_content_string = ""
     
-    with open("../ratings.txt", "r") as file:
+    with open("../temps/ratings.txt", "r") as file:
         file_content_string = file.read()
 
+    prof_num_index = file_content_string.find("/flag/professor-rating/")
+    prof_num = (file_content_string[prof_num_index+23:file_content_string.find("/", prof_num_index+23)])
+    
 
     class_name_index = file_content_string.find("RatingHeader__StyledClass")
     
@@ -103,6 +108,7 @@ def extract_class_info(json_text, what_print):
         if(count_num_reviews == 78):
             print(file_content_string[ratingindex-10:ratingindex+20])
         user_rating = float(file_content_string[ratingindex+1:file_content_string.find("<", ratingindex)])
+        tot_rating = tot_rating + user_rating
         print(user_rating)
 
 
@@ -111,6 +117,7 @@ def extract_class_info(json_text, what_print):
         diffindex = file_content_string.find(">", diffindex)
         print(diffindex)
         user_diff = float(file_content_string[diffindex+1:file_content_string.find("<", diffindex)])
+        tot_diff = tot_diff + user_diff
         print(user_diff)
         
         
@@ -124,25 +131,40 @@ def extract_class_info(json_text, what_print):
         class_name_index = file_content_string.find("RatingHeader__StyledClass", diffindex)
         class_name_index = file_content_string.find("RatingHeader__StyledClass", class_name_index+5)
 
-
-    
-    #help me fix this part
     professor_name = "profn"
-    #first_name + " " + last_name
+    with open("../temps/full_names.txt", "r", encoding="utf-8") as f:
+            professor_name = f.readline().strip()
+    
+    print("Total reviews:")
+    print(count_num_reviews)
+    average_rat = round(tot_rating/count_num_reviews + 0.0001, 1)
+    print(average_rat)
+    average_diff = round(tot_diff/count_num_reviews + 0.0001, 1)
+    print(average_diff)
+    
+
+    with open("../temps/sql_insert.sql", "r", encoding="utf-8") as f:
+            fac_link = f.readline().strip()
+
+    sql = f"""UPDATE professors
+SET rating = {average_rat},
+    difficulty = {average_diff},
+    num_ratings = {count_num_reviews},
+    faculty_url = \'{fac_link}\',
+    rmp_url = \'https://www.ratemyprofessors.com/professor/{prof_num}\'
+WHERE full_name = '{professor_name}';"""
+
+    print(sql)
+
+    with open("../temps/sql_insert.sql", "w", encoding="utf-8") as f:
+        f.write(sql)
+
+
     result = {
         professor_name: {
             "temp": "temp"
-
-            
         }
     }
-
-    '''
-    "rmpurl": rmpurl,
-    "department": department,
-    "overall": avg_ratings,
-    "diff": avg_diff
-    '''
 
     # Add each class and its reviews
     for cname, ratings in class_reviews.items():
@@ -155,12 +177,8 @@ def extract_class_info(json_text, what_print):
             for single_rating in ratings:
                 tot_over = tot_over + single_rating[0]
                 tot_diff = tot_diff + single_rating[1]
-            #print(tot_over/len(ratings))
-            #print(tot_diff/len(ratings))
-            if(what_print == "fin"):
-                result[professor_name][cname] = [round(tot_over/len(ratings), 1), round(tot_diff/len(ratings), 1), len(ratings)]
-            else:
-                result[professor_name][cname] = [tot_over, tot_diff, len(ratings)]
+            
+            result[professor_name][cname] = [tot_over, tot_diff, len(ratings)]
 
     return result
 
@@ -200,7 +218,7 @@ if __name__ == "__main__":
     compacted = extract_class_info("", filetype)
 
 
-    with open("../prof_rate.json", "w", encoding="utf-8") as f:
+    with open("../temps/prof_rate.json", "w", encoding="utf-8") as f:
         json.dump(compacted, f, indent=2)
 
     print("Compacted data")

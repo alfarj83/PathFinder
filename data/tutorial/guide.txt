@@ -1,17 +1,16 @@
 
-video tutorial
+video tutorial (updated):
+https://drive.google.com/file/d/1nDwLSQIr2qPmavfCwJcjouyLu-V1p_fX/view?usp=sharing 
+
+old tut here:
 https://drive.google.com/file/d/1iAjq0MOgZOIefdMCDkgayZptQ5pwOjp0/view?usp=sharing
 
-Copy the name from supabase
-Paste name into rate my professor, 
-Paste into then into VSCode for profn change 
-Paste into faculty page
+Copy the name from full_names.txt
+run fac_scrap.py to get their faculty info 
+(if it fails paste the name into the faculty lookup page)
+(then copy the correct url as a parameter of fac_scrap.py)
 
-Copy faculty url 
-If professor has a picture save the picture using the ending of the url in the ims folder
-Paste url in supabase facultyurl
-
-Back in RMP note the overall rating,diff,reviews
+In RMP paste the name in
 
 Find the load more reviews button
 Right click, inspect element
@@ -29,9 +28,8 @@ Look at the output in prof_rate.json
 Look for any classes that need to be combined
 
 Run the rmp_csv_convert.py with any combines
-Replace the profn with the professor name that is copied in there
 
-Insert the csv into supabase
+Insert the sql code into the editor and csv into supabase
 
 
 
