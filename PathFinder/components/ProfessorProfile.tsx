@@ -184,9 +184,11 @@ export default function ProfessorProfile({
       if (isSaved) {
         const success = await unsaveProfessor(activeProfessorId);
         if (success) setIsSaved(false);
+        Alert.alert('Professor unsaved!')
       } else {
         const success = await saveProfessor(activeProfessorId);
         if (success) setIsSaved(true);
+        Alert.alert('Professor saved!')
       }
     } catch (err) {
       console.error('Error toggling save:', err);
