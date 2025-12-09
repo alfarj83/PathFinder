@@ -1,5 +1,5 @@
 // services/departments.ts
-import { Department } from '@/types';
+import { Course, Department } from '@/types';
 import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
 import { Professor } from '@/types';
@@ -40,9 +40,9 @@ class DepartmentService {
         // 4. Await the database query
         const { data, error } = await supabase
           .from('professors') // Make sure 'professors' is your table name
-          .select()            // Get all columns
-          .or(filterString);   // Apply the multi-column search
-
+          .select('*')            // Get all columns
+          .ilike('department_name', searchQuery);
+          
         if (data == null) {
           return [];
         }
@@ -56,6 +56,40 @@ class DepartmentService {
       } else {
         return [];
       }
+  }
+
+  async getDeptCourses(course_code: string): Promise<Course[]> {
+    if (supabase) {
+      // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)
+      const searchQuery = `%${course_code}%`;
+      console.log('here is searchQuery:', searchQuery) // gets to here
+
+      // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
+      // Note: Adjust this if your column names are different!
+      const filterString = [
+        `course_code.ilike.${searchQuery}`
+      ].join(','); // .or() takes a comma-separated string
+
+        // 4. Await the database query
+        const { data, error } = await supabase
+          .from('courses') // Make sure 'courses' is your table name
+          .select('*')            // Get all columns
+          .or(filterString);   // Apply the multi-column search
+
+          
+      if (data == null) {
+        return [];
+      }
+      
+      if (error) {
+        console.log(error)
+        console.error('Error fetching department:', error);
+      }
+
+      return data as Course[];
+    } else {
+      return [];
+    }
   }
 };
 

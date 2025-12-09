@@ -90,7 +90,9 @@ export default function SignUpForm() {
           secureTextEntry
           autoComplete="password"
         />
-
+        {loading && <Text>
+            {'An confirmation email has been sent to your inbox.'}
+          </Text>}
         {/* Sign Up Button */}
         <TouchableOpacity 
           style={[styles.button, loading && styles.buttonDisabled]} 

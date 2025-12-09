@@ -40,6 +40,7 @@ type ClassCardProps = {
   course: CourseWithRating;
   isExpanded: boolean;
   onToggle: () => void;
+  navigate: (courseId:string | number) => void;
 };
 
 /**
@@ -80,13 +81,13 @@ const StarRating = ({ rating }: StarRatingProps) => {
 /**
  * Renders the main card for a class
  */
-const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
+const ClassCard = ({ course, isExpanded, onToggle, navigate }: ClassCardProps) => {
   const ratingDisplay = formatRating(course.rating);
   const ratingNum = toNumber(course.rating);
   const hasValidRating = isValidNumber(course.rating) && ratingNum > 0;
 
   return (
-    <View style={styles.classCard}>
+    <TouchableOpacity style={styles.classCard} onPress={() => navigate(course.id)}>
       <View style={styles.classCardTop}>
         <View style={styles.classInfo}>
           <Text style={styles.classTitle}>
@@ -123,7 +124,7 @@ const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
           color="#000"
         />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -241,6 +242,20 @@ export default function ProfessorProfile({
     } else {
       Alert.alert('Not Available', `${type} link is not available`);
     }
+  };
+
+      // Updated to accept professor ID and pass current search context
+  const navigateToCourseProfile = (courseId: string|number) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        courseId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
 
   // Loading state
@@ -374,6 +389,7 @@ export default function ProfessorProfile({
                 course={course}
                 isExpanded={expandedCourses.has(course.course_code)}
                 onToggle={() => toggleCourseExpanded(course.course_code)}
+                navigate={() => navigateToCourseProfile(course.id)}
               />
             ))
           )}
