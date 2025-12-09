@@ -86,47 +86,8 @@ export default function ProfsScreen() {
       setLoading(false);
     }
   }
-
-  async function loadCourses() {
-    setLoading(true);
-    try {
-      // Check if we have search results passed from the search screen
-      if (params?.searchResults) {
-        // Parse the search results from the URL parameter
-        const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
-        setCourses(results);
-        setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
-        // Update header to show it's a search result
-        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
-        
-      } 
-
-      // parse through searchQuery
-      // Check if we have a department to display
-      else if (params?.departmentCode) {
-        setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
-        
-        // Load professors from the specific department
-        const { data } = await supabase
-          .from('courses')
-          .select()
-          .eq('course_code', Array.isArray(params.departmentCode) ? params.departmentCode[0] : params.departmentCode);
-        if (data) setProfessors(data);
-      } 
-      // Default: Load all professors
-      else {
-        const { data } = await supabase.from('courses').select();
-        if (data) setCourses(data);
-      }
-    } catch (error) {
-      console.error('Error loading courses:', error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  // Navigates to the professor profile/detail screen
-  // Passes current search context to allow return navigation
+  
+  // Updated to accept professor ID and pass current search context
   const navigateToProfile = (professorId: string) => {
     router.push({
       pathname: '/test',

@@ -26,22 +26,8 @@ import { Department } from '@/types';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
 
-// This uses an object literal to define static default values (empty functions)
-const defaultProps: HomeScreenProps = {
-    loadDepartments: () => console.log("loadDepartments prop not provided!"),
-    handleSearch: () => console.log("handleSearch prop not provided!"),
-    handleDepartmentPress: () => console.log("handleDepartmentPress prop not provided!"),
-    handleViewSaved: () => console.log("handleViewSaved prop not provided!"),
-}
-
-interface HomeScreenProps {
-    loadDepartments?: () => void; 
-    handleSearch?: () => void; 
-    handleDepartmentPress?: (dept: Department) => void;
-    handleViewSaved?: () => void;
-}
-
-export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
+// --- NEW INTERFACE DEFINITION ---
+export default function HomeScreen() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [humanities, setHumanities] = useState<Department[]>([]);
@@ -120,14 +106,29 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
 
   // Fetches professors for the selected department and navigates to faculty page
   const handleDepartmentPress = async (dept: Department, deptCode: string) => {
-    let results = await DeptObj.getDeptProfessors(dept.name);
-    router.push({
+    console.log('here is the deptname:', dept.name)
+    let results = [];
+    if (searchMode == 'professor') {
+      results = await DeptObj.getDeptProfessors(dept.name);
+      // Navigate to faculty page with search results
+      router.push({
         pathname: '/faculty',
         params: { 
             searchQuery: searchQuery? searchQuery : deptCode,
             searchResults: JSON.stringify(results)
         }
     });
+    } else {
+      results = await DeptObj.getDeptCourses(deptCode);
+      // Navigate to faculty page with search results
+      router.push({
+        pathname: '/courses',
+        params: { 
+            searchQuery: searchQuery? searchQuery : deptCode,
+            searchResults: JSON.stringify(results)
+        }
+    });
+    }
   };
 
   return (
@@ -373,14 +374,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
     marginBottom: 5,
     textAlign: 'center',
   },
   sectionSubtitle: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#666',
     marginBottom: 20,
     textAlign: 'center',

@@ -8,6 +8,7 @@
 // - Expandable course reviews
 
 import { ProfileDataObj } from '@/services/profileData';
+import { UserObj } from '@/services/user';
 import { CourseWithRating, Professor } from '@/types';
 import {
   formatRating,
@@ -15,11 +16,11 @@ import {
   isValidNumber,
   toNumber
 } from '@/utils/formatters';
-import {
-  isProfessorSaved,
-  saveProfessor,
-  unsaveProfessor,
-} from '@/utils/savedItems';
+// import {
+//   isProfessorSaved,
+//   saveProfessor,
+//   unsaveProfessor,
+// } from '@/utils/savedItems';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -49,51 +50,19 @@ type ClassCardProps = {
   course: CourseWithRating;
   isExpanded: boolean;
   onToggle: () => void;
+  navigate: (courseId:string | number) => void;
 };
 
-// Renders a 5-star rating display with full, half, and empty stars
-// Calculates star distribution based on numeric rating value
-const StarRating = ({ rating }: StarRatingProps) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-  return (
-    <View style={styles.starRow}>
-      {[...Array(fullStars)].map((_, i) => (
-        <Icon
-          key={`full-${i}`}
-          name="star"
-          size={16}
-          color="#FFD700"
-          style={{ marginRight: 2 }}
-        />
-      ))}
-      {hasHalfStar && (
-        <Icon name="star" size={16} color="#FFD700" style={{ marginRight: 2 }} />
-      )}
-      {[...Array(emptyStars)].map((_, i) => (
-        <Icon
-          key={`empty-${i}`}
-          name="star"
-          size={16}
-          color="#CCC"
-          style={{ marginRight: 2 }}
-        />
-      ))}
-    </View>
-  );
-};
-
-// Renders a course card with rating information and expandable reviews
-// Shows course code, name, rating badge, and difficulty score
-const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
+/**
+ * Renders the main card for a class
+ */
+const ClassCard = ({ course, isExpanded, onToggle, navigate }: ClassCardProps) => {
   const ratingDisplay = formatRating(course.rating);
   const ratingNum = toNumber(course.rating);
   const hasValidRating = isValidNumber(course.rating) && ratingNum > 0;
 
   return (
-    <View style={styles.classCard}>
+    <TouchableOpacity style={styles.classCard} onPress={() => navigate(course.id)}>
       <View style={styles.classCardTop}>
         <View style={styles.classInfo}>
           <Text style={styles.classTitle}>
@@ -130,7 +99,7 @@ const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
           color="#000"
         />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -180,7 +149,7 @@ export default function ProfessorProfile({
 
   const checkSavedStatus = async () => {
     if (activeProfessorId) {
-      const saved = await isProfessorSaved(activeProfessorId);
+      const saved = await UserObj.isProfessorSaved(activeProfessorId);
       setIsSaved(saved);
     }
   };
@@ -192,11 +161,11 @@ export default function ProfessorProfile({
     setSavingInProgress(true);
     try {
       if (isSaved) {
-        const success = await unsaveProfessor(activeProfessorId);
+        const success = await UserObj.unsaveProfessor(activeProfessorId);
         if (success) setIsSaved(false);
         Alert.alert('Professor unsaved!')
       } else {
-        const success = await saveProfessor(activeProfessorId);
+        const success = await UserObj.saveProfessor(activeProfessorId);
         if (success) setIsSaved(true);
         Alert.alert('Professor saved!')
       }
@@ -253,6 +222,20 @@ export default function ProfessorProfile({
     } else {
       Alert.alert('Not Available', `${type} link is not available`);
     }
+  };
+
+      // Updated to accept professor ID and pass current search context
+  const navigateToCourseProfile = (courseId: string|number) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        courseId,
+        // Pass back the current search context so we can return to it
+        fromSearch: 'true',
+        searchQuery: params.searchQuery || '',
+        searchResults: params.searchResults || ''
+      }
+    });
   };
 
   // Loading state
@@ -386,6 +369,7 @@ export default function ProfessorProfile({
                 course={course}
                 isExpanded={expandedCourses.has(course.course_code)}
                 onToggle={() => toggleCourseExpanded(course.course_code)}
+                navigate={() => navigateToCourseProfile(course.id)}
               />
             ))
           )}

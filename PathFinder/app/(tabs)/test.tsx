@@ -1,7 +1,6 @@
 // app/(tabs)/test.tsx
 import CourseProfile from '@/components/CourseProfile';
 import ProfessorProfile from '@/components/ProfessorProfile';
-import HomeScreen from '@/components/HomeScreen';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
