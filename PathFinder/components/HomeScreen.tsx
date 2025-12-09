@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Alert,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useEffect, useState, useMemo } from 'react';
@@ -110,23 +111,16 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
     setSearching(false);
   };
 
-  const handleDepartmentPress = async (dept: Department) => {
+  const handleDepartmentPress = async (dept: Department, deptCode: string) => {
     let results = await DeptObj.getDeptProfessors(dept.name);
     // Navigate to faculty page with search results
     router.push({
         pathname: '/faculty',
         params: { 
-            searchQuery,
+            searchQuery: searchQuery? searchQuery : deptCode,
             searchResults: JSON.stringify(results)
         }
     });
-  };
-
-  const handleViewSaved = () => {
-    // Navigate to profile/saved page
-    Alert.alert('Coming Soon', 'Saved items will be available soon!');
-    // Uncomment when you create the profile page:
-    // router.push('/profile');
   };
 
   return (
@@ -136,10 +130,10 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <View style={styles.titleRow}>
-              <Text style={styles.title}>Pathfinder</Text>
               <View style={styles.iconCircle}>
-                <Ionicons name="compass" size={24} color="white" />
+                <Image source={require('../assets/images/pathfinder_logo.png')} style={styles.logoImage}/>
               </View>
+              <Text style={styles.title}>Pathfinder</Text>
             </View>
             <Text style={styles.welcomeText}>Welcome, User!</Text>
 
@@ -173,14 +167,6 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 Search for a {searchMode === 'professor' ? 'course' : 'professor'} instead
               </Text>
             </TouchableOpacity>
-
-            {/* <TouchableOpacity 
-              style={styles.viewSavedButton}
-              onPress={handleViewSaved}
-              activeOpacity={0.8}
-            >
-              {/* <Text style={styles.viewSavedText}>View Saved</Text> }
-            </TouchableOpacity> */}
           </View>
         </View>
 
@@ -201,7 +187,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
-                  onPress={() => handleDepartmentPress(dept)}
+                  onPress={() => handleDepartmentPress(dept, dept.code)}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
@@ -223,7 +209,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
-                  onPress={() => handleDepartmentPress(dept)}
+                  onPress={() => handleDepartmentPress(dept, dept.code)}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
@@ -245,7 +231,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
-                  onPress={() => handleDepartmentPress(dept)}
+                  onPress={() => handleDepartmentPress(dept, dept.code)}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
@@ -267,7 +253,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
-                  onPress={() => handleDepartmentPress(dept)}
+                  onPress={() => handleDepartmentPress(dept, dept.code)}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
@@ -289,7 +275,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
                 <TouchableOpacity 
                   key={dept.id} 
                   style={styles.departmentButton}
-                  onPress={() => handleDepartmentPress(dept)}
+                  onPress={() => handleDepartmentPress(dept, dept.code)}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.departmentCode}>{dept.code}</Text>
@@ -320,33 +306,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleRow: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     marginBottom: 10,
   },
   title: {
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: 'bold',
     color: 'white',
     marginRight: 10,
   },
   iconCircle: {
-    backgroundColor: '#5A7A6B',
+    //backgroundColor: '#5A7A6B',
     borderRadius: 20,
-    width: 40,
-    height: 40,
+    width: 140,
+    height: 140,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  logoImage: {
+    width: 140, // Fixed size
+    height: 140, // Fixed size
+    // Optional: ensures the image scales down to fit the 30x30 box without stretching
+    resizeMode: 'contain', 
+  },
   welcomeText: {
-    fontSize: 18,
+    fontSize: 25,
     color: 'white',
     marginBottom: 20,
   },
   searchContainer: {
     flexDirection: 'row',
     backgroundColor: '#E8E4D9',
-    borderRadius: 25,
+    borderRadius: 30,
     paddingHorizontal: 15,
     paddingVertical: 10,
     width: '100%',
@@ -366,21 +358,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   subText: {
-    fontSize: 14,
+    fontSize: 18,
+    fontWeight: 'bold',
     color: 'white',
     marginBottom: 15,
     textDecorationLine: 'underline',
-  },
-  viewSavedButton: {
-    backgroundColor: '#8FA896',
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderRadius: 20,
-  },
-  viewSavedText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: '600',
   },
   departmentsSection: {
     padding: 20,

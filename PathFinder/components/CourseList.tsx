@@ -63,18 +63,6 @@ export default function CoursesScreen() {
     }
   }
 
-  const getRatingColor = (rating: number) => {
-    if (rating >= 4) return '#4CAF50';
-    if (rating >= 3) return '#FFA726';
-    return '#EF5350';
-  };
-
-  const getDifficultyColor = (difficulty: number) => {
-    if (difficulty <= 2) return '#4CAF50';
-    if (difficulty <= 3.5) return '#FFA726';
-    return '#EF5350';
-  };
-
     // Updated to accept professor ID and pass current search context
   const navigateToProfile = (courseId: string|number) => {
     router.push({
@@ -94,6 +82,11 @@ export default function CoursesScreen() {
     UserObj.saveCourse(courseId);
   }
   
+  const isCourseActive = (course: Course) => {
+    if (course.course_desc != null) {
+      return true;
+    }
+  }
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -116,7 +109,9 @@ export default function CoursesScreen() {
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
-            {courses.map((course) => (
+            {courses
+            .filter(isCourseActive)
+            .map((course) => (
             <TouchableOpacity key={course.id} style={styles.professorCard} onPress={() => navigateToProfile(course.id)}>
               <View style={styles.cardContent}>
                 {/* Professor Image */}

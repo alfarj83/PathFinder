@@ -1,5 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
+import Entypo from '@expo/vector-icons/Entypo';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import Constants from "expo-constants";
 
@@ -11,24 +13,28 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarStyle: {
+          height: 80
+        }
       }}>
       <Tabs.Screen
         name="index"
         options={{
-           title: 'Home'
-           //tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+           title: 'Home',
+           tabBarIcon: ({ color }) => <Entypo name="home" size={30} color={color} />,
          }}
       />
       <Tabs.Screen
         name="faculty"
         options={{
-          title: 'Faculty'
+          href: null
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: "User"
+          title: "User",
+          tabBarIcon: ({ color }) => <FontAwesome name="user" size={30} color={color} />
         }}
       />
       <Tabs.Screen
