@@ -1,3 +1,11 @@
+// CourseProfile Component
+//
+// Displays detailed information about a specific course including:
+// - Course description and metadata
+// - List of professors teaching the course with ratings
+// - Course statistics and averages
+// - Save/bookmark functionality
+
 import { ProfileDataObj } from '@/services/profileData';
 import { Course, ProfessorWithRating } from '@/types';
 import {
@@ -24,6 +32,7 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
 
+// Type definitions for component props
 type CourseProfileProps = {
   courseId?: string;
 };
@@ -33,9 +42,9 @@ type ProfessorCardProps = {
   onPress: () => void;
 };
 
-/**
- * Renders a professor card with course-specific ratings
- */
+// ProfessorCard Component
+// Renders a professor card with course-specific ratings
+// Shows professor image, name, department, and rating/difficulty badges
 const ProfessorCard = ({ professor, onPress }: ProfessorCardProps) => {
   // Use course-specific rating if available, otherwise use overall rating
   const rating = toNumber(professor.courseRating ?? professor.rating);
@@ -122,6 +131,8 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
   // Get course ID from props first, then fall back to route params
   const activeCourseId = courseId || (params.courseId as string);
 
+
+  // Returns to search results if coming from search, otherwise goes back a page
   const handleBackPress = () => {
     if (params.fromSearch === 'true' && params.searchResults) {
       router.push({
@@ -136,6 +147,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
     }
   };
 
+  // Effect hook to fetch course data when component mounts or courseId changes
   useEffect(() => {
     if (activeCourseId) {
       fetchCourseData();
@@ -146,6 +158,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
     }
   }, [activeCourseId]);
 
+  // Checks if the current course is saved/bookmarked
   const checkSavedStatus = async () => {
     if (activeCourseId) {
       const saved = await isCourseSaved(activeCourseId);
@@ -153,6 +166,8 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
     }
   };
 
+  // Toggles the saved status of the course
+  // Adds or removes course from user's saved list
   const handleToggleSave = async () => {
     if (savingInProgress || !activeCourseId) return;
 
@@ -179,12 +194,12 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
 
       // Use the new ProfileDataService to get complete course data
       const { course, professors: courseProfessors } =
+        // Use the ProfileDataService to get complete course data
         await ProfileDataObj.getFullCourseProfile(activeCourseId);
 
       if (!course) {
         throw new Error('Course not found');
       }
-
       setCourseData(course);
       setProfessors(courseProfessors);
     } catch (err: any) {
@@ -195,7 +210,9 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
       setLoading(false);
     }
   };
-
+  
+  // Navigates to a professor's profile page
+  // Passes context about current course for back navigation
   const navigateToProfessorProfile = (professorId: string) => {
     router.push({
       pathname: '/test',
@@ -207,7 +224,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
     });
   };
 
-  // Check if course has prerequisites (placeholder)
+  // Check if course has prerequisites
   const hasPrerequisites = false;
 
   // Loading state
@@ -379,6 +396,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
   );
 }
 
+// Component Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

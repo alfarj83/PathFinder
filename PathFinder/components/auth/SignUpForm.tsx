@@ -1,4 +1,12 @@
-// components/auth/SignUpForm.tsx
+/**
+ * SignUpForm Component
+ * 
+ * A user registration form that handles account creation functionality.
+ * Provides email/password input fields with validation and navigation to login.
+ * 
+ * @component/auth/SignUpForm.tsx
+ */
+
 import React, { useState } from 'react';
 import { 
   View, 
@@ -7,32 +15,39 @@ import {
   TouchableOpacity, 
   StyleSheet, 
   Alert,
-  Image  // ADD THIS IMPORT
+  Image  
 } from 'react-native';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
 
 export default function SignUpForm() {
   const router = useRouter();
+  // State management for form inputs and loading status
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // Handles the sign-up process
+  // Validates inputs, calls user service, and handles response
   const handleSignUp = async () => {
+    // Validate input fields are filled
     if (!email || !password) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
+    // Validate required password length
     if (password.length < 6) {
       Alert.alert('Error', 'Password must be at least 6 characters');
       return;
     }
 
+    // Set loading state and attempt sign-up
     setLoading(true);
     const response = await UserObj.signUp(email, password);
     setLoading(false);
 
+    // Set sign-up response handling
     if (response.success) {
       Alert.alert(
         'Success', 
@@ -49,6 +64,7 @@ export default function SignUpForm() {
     }
   };
 
+  // Navigates user to the login screen
   const navigateToLogIn = () => {
     router.push('/login');
   };
@@ -114,6 +130,8 @@ export default function SignUpForm() {
   );
 }
 
+// Component Styles
+// Defines the visual appearance and layout of the sign-up form
 const styles = StyleSheet.create({
   formContainer: {
     flex: 1,

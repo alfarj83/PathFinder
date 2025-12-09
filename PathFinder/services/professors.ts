@@ -1,21 +1,10 @@
 // services/professors.ts
 import { Professor, Course } from '@/types';
-//import { mockProfessors } from '@/utils/mockData';
 import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
 import { DeptObj } from './departments';
 import { CourseObj } from './courses';
 const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
-
-// export const professorService = {
-//   getAllProfessors: () => USE_MOCK
-//     ? Promise.resolve(mockProfessors)
-//     : api.get<Professor[]>('/professors'),
-
-//   getProfessorsByDepartment: (departmentCode: string) => USE_MOCK
-//     ? Promise.resolve(mockProfessors.filter(p => p.departmentCode === departmentCode))
-//     : api.get<Professor[]>('/professors', { department: departmentCode }),
-// };
 
 class ProfessorService {
   // internal record of all matching professors within a professorSearch
@@ -48,7 +37,6 @@ class ProfessorService {
       console.log(searchQuery) // gets to here
 
       // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
-      // Note: Adjust this if your column names are different!
       const filterString = [
         `full_name.ilike.${searchQuery}`,
         `first_name.ilike.${searchQuery}`,
@@ -68,18 +56,8 @@ class ProfessorService {
         }
   
         this.matchingProfessors = (data ?? []) as Professor[];
-      } //else {
-          // Your fallback API call was correct
-          //this.matchingProfessors = APIObj.get<Professor[]>('/professors/search', { q }) ?? []
-        //}
+      } 
     }
-      //console.log("this is the matching professors array:", this.matchingProfessors);
 }
-
-  // use of facade software design pattern
-  // selectProfessorCard() {
-  //   this.returnCurrentCourseReviews();
-  //   this.returnPreviousCourseReviews();
-  // }
 
 export var ProfObj = new ProfessorService();

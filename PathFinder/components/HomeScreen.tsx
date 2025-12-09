@@ -1,3 +1,12 @@
+
+// HomeScreen Component
+//
+// Main landing page of the application featuring:
+// - Search functionality for professors and courses
+// - Department browsing organized by academic categories
+// - Welcome header with branding
+// - Dynamic search mode toggling
+
 import {
   StyleSheet,
   ScrollView,
@@ -10,19 +19,13 @@ import {
   Image,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { DeptObj } from '@/services/departments';
-import { ProfObj } from '@/services/professors';
-import { CourseObj } from '@/services/courses';
 import { Department } from '@/types';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
-import { APIObj } from '@/services/api';
-import { Professor } from '@/types';
 
-// --- NEW INTERFACE DEFINITION ---
-// --- CORRECT DEFAULT PROPS INITIALIZATION ---
 // This uses an object literal to define static default values (empty functions)
 const defaultProps: HomeScreenProps = {
     loadDepartments: () => console.log("loadDepartments prop not provided!"),
@@ -32,7 +35,6 @@ const defaultProps: HomeScreenProps = {
 }
 
 interface HomeScreenProps {
-    // Make functions OPTIONAL (?:) because the component is a route and might be called without props
     loadDepartments?: () => void; 
     handleSearch?: () => void; 
     handleDepartmentPress?: (dept: Department) => void;
@@ -40,8 +42,6 @@ interface HomeScreenProps {
 }
 
 export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
-  //const props = useMemo(() => ({...defaultProps, ...initialProps}), [initialProps]);
-
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [humanities, setHumanities] = useState<Department[]>([]);
@@ -56,15 +56,18 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
   //Load departments on mount
   useEffect(() => {
     loadDepartments();
-    //DeptObj.getMatchingProfessors('', '')
   }, []);
 
+  // Toggles between professor and course search modes
+  // Clears the search query when switching modes
   const toggleSearchMode = () => {
     setSearchMode(prev => prev === 'professor' ? 'course' : 'professor');
     setSearchQuery(''); // Clear search when toggling
   };
 
-  // department data is based on mockDepartments, NOT supabase data
+  // Loads and categorizes departments from the service layer
+  // Department data is based on mockDepartments, NOT direct Supabase data
+  // Sorts departments into five academic categories
   async function loadDepartments() {
     let hum:Department[] = [], 
       eng:Department[] = [], 
@@ -88,6 +91,8 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
           manage.push(data[i]);
         }
       }
+
+      // Update state with categorized departments
       setHumanities(hum);
       setEngineering(eng);
       setArchitecture(arch);
@@ -101,6 +106,8 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
     }
   };
 
+  // Handles search submission based on current search mode
+  // Delegates to UserObj methods for professor or course search
   const handleSearch = async () => {
     setSearching(true);
     if (searchMode === 'professor') {
@@ -111,9 +118,9 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
     setSearching(false);
   };
 
+  // Fetches professors for the selected department and navigates to faculty page
   const handleDepartmentPress = async (dept: Department, deptCode: string) => {
     let results = await DeptObj.getDeptProfessors(dept.name);
-    // Navigate to faculty page with search results
     router.push({
         pathname: '/faculty',
         params: { 
@@ -317,7 +324,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   iconCircle: {
-    //backgroundColor: '#5A7A6B',
     borderRadius: 20,
     width: 140,
     height: 140,
@@ -325,9 +331,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoImage: {
-    width: 140, // Fixed size
-    height: 140, // Fixed size
-    // Optional: ensures the image scales down to fit the 30x30 box without stretching
+    width: 140, 
+    height: 140, 
     resizeMode: 'contain', 
   },
   welcomeText: {
@@ -366,7 +371,6 @@ const styles = StyleSheet.create({
   },
   departmentsSection: {
     padding: 20,
-    //backgroundColor: 'red',
   },
   sectionTitle: {
     fontSize: 18,

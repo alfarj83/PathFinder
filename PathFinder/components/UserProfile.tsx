@@ -1,3 +1,12 @@
+// ProfileTab Component
+//
+// User profile screen displaying:
+// - User account information (email, department, join date)
+// - Preview of saved courses (limited to 2)
+// - Preview of saved professors (limited to 2)
+// - Pull-to-refresh functionality
+// - Sign out capability
+
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
@@ -34,7 +43,7 @@ export default function ProfileTab() {
     try {
       setLoading(true);
 
-      // Get current user
+      // Get current user from Supabase auth
       const { data: { user } } = await supabase.auth.getUser();
       
       if (!user) {
@@ -95,7 +104,6 @@ export default function ProfileTab() {
   };
 
   const navigateToCourse = (courseId: string | number) => {
-    // Navigate to course detail page (to be implemented)
     router.push({
       pathname: '/test',
       params: { courseId }
@@ -109,12 +117,13 @@ export default function ProfileTab() {
     });
   };
 
+  // Handles pull-to-refresh functionality
+  // Reloads saved courses and professors when user pulls down
   const onRefresh = useCallback(async () => {
     // 1. Start the loading indicator
     setRefreshing(true);
 
-    // 2. Perform the actual refresh/data fetching logic
-    // Get current user
+    // 2. Perform the actual refresh/data fetching
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
         console.log('No user found');
@@ -164,16 +173,18 @@ export default function ProfileTab() {
     );
   }
 
+  // Handles user sign out
+  // Signs out from Supabase and redirects to login screen
   async function signOut() {
     try {
         const { error } = await supabase.auth.signOut()
         if (error) {
-          // Handle the error (e.g., show an alert)
+          // Handle the error (shows an alert)
           console.error('Error logging out:', error.message);
           return;
         }
+        // State/Navigation Management handled by router
         router.push('../(auth)/login')
-        // --- State/Navigation Management Goes Here ---
 
       } catch (err) {
         console.error('An unexpected error occurred during logout:', err);

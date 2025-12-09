@@ -1,3 +1,14 @@
+/**
+ * LoginForm Component
+ * 
+ * A reusable authentication form that handles user login functionality.
+ * Provides email/password input fields, form validation, and navigation to sign-up.
+ * 
+ * @component
+ * @param {LoginFormProps} props - Component props
+ * @param {Function} props.onLoginSuccess - Callback executed after successful login
+ */
+
 import React, { useState } from 'react';
 import { 
   View, 
@@ -11,39 +22,43 @@ import {
 } from 'react-native';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
-// Removed useRouter as navigation is now handled by the parent component
 
-// Define props to accept the success callback
+// Define component props interface
 interface LoginFormProps {
   onLoginSuccess: () => void; 
 }
 
 export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
+  // State management for form inputs and loading status
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
+
+  // Handles the login process
+  // Validates inputs, calls authentication service, and handles response
   const handleLogIn = async () => {
+    // Validate input fields are filled
     if (!email || !password) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
+    // Set loading state and attempt login
     setLoading(true);
-    // Assuming UserObj.logIn returns { success: boolean, message?: string }
     const response = await UserObj.logIn(email, password);
     setLoading(false);
 
+    // Set login response handling
     if (response.success) {
-      // 1. Call the success callback to tell the parent component to navigate to home
       onLoginSuccess(); 
     } else {
       Alert.alert('Error', response.message || 'Failed to log in');
     }
   };
 
-  // navigate to sign up
+  // Navigate to sign-up screen for user
   function navigateToSignUp() {
     router.push('/(auth)/signup');
   }
@@ -111,6 +126,8 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
   );
 };
 
+// Component Styles
+// Defines the visual appearance and layout of the login form
 const styles = StyleSheet.create({
   formContainer: {
     flex: 1,
@@ -126,8 +143,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     height: '100%',
-    width: '100%',// Reduced inner padding
-    //backgroundColor: 'red',
+    width: '100%',
   },
   logoContainer: {
     marginBottom: 40,

@@ -1,3 +1,12 @@
+// ProfessorProfile Component
+//
+// Displays detailed information about a specific professor including:
+// - Professor bio and contact information
+// - List of courses taught with ratings
+// - Star rating visualization
+// - Save/bookmark functionality
+// - Expandable course reviews
+
 import { ProfileDataObj } from '@/services/profileData';
 import { CourseWithRating, Professor } from '@/types';
 import {
@@ -42,9 +51,8 @@ type ClassCardProps = {
   onToggle: () => void;
 };
 
-/**
- * Renders the 5-star rating
- */
+// Renders a 5-star rating display with full, half, and empty stars
+// Calculates star distribution based on numeric rating value
 const StarRating = ({ rating }: StarRatingProps) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
@@ -77,9 +85,8 @@ const StarRating = ({ rating }: StarRatingProps) => {
   );
 };
 
-/**
- * Renders the main card for a class
- */
+// Renders a course card with rating information and expandable reviews
+// Shows course code, name, rating badge, and difficulty score
 const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
   const ratingDisplay = formatRating(course.rating);
   const ratingNum = toNumber(course.rating);
@@ -130,6 +137,7 @@ const ClassCard = ({ course, isExpanded, onToggle }: ClassCardProps) => {
 export default function ProfessorProfile({
   professorId,
 }: ProfessorProfileProps = {}) {
+  // State management for professor data and UI state
   const [professorData, setProfessorData] = useState<Professor | null>(null);
   const [courses, setCourses] = useState<CourseWithRating[]>([]);
   const [loading, setLoading] = useState(true);
@@ -159,6 +167,7 @@ export default function ProfessorProfile({
     }
   };
 
+  // Effect hook to fetch professor data when component mounts or professorId changes
   useEffect(() => {
     if (activeProfessorId) {
       fetchProfessorData();
@@ -176,6 +185,7 @@ export default function ProfessorProfile({
     }
   };
 
+  // Adds or removes professor from user's saved list
   const handleToggleSave = async () => {
     if (savingInProgress || !activeProfessorId) return;
 
@@ -202,7 +212,6 @@ export default function ProfessorProfile({
       setLoading(true);
       setError(null);
 
-      // Use the new ProfileDataService to get complete professor data
       const { professor, courses: professorCourses } =
         await ProfileDataObj.getFullProfessorProfile(activeProfessorId);
 
@@ -221,6 +230,7 @@ export default function ProfessorProfile({
     }
   };
 
+  // Manages which course reviews are currently visible
   const toggleCourseExpanded = (courseCode: string) => {
     setExpandedCourses((prev) => {
       const newSet = new Set(prev);
@@ -233,6 +243,8 @@ export default function ProfessorProfile({
     });
   };
 
+  // Opens external links in the device browser
+  // Handles errors if URL is invalid or unavailable
   const openLink = (url: string | undefined, type: string) => {
     if (url) {
       Linking.openURL(url).catch(() => {

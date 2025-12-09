@@ -111,13 +111,3 @@ class APIService {
 }
 
 export const APIObj = new APIService();
-// // Default mocks to FALSE unless explicitly enabled.
-// export const USE_MOCK =
-//   String(
-//     (Constants.expoConfig?.extra as any)?.EXPO_PUBLIC_USE_MOCK ??
-//       process.env.EXPO_PUBLIC_USE_MOCK ??
-//       "false"
-//   ).toLowerCase() === "true";
-
-// Optional: log once on boot to verify.
-//console.log("BASE_URL =>", BASE_URL, "USE_MOCK =>", USE_MOCK);

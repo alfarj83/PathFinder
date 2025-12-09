@@ -1,6 +1,10 @@
+// CoursesScreen Component
+//
+// Displays a list of courses based on search results or department selection.
+// Handles course navigation, search result display, and course saving functionality.
+
 import { Ionicons } from '@expo/vector-icons';
-//import { useRouter } from 'expo-router';
-import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
+import { useRouter, useLocalSearchParams } from 'expo-router'; 
 import { useState, useEffect } from 'react';
 import {
     ScrollView,
@@ -13,23 +17,24 @@ import {
     Alert
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
-import { supabase } from '@/utils/supabase';
-import { Professor, Course } from '@/types';
+import { Course } from '@/types';
 import { UserObj } from '@/services/user';
 
 export default function CoursesScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams(); // 2. Get all navigation parameters
-  const { searchResults } = params; // 3. Get your specific 'searchResults' param
+  const params = useLocalSearchParams(); // Get all navigation parameters
+  const { searchResults } = params; // Get your specific 'searchResults' param
+
+  // State management for courses display and filtering
   const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(false);
-  const [courseCode, setCourseCode] = useState<string>('');
+  const [] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
 
-  // Only re-run when relevant navigation params change. Using the whole
-  // `params` object can cause a new reference every render and trigger
-  // an infinite update loop. Depend on specific fields instead.
+  // Effect hook to reload courses when navigation params change
+  // Only re-run when relevant navigation params change to avoid infinite loops
+  // Using the whole params object can cause new references every render
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
@@ -39,13 +44,15 @@ export default function CoursesScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.searchResults, params?.searchQuery]);
 
-
+  // Loads courses from search results or default data
+  // Parses URL parameters and updates the course list
   async function loadCourses() {
     setLoading(true);
     try {
       // Check if we have search results passed from the search screen
       if (params?.searchResults) {
         // Parse the search results from the URL parameter
+        // Handle both array and string formats
         const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
         console.log(results)
         setCourses(results);
@@ -63,7 +70,8 @@ export default function CoursesScreen() {
     }
   }
 
-    // Updated to accept professor ID and pass current search context
+  // Navigates to the course profile/detail screen
+  // Passes current search context to allow return navigation
   const navigateToProfile = (courseId: string|number) => {
     router.push({
       pathname: '/test',
@@ -77,11 +85,14 @@ export default function CoursesScreen() {
     });
   };
 
+  // Handles saving a course to the user's saved list
   function handleSaved(courseId: string | number) {
     Alert.alert('Course saved!')
     UserObj.saveCourse(courseId);
   }
   
+  // Checks if a course is active and should be displayed
+  // Courses are active if they have a description
   const isCourseActive = (course: Course) => {
     if (course.course_desc != null) {
       return true;
@@ -138,6 +149,8 @@ export default function CoursesScreen() {
   );
 }
 
+// Component Styles
+// Defines the visual appearance and layout of the courses screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,

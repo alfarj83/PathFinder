@@ -1,3 +1,9 @@
+// ProfsScreen Component
+//
+// Displays a list of professors based on search results or department selection.
+// Shows professor cards with ratings, difficulty scores, and department information.
+// Handles navigation to individual professor profiles.
+
 import { Course, Professor } from '@/types';
 import {
   formatRating,
@@ -21,14 +27,17 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function ProfsScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams(); // 2. Get all navigation parameters
-  const { searchResults } = params; // 3. Get your specific 'searchResults' param
+  const params = useLocalSearchParams(); 
+  const { searchResults } = params; 
+
+  // State management for professors display and filtering
   const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
   const [professors, setProfessors] = useState<Professor[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
 
+  // Effect hook to reload professors when navigation params change
   useEffect(() => {
     console.debug('[faculty] effect run - params:', {
       searchResults: params?.searchResults,
@@ -40,6 +49,8 @@ export default function ProfsScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.searchResults, params?.departmentCode, params?.searchQuery, params?.departmentName]);
 
+  // Loads professors from search results, specific department, or all professors
+  // Parses URL parameters and updates the professor list accordingly
   async function loadProfessors() {
     setLoading(true);
     try {
@@ -114,7 +125,8 @@ export default function ProfsScreen() {
     }
   }
 
-  // Updated to accept professor ID and pass current search context
+  // Navigates to the professor profile/detail screen
+  // Passes current search context to allow return navigation
   const navigateToProfile = (professorId: string) => {
     router.push({
       pathname: '/test',
