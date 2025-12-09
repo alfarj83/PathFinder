@@ -1,4 +1,5 @@
 import { ProfileDataObj } from '@/services/profileData';
+import { UserObj } from '@/services/user';
 import { Course, ProfessorWithRating } from '@/types';
 import {
   formatRating,
@@ -7,7 +8,6 @@ import {
   isValidNumber,
   toNumber,
 } from '@/utils/formatters';
-import { isCourseSaved, saveCourse, unsaveCourse } from '@/utils/savedItems';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -148,7 +148,7 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
 
   const checkSavedStatus = async () => {
     if (activeCourseId) {
-      const saved = await isCourseSaved(activeCourseId);
+      const saved = await UserObj.isCourseSaved(activeCourseId);
       setIsSaved(saved);
     }
   };
@@ -159,10 +159,10 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
     setSavingInProgress(true);
     try {
       if (isSaved) {
-        const success = await unsaveCourse(activeCourseId);
+        const success = await UserObj.unsaveCourse(activeCourseId);
         if (success) setIsSaved(false);
       } else {
-        const success = await saveCourse(activeCourseId);
+        const success = await UserObj.saveCourse(activeCourseId);
         if (success) setIsSaved(true);
       }
     } catch (err) {

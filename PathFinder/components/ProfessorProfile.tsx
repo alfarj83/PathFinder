@@ -1,4 +1,5 @@
 import { ProfileDataObj } from '@/services/profileData';
+import { UserObj } from '@/services/user';
 import { CourseWithRating, Professor } from '@/types';
 import {
   formatRating,
@@ -6,11 +7,11 @@ import {
   isValidNumber,
   toNumber
 } from '@/utils/formatters';
-import {
-  isProfessorSaved,
-  saveProfessor,
-  unsaveProfessor,
-} from '@/utils/savedItems';
+// import {
+//   isProfessorSaved,
+//   saveProfessor,
+//   unsaveProfessor,
+// } from '@/utils/savedItems';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -41,41 +42,6 @@ type ClassCardProps = {
   isExpanded: boolean;
   onToggle: () => void;
   navigate: (courseId:string | number) => void;
-};
-
-/**
- * Renders the 5-star rating
- */
-const StarRating = ({ rating }: StarRatingProps) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-  return (
-    <View style={styles.starRow}>
-      {[...Array(fullStars)].map((_, i) => (
-        <Icon
-          key={`full-${i}`}
-          name="star"
-          size={16}
-          color="#FFD700"
-          style={{ marginRight: 2 }}
-        />
-      ))}
-      {hasHalfStar && (
-        <Icon name="star" size={16} color="#FFD700" style={{ marginRight: 2 }} />
-      )}
-      {[...Array(emptyStars)].map((_, i) => (
-        <Icon
-          key={`empty-${i}`}
-          name="star"
-          size={16}
-          color="#CCC"
-          style={{ marginRight: 2 }}
-        />
-      ))}
-    </View>
-  );
 };
 
 /**
@@ -172,7 +138,7 @@ export default function ProfessorProfile({
 
   const checkSavedStatus = async () => {
     if (activeProfessorId) {
-      const saved = await isProfessorSaved(activeProfessorId);
+      const saved = await UserObj.isProfessorSaved(activeProfessorId);
       setIsSaved(saved);
     }
   };
@@ -183,11 +149,11 @@ export default function ProfessorProfile({
     setSavingInProgress(true);
     try {
       if (isSaved) {
-        const success = await unsaveProfessor(activeProfessorId);
+        const success = await UserObj.unsaveProfessor(activeProfessorId);
         if (success) setIsSaved(false);
         Alert.alert('Professor unsaved!')
       } else {
-        const success = await saveProfessor(activeProfessorId);
+        const success = await UserObj.saveProfessor(activeProfessorId);
         if (success) setIsSaved(true);
         Alert.alert('Professor saved!')
       }

@@ -1,41 +1,119 @@
 // services/professors.ts
-import { Professor, Course } from '@/types';
+import { Professor, Course, Rating } from '@/types';
 //import { mockProfessors } from '@/utils/mockData';
-import { APIObj } from '@/services/api';
 import { supabase } from '@/utils/supabase';
-import { DeptObj } from './departments';
-import { CourseObj } from './courses';
-const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
-
-// export const professorService = {
-//   getAllProfessors: () => USE_MOCK
-//     ? Promise.resolve(mockProfessors)
-//     : api.get<Professor[]>('/professors'),
-
-//   getProfessorsByDepartment: (departmentCode: string) => USE_MOCK
-//     ? Promise.resolve(mockProfessors.filter(p => p.departmentCode === departmentCode))
-//     : api.get<Professor[]>('/professors', { department: departmentCode }),
-// };
+//const USE_MOCK = (process.env.EXPO_PUBLIC_USE_MOCK ?? "true") === "true";
 
 class ProfessorService {
   // internal record of all matching professors within a professorSearch
   private matchingProfessors: Professor[] = [];
-  private currentCourses: typeof CourseObj[] = [];
-  private previousCourses: typeof CourseObj[] = [];
 
   /* GETTERS */
-  //returns Professor[]
+  // returns Professor[]
   returnMatchingProfessors() {
     return this.matchingProfessors;
   }
-  // returns Course[]
-  returnCurrentCourses() {
-    return this.currentCourses;
+    /**
+   * Fetch complete professor data by ID
+   */
+  async getProfessorById(professorId: string): Promise<Professor | null> {
+    try {
+      const { data, error } = await supabase
+        .from('professors')
+        .select('*')
+        .eq('id', professorId)
+        .single();
+
+      if (error) {
+        console.error('Error fetching professor:', error);
+        return null;
+      }
+
+      return data as Professor;
+    } catch (error) {
+      console.error('Error in getProfessorById:', error);
+      return null;
+    }
   }
-  //returns Course[]
-  returnPreviousCourses() {
-    return this.previousCourses;
-  }
+
+    /**
+     * Get courses taught by a professor using the professor_courses table
+     * Returns course codes as an array
+     */
+    async getProfessorCourses(professorName: string): Promise<string[]> {
+      try {
+        const { data, error } = await supabase
+          .from('professor_courses')
+          .select('Courses')
+          .eq('Professor', professorName)
+          .single();
+  
+        if (error || !data) {
+          console.log('No courses found for professor:', professorName);
+          return [];
+        }
+  
+        // Split the comma-separated course codes
+        const courseCodes = data.Courses
+          .split(',')
+          .map((code: string) => code.trim())
+          .filter((code: string) => code.length > 0);
+  
+        return courseCodes;
+      } catch (error) {
+        console.error('Error fetching professor courses:', error);
+        return [];
+      }
+    }
+
+    /**
+     * Get ratings for a specific professor and course from the ratings table
+     */
+    async getProfessorCourseRating(
+      professorName: string,
+      courseCode: string
+    ): Promise<Rating | null> {
+      try {
+        const { data, error } = await supabase
+          .from('ratings')
+          .select('*')
+          .eq('prof_name', professorName)
+          .eq('class_code', courseCode)
+          .single();
+  
+        if (error) {
+          // Not found is okay, just return null
+          return null;
+        }
+  
+        return data as Rating;
+      } catch (error) {
+        console.error('Error fetching rating:', error);
+        return null;
+      }
+    }
+
+    /**
+       * Get all ratings for a professor across all courses
+       */
+      async getAllProfessorRatings(professorName: string): Promise<Rating[]> {
+        try {
+          const { data, error } = await supabase
+            .from('ratings')
+            .select('*')
+            .eq('prof_name', professorName);
+    
+          if (error) {
+            console.error('Error fetching professor ratings:', error);
+            return [];
+          }
+    
+          return (data || []) as Rating[];
+        } catch (error) {
+          console.error('Error in getAllProfessorRatings:', error);
+          return [];
+        }
+      }
 
   /* SETTERS */
     // 1. Make the function async so you can use 'await'
@@ -68,18 +146,30 @@ class ProfessorService {
         }
   
         this.matchingProfessors = (data ?? []) as Professor[];
-      } //else {
-          // Your fallback API call was correct
-          //this.matchingProfessors = APIObj.get<Professor[]>('/professors/search', { q }) ?? []
-        //}
+      }
     }
-      //console.log("this is the matching professors array:", this.matchingProfessors);
-}
+    
+  /**
+   * Get professor by UUID (if using UUID field)
+   */
+  async getProfessorByUuid(uuid: string): Promise<Professor | null> {
+    try {
+      const { data, error } = await supabase
+        .from('professors')
+        .select('*')
+        .eq('uuid', uuid)
+        .single();
 
-  // use of facade software design pattern
-  // selectProfessorCard() {
-  //   this.returnCurrentCourseReviews();
-  //   this.returnPreviousCourseReviews();
-  // }
+      if (error) {
+        return null;
+      }
+
+      return data as Professor;
+    } catch (error) {
+      console.error('Error fetching professor by UUID:', error);
+      return null;
+    }
+  }
+}
 
 export var ProfObj = new ProfessorService();

@@ -1,5 +1,4 @@
 import { Ionicons } from '@expo/vector-icons';
-//import { useRouter } from 'expo-router';
 import { useRouter, useLocalSearchParams } from 'expo-router'; // 1. Import useLocalSearchParams
 import { useState, useEffect } from 'react';
 import {
@@ -13,8 +12,7 @@ import {
     Alert
 } from 'react-native';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
-import { supabase } from '@/utils/supabase';
-import { Professor, Course } from '@/types';
+import { Course } from '@/types';
 import { UserObj } from '@/services/user';
 
 export default function CoursesScreen() {
@@ -24,7 +22,6 @@ export default function CoursesScreen() {
   const [selectedDepartment, setSelectedDepartment] = useState('Communication & Media Department');
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(false);
-  const [courseCode, setCourseCode] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
 
   // Only re-run when relevant navigation params change. Using the whole

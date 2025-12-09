@@ -22,26 +22,7 @@ import { APIObj } from '@/services/api';
 import { Professor } from '@/types';
 
 // --- NEW INTERFACE DEFINITION ---
-// --- CORRECT DEFAULT PROPS INITIALIZATION ---
-// This uses an object literal to define static default values (empty functions)
-const defaultProps: HomeScreenProps = {
-    loadDepartments: () => console.log("loadDepartments prop not provided!"),
-    handleSearch: () => console.log("handleSearch prop not provided!"),
-    handleDepartmentPress: () => console.log("handleDepartmentPress prop not provided!"),
-    handleViewSaved: () => console.log("handleViewSaved prop not provided!"),
-}
-
-interface HomeScreenProps {
-    // Make functions OPTIONAL (?:) because the component is a route and might be called without props
-    loadDepartments?: () => void; 
-    handleSearch?: () => void; 
-    handleDepartmentPress?: (dept: Department) => void;
-    handleViewSaved?: () => void;
-}
-
-export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
-  //const props = useMemo(() => ({...defaultProps, ...initialProps}), [initialProps]);
-
+export default function HomeScreen() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [humanities, setHumanities] = useState<Department[]>([]);
@@ -56,7 +37,6 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
   //Load departments on mount
   useEffect(() => {
     loadDepartments();
-    //DeptObj.getMatchingProfessors('', '')
   }, []);
 
   const toggleSearchMode = () => {
@@ -64,7 +44,7 @@ export default function HomeScreen(/*initialProps: HomeScreenProps*/) {
     setSearchQuery(''); // Clear search when toggling
   };
 
-  // department data is based on mockDepartments, NOT supabase data
+  // loads all departments from a set table within supabase
   async function loadDepartments() {
     let hum:Department[] = [], 
       eng:Department[] = [], 

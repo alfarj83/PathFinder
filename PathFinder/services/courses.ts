@@ -1,73 +1,135 @@
 // services/courses.ts
-import { Course, Professor } from '@/types';
+import { Course, Professor, ProfessorWithRating } from '@/types';
 import { supabase } from '@/utils/supabase';
-import { ProfObj } from './professors';
 
 class CourseService {
-  // internal record of all matching professors within a professorSearch
+  // Keep the latest set of matching courses from the last search
   private matchingCourses: Course[] = [];
-  private currentProfs: typeof CourseObj[] = [];
-  private previousProfs: typeof CourseObj[] = [];
 
-  /* GETTERS */
-  //returns Course[]
+  // Return the most recent course search results
   returnMatchingCourses() {
     return this.matchingCourses;
   }
-  // returns Professor[]
-  returnCurrentProfessors() {
-    return this.currentProfs;
-  }
-  //returns Professor[]
-  returnPreviousProfessors() {
-    return this.previousProfs;
+
+  async getCourseById(courseId: string | number): Promise<Course | null> {
+    try {
+      const { data, error } = await supabase
+        .from('courses')
+        .select('*')
+        .eq('id', courseId)
+        .single();
+
+      if (error) {
+        console.error('Error fetching course:', error);
+        return null;
+      }
+
+      return data as Course;
+    } catch (error) {
+      console.error('Error in getCourseById:', error);
+      return null;
+    }
   }
 
-  /* SETTERS */
-      // 1. Make the function async so you can use 'await'
+  // Look up all professors with ratings associated to a given course code
+  async getProfessorsForCourse(courseCode: string): Promise<ProfessorWithRating[]> {
+    try {
+      // Get all ratings rows for this course
+      const { data: ratings, error: ratingsError } = await supabase
+        .from('ratings')
+        .select('*')
+        .eq('class_code', courseCode);
+
+      if (ratingsError || !ratings || ratings.length === 0) {
+        console.log('No ratings found for course:', courseCode);
+        return [];
+      }
+
+      const professorsWithRatings: ProfessorWithRating[] = [];
+
+      // For each rating, try to find a matching professor row
+      for (const rating of ratings) {
+        const { data: profData, error: profError } = await supabase
+          .from('professors')
+          .select('*')
+          .eq('full_name', rating.prof_name)
+          .single();
+
+        if (profData && !profError) {
+          professorsWithRatings.push({
+            ...profData,
+            courseRating: rating.rating,
+            courseDifficulty: rating.diff,
+            courseNumRatings: rating.num_ratings,
+          });
+        } else {
+          // Fall back to a minimal professor entry if they are not in the table
+          professorsWithRatings.push({
+            id: rating.prof_name,
+            full_name: rating.prof_name,
+            rating: rating.rating,
+            courseRating: rating.rating,
+            courseDifficulty: rating.diff,
+            courseNumRatings: rating.num_ratings,
+          });
+        }
+      }
+
+      return professorsWithRatings;
+    } catch (error) {
+      console.error('Error fetching professors for course:', error);
+      return [];
+    }
+  }
+
+  // Search courses by code or name and update the in-memory results
   public async searchCourse(q: string): Promise<void> {
-    // The 'supabase' variable is the Supabase client
     if (supabase) {
-      
-      // 2. Prepare the search term for a 'contains' query (ilike = case-insensitive)
+      // Wrap the query string for a case-insensitive "contains" match
       const searchQuery = `%${q}%`;
-      console.log(searchQuery) // gets to here
+      console.log(searchQuery); // Confirm the search pattern used
 
-      // 3. Build the .or() filter string. This searches for the query in any of the specified columns.
-      // Note: Adjust this if your column names are different!
+      // Build the .or() filter to search both course_code and course_name
       const filterString = [
         `course_code.ilike.${searchQuery}`,
         `course_name.ilike.${searchQuery}`,
-      ].join(','); // .or() takes a comma-separated string
+      ].join(',');
 
-      // 4. Await the database query
       const { data, error } = await supabase
-        .from('courses') // Make sure 'professors' is your table name
-        .select()            // Get all columns
-        .or(filterString);   // Apply the multi-column search
+        .from('courses')
+        .select()
+        .or(filterString);
 
       if (error) {
-        console.log(error)
+        console.log(error);
         console.error('Error searching courses:', error);
       }
 
+      // Fall back to an empty array if Supabase returned null
       this.matchingCourses = (data ?? []) as Course[];
     }
   }
-      //console.log("this is the matching professors array:", this.matchingProfessors);
 
-  getCurrentCourses() {
-    
-  }
-  getPreviousCourses(){
+  // Fetch a single course row by its course_code
+  async getCourseByCode(courseCode: string): Promise<Course | null> {
+    try {
+      const { data, error } = await supabase
+        .from('courses')
+        .select('*')
+        .eq('course_code', courseCode)
+        .single();
 
-  }
-  getCourses() {
+      if (error) {
+        return null;
+      }
 
+      return data as Course;
+    } catch (error) {
+      console.error('Error fetching course by code:', error);
+      return null;
+    }
   }
-  returnPreviousProfReviews() {}
-  returnCurrentProfReviews() {}
-  selectCourseCard() {}
 }
 
+// Export a shared instance so consumers do not create their own
 export var CourseObj = new CourseService();
