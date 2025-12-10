@@ -2,6 +2,27 @@
 import { Course, Professor, ProfessorWithRating } from '@/types';
 import { supabase } from '@/utils/supabase';
 
+// 
+//  CourseService (Singleton)
+//  -------------------------
+//  This class is implemented using the Singleton design pattern. Instead of 
+//  creating new CourseService objects in different files, we export one 
+//  shared instance at the bottom of this file (`CourseObj`). 
+//  
+//  Why Singleton?
+//    - Ensures all screens use the same course-data source.
+//    - Keeps in-memory state consistent (ex: matchingCourses from search).
+//    - Prevents duplicate Supabase queries from multiple, unnecessary instances.
+//    - Makes the service behave like a small shared "course database".
+//  
+//   Example Usage:
+//     const course = await CourseObj.getCourseById(id);
+//     const profs  = await CourseObj.getProfessorsForCourse(code);
+//  
+//   This shared instance is also used inside the Facade 
+//   (ProfileDataService.getFullCourseProfile), which pulls together several 
+//   nested operations into one simplified call for the UI.
+//
 class CourseService {
   // Keep the latest set of matching courses from the last search
   private matchingCourses: Course[] = [];
@@ -130,6 +151,14 @@ class CourseService {
     }
   }
 }
+
+//
+//  Singleton Instance
+//  ------------------
+//  Only one CourseService object is created for the whole application.
+//  All imports reference the same instance, which maintains shared state 
+//  such as cached course search results.
+// 
 
 // Export a shared instance so consumers do not create their own
 export var CourseObj = new CourseService();
