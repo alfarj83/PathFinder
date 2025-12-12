@@ -167,39 +167,3 @@ class ProfileDataService {
 
 // Shared instance used by profile-related screens
 export const ProfileDataObj = new ProfileDataService();
-
-// USAGE EXAMPLE in CourseProfile component:
-//
-// const fetchCourseData = async () => {
-//   try {
-//     setLoading(true);
-//     
-//     // BEFORE FACADE (Complex - requires knowledge of service internals):
-//     // const course = await CourseObj.getCourseById(activeCourseId);
-//     // if (!course) throw new Error('Course not found');
-//     // const professors = await CourseObj.getProfessorsForCourse(course.course_code);
-//     // setCourseData(course);
-//     // setProfessors(professors);
-//     
-//     // AFTER FACADE (Simple - one method call):
-//     const { course, professors } = await ProfileDataObj.getFullCourseProfile(activeCourseId);
-//     
-//     if (!course) {
-//       throw new Error('Course not found');
-//     }
-//     
-//     setCourseData(course);
-//     setProfessors(professors);
-//   } catch (err) {
-//     setError(err.message);
-//   } finally {
-//     setLoading(false);
-//   }
-// };
-//
-// KEY BENEFITS:
-// 1. UI component doesn't need to know about CourseService internals
-// 2. No need to understand the relationship between courses and ratings tables
-// 3. Single point of failure and error handling
-// 4. If data fetching logic changes, only the facade needs updating
-// 5. Easier to test - mock one method instead of multiple service calls
