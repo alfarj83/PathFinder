@@ -103,7 +103,7 @@ export default function ProfsScreen() {
     });
   };
 
-
+  // Component to render professor image or default icon
   const ProfImage = ({ prof }: { prof: Professor }) => {
     let name = prof?.faculty_url?.split('/').pop();
     if (name == undefined) name = '';

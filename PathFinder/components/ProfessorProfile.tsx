@@ -9,18 +9,13 @@
 
 import { ProfileDataObj } from '@/services/profileData';
 import { UserObj } from '@/services/user';
-import { CourseWithRating, Professor } from '@/types';
+import { Course, CourseWithRating, Professor } from '@/types';
 import {
   formatRating,
   getRatingColor,
   isValidNumber,
   toNumber
 } from '@/utils/formatters';
-// import {
-//   isProfessorSaved,
-//   saveProfessor,
-//   unsaveProfessor,
-// } from '@/utils/savedItems';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -104,6 +99,7 @@ const ClassCard = ({ course, isExpanded, onToggle, navigate }: ClassCardProps) =
   );
 };
 
+// Component to render professor image or default icon
 const ProfImage = ({ imageKey }: { imageKey: ImageKey }) => {
   if (!imageKey || !IMAGE_MAP[imageKey]) {
     return (<Ionicons name="person-circle-outline" size={100} color="#627768" />);
@@ -243,7 +239,15 @@ export default function ProfessorProfile({
     }
   };
 
-      // Updated to accept professor ID and pass current search context
+  // Checks if a course is active and should be displayed
+    // Courses are active if they have a description
+    const isCourseActive = (course: Course) => {
+      if (course.course_desc != null) {
+        return true;
+      }
+    }
+
+  // Updated to accept professor ID and pass current search context
   const navigateToCourseProfile = (courseId: string|number) => {
     router.push({
       pathname: '/test',
@@ -382,7 +386,9 @@ export default function ProfessorProfile({
               <Text style={styles.emptyText}>No class data available</Text>
             </View>
           ) : (
-            courses.map((course) => (
+            courses
+            .filter(isCourseActive)
+            .map((course) => (
               <ClassCard
                 key={course.course_code}
                 course={course}
