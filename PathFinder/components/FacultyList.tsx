@@ -25,6 +25,7 @@ import {
   Image,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { IMAGE_MAP, ImageKey } from './ImageMap';
 
 export default function ProfsScreen() {
   const router = useRouter();
@@ -101,6 +102,22 @@ export default function ProfsScreen() {
       }
     });
   };
+
+
+  const ProfImage = ({ prof }: { prof: Professor }) => {
+    let name = prof?.faculty_url?.split('/').pop();
+    if (name == undefined) name = '';
+    let imageKey = name as ImageKey;
+    
+    if (!imageKey || !IMAGE_MAP[imageKey]) {
+      return (<Ionicons name="person-circle-outline" size={50} color="#666" />);
+    } else
+    return (
+      <View style={{borderRadius: 50, overflow: 'hidden'}}>
+        <Image source={IMAGE_MAP[imageKey]} style={{width: 50, height: 50}} />
+      </View>
+    );
+  }
   
 
   return (
@@ -134,8 +151,7 @@ export default function ProfsScreen() {
               <View style={styles.cardContent}>
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
-                  <Ionicons name="person-circle-outline" size={50} color="#666" />
-                  {/*<Image source={require(addProfImage(professor.full_name))} />*/}
+                  <ProfImage prof={professor}/>
                 </View>
 
                 {/* Professor Info */}
@@ -236,6 +252,8 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     marginRight: 12,
+    borderRadius: 50,
+    overflow: 'hidden'
   },
   professorInfo: {
     flex: 1,

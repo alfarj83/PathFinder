@@ -117,7 +117,7 @@ export default function ProfessorProfile({
   professorId,
 }: ProfessorProfileProps = {}) {
   // State management for professor data and UI state
-  const [professorData, setProfessorData] = useState<Professor | null>(null);2
+  const [professorData, setProfessorData] = useState<Professor | null>(null);
   const [courses, setCourses] = useState<CourseWithRating[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
