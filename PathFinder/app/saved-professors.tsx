@@ -176,9 +176,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 50,
+    paddingTop: 65,
     paddingBottom: 16,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#E8E4D5',
   },
   backButton: {
     marginRight: 12,

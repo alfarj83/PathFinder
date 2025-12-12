@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function SignUpForm() {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Handles the sign-up process
   // Validates inputs, calls user service, and handles response
@@ -97,15 +99,28 @@ export default function SignUpForm() {
         />
 
         {/* Password Input */}
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          placeholderTextColor="#A8B5A9"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          autoComplete="password"
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.passwordInput}
+            placeholder="Password"
+            placeholderTextColor="#A8B5A9"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            autoComplete="password"
+          />
+          <TouchableOpacity 
+            style={styles.eyeIcon}
+            onPress={() => setShowPassword(!showPassword)}
+            disabled={loading}
+          >
+            <Ionicons 
+              name={showPassword ? "eye-off" : "eye"} 
+              size={24} 
+              color="#A8B5A9" 
+            />
+          </TouchableOpacity>
+        </View>
         {loading && <Text>
             {'An confirmation email has been sent to your inbox.'}
           </Text>}
@@ -144,6 +159,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+    passwordContainer: {
+    width: '100%',
+    position: 'relative',
+    marginBottom: 15,
+  },
   content: {
     flex: 1,
     paddingTop: 50,
@@ -168,19 +188,19 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     backgroundColor: '#6B7B6E',
-    borderRadius: 8,
-    padding: 30,
+    borderRadius: 25,
+    padding: 25,
     marginBottom: 15,
     color: '#FFF',
-    fontSize: 20,
+    fontSize: 19,
   },
   button: {
     width: '100%',
     backgroundColor: '#D9D9D9',
-    borderRadius: 25,
+    borderRadius: 40,
     padding: 20,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 18,
     borderWidth: 1,
     borderColor: '#999',
   },
@@ -188,7 +208,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 19,
     fontWeight: '600',
     color: '#000',
   },
@@ -207,5 +227,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textDecorationLine: 'underline',
     color: '#000',
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 20,
+    top: '50%',
+    transform: [{ translateY: -18 }],
+    padding: 5,
+  },
+  passwordInput: {
+    width: '100%',
+    backgroundColor: '#6B7B6E',
+    borderRadius: 25,
+    padding: 25,
+    paddingRight: 60,
+    color: '#FFF',
+    fontSize: 19,
   },
 });

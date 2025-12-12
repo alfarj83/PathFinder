@@ -176,9 +176,11 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
       if (isSaved) {
         const success = await UserObj.unsaveCourse(activeCourseId);
         if (success) setIsSaved(false);
+        Alert.alert('Course unsaved!')
       } else {
         const success = await UserObj.saveCourse(activeCourseId);
         if (success) setIsSaved(true);
+        Alert.alert('Course saved!') 
       }
     } catch (err) {
       console.error('Error toggling save:', err);
@@ -291,18 +293,6 @@ export default function CourseProfile({ courseId }: CourseProfileProps = {}) {
             <Text style={styles.descriptionText}>
               {courseData.course_desc || 'No description available.'}
             </Text>
-
-            {/* Prerequisites Button */}
-            <TouchableOpacity
-              style={[
-                styles.prerequisitesButton,
-                hasPrerequisites && styles.prerequisitesButtonActive,
-              ]}
-            >
-              <Text style={styles.prerequisitesText}>
-                {hasPrerequisites ? 'View Prerequisites' : 'No Prerequisites'}
-              </Text>
-            </TouchableOpacity>
           </View>
 
           {/* Professors Section */}
@@ -446,7 +436,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#E8E4D5',
-    paddingTop: 50,
+    paddingTop: 65,
     paddingBottom: 20,
     paddingHorizontal: 20,
     flexDirection: 'row',

@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#6B8E7F',
-    paddingTop: 50,
+    paddingTop: 60,
     paddingBottom: 30,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -325,7 +325,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   iconCircle: {
-    borderRadius: 20,
+    borderRadius: 19,
     width: 140,
     height: 140,
     justifyContent: 'center',
@@ -340,6 +340,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'white',
     marginBottom: 20,
+    alignItems: 'center'
   },
   searchContainer: {
     flexDirection: 'row',
@@ -364,7 +365,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   subText: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 15,

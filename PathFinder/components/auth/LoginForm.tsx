@@ -18,8 +18,10 @@ import {
   StyleSheet, 
   Alert,
   Image,
-  ActivityIndicator
+  ActivityIndicator,
+  ScrollView
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { UserObj } from '@/services/user';
 import { useRouter } from 'expo-router';
 
@@ -33,6 +35,7 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
 
@@ -64,7 +67,7 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
   }
 
   return (
-    <View style={styles.formContainer}>
+    <ScrollView contentContainerStyle={styles.formContainer}>
       <View style={styles.content}>
         {/* Logo */}
         <View style={styles.logoContainer}>
@@ -92,16 +95,29 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
         />
 
         {/* Password Input */}
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          placeholderTextColor="#A8B5A9"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          autoComplete="password"
-          editable={!loading}
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.passwordInput}
+            placeholder="Password"
+            placeholderTextColor="#A8B5A9"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={!showPassword}
+            autoComplete="password"
+            editable={!loading}
+          />
+          <TouchableOpacity 
+            style={styles.eyeIcon}
+            onPress={() => setShowPassword(!showPassword)}
+            disabled={loading}
+          >
+            <Ionicons 
+              name={showPassword ? "eye-off" : "eye"} 
+              size={24} 
+              color="#A8B5A9" 
+            />
+          </TouchableOpacity>
+        </View>
 
         {/* Sign In Button */}
         <TouchableOpacity 
@@ -122,7 +138,7 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -163,19 +179,40 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     backgroundColor: '#6B7B6E',
-    borderRadius: 8,
-    padding: 30,
+    borderRadius: 25,
+    padding: 25,
     marginBottom: 15,
     color: '#FFF',
-    fontSize: 20,
+    fontSize: 19,
+  },
+  passwordContainer: {
+    width: '100%',
+    position: 'relative',
+    marginBottom: 15,
+  },
+  passwordInput: {
+    width: '100%',
+    backgroundColor: '#6B7B6E',
+    borderRadius: 25,
+    padding: 25,
+    paddingRight: 60,
+    color: '#FFF',
+    fontSize: 19,
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 20,
+    top: '50%',
+    transform: [{ translateY: -18 }],
+    padding: 5,
   },
   button: {
     width: '100%',
     backgroundColor: '#D9D9D9',
-    borderRadius: 25,
+    borderRadius: 40,
     padding: 20,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 18,
     borderWidth: 1,
     borderColor: '#999',
   },
@@ -183,7 +220,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 19,
     fontWeight: '600',
     color: '#000',
   },

@@ -9,26 +9,23 @@
 
 import { ProfileDataObj } from '@/services/profileData';
 import { UserObj } from '@/services/user';
-import { CourseWithRating, Professor } from '@/types';
+import { Course, CourseWithRating, Professor } from '@/types';
 import {
   formatRating,
   getRatingColor,
   isValidNumber,
   toNumber
 } from '@/utils/formatters';
-// import {
-//   isProfessorSaved,
-//   saveProfessor,
-//   unsaveProfessor,
-// } from '@/utils/savedItems';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  ImageStyle,
   Linking,
   ScrollView,
+  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -36,15 +33,14 @@ import {
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
+import { Image } from 'react-native';
+import { IMAGE_MAP, ImageKey } from './ImageMap';
 
 // --- Type Definitions ---
 type ProfessorProfileProps = {
   professorId?: string;
 };
 
-type StarRatingProps = {
-  rating: number;
-};
 
 type ClassCardProps = {
   course: CourseWithRating;
@@ -103,6 +99,16 @@ const ClassCard = ({ course, isExpanded, onToggle, navigate }: ClassCardProps) =
   );
 };
 
+// Component to render professor image or default icon
+const ProfImage = ({ imageKey }: { imageKey: ImageKey }) => {
+  if (!imageKey || !IMAGE_MAP[imageKey]) {
+    return (<Ionicons name="person-circle-outline" size={100} color="#627768" />);
+  } else
+  return (
+    <Image source={IMAGE_MAP[imageKey]} style={{width: 100, height: 100}} />
+  );
+}
+
 export default function ProfessorProfile({
   professorId,
 }: ProfessorProfileProps = {}) {
@@ -120,6 +126,15 @@ export default function ProfessorProfile({
 
   // Get professor ID from props first, then fall back to route params
   const activeProfessorId = professorId || (params.professorId as string);
+
+  // parsing imagekey from faculty url
+  const kebabCase = () => {
+    let name = professorData?.faculty_url?.split('/').pop();
+    if (name == undefined) return '';
+    return name;
+  }
+  const imageKey = kebabCase() as ImageKey;
+  console.log('here is the imagekey', imageKey)
 
   const handleBackPress = () => {
     // Check if we came from a search and have the search params
@@ -224,7 +239,15 @@ export default function ProfessorProfile({
     }
   };
 
-      // Updated to accept professor ID and pass current search context
+  // Checks if a course is active and should be displayed
+    // Courses are active if they have a description
+    const isCourseActive = (course: Course) => {
+      if (course.course_desc != null) {
+        return true;
+      }
+    }
+
+  // Updated to accept professor ID and pass current search context
   const navigateToCourseProfile = (courseId: string|number) => {
     router.push({
       pathname: '/test',
@@ -297,7 +320,7 @@ export default function ProfessorProfile({
         {/* Profile Section */}
         <View style={styles.profileSection}>
           <View style={styles.profileImageLarge}>
-            <Ionicons name="person-circle-outline" size={100} color="#627768" />
+            <ProfImage imageKey={imageKey} />
           </View>
           <Text style={styles.professorNameLarge}>{professorData.full_name}</Text>
           <Text style={styles.departmentTextLarge}>
@@ -363,7 +386,9 @@ export default function ProfessorProfile({
               <Text style={styles.emptyText}>No class data available</Text>
             </View>
           ) : (
-            courses.map((course) => (
+            courses
+            .filter(isCourseActive)
+            .map((course) => (
               <ClassCard
                 key={course.course_code}
                 course={course}
@@ -430,7 +455,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 50,
+    paddingTop: 65,
     paddingBottom: 10,
     backgroundColor: '#F5F5F5',
   },
