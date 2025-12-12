@@ -21,7 +21,8 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View, 
+  Image,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -54,18 +55,7 @@ export default function ProfsScreen() {
   async function loadProfessors() {
     setLoading(true);
     try {
-      // Check if we have search results passed from the search screen
-      if (params?.searchResults) {
-        // Parse the search results from the URL parameter
-        const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
-        setProfessors(results);
-        setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
-        
-        // Update header to show it's a search result
-        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
-      } 
-      // Check if we have a department to display
-      else if (params?.departmentCode) {
+      if (params?.departmentCode) {
         setSelectedDepartment(Array.isArray(params.departmentName) ? params.departmentName[0] : params.departmentName || 'Faculty');
         
         // Load professors from the specific department
@@ -74,6 +64,17 @@ export default function ProfsScreen() {
           .select()
           .eq('department_code', Array.isArray(params.departmentCode) ? params.departmentCode[0] : params.departmentCode);
         if (data) setProfessors(data);
+      } 
+      // Check if we have search results passed from the search screen
+      else if (params?.searchResults) {
+        // Parse the search results from the URL parameter
+        const results = JSON.parse(Array.isArray(params.searchResults) ? params.searchResults[0] : params.searchResults);
+        console.log('here are the search results:', results);
+        setProfessors(results);
+        setSearchQuery(Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery || null);
+        
+        // Update header to show it's a search result
+        setSelectedDepartment(`Search Results for "${Array.isArray(params.searchQuery) ? params.searchQuery[0] : params.searchQuery}"`);
       } 
       // Default: Load all professors
       else {
@@ -134,6 +135,7 @@ export default function ProfsScreen() {
                 {/* Professor Image */}
                 <View style={styles.imageContainer}>
                   <Ionicons name="person-circle-outline" size={50} color="#666" />
+                  {/*<Image source={require(addProfImage(professor.full_name))} />*/}
                 </View>
 
                 {/* Professor Info */}

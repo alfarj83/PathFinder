@@ -27,8 +27,10 @@ import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  ImageStyle,
   Linking,
   ScrollView,
+  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -36,15 +38,14 @@ import {
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
+import { Image } from 'react-native';
+import { IMAGE_MAP, ImageKey } from './ImageMap';
 
 // --- Type Definitions ---
 type ProfessorProfileProps = {
   professorId?: string;
 };
 
-type StarRatingProps = {
-  rating: number;
-};
 
 type ClassCardProps = {
   course: CourseWithRating;
@@ -103,11 +104,20 @@ const ClassCard = ({ course, isExpanded, onToggle, navigate }: ClassCardProps) =
   );
 };
 
+const ProfImage = ({ imageKey }: { imageKey: ImageKey }) => {
+  if (!imageKey || !IMAGE_MAP[imageKey]) {
+    return (<Ionicons name="person-circle-outline" size={100} color="#627768" />);
+  } else
+  return (
+    <Image source={IMAGE_MAP[imageKey]} style={{width: 100, height: 100}} />
+  );
+}
+
 export default function ProfessorProfile({
   professorId,
 }: ProfessorProfileProps = {}) {
   // State management for professor data and UI state
-  const [professorData, setProfessorData] = useState<Professor | null>(null);
+  const [professorData, setProfessorData] = useState<Professor | null>(null);2
   const [courses, setCourses] = useState<CourseWithRating[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -120,6 +130,15 @@ export default function ProfessorProfile({
 
   // Get professor ID from props first, then fall back to route params
   const activeProfessorId = professorId || (params.professorId as string);
+
+  // parsing imagekey from faculty url
+  const kebabCase = () => {
+    let name = professorData?.faculty_url?.split('/').pop();
+    if (name == undefined) return '';
+    return name;
+  }
+  const imageKey = kebabCase() as ImageKey;
+  console.log('here is the imagekey', imageKey)
 
   const handleBackPress = () => {
     // Check if we came from a search and have the search params
@@ -297,7 +316,7 @@ export default function ProfessorProfile({
         {/* Profile Section */}
         <View style={styles.profileSection}>
           <View style={styles.profileImageLarge}>
-            <Ionicons name="person-circle-outline" size={100} color="#627768" />
+            <ProfImage imageKey={imageKey} />
           </View>
           <Text style={styles.professorNameLarge}>{professorData.full_name}</Text>
           <Text style={styles.departmentTextLarge}>
@@ -430,7 +449,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 50,
+    paddingTop: 65,
     paddingBottom: 10,
     backgroundColor: '#F5F5F5',
   },

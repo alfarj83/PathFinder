@@ -49,9 +49,14 @@ export default function SavedCoursesScreen() {
     }
   };
 
-  const navigateToCourse = (courseId: string | number) => {
-    // Navigate to course detail page (to be implemented)
-    console.log('Navigate to course:', courseId);
+  const navigateToCourse= (courseId: string|number) => {
+    router.push({
+      pathname: '/test',
+      params: { 
+        courseId,
+        // Pass back the current search context so we can return to it
+      }
+    });
   };
 
   const unsaveCourse = async (courseId: string | number) => {
@@ -150,9 +155,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 50,
+    paddingTop: 65,
     paddingBottom: 16,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#E8E4D5',
   },
   backButton: {
     marginRight: 12,

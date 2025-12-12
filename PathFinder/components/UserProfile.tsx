@@ -204,7 +204,6 @@ export default function ProfileTab() {
             />
           </View>
           <Text style={styles.userEmail}>{userEmail}</Text>
-          <Text style={styles.userDepartment}>{userDepartment}</Text>
           <Text style={styles.joinedDate}>{joinedDate}</Text>
         </View>
 
